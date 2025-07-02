@@ -1,0 +1,15 @@
+{
+  "name": "CodeClip",
+  "version": "1.0.0",
+  "description": "This extension will manage all your code snippets",
+  "manifest_version": 3,
+  "permissions": ["activeTab"],
+  "action": {
+    "default_popup": "index.html",
+    "default_title": "CodeClip"
+  },
+  "background": {
+    "service_worker": "background.js",
+    "type": "module"
+  }
+}
