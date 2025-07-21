@@ -3,13 +3,61 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeClip</title>
+    <title>CodeClip Challenge Vault</title>
     <script
-  src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
-  crossorigin="anonymous"
-></script>
+      src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
+      crossorigin="anonymous"
+    ></script>
+    <link rel="stylesheet" href="styles/main.css" />
   </head>
   <body>
-    
+    <header>
+      <h1>CodeClip Challenge Vault</h1>
+    </header>
+
+    <main>
+      <div class="filter-controls">
+        <div class="control-group">
+          <label for="search-bar">Search by Title</label>
+          <input type="search" id="search-bar" placeholder="e.g., Two Sum" />
+        </div>
+
+        <div class="control-group">
+          <label for="difficulty-filter">Difficulty</label>
+          <select id="difficulty-filter">
+            <option value="all">All</option>
+            <option value="Easy">Easy</option>
+            <option value="Medium">Medium</option>
+            <option value="Hard">Hard</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="language-filter">Language</label>
+          <select id="language-filter">
+            <option value="all">All</option>
+            <option value="JavaScript">JavaScript</option>
+            <option value="Python">Python</option>
+            <option value="Java">Java</option>
+          </select>
+        </div>
+
+        <div class="control-group">
+          <label for="status-filter">Status</label>
+          <select id="status-filter">
+            <option value="all">All</option>
+            <option value="todo">To Do</option>
+            <option value="in-progress">In Progress</option>
+            <option value="completed">Completed</option>
+          </select>
+        </div>
+
+        <button id="reset-filters">Clear Filters</button>
+      </div>
+
+      <div id="challenges-container"></div>
+    </main>
+
+    <script src="scripts/challenges.js"></script>
   </body>
 </html>
