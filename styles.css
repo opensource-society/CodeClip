@@ -360,24 +360,43 @@ body {
 .string { color: #16a34a; }
 
 /* Theme Toggle */
-.theme-toggle-container {
-  text-align: center;
-  padding: 2rem 0;
-}
-
 .theme-toggle-btn {
-  background: #64748b;
-  color: #fff;
+  background: none;
   border: none;
-  padding: 0.8rem 1.5rem;
-  border-radius: 8px;
+  color: #2563eb;
+  font-size: 1.7rem;
+  margin-left: 1.5rem;
   cursor: pointer;
-  font-weight: 600;
-  transition: background 0.3s ease;
+  transition: color 0.2s;
+  outline: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0.2rem 0.5rem;
+}
+.theme-toggle-btn:hover, .theme-toggle-btn:focus {
+  color: #3b82f6;
 }
 
-.theme-toggle-btn:hover {
-  background: #475569;
+[data-theme="dark"] .theme-toggle-btn {
+  color: #f1f1f1;
+}
+
+.theme-toggle-btn svg {
+  width: 1.2em;
+  height: 1.2em;
+  vertical-align: middle;
+  transition: color 0.2s, transform 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+  display: block;
+  transform: rotate(0deg);
+}
+.theme-toggle-btn.animated svg {
+  transform: rotate(180deg);
+}
+
+/* Remove old theme toggle container styles */
+.theme-toggle-container {
+  display: none !important;
 }
 
 /* Responsive Styles */
