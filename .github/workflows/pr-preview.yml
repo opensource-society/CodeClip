@@ -12,11 +12,13 @@ jobs:
     permissions:
       contents: write
       pull-requests: write
+
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          ref: ${{ github.event.pull_request.head.sha }}
+          repository: ${{ github.event.pull_request.head.repo.full_name }}
+          ref: ${{ github.event.pull_request.head.ref }}
           fetch-depth: 1
 
       - name: Set up Node.js
@@ -27,17 +29,15 @@ jobs:
       - name: Copy files to preview folder
         run: |
           mkdir -p preview/pr-${{ github.event.pull_request.number }}
-          cp -r * preview/pr-${{ github.event.pull_request.number }}/
-          rm -rf preview/pr-${{ github.event.pull_request.number }}/.git
-          rm -rf preview/pr-${{ github.event.pull_request.number }}/.github
+          rsync -av --exclude 'preview' --exclude '.git' --exclude '.github' ./ preview/pr-${{ github.event.pull_request.number }}/
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./preview
+          publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
-          destination_dir: pr-preview
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
           keep_files: true
 
       - name: Comment PR with preview URL
@@ -46,4 +46,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           header: preview-url
           message: |
-            🚀 PR Preview:  PR Preview: https://opensource-society.github.io/${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/index.html 
+            🚀 PR Preview: https://opensource-society.github.io/CodeClip/pr-preview/pr-${{ github.event.pull_request.number }}/index.html

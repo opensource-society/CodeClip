@@ -1,0 +1,195 @@
+/* --- THEME & GLOBAL STYLES --- */
+:root {
+  --bg-color: #f4f7f9;
+  --text-color: #1a202c;
+  --card-bg: #ffffff;
+  --border-color: #e2e8f0;
+  --input-bg: #ffffff;
+  --accent-color: #3182ce;
+  --accent-color-hover: #2b6cb0;
+  
+  /* Badge Colors */
+  --easy-bg: #d4edda;
+  --easy-text: #155724;
+  --medium-bg: #fff3cd;
+  --medium-text: #856404;
+  --hard-bg: #f8d7da;
+  --hard-text: #721c24;
+}
+
+[data-theme="dark"] {
+  --bg-color: #1a202c;
+  --text-color: #e2e8f0;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --input-bg: #2d3748;
+  --accent-color: #63b3ed;
+  --accent-color-hover: #90cdf4;
+
+  /* Badge Colors */
+  --easy-bg: #1c4532;
+  --easy-text: #68d391;
+  --medium-bg: #4a3a19;
+  --medium-text: #f6e05e;
+  --hard-bg: #521b22;
+  --hard-text: #f56565;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+}
+
+.page-header {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.page-header h1 {
+  font-size: 2.5rem;
+  font-weight: 700;
+  margin-bottom: 0.5rem;
+}
+
+.page-header p {
+  font-size: 1.1rem;
+  color: #718096; /* Neutral color, works in both themes */
+}
+
+
+/* --- CONTROLS (SEARCH & FILTER) --- */
+.controls {
+  display: flex;
+  gap: 1rem;
+  margin-bottom: 2rem;
+  flex-wrap: wrap;
+}
+
+.controls input, .controls select {
+  flex-grow: 1;
+  padding: 0.75rem 1rem;
+  font-size: 1rem;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  background-color: var(--input-bg);
+  color: var(--text-color);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.controls input:focus, .controls select:focus {
+  outline: none;
+  border-color: var(--accent-color);
+  box-shadow: 0 0 0 3px var(--accent-color-hover-shadow, rgba(49, 130, 206, 0.3));
+}
+
+.controls select {
+  min-width: 200px;
+  flex-grow: 0;
+}
+
+/* --- CHALLENGE GRID & CARDS --- */
+.challenge-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.card {
+  background-color: var(--card-bg);
+  border: 1px solid var(--border-color);
+  border-radius: 12px;
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  cursor: pointer;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.07), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 1rem;
+}
+
+.card h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  margin: 0;
+  color: var(--text-color);
+  flex-grow: 1;
+}
+
+.badge {
+  padding: 0.25rem 0.75rem;
+  border-radius: 9999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  white-space: nowrap;
+}
+
+.badge.easy { background-color: var(--easy-bg); color: var(--easy-text); }
+.badge.medium { background-color: var(--medium-bg); color: var(--medium-text); }
+.badge.hard { background-color: var(--hard-bg); color: var(--hard-text); }
+
+.card-body {
+    flex-grow: 1;
+}
+
+.language {
+  font-size: 0.9rem;
+  color: #718096;
+}
+
+.card-footer {
+    border-top: 1px solid var(--border-color);
+    padding-top: 1rem;
+    margin-top: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.status {
+  font-size: 0.9rem;
+  font-weight: 500;
+}
+.status.complete { color: var(--easy-text); }
+.status.incomplete { color: var(--medium-text); }
+
+
+/* --- UTILITIES --- */
+.no-results-message {
+    text-align: center;
+    padding: 3rem;
+    color: #718096;
+}
+
+#theme-toggle {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: var(--card-bg);
+  color: var(--text-color);
+  border: 1px solid var(--border-color);
+  border-radius: 50%;
+}
