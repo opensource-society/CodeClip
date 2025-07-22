@@ -24,7 +24,7 @@ jobs:
       - name: Copy files to preview folder
         run: |
           mkdir -p preview/pr-${{ github.event.pull_request.number }}
-          cp -r * preview/pr-${{ github.event.pull_request.number }}/
+          rsync -av --progress --exclude=preview . preview/pr-${{ github.event.pull_request.number }}/
           rm -rf preview/pr-${{ github.event.pull_request.number }}/.git
           rm -rf preview/pr-${{ github.event.pull_request.number }}/.github
 
