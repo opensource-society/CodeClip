@@ -13,8 +13,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
 
   <!-- Styles -->
-  <link rel="stylesheet" href="styles/main.css">
+  
   <link rel="stylesheet" href="./styles/themes.css" />
+  <link rel="stylesheet" href="styles/main.css">
   <link rel="stylesheet" href="styles.css">
 
   <!-- Sentry Script -->
@@ -51,21 +52,33 @@
 
   <!-- Hero section -->
   <div id="hero-section">
-    <div class="bars-container">
-      <div class="bar red"></div>
-      <div class="bar green"></div>
-      <div class="bar yellow"></div>
-      <div class="bar blue"></div>
-    </div>
+   <div class="hero-content">
+  <h1 class="hero-title"> <span id="element" class="purple"></span></h1>
+  <p class="hero-subtitle">CodeClip is your mini playground to practice, challenge, and grow — made for GSSoC and beyond.</p>
+  <div class="hero-buttons">
+    <a href="#" class="btn btn-primary">Start Coding</a>
+    <a href="#" class="btn btn-secondary">Browse Challenges</a>
+  </div>
+</div>
 
-    <h1>Code-Clip</h1>
-    <h3>--- A tiny playground for your giant ideas</h3>
   </div>
 
   <!-- Footer -->
   <div id="footer"></div>
 
   <!-- Scripts -->
+
+  <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: [
+          "Unleash Your Inner Coder",
+        ],
+        typeSpeed: 50,
+      });
+    </script>
   <script src="scripts/app.js"></script>
   <script src="./scripts/theme.js"></script>
 </body>
