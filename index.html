@@ -21,27 +21,34 @@
     <script src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js" crossorigin="anonymous"></script>
   </head>
   <body>
-    <!-- Header Component -->
-    <header class="header">
-      <div class="container header__container">
-        <div class="header__logo">
-          <span class="logo-text">CodeClip</span>
-        </div>
-        <nav class="header__nav" id="navMenu">
-          <ul class="nav__list">
-            <li><a href="#" class="nav__link">Home</a></li>
-            <li><a href="./pages/challenges.html" class="nav__link">Challenges</a></li>
-            <li><a href="/editor.html" class="nav__link">Editor</a></li>
-            <li><a href="#" class="nav__link">Profile</a></li>
-          </ul>
-        </nav>
-        <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-        </button>
-      </div>
-    </header>
+    <!-- Only header part shown below — rest remains unchanged -->
+
+<header class="header">
+  <div class="container header__container">
+    <div class="header__logo">
+      <span class="logo-text">CodeClip</span>
+    </div>
+    <nav class="header__nav" id="navMenu">
+      <ul class="nav__list">
+        <li><a href="#" class="nav__link">Home</a></li>
+        <li><a href="./pages/challenges.html" class="nav__link">Challenges</a></li>
+        <li><a href="/editor.html" class="nav__link">Editor</a></li>
+        <li><a href="#" class="nav__link">Profile</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <button id="theme-toggle" class="theme-toggle-btn" aria-label="Toggle Theme">
+        <span class="material-icons">light_mode</span>
+      </button>
+      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu" aria-expanded="false">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </div>
+</header>
+
 
     <!-- Main Content -->
     <main>
@@ -122,12 +129,7 @@
         </div>
       </div>
     </main>
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle-container">
-      <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
-    </div>
-
+    
     <!-- Footer -->
     <div id="footer"></div>
 
