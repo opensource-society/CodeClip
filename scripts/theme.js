@@ -4,7 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const toggleBtn = document.getElementById("theme-toggle");
 
     const setTheme = (theme) => {
-      document.documentElement.setAttribute("data-theme", theme);
+      if (theme === 'dark') {
+        document.body.classList.add('night-theme');
+      } else {
+        document.body.classList.remove('night-theme');
+      }
       const success = saveUserSettings({ ...loadUserSettings(), theme });
       if (!success) {
         alert('Failed to save theme preference.');
@@ -20,8 +24,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Toggle button click
     toggleBtn.addEventListener("click", () => {
-      const current = document.documentElement.getAttribute("data-theme");
-      const newTheme = current === "light" ? "dark" : "light";
+      const currentTheme = document.body.classList.contains('night-theme') ? 'dark' : 'light';
+      const newTheme = currentTheme === "light" ? "dark" : "light";
       setTheme(newTheme);
     });
 
@@ -31,7 +35,7 @@ document.addEventListener("DOMContentLoaded", () => {
         try {
           const newSettings = JSON.parse(event.newValue);
           if (newSettings && newSettings.theme) {
-            document.documentElement.setAttribute("data-theme", newSettings.theme);
+            setTheme(newSettings.theme);
           }
         } catch (e) {
           // Ignore parse errors
