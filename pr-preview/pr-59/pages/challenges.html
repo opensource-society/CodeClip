@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Coding Challenges</title>
+  <link rel="stylesheet" href="../styles/challenges.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+  <div class="container">
+    <header class="page-header">
+      <h1>Challenges</h1>
+      <p>Sharpen your skills with our collection of coding challenges.</p>
+    </header>
+
+    <div class="controls">
+      <input type="text" id="searchInput" placeholder="Search challenges..." />
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+        <option value="algorithms">Algorithms</option>
+      </select>
+    </div>
+
+    <div class="challenge-grid" id="challengeGrid">
+      </div>
+    
+    <div id="no-results" class="no-results-message" style="display: none;">
+      <h2>🤔 No challenges found...</h2>
+      <p>Try adjusting your search or filter criteria.</p>
+    </div>
+
+  </div>
+
+  <button id="theme-toggle" title="Toggle theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <script src="../scripts/challenges.js"></script>
+</body>
+</html>
