@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Submit Coding Challenge</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="container">
+    <h2>Submit New Coding Challenge</h2>
+    <form id="challengeForm">
+      <label for="title">Title</label>
+      <input id="title" name="title" type="text" required />
+
+      <label for="description">Description</label>
+      <textarea id="description" name="description" required></textarea>
+
+      <label for="difficulty">Difficulty</label>
+      <select id="difficulty" name="difficulty" required>
+        <option value="">Select</option>
+        <option>Easy</option>
+        <option>Medium</option>
+        <option>Hard</option>
+      </select>
+
+      <label>Test Cases</label>
+      <div id="testCases">
+        <input type="text" class="test-case" placeholder="Test Case 1" required />
+      </div>
+      <button type="button" id="addTestCase">+ Add Test Case</button>
+
+      <label for="solution">Sample Solution</label>
+      <textarea id="solution" name="solution" required></textarea>
+
+      <button type="submit">Submit</button>
+    </form>
+
+    <section id="preview"></section>
+  </main>
+  <script src="submit-challenge/script.js"></script>
+
+</body>
+</html>
