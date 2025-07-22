@@ -1,27 +1,32 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
 :root {
-    --bg-color: #ffffff;
-    --text-color: #000000;
-    --header-bg: #f0f0f0;
-  }
-  
-  [data-theme="dark"] {
-    --bg-color: #121212;
-    --text-color: #f1f1f1;
-    --header-bg: #1e1e1e;
-  }
-  
-  body {
-    background-color: var(--bg-color);
-    color: var(--text-color);
-    font-family: sans-serif;
-    transition: background-color 0.3s ease, color 0.3s ease;
-  }
-  
-  main {
-    padding: 2rem;
-  }
-  
-  #theme-toggle {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --header-bg: #f0f0f0;
+}
+
+[data-theme="dark"] {
+  --bg-color: #121212;
+  --text-color: #f1f1f1;
+  --header-bg: #1e1e1e;
+}
+
+body {
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main {
+  padding: 2rem;
+}
+
+/* #theme-toggle {
     position: fixed;
     bottom: 20px;
     right: 20px;
@@ -39,5 +44,89 @@
   #theme-toggle:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+  }*/
+/*nav {
+  position: relative;
+  width: 475;
+  height: 50px;
+  background: red;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+nav a {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 500;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  padding: 14px 16px;
+  z-index: 1;
+}
+nav a:hover {
+  width: 475;
+  height: 50px;
+  background-color: black;
+}*/
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  justify-content: space-evenly;
+}
+
+/* Change the link color to #111 (black) on hover */
+li a:hover {
+  background-color: black;
+  width: auto;
+  height: auto;
+}
+@media (max-width: 600px) {
+  .container {
+    flex-direction: column;
   }
-  
+  .humburger {
+    display: none;
+  }
+}
+.container {
+  display: flex;
+  flex-wrap: nowrap;
+  background-color: DodgerBlue;
+  justify-content: space-evenly;
+}
+.humburger {
+  width: 40px;
+  height: 40px;
+  font-size: 24px;
+  background: none;
+  border: none;
+  color: white;
+  display: none;
+  cursor: pointer;
+}
+.logo img {
+  height: 40px;
+  width: 40px;
+}
+#mobileMenu.show {
+  display: flex;
+}

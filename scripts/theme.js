@@ -26,4 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     });
   });
+  docunment .getElementById("hamburger").addEventListener("click",()=>{
+    const menu = docunment.getElementById("mobileMenu");
+    menu.classList.toggle("show");
+  })
   
