@@ -111,11 +111,26 @@
     </style>
 </head>
 <body class="bg-dark text-light">
-        <div class="header-grid-item pt-3">
-            <button class="btn btn-outline-light btn-sm rounded-pill px-3" onclick="alert('Navigating to homepage...')">
-                <a href="/index.html"><i class="bi bi-arrow-left me-2"></i>Back to Homepage</a>
-            </button>
+    <!-- Header Component -->
+    <header style="background: #1a1a1a; padding: 1rem 0; border-bottom: 1px solid #333;">
+        <div class="container-fluid">
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+                <div style="display: flex; align-items: center; gap: 2rem;">
+                    <div style="font-size: 1.5rem; font-weight: 700; color: #4FC3F7;">CodeClip</div>
+                    <nav style="display: flex; gap: 1.5rem;">
+                        <a href="/" data-route="/" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Home</a>
+                        <a href="/challenges" data-route="/challenges" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Challenges</a>
+                        <a href="/editor" data-route="/editor" style="color: #4FC3F7; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; background: rgba(79, 195, 247, 0.1);">Editor</a>
+                        <a href="/profile" data-route="/profile" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Profile</a>
+                    </nav>
+                </div>
+                <div>
+                    <button class="btn btn-outline-light btn-sm">Save Code</button>
+                </div>
+            </div>
         </div>
+    </header>
+
     <div id="grid-container" class="grid-container">
       
         <!-- Left Panel: Challenge Description -->
@@ -262,5 +277,8 @@ function reverseString(str) {
             });
         });
     </script>
+
+    <!-- Router Script -->
+    <script type="module" src="scripts/app.js"></script>
 </body>
 </html>
