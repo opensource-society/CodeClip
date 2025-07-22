@@ -33,7 +33,8 @@ body {
 }
 
 [data-theme="dark"] .nav__link:hover,
-[data-theme="dark"] .nav__link:focus {
+[data-theme="dark"] .nav__link:focus,
+[data-theme="dark"] .nav__link.active {
   color: #3b82f6;
 }
 
@@ -169,8 +170,13 @@ body {
 }
 
 .nav__link:hover::after,
-.nav__link:focus::after {
+.nav__link:focus::after,
+.nav__link.active::after {
   width: 100%;
+}
+
+.nav__link.active {
+  color: #2563eb;
 }
 
 .header__toggle {

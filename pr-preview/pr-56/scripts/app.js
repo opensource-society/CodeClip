@@ -45,6 +45,100 @@ import { saveUserProgress, loadUserProgress, saveCompletedChallenges, loadComple
 
 console.log('app script loaded');
 
+// Simple Client-Side Router
+class Router {
+  constructor() {
+    this.routes = {
+      '/': 'index.html',
+      '/home': 'index.html',
+      '/challenges': 'pages/challenges.html',
+      '/editor': 'editor.html',
+      '/profile': 'pages/profile.html',
+      '/coding': 'editor.html'
+    };
+    this.init();
+  }
+
+  init() {
+    // Handle browser back/forward buttons
+    window.addEventListener('popstate', () => {
+      this.handleRoute(window.location.pathname);
+    });
+
+    // Handle navigation clicks
+    document.addEventListener('click', (e) => {
+      if (e.target.matches('[data-route]') || e.target.closest('[data-route]')) {
+        e.preventDefault();
+        const route = e.target.getAttribute('data-route') || e.target.closest('[data-route]').getAttribute('data-route');
+        this.navigate(route);
+      }
+    });
+  }
+
+  navigate(path) {
+    // Normalize path
+    if (path === '/' || path === '/index.html') {
+      path = '/';
+    }
+
+    // Only navigate if we're not already on the target page
+    const currentPath = window.location.pathname;
+    const currentPage = this.getCurrentPageFromPath(currentPath);
+    const targetPage = this.routes[path];
+
+    if (currentPage === targetPage) {
+      // Already on the correct page, just update the URL
+      window.history.pushState({}, '', path);
+      return;
+    }
+
+    // Navigate to the new page
+    window.history.pushState({}, '', path);
+    this.handleRoute(path);
+  }
+
+  getCurrentPageFromPath(path) {
+    // Determine what page we're currently on based on the file name
+    const fileName = path.split('/').pop() || 'index.html';
+    if (fileName === '' || fileName === 'index.html') return 'index.html';
+    if (fileName === 'challenges.html') return 'pages/challenges.html';
+    if (fileName === 'editor.html') return 'editor.html';
+    if (fileName === 'profile.html') return 'pages/profile.html';
+    return 'index.html';
+  }
+
+  handleRoute(path) {
+    // Normalize path
+    if (path === '/' || path === '/index.html') {
+      path = '/';
+    }
+
+    if (this.routes[path]) {
+      const targetPage = this.routes[path];
+      const currentPath = window.location.pathname;
+      const currentPage = this.getCurrentPageFromPath(currentPath);
+
+      // Only redirect if we need to change pages
+      if (currentPage !== targetPage) {
+        if (path === '/') {
+          window.location.href = '/';
+        } else {
+          window.location.href = targetPage;
+        }
+      }
+    } else {
+      console.warn('Route not found:', path);
+      // Fallback to homepage
+      window.location.href = '/';
+    }
+  }
+}
+
+// Initialize router only if we're not in a form submission context
+if (!window.location.pathname.includes('submit-challenge')) {
+  const router = new Router();
+}
+
 // Example: Save and load user progress
 const userProgress = loadUserProgress();
 console.log('Loaded user progress:', userProgress);
