@@ -6,7 +6,6 @@
     <title>CodeClip</title>
 
     <!-- Fonts -->
-    main
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -39,21 +38,6 @@
       src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
       crossorigin="anonymous"
     ></script>
-
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
-
-    <!-- Material Icons -->
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
-
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-
-    <!-- Sentry Script -->
-    <script src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js" crossorigin="anonymous"></script>
- main
   </head>
   <body>
     <!-- Header Component -->
@@ -65,7 +49,6 @@
         <nav class="header__nav" id="navMenu">
           <ul class="nav__list">
             <li><a href="#" class="nav__link">Home</a></li>
- main
             <li>
               <a href="./pages/challenges.html" class="nav__link">Challenges</a>
             </li>
@@ -81,13 +64,6 @@
           id="navToggle"
           aria-label="Open navigation menu"
         >
-            <li><a href="./pages/challenges.html" class="nav__link">Challenges</a></li>
-            <li><a href="/editor.html" class="nav__link">Editor</a></li>
-            <li><a href="#" class="nav__link">Profile</a></li>
-          </ul>
-        </nav>
-        <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-          main
           <span class="hamburger"></span>
           <span class="hamburger"></span>
           <span class="hamburger"></span>
@@ -109,7 +85,6 @@
             <div class="hero__text">
               <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
               <h1 class="hero__title">
- main
                 <span id="element"></span>
               </h1>
               <p class="hero__description">
@@ -126,17 +101,6 @@
                 <a href="/challenges" class="btn btn-secondary"
                   >📚 View Challenges</a
                 >
-
-                Code. <span class="highlight">Challenge.</span><br />
-                Conquer.
-              </h1>
-              <p class="hero__description">
-                Discover CodeClip, an exhilarating, lightweight web app that empowers developers to master coding challenges right in their browser! Whether you're tackling algorithms, debugging scripts, or showcasing your solutions to the open-source community, CodeClip offers a seamless, interactive experience with a sleek interface, real-time feedback, and effortless sharing via unique URLs or GitHub Gists.
-              </p>
-              <div class="hero__cta">
-                <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
-                <a href="/challenges" class="btn btn-secondary">📚 View Challenges</a>
- main
               </div>
             </div>
             <div class="hero__visual">
@@ -147,7 +111,6 @@
                   <span class="circle green"></span>
                 </div>
                 <div class="code-content">
- main
                   <div class="code-line">
                     <span class="comment">// Welcome to CodeClip</span>
                   </div>
@@ -159,11 +122,6 @@
                     <span class="keyword">return</span>
                     <span class="string">'Success!'</span>;
                   </div>
-
-                  <div class="code-line"><span class="comment">// Welcome to CodeClip</span></div>
-                  <div class="code-line"><span class="keyword">function</span> <span class="string">solveProblem</span>() {</div>
-                  <div class="code-line">  <span class="keyword">return</span> <span class="string">'Success!'</span>;</div>
- main
                   <div class="code-line">}</div>
                 </div>
               </div>
@@ -172,86 +130,43 @@
         </div>
       </section>
 
-      <!-- Feature Cards -->
-      <div class="content">
-        <div class="card">
-          <a href="#" target="_blank">
-            main
-            <div class="icon">
-              <i class="material-icons md-36" alt="Challenge vault icon"
-                >security</i
-              >
-            </div>
-            <p class="title">Challenge Vault</p>
-            <p class="text">
-              All your challenges in one place — track, review, repeat.
+      <section class="features" id="features">
+        <h2 class="section-title">Why Choose <span>CodeClip</span>?</h2>
+        <div class="features-grid">
+          <div class="feature-card">
+            <i class="fa-solid fa-vault"></i>
+            <h3>Challenge Vault</h3>
+            <p>
+              A rich collection of curated coding problems to sharpen your
+              skills.
             </p>
-
-            <div class="icon"><i class="material-icons md-36" alt="Challenge vault icon">security</i></div>
-            <p class="title">Challenge Vault</p>
-            <p class="text">All your challenges in one place — track, review, repeat.</p>
- main
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="#" target="_blank">
- main
-            <div class="icon">
-              <i class="material-icons md-36" alt="Code editor icon">code</i>
-            </div>
-            <p class="title">Code Editor</p>
-            <p class="text">
-              Write, test, and edit code seamlessly in your personal editor.
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-code"></i>
+            <h3>Code Editor</h3>
+            <p>
+              Write, run, and debug code directly in the browser with real-time
+              feedback.
             </p>
-
-            <div class="icon"><i class="material-icons md-36" alt="Code editor icon">code</i></div>
-            <p class="title">Code Editor</p>
-            <p class="text">Write, test, and edit code seamlessly in your personal editor.</p>
- main
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="#" target="_blank">
- main
-            <div class="icon">
-              <i class="material-icons md-36" alt="Solution sharing icon"
-                >share</i
-              >
-            </div>
-            <p class="title">Solution Sharing</p>
-
-            <div class="icon"><i class="material-icons md-36" alt="Solution sharing icon">share</i></div>
-            <p class="title">Solution Sharing </p>
- main
-            <p class="text">Show your approach. Discover new ones.</p>
-          </a>
-        </div>
-
-        <div class="card">
-          <a href="#" target="_blank">
-main
-            <div class="icon">
-              <i class="material-icons md-36" alt="AI recommendation icon"
-                >smart_toy</i
-              >
-            </div>
-            <p class="title">AI Recommendation</p>
-            <p class="text">
-              Let AI guide your next steps with personalized recommendations.
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-share-nodes"></i>
+            <h3>Solution Sharing</h3>
+            <p>
+              Collaborate and share your solutions with the community for peer
+              feedback.
             </p>
-            <div class="icon"><i class="material-icons md-36" alt="AI recommendation icon">smart_toy</i></div>
-            <p class="title">AI Recommendation </p>
-            <p class="text">Let AI guide your next steps with personalized recommendations.</p>
-            main
-          </a>
+          </div>
+          <div class="feature-card">
+            <i class="fa-solid fa-robot"></i>
+            <h3>AI Recommendations</h3>
+            <p>
+              Get personalized challenge suggestions based on your progress and
+              interests.
+            </p>
+          </div>
         </div>
-      </div>
-    </main>
- main
-
-  
+      </section>
 
     <!-- Footer -->
     <div id="footer"></div>
@@ -269,23 +184,8 @@ main
       });
     </script>
 
-
-
-    <!-- Theme Toggle -->
-    <div class="theme-toggle-container">
-      <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
-    </div>
-
-    <!-- Footer -->
-    <div id="footer"></div>
-
-    <!-- Scripts -->
- main
     <script type="module" src="scripts/data.js"></script>
     <script type="module" src="scripts/app.js"></script>
     <script type="module" src="./scripts/theme.js"></script>
   </body>
- main
 </html>
-</html>
- main
