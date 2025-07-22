@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CodeClip</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <link rel="stylesheet" href="../styles.css">
+</head>
+<body>
+  <!-- Header Component -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <span class="logo-text">CodeClip</span>
+      </div>
+      <nav class="header__nav" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="/" data-route="/" class="nav__link">Home</a></li>
+          <li><a href="/challenges" data-route="/challenges" class="nav__link">Challenges</a></li>
+          <li><a href="/editor" data-route="/editor" class="nav__link">Editor</a></li>
+          <li><a href="/profile" data-route="/profile" class="nav__link active">Profile</a></li>
+        </ul>
+      </nav>
+      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Profile Hero Section -->
+    <section class="profile-hero">
+      <div class="container">
+        <div class="profile-hero__content">
+          <div class="profile-avatar">
+            <div class="avatar-circle">
+              <span class="avatar-initial">U</span>
+            </div>
+          </div>
+          <h1 class="profile-hero__title">User Profile</h1>
+          <p class="profile-hero__subtitle">Track your coding journey</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Stats -->
+    <section class="profile-stats">
+      <div class="container">
+        <div class="stats-grid">
+          <div class="stat-card">
+            <div class="stat-icon">🎯</div>
+            <div class="stat-number">15</div>
+            <div class="stat-label">Challenges Solved</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🔥</div>
+            <div class="stat-number">7</div>
+            <div class="stat-label">Day Streak</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">⭐</div>
+            <div class="stat-number">1,250</div>
+            <div class="stat-label">Points Earned</div>
+          </div>
+          <div class="stat-card">
+            <div class="stat-icon">🏆</div>
+            <div class="stat-number">3</div>
+            <div class="stat-label">Achievements</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Profile Content -->
+    <section class="profile-content">
+      <div class="container">
+        <div class="profile-grid">
+          <!-- Progress Section -->
+          <div class="profile-section">
+            <h2 class="section-title">Progress Overview</h2>
+            <div class="progress-cards">
+              <div class="progress-card">
+                <h3>Difficulty Breakdown</h3>
+                <div class="difficulty-progress">
+                  <div class="difficulty-item">
+                    <span class="difficulty-label">Easy</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 75%;"></div>
+                    </div>
+                    <span class="progress-text">9/12</span>
+                  </div>
+                  <div class="difficulty-item">
+                    <span class="difficulty-label">Medium</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 40%;"></div>
+                    </div>
+                    <span class="progress-text">4/10</span>
+                  </div>
+                  <div class="difficulty-item">
+                    <span class="difficulty-label">Hard</span>
+                    <div class="progress-bar">
+                      <div class="progress-fill" style="width: 20%;"></div>
+                    </div>
+                    <span class="progress-text">2/10</span>
+                  </div>
+                </div>
+              </div>
+
+              <div class="progress-card">
+                <h3>Categories Mastered</h3>
+                <div class="category-tags">
+                  <span class="category-tag completed">Arrays</span>
+                  <span class="category-tag completed">Strings</span>
+                  <span class="category-tag in-progress">Algorithms</span>
+                  <span class="category-tag">Data Structures</span>
+                  <span class="category-tag">Dynamic Programming</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity -->
+          <div class="profile-section">
+            <h2 class="section-title">Recent Activity</h2>
+            <div class="activity-list">
+              <div class="activity-item">
+                <div class="activity-icon">✅</div>
+                <div class="activity-content">
+                  <h4>Solved "Two Sum"</h4>
+                  <p>Completed in 3 minutes • Easy</p>
+                  <span class="activity-time">2 hours ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">🎯</div>
+                <div class="activity-content">
+                  <h4>Started "Longest Palindromic Substring"</h4>
+                  <p>Medium difficulty challenge</p>
+                  <span class="activity-time">1 day ago</span>
+                </div>
+              </div>
+              <div class="activity-item">
+                <div class="activity-icon">🏆</div>
+                <div class="activity-content">
+                  <h4>Earned "Array Master" Achievement</h4>
+                  <p>Solved 10 array-based challenges</p>
+                  <span class="activity-time">3 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Achievements -->
+          <div class="profile-section">
+            <h2 class="section-title">Achievements</h2>
+            <div class="achievements-grid">
+              <div class="achievement-card earned">
+                <div class="achievement-icon">🎯</div>
+                <h4>First Blood</h4>
+                <p>Solve your first challenge</p>
+              </div>
+              <div class="achievement-card earned">
+                <div class="achievement-icon">🔥</div>
+                <h4>On Fire</h4>
+                <p>7-day coding streak</p>
+              </div>
+              <div class="achievement-card earned">
+                <div class="achievement-icon">📚</div>
+                <h4>Array Master</h4>
+                <p>Complete 10 array challenges</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon">⚡</div>
+                <h4>Speed Demon</h4>
+                <p>Solve a challenge in under 60 seconds</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon">🏆</div>
+                <h4>Perfectionist</h4>
+                <p>Solve 5 challenges without hints</p>
+              </div>
+              <div class="achievement-card">
+                <div class="achievement-icon">🌟</div>
+                <h4>Rising Star</h4>
+                <p>Reach 2000 points</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>CodeClip</h4>
+          <p>Master coding challenges in your browser</p>
+        </div>
+        <div class="footer__section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/" data-route="/">Home</a></li>
+            <li><a href="/challenges" data-route="/challenges">Challenges</a></li>
+            <li><a href="/editor" data-route="/editor">Editor</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="#">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 CodeClip. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="../scripts/app.js"></script>
+  <script type="module" src="../scripts/theme.js"></script>
+  
+  <style>
+    /* Additional styles for profile page */
+    .profile-hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .profile-avatar {
+      margin-bottom: 2rem;
+    }
+
+    .avatar-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .avatar-initial {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+    }
+
+    .profile-hero__title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .profile-hero__subtitle {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .profile-stats {
+      background: var(--bg-secondary);
+      padding: 3rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .profile-content {
+      padding: 4rem 0;
+    }
+
+    .profile-grid {
+      display: grid;
+      gap: 3rem;
+    }
+
+    .profile-section {
+      background: white;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+    }
+
+    .progress-cards {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .progress-card {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+    }
+
+    .progress-card h3 {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .difficulty-progress {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .difficulty-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 60px;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .difficulty-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e9ecef;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .category-tag {
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      background: #e9ecef;
+      color: var(--text-muted);
+    }
+
+    .category-tag.completed {
+      background: var(--primary-color);
+      color: white;
+    }
+
+    .category-tag.in-progress {
+      background: #ffc107;
+      color: #856404;
+    }
+
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg-light);
+      border-radius: 0.75rem;
+    }
+
+    .activity-icon {
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .activity-content h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .activity-content p {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-time {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .achievement-card {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      background: var(--bg-light);
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .achievement-card.earned {
+      opacity: 1;
+      background: white;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievement-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .achievement-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-hero__title {
+        font-size: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .difficulty-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+</body>
+</html>
