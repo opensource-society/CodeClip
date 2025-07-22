@@ -8,8 +8,340 @@
   src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
   crossorigin="anonymous"
 ></script>
+<style>
+  :root{
+    --color-primary: #2e2e2e;
+    --color-secondary: #343434;
+    --color-accent: #e74ce7;
+    --color-text-primary: #ececec;
+    --color-text-secondary: #bdbdbd;
+    --color-background-primary: #212212;
+    --color-background-secondary: #2c2c2c;
+
+    --color-button-primary: var(--color-secondary);
+    --color-button-primary-hover: #229822;
+    --color-button-text: #ffffff;
+    --color-button-secondary: transparent;
+    --color-button-secondary-text: var(--color-accent);
+    --color-buttton-secondary-hover: rgba(231, 80,60, 0.1);
+
+    --color-accent-rgb: 231, 80,60 ;
+    --font-family-primary: "Inter", sans-serif;
+    --font-size-base: 16px;
+
+    --border-radius-sm: 5px;
+    --border-radius-md: 8px;
+    --border-radius-lg: 12px;
+  }
+
+  *,
+  *::before,
+  *::after{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+
+  
+
+  body{
+    font-family: var(--font-family-primary);
+    font-size: var(--font-size-base);
+    line-height: 1.5;
+    color: var(--color-text-primary);
+    background-color: var(--color-background-primary);
+
+  }  
+
+  h1,h2,h3,h4,h5,h6{
+    font-family: var(--font-family-primary);
+    color: var(--color-text-primary);
+    margin-bottom: 1rem;
+    line-height: 1.2;
+  }
+   h1 {
+    font-size: 2.5rem;
+   }
+   h2 {
+    font-size: 2rem;
+   }
+   h3 {
+    font-size: 1.5rem;
+   }
+   h4{
+    font-size: 1.5rem;
+   }
+
+   a{
+    color: var(--color-secondary);
+    text-decoration: none;
+    transition: color 0.4s ease;
+   }
+    a:hover{
+      color: var(--color-button-primary-hover);
+      text-decoration: underline;
+    }
+
+    .container{
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 0 1.5rem;
+    }
+
+    .text-center{
+      text-align: center;
+    }
+
+    .btn{
+      display: inline-block;
+      padding: 0.8rem 1.8rem;
+      border-radius: var(--border-radius-md);
+      text-decoration: none;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.4s ease, color 0.4s ease,
+      transform 0.3s ease, box-shadow 0.4s ease;
+      font-size: var(--font-size-base);
+      text-align: center;
+    }
+
+    .btn-primary{
+      background-color: var(--color-button-primary);
+      color: var(--color-button-text);
+      border: 2px solid;
+      box-shadow: 0 4px 10px rgba(var(--color-accent-rgb), 0.4);
+    }
+
+    .btn-primary:hover {
+        background-color: var(--color-button-primary-hover);
+        border-color: var(--color-button-primary-hover);
+        transform: translateY(-3px);
+        box-shadow: 0 6px 15px rgba(var(--color-accent-rgb), 0.5);
+    }
+
+    .btn-secondary{
+      background-color: var(--color-button-secondary);
+      color: var(--color-button-secondary-text);
+      border: 2px solid var(--color-accent);
+    }
+
+    .btn-secondary:hover{
+      background-color: var(--color-buttton-secondary-hover);
+      transform: translateY(-3px);
+    }
+
+    .hero-section {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 90vh;
+      background-color: var(--color-background-primary);
+      color: var(--color-text-primary);
+      text-align: center;
+      padding: 3rem;
+      overflow: hidden;
+      position: relative;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-background-graphics {
+      position: absolute;
+      border-radius: 50%;
+      opacity: 0.15;
+      filter: blur(50px);
+      animation: floatAndFade 20s infinite ease alternate;
+      z-index: 1;
+    }
+
+    .graphics-1 {
+      width: 300px;
+      height: 300px;
+      background-color: var(--color-accent);
+      top: 10%;
+      left: 5%;
+      animation-delay: 0s;
+    }
+
+    .graphics-2 {
+      width: 400px;
+      height: 400px;
+      background-color: var(--color-secondary);
+      bottom: 15%;
+      right: 10%;
+      animation-delay: 5s;
+    }
+
+    .hero-content {
+      z-index: 10;
+      max-width: 900px;
+      margin: 0 auto;
+      opacity: 0;
+      transform: translateY(20px);
+      animation: fadeInMoveUp 1s ease-out forwards;
+      animation-delay: 0.5s;
+    }
+
+    .hero-title {
+      font-size: 4rem;
+      margin-bottom: 1.5rem;
+      line-height: 1.2;
+      color: var(--color-text-primary);
+      text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.4);
+    }
+
+    .hero-subtitle {
+       font-size: 1.4rem;
+        margin-bottom: 2.5rem;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+        color: var(--color-text-secondary);
+    }
+
+    .hero-actions {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      flex-wrap: wrap;
+    }
+
+    .main-content-placeholder {
+      padding: 4rem 0;
+      background-color: var(--color-background-secondary);
+    }
+
+    .py-8 {
+      padding: 4rem 0;
+    }
+
+    @keyframes fadeInMoveUp{
+      from{
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0px);
+      }
+    }
+
+    @keyframes floatAndFade {
+      0%, 100%{
+        transform: translate(0, 0);
+        opacity: 0.2;
+      }
+      50% {
+        transform: translate(10px, -10px);
+        opacity: 0.3;
+      }
+    }
+
+    
+@media (max-width: 992px) {
+  .hero-title {
+    font-size: 3.2rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: 70vh;
+    padding: 20px;
+  }
+
+  .hero-title {
+    font-size: 2.8rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.1rem;
+    margin-bottom: 30px;
+  }
+
+  .hero-actions {
+    display: flex;
+    flex-direction: column; 
+    gap: 20px;
+  }
+
+  .btn {
+    width: 90%;         
+    max-width: 300px;
+    margin: 0 auto;     
+  }
+
+  .graphics-1,
+  .graphics-2 {
+    width: 200px;
+    height: 200px;
+    filter: blur(30px); 
+  }
+}
+</style>
   </head>
   <body>
-    
+    <header class="hero-section">
+      <div class="hero-background-graphics graphics-1"></div>
+      <div class="hero-background-graphics graphics-2"></div>
+
+      <div class="hero-content">
+        <h1 class="hero-title">Unlock Your Coding Potential with CodeClip!</h1>
+        <p class="hero-subtitle">
+          Your personal coding companion that helps you master programming concepts, solve challenges, and build amazing projects with confidence.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#" class="btn btn-primary">Explore features</a>
+          <a href="#" class="btn btn-secondary">Start Coding Now</a>
+        </div>
+      </div>
+    </header>
+
+    <main class="main-content-placeholder">
+      <section class="container py-8">
+        <h2>Welcome to CodeClip!</h2>
+        <p>
+          This is where more exciting content about the platform's features,
+          latest challenges, community highlights, and testimonials would be
+          placed.
+        </p>
+        <p>
+          The hero section above is designed to grab attention and guide users
+          to the core functionalities.
+        </p>
+      </section>
+    </main>
+
+    <script>
+      document.addEventListener('DOMContentLoaded', () => {
+        console.log('Hero section script loaded and DOM is ready!');
+        
+        const primaryButton = document.querySelector('.btn-primary');
+        const secondaryButton = document.querySelector('.btn-secondary');
+        
+        if (primaryButton) {
+          primaryButton.addEventListener('click', function() {
+            console.log('Explore Challenges button clicked!');
+            //
+            // 
+            // 
+          });
+        }
+        
+        if (secondaryButton) {
+          secondaryButton.addEventListener('click', function() {
+            console.log('Start Coding Now button clicked!');
+            // 
+            // 
+            // 
+          });
+        }
+      });
+    </script>
+
   </body>
 </html>
