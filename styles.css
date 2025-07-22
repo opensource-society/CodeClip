@@ -236,7 +236,10 @@ body {
   left: 30%;
   animation-delay: 4s;
 }
+#theme-toggle:hover{
+  cursor: pointer;
 
+}
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }

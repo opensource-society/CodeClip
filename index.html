@@ -1,100 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeClip</title>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClip</title>
     <!-- Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
-  
-    <!-- Styles -->
-    <link rel="stylesheet" href="styles.css">
-  
-    <!-- Sentry Script -->
-    <script src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js" crossorigin="anonymous"></script>
-</head>
-<body>
-  <!-- Header Component -->
-  <header class="header">
-    <div class="container header__container">
-      <div class="header__logo">
-        <span class="logo-text">CodeClip</span>
-      </div>
-      <nav class="header__nav" id="navMenu">
-        <ul class="nav__list">
-          <li><a href="#" class="nav__link">Home</a></li>
-          <li><a href="#" class="nav__link">Challenges</a></li>
-          <li><a href="#" class="nav__link">Editor</a></li>
-          <li><a href="#" class="nav__link">Profile</a></li>
-        </ul>
-      </nav>
-      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-      </button>
-    </div>
-  </header>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
 
-  <!-- Main Content -->
-  <main>
-    <!-- Hero Section -->
-    <section class="hero">
-      <div class="floating-elements">
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
-        <div class="floating-element"></div>
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css" />
+
+    <!-- Sentry Script -->
+    <script
+      src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <!-- Header Component -->
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <span class="logo-text">CodeClip</span>
+        </div>
+        <nav class="header__nav" id="navMenu">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">Challenges</a></li>
+            <li><a href="#" class="nav__link">Editor</a></li>
+            <li><a href="#" class="nav__link">Profile</a></li>
+            <li>
+              <i class="fa-solid fa-moon" id="theme-toggle"></i>
+              <!-- <div class="theme-toggle-container">
+                <button id="theme-toggle" class="theme-toggle-btn">
+                  Toggle Theme
+                </button>
+              </div> -->
+            </li>
+          </ul>
+        </nav>
+        <button
+          class="header__toggle"
+          id="navToggle"
+          aria-label="Open navigation menu"
+        >
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
       </div>
-      <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
-            <h1 class="hero__title">
-              Code. <span class="highlight">Challenge.</span><br>
-              Conquer.
-            </h1>
-            <p class="hero__description">
-              Discover CodeClip, an exhilarating, lightweight web app that empowers developers to master coding challenges right in their browser!  Whether you're tackling algorithms, debugging scripts, or showcasing your solutions to the open-source community, CodeClip offers a seamless, interactive experience with a sleek interface, real-time feedback, and effortless sharing via unique URLs or GitHub Gists. 
-            </p>
-            <div class="hero__cta">
-              <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
-              <a href="/challenges" class="btn btn-secondary">📚 View Challenges</a>
-            </div>
-          </div>
-          <div class="hero__visual">
-            <div class="code-window">
-              <div class="code-window__header">
-                <span class="circle red"></span>
-                <span class="circle yellow"></span>
-                <span class="circle green"></span>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+      <!-- Hero Section -->
+      <section class="hero">
+        <div class="floating-elements">
+          <div class="floating-element"></div>
+          <div class="floating-element"></div>
+          <div class="floating-element"></div>
+        </div>
+        <div class="container">
+          <div class="hero__content">
+            <div class="hero__text">
+              <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
+              <h1 class="hero__title">
+                <span id="element"></span>
+              </h1>
+              <p class="hero__description">
+                Discover CodeClip, an exhilarating, lightweight web app that
+                empowers developers to master coding challenges right in their
+                browser! Whether you're tackling algorithms, debugging scripts,
+                or showcasing your solutions to the open-source community,
+                CodeClip offers a seamless, interactive experience with a sleek
+                interface, real-time feedback, and effortless sharing via unique
+                URLs or GitHub Gists.
+              </p>
+              <div class="hero__cta">
+                <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
+                <a href="/challenges" class="btn btn-secondary"
+                  >📚 View Challenges</a
+                >
               </div>
-              <div class="code-content">
-                <div class="code-line"><span class="comment">// Welcome to CodeClip</span></div>
-                <div class="code-line"><span class="keyword">function</span> <span class="string">solveProblem</span>() {</div>
-                <div class="code-line">  <span class="keyword">return</span> <span class="string">'Success!'</span>;</div>
-                <div class="code-line">}</div>
+            </div>
+            <div class="hero__visual">
+              <div class="code-window">
+                <div class="code-window__header">
+                  <span class="circle red"></span>
+                  <span class="circle yellow"></span>
+                  <span class="circle green"></span>
+                </div>
+                <div class="code-content">
+                  <div class="code-line">
+                    <span class="comment">// Welcome to CodeClip</span>
+                  </div>
+                  <div class="code-line">
+                    <span class="keyword">function</span>
+                    <span class="string">solveProblem</span>() {
+                  </div>
+                  <div class="code-line">
+                    <span class="keyword">return</span>
+                    <span class="string">'Success!'</span>;
+                  </div>
+                  <div class="code-line">}</div>
+                </div>
               </div>
             </div>
           </div>
         </div>
-      </div>
-    </section>
-  </main>
+      </section>
+    </main>
 
-  <!-- Theme Toggle -->
-  <div class="theme-toggle-container">
-    <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
-  </div>
+    <!-- Theme Toggle -->
 
-  <!-- Footer -->
-  <div id="footer"></div>
+    <!-- Footer -->
+    <div id="footer"></div>
 
-  <!-- Scripts -->
-  <script type="module" src="scripts/data.js"></script>
-  <script type="module" src="scripts/app.js"></script>
-  <script type="module" src="./scripts/theme.js"></script>
-</body>
+    <!-- Scripts -->
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+
+    <!-- Setup and start animation! -->
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Code", "Challenge", "Conquer"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+    <script type="module" src="scripts/data.js"></script>
+    <script type="module" src="scripts/app.js"></script>
+    <script type="module" src="./scripts/theme.js"></script>
+  </body>
 </html>
