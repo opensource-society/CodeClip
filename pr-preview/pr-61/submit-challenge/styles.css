@@ -1,0 +1,34 @@
+body {
+  font-family: sans-serif;
+  background: #f0f0f0;
+  padding: 2rem;
+}
+
+.container {
+  max-width: 700px;
+  background: white;
+  padding: 2rem;
+  margin: auto;
+  border-radius: 10px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+}
+
+label {
+  margin-top: 1rem;
+}
+
+input, textarea, select, button {
+  padding: 0.5rem;
+  font-size: 1rem;
+  margin-top: 0.3rem;
+}
+
+#preview {
+  margin-top: 2rem;
+  background: #e0e0ff;
+  padding: 1rem;
+}
