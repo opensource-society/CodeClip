@@ -1,0 +1,28 @@
+  .about-container {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 2rem;
+      text-align: left;
+    }
+    .about-container h1 {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+    .about-container ul {
+      list-style-type: disc;
+      margin-left: 2rem;
+    }
+    .back-link {
+      display: inline-block;
+      margin-top: 2rem;
+      color: var(--text-color);
+      text-decoration: underline;
+    }
+    @media (max-width: 600px) {
+      .about-container {
+        padding: 1rem;
+      }
+    }
+
+
+    
