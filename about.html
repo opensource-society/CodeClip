@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeClip</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+  
+    <!-- Styles -->
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles/about.css">
+  
+    <!-- Sentry Script -->
+    <script src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js" crossorigin="anonymous"></script>
+</head>
+<body>
+  <!-- Header Component -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <span class="logo-text">CodeClip</span>
+      </div>
+      <nav class="header__nav" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="index.html" class="nav__link">Home</a></li>
+          <li><a href="#" class="nav__link">Challenges</a></li>
+          <li><a href="#" class="nav__link">Editor</a></li>
+          <li><a href="#" class="nav__link">Profile</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
+        </ul>
+      </nav>
+      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+   <div class="about-container">
+    <h1>About CodeClip</h1>
+    <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
+
+    <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
+
+    <h2> Features</h2>
+    <ul>
+      <li> Light/Dark mode support</li>
+      <li> Save and manage code snippets effortlessly</li>
+      <li> Search functionality (in progress)</li>
+      <li> Responsive design for mobile and desktop</li>
+      <li> 100% privacy – nothing leaves your browser</li>
+    </ul>
+
+    
+    <p>View the source code or contribute here:  
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
+        github.com/opensource-society/CodeClip
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="scripts/data.js"></script>
+  <script type="module" src="scripts/app.js"></script>
+  <script type="module" src="./scripts/theme.js"></script>
+</body>
+</html>
