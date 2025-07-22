@@ -1,18 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenges - CodeClip</title>
     
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Merge both font options for flexibility -->
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
-    
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
     <!-- Styles -->
+    <!-- If you want to keep all challenge styles in one file, use: -->
     <link rel="stylesheet" href="../styles.css">
+    <!-- Or, if you want to scope styles to just challenges, use: -->
+    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 </head>
 <body>
   <!-- Header Component -->
@@ -53,7 +58,7 @@
       </div>
     </section>
 
-    <!-- Challenges Filter Section -->
+    <!-- Controls (merged from both versions) -->
     <section class="challenges-filter">
       <div class="container">
         <div class="filter-controls">
@@ -74,6 +79,9 @@
               <option value="strings">Strings</option>
               <option value="algorithms">Algorithms</option>
               <option value="data-structures">Data Structures</option>
+              <option value="frontend">Frontend</option>
+              <option value="backend">Backend</option>
+              <option value="fullstack">Fullstack</option>
             </select>
           </div>
           <div class="search-group">
@@ -87,7 +95,7 @@
     <section class="challenges-grid">
       <div class="container">
         <div class="challenges-list" id="challengesList">
-          <!-- Challenge cards will be populated here -->
+          <!-- Challenge cards can be rendered here dynamically via JS -->
           <div class="challenge-card" data-difficulty="easy" data-category="arrays">
             <div class="challenge-card__header">
               <h3 class="challenge-card__title">Two Sum</h3>
@@ -156,6 +164,10 @@
             </div>
           </div>
         </div>
+        <div id="no-results" class="no-results-message" style="display: none;">
+          <h2>🤔 No challenges found...</h2>
+          <p>Try adjusting your search or filter criteria.</p>
+        </div>
       </div>
     </section>
   </main>
@@ -191,9 +203,15 @@
     </div>
   </footer>
 
+  <!-- Theme Toggle Button (from main branch version) -->
+  <button id="theme-toggle" title="Toggle theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
   <!-- Scripts -->
   <script type="module" src="../scripts/app.js"></script>
   <script type="module" src="../scripts/theme.js"></script>
+  <script src="../scripts/challenges.js"></script>
   
   <style>
     /* Additional styles for challenges page */
@@ -341,6 +359,24 @@
     .btn-sm {
       padding: 0.5rem 1rem;
       font-size: 0.875rem;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      background: var(--bg-primary, #fff);
+      border: none;
+      border-radius: 50%;
+      padding: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.2s;
+    }
+
+    #theme-toggle svg {
+      vertical-align: middle;
     }
 
     @media (max-width: 768px) {
