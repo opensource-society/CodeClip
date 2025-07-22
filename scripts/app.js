@@ -1,4 +1,24 @@
-console.log('App script loaded');
+import { saveUserProgress, loadUserProgress, saveCompletedChallenges, loadCompletedChallenges } from './data.js';
+
+console.log('app script loaded');
+
+// Example: Save and load user progress
+const userProgress = loadUserProgress();
+console.log('Loaded user progress:', userProgress);
+
+const updatedProgress = { ...userProgress, lastVisited: Date.now() };
+if (!saveUserProgress(updatedProgress)) {
+  alert('Failed to save user progress.');
+}
+
+// Example: Save and load completed challenges
+const completed = loadCompletedChallenges();
+console.log('Loaded completed challenges:', completed);
+
+const updatedCompleted = [...completed, 'challenge-1'];
+if (!saveCompletedChallenges(updatedCompleted)) {
+  alert('Failed to save completed challenges.');
+}
 
 // Hamburger menu functionality
 const navToggle = document.getElementById('navToggle');

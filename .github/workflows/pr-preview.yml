@@ -16,8 +16,12 @@ jobs:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
+ CI/CD
           repository: ${{ github.event.pull_request.head.repo.full_name }}
           ref: ${{ github.event.pull_request.head.ref }}
+
+          ref: ${{ github.event.pull_request.head.sha }}
+main
           fetch-depth: 1
 
       - name: Set up Node.js
@@ -46,4 +50,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           header: preview-url
           message: |
+ CI/CD
             🚀 PR Preview: https://opensource-society.github.io/${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/index.html
+
+            🚀 PR Preview:  PR Preview: https://opensource-society.github.io/${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/index.html 
+main
