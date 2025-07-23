@@ -55,20 +55,34 @@
     <!-- main code starts -->
     <main>
       <div class="container">
-        <div class="hero__content">
-          <div class="hero__text">
-            <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
-            <h1 class="hero__title">
-              <span id="element"></span>
-            </h1>
-            <p class="hero__description">
-              Discover CodeClip, an exhilarating, lightweight web app that
-              empowers developers to master coding challenges right in their
-              browser! Whether you're tackling algorithms, debugging scripts,
-              or showcasing your solutions to the open-source community,
-              CodeClip offers a seamless, interactive experience with a sleek
-              interface, real-time feedback, and effortless sharing via unique
-              URLs or GitHub Gists.
+
+        <div class="challenges-list" id="challengesList">
+          <!-- Challenge cards can be rendered here dynamically via JS -->
+          <div class="challenge-card" data-difficulty="easy" data-category="arrays">
+            <div class="challenge-card__header">
+              <h3 class="challenge-card__title">Two Sum</h3>
+              <span class="difficulty-badge difficulty-easy">Easy</span>
+            </div>
+            <p class="challenge-card__description">
+              Given an array of integers and a target sum, return indices of two numbers that add up to the target.
+            </p>
+            <div class="challenge-card__meta">
+              <span class="category-tag">Arrays</span>
+              <span class="category-tag">Hash Table</span>
+            </div>
+            <div class="challenge-card__actions">
+              <a href="/javascript-executor.html"  class="btn btn-primary btn-sm">Solve Challenge</a>
+            </div>
+          </div>
+
+          <div class="challenge-card" data-difficulty="medium" data-category="strings">
+            <div class="challenge-card__header">
+              <h3 class="challenge-card__title">Longest Palindromic Substring</h3>
+              <span class="difficulty-badge difficulty-medium">Medium</span>
+            </div>
+            <p class="challenge-card__description">
+              Given a string, find the longest palindromic substring within it.
+
             </p>
             <div class="hero__cta">
               <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
