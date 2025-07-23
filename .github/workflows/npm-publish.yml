@@ -1,0 +1,89 @@
+name: Auto-deploy PR to GitHub Pages
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+
+    env:
+      BUILD_REQUIRED: 'true'  # Default value; can be overridden in repo settings
+
+    permissions:
+      contents: read
+      pull-requests: write
+      pages: write
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Set up Node.js
+        if: env.BUILD_REQUIRED && env.BUILD_REQUIRED == 'true'
+        uses: actions/setup-node@v4
+        with:
+          node-version: '20'
+          cache: 'npm'
+
+      - name: Install dependencies
+        if: env.BUILD_REQUIRED && env.BUILD_REQUIRED == 'true'
+        run: npm ci
+
+      - name: Build project
+        if: env.BUILD_REQUIRED && env.BUILD_REQUIRED == 'true'
+        run: npm run build
+        env:
+          BASE_URL: /${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Copy files to preview folder
+        run: |
+          mkdir -p preview/pr-${{ github.event.pull_request.number }}
+          shopt -s extglob
+          cp -r ./dist/* preview/pr-${{ github.event.pull_request.number }}/ 2>/dev/null || \
+          cp -r !(.git|.github|preview) preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
+          publish_branch: gh-pages
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+          keep_files: false
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Get GitHub Pages URL
+        id: pages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = await github.rest.repos.getPages({
+              owner: context.repo.owner,
+              repo: context.repo.repo
+            });
+            return response.data.html_url;
+
+      - name: Comment PR with preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          header: preview-url
+          message: |
+            🚀 PR Preview: ${{ steps.pages.outputs.result }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+      - name: Add label to PR (optional)
+        uses: actions-ecosystem/action-add-labels@v1
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          labels: preview-available
