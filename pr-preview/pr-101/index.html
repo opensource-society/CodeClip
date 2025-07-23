@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
+      integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
+      crossorigin="anonymous"
+      referrerpolicy="no-referrer"
+    />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
+      crossorigin="anonymous"
+    ></script>
+  </head>
+  <body>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <span class="logo-text">CodeClip</span>
+        </div>
+        <nav class="header__nav" id="navMenu">
+          <ul class="nav__list">
+            <li><a href="/" data-route="/" class="nav__link">Home</a></li>
+            <li><a href="/challenges" data-route="/challenges" class="nav__link active">Challenges</a></li>
+            <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+            <li><a href="/profile" data-route="/profile" class="nav__link">Profile</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+          </ul>
+        </nav>
+        <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </header>
+
+    <main>
+      <div class="container">
+        <div class="hero__content">
+          <div class="hero__text">
+            <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
+            <h1 class="hero__title">
+              <span id="element"></span>
+            </h1>
+            <p class="hero__description">
+              Discover CodeClip, an exhilarating, lightweight web app that
+              empowers developers to master coding challenges right in their
+              browser! Whether you're tackling algorithms, debugging scripts,
+              or showcasing your solutions to the open-source community,
+              CodeClip offers a seamless, interactive experience with a sleek
+              interface, real-time feedback, and effortless sharing via unique
+              URLs or GitHub Gists.
+            </p>
+            <div class="hero__cta">
+              <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
+              <a href="/challenges" class="btn btn-secondary">📚 View Challenges</a>
+            </div>
+          </div>
+          <div class="hero__visual">
+            <div class="code-window">
+              <div class="code-window__header">
+                <span class="circle red"></span>
+                <span class="circle yellow"></span>
+                <span class="circle green"></span>
+              </div>
+              <div class="code-content">
+                <div class="code-line"><span class="comment">// Welcome to CodeClip</span></div>
+                <div class="code-line"><span class="keyword">function</span> <span class="string">solveProblem</span>() {</div>
+                <div class="code-line">  <span class="keyword">return</span> <span class="string">'Success!'</span>;</div>
+                <div class="code-line">}</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="content">
+        <div class="card">
+          <a href="#" target="_blank">
+            <div class="icon"><i class="material-icons md-36" alt="Challenge vault icon">security</i></div>
+            <p class="title">Challenge Vault</p>
+            <p class="text">All your challenges in one place — track, review, repeat.</p>
+          </a>
+        </div>
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="container">
+        <div class="footer__content">
+          <div class="footer__section">
+            <h4>CodeClip</h4>
+            <p>Master coding challenges in your browser</p>
+          </div>
+          <div class="footer__section">
+            <h4>Quick Links</h4>
+            <ul>
+              <li><a href="/" data-route="/">Home</a></li>
+              <li><a href="/challenges" data-route="/challenges">Challenges</a></li>
+              <li><a href="/editor" data-route="/editor">Editor</a></li>
+            </ul>
+          </div>
+          <div class="footer__section">
+            <h4>Community</h4>
+            <ul>
+              <div class="footer__section">
+  <h4>Community</h4>
+  <ul>
+    <li><a href="https://github.com/opensource-society" target="_blank" rel="noopener">GitHub</a></li>
+    <li><a href="https://discord.gg/your-discord-invite" target="_blank" rel="noopener">Discord</a></li>
+    <li><a href="https://twitter.com/opensource_soc" target="_blank" rel="noopener">Twitter</a></li>
+  </ul>
+</div>
+            </ul>
+          </div>
+        </div>
+        <div class="footer__bottom">
+          <p>&copy; 2024 CodeClip. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Code", "Challenge", "Conquer"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+    <script type="module" src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/theme.js"></script>
+  </body>
+</html>
