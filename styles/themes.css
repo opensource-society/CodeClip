@@ -8,7 +8,7 @@
     --bg-color: #121212;
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
-  }
+  } 
   
   body {
     background-color: var(--bg-color);
