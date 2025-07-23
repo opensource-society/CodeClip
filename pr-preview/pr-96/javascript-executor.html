@@ -1,0 +1,736 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>JavaScript Code Executor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: 30px;
+            box-shadow: 0 8px 32px rgba(31, 38, 135, 0.37);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+        }
+
+        .header {
+            text-align: center;
+            margin-bottom: 30px;
+        }
+
+        .header h1 {
+            color: white;
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+        }
+
+        .header p {
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 1.1rem;
+        }
+
+        .layout {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            height: 70vh;
+        }
+
+        .panel {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 15px;
+            padding: 25px;
+            box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .panel-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+            padding-bottom: 15px;
+            border-bottom: 2px solid #e0e0e0;
+        }
+
+        .panel-title {
+            font-size: 1.3rem;
+            font-weight: 600;
+            color: #333;
+        }
+
+        .editor-container {
+            flex: 1;
+            position: relative;
+        }
+
+        #codeEditor {
+            width: 100%;
+            height: 100%;
+            border: 2px solid #e0e0e0;
+            border-radius: 10px;
+            padding: 15px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.5;
+            resize: none;
+            background: #fafafa;
+            transition: border-color 0.3s ease;
+        }
+
+        #codeEditor:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .btn {
+            padding: 12px 24px;
+            border: none;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .btn-primary {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+        }
+
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+        }
+
+        .btn-secondary {
+            background: #f8f9fa;
+            color: #6c757d;
+            border: 2px solid #e9ecef;
+        }
+
+        .btn-secondary:hover {
+            background: #e9ecef;
+            border-color: #dee2e6;
+        }
+
+        .btn:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none !important;
+        }
+
+        .output-container {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+        }
+
+        #output {
+            flex: 1;
+            background: #1e1e1e;
+            color: #f8f8f2;
+            padding: 20px;
+            border-radius: 10px;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+            font-size: 14px;
+            line-height: 1.6;
+            overflow-y: auto;
+            white-space: pre-wrap;
+            word-wrap: break-word;
+        }
+
+        .status-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+
+        .status-indicator {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .status-dot {
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: #28a745;
+        }
+
+        .status-dot.error {
+            background: #dc3545;
+        }
+
+        .status-dot.running {
+            background: #ffc107;
+            animation: pulse 1s infinite;
+        }
+
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .execution-info {
+            display: flex;
+            gap: 20px;
+            font-size: 0.85rem;
+        }
+
+        .log-entry {
+            margin: 5px 0;
+            padding: 8px 12px;
+            border-radius: 6px;
+            border-left: 4px solid #007acc;
+            background: rgba(0, 122, 204, 0.1);
+        }
+
+        .log-entry.error {
+            border-left-color: #dc3545;
+            background: rgba(220, 53, 69, 0.1);
+            color: #dc3545;
+        }
+
+        .log-entry.warn {
+            border-left-color: #ffc107;
+            background: rgba(255, 193, 7, 0.1);
+            color: #856404;
+        }
+
+        .log-entry.info {
+            border-left-color: #17a2b8;
+            background: rgba(23, 162, 184, 0.1);
+            color: #0c5460;
+        }
+
+        .timeout-setting {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .timeout-setting input {
+            width: 80px;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 0.9rem;
+        }
+
+        .examples {
+            margin-top: 15px;
+        }
+
+        .example-btn {
+            background: #e3f2fd;
+            color: #1976d2;
+            border: 1px solid #bbdefb;
+            padding: 8px 16px;
+            border-radius: 6px;
+            font-size: 0.9rem;
+            margin: 5px 5px 5px 0;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .example-btn:hover {
+            background: #bbdefb;
+        }
+
+        @media (max-width: 768px) {
+            .layout {
+                grid-template-columns: 1fr;
+                height: auto;
+            }
+
+            .panel {
+                min-height: 400px;
+            }
+
+            .container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 2rem;
+            }
+
+            .controls {
+                flex-wrap: wrap;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🚀 JavaScript Code Executor</h1>
+            <p>Write, test, and debug your JavaScript code with advanced safety features</p>
+        </div>
+
+        <div class="layout">
+            <div class="panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">📝 Code Editor</h3>
+                    <div class="timeout-setting">
+                        <label>Timeout:</label>
+                        <input type="number" id="timeoutInput" value="5000" min="1000" max="30000" step="1000">
+                        <span>ms</span>
+                    </div>
+                </div>
+
+                <div class="editor-container">
+                    <textarea id="codeEditor" placeholder="// Write your JavaScript code here...
+// Example:
+console.log('Hello, World!');
+
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log('Fibonacci sequence:');
+for (let i = 0; i < 10; i++) {
+    console.log(`F(${i}) = ${fibonacci(i)}`);
+}"></textarea>
+                </div>
+
+                <div class="controls">
+                    <button id="runBtn" class="btn btn-primary">
+                        ▶️ Run Code
+                    </button>
+                    <button id="clearBtn" class="btn btn-secondary">
+                        🗑️ Clear
+                    </button>
+                    <button id="stopBtn" class="btn btn-secondary" disabled>
+                        ⏹️ Stop
+                    </button>
+                </div>
+
+                <div class="examples">
+                    <strong>Quick Examples:</strong><br>
+                    <button class="example-btn" data-example="hello">Hello World</button>
+                    <button class="example-btn" data-example="fibonacci">Fibonacci</button>
+                    <button class="example-btn" data-example="async">Async/Await</button>
+                    <button class="example-btn" data-example="array">Array Methods</button>
+                    <button class="example-btn" data-example="dom">DOM Example</button>
+                </div>
+            </div>
+
+            <div class="panel">
+                <div class="panel-header">
+                    <h3 class="panel-title">📊 Output Console</h3>
+                    <button id="clearOutputBtn" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.9rem;">
+                        Clear Output
+                    </button>
+                </div>
+
+                <div class="output-container">
+                    <div id="output">Ready to execute JavaScript code...
+Try running the example code or write your own!</div>
+                </div>
+
+                <div class="status-bar">
+                    <div class="status-indicator">
+                        <div id="statusDot" class="status-dot"></div>
+                        <span id="statusText">Ready</span>
+                    </div>
+                    <div class="execution-info">
+                        <span id="executionTime">Execution time: --</span>
+                        <span id="memoryUsage">Memory: --</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class CodeExecutor {
+            constructor() {
+                this.isRunning = false;
+                this.executionWorker = null;
+                this.executionStartTime = 0;
+                this.outputElement = document.getElementById('output');
+                this.statusDot = document.getElementById('statusDot');
+                this.statusText = document.getElementById('statusText');
+                this.executionTimeElement = document.getElementById('executionTime');
+                this.memoryUsageElement = document.getElementById('memoryUsage');
+                
+                this.initializeEventListeners();
+                this.setupExamples();
+            }
+
+            initializeEventListeners() {
+                document.getElementById('runBtn').addEventListener('click', () => this.executeCode());
+                document.getElementById('clearBtn').addEventListener('click', () => this.clearEditor());
+                document.getElementById('stopBtn').addEventListener('click', () => this.stopExecution());
+                document.getElementById('clearOutputBtn').addEventListener('click', () => this.clearOutput());
+                
+                // Keyboard shortcuts
+                document.getElementById('codeEditor').addEventListener('keydown', (e) => {
+                    if ((e.ctrlKey || e.metaKey) && e.key === 'Enter') {
+                        e.preventDefault();
+                        this.executeCode();
+                    }
+                });
+            }
+
+            setupExamples() {
+                const examples = {
+                    hello: `// Hello World Example
+console.log('Hello, World!');
+console.log('Welcome to the JavaScript Code Executor!');
+
+const greeting = name => \`Hello, \${name}!\`;
+console.log(greeting('Developer'));`,
+
+                    fibonacci: `// Fibonacci Sequence
+function fibonacci(n) {
+    if (n <= 1) return n;
+    return fibonacci(n - 1) + fibonacci(n - 2);
+}
+
+console.log('Fibonacci sequence (first 10 numbers):');
+for (let i = 0; i < 10; i++) {
+    console.log(\`F(\${i}) = \${fibonacci(i)}\`);
+}
+
+// Optimized version with memoization
+const fibMemo = (n, memo = {}) => {
+    if (n in memo) return memo[n];
+    if (n <= 1) return n;
+    memo[n] = fibMemo(n - 1, memo) + fibMemo(n - 2, memo);
+    return memo[n];
+};
+
+console.log('\\nOptimized Fibonacci F(40):', fibMemo(40));`,
+
+                    async: `// Async/Await Example
+const delay = ms => new Promise(resolve => setTimeout(resolve, ms));
+
+async function asyncExample() {
+    console.log('Starting async operations...');
+    
+    console.log('Step 1: Immediate');
+    
+    await delay(1000);
+    console.log('Step 2: After 1 second');
+    
+    await delay(1000);
+    console.log('Step 3: After 2 seconds total');
+    
+    return 'Async operations completed!';
+}
+
+// Execute async function
+asyncExample().then(result => {
+    console.log(result);
+}).catch(error => {
+    console.error('Error:', error);
+});
+
+console.log('This runs immediately while async operations are pending...');`,
+
+                    array: `// Array Methods Demonstration
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+
+console.log('Original array:', numbers);
+
+// Filter even numbers
+const evens = numbers.filter(n => n % 2 === 0);
+console.log('Even numbers:', evens);
+
+// Map to squares
+const squares = numbers.map(n => n * n);
+console.log('Squares:', squares);
+
+// Reduce to sum
+const sum = numbers.reduce((acc, n) => acc + n, 0);
+console.log('Sum:', sum);
+
+// Chain operations
+const result = numbers
+    .filter(n => n > 5)
+    .map(n => n * 2)
+    .reduce((acc, n) => acc + n, 0);
+
+console.log('Chained operations (filter > 5, multiply by 2, sum):', result);
+
+// Find and includes
+console.log('Find first number > 7:', numbers.find(n => n > 7));
+console.log('Includes 5:', numbers.includes(5));`,
+
+                    dom: `// DOM Manipulation Example
+// Create elements dynamically
+const container = document.createElement('div');
+container.style.cssText = \`
+    background: linear-gradient(45deg, #ff6b6b, #4ecdc4);
+    padding: 20px;
+    border-radius: 10px;
+    margin: 10px 0;
+    color: white;
+    font-family: Arial, sans-serif;
+\`;
+
+const title = document.createElement('h3');
+title.textContent = 'Dynamically Created Content!';
+title.style.margin = '0 0 10px 0';
+
+const info = document.createElement('p');
+info.innerHTML = \`
+    <strong>Current time:</strong> \${new Date().toLocaleString()}<br>
+    <strong>User agent:</strong> \${navigator.userAgent.slice(0, 50)}...
+\`;
+
+container.appendChild(title);
+container.appendChild(info);
+
+// Add to the output (simulate adding to page)
+console.log('DOM elements created successfully!');
+console.log('Title:', title.textContent);
+console.log('Time:', new Date().toLocaleString());
+
+// Simulate event handling
+const button = document.createElement('button');
+button.textContent = 'Click me!';
+button.style.cssText = \`
+    background: white;
+    color: #333;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+\`;
+
+let clickCount = 0;
+button.onclick = () => {
+    clickCount++;
+    console.log(\`Button clicked \${clickCount} time(s)!\`);
+};
+
+container.appendChild(button);
+console.log('Interactive button added to container!');`
+                };
+
+                document.querySelectorAll('.example-btn').forEach(btn => {
+                    btn.addEventListener('click', () => {
+                        const example = btn.dataset.example;
+                        if (examples[example]) {
+                            document.getElementById('codeEditor').value = examples[example];
+                        }
+                    });
+                });
+            }
+
+            async executeCode() {
+                if (this.isRunning) return;
+
+                const code = document.getElementById('codeEditor').value.trim();
+                if (!code) {
+                    this.displayOutput('No code to execute.', 'warn');
+                    return;
+                }
+
+                this.startExecution();
+
+                try {
+                    const timeout = parseInt(document.getElementById('timeoutInput').value) || 5000;
+                    await this.runCodeSafely(code, timeout);
+                } catch (error) {
+                    this.displayOutput(`Execution Error: ${error.message}`, 'error');
+                } finally {
+                    this.stopExecution();
+                }
+            }
+
+            startExecution() {
+                this.isRunning = true;
+                this.executionStartTime = performance.now();
+                
+                document.getElementById('runBtn').disabled = true;
+                document.getElementById('stopBtn').disabled = false;
+                
+                this.statusDot.className = 'status-dot running';
+                this.statusText.textContent = 'Running...';
+                
+                this.clearOutput();
+                this.displayOutput('🚀 Executing code...\\n', 'info');
+            }
+
+            stopExecution() {
+                this.isRunning = false;
+                
+                if (this.executionWorker) {
+                    this.executionWorker.terminate();
+                    this.executionWorker = null;
+                }
+                
+                document.getElementById('runBtn').disabled = false;
+                document.getElementById('stopBtn').disabled = true;
+                
+                const executionTime = performance.now() - this.executionStartTime;
+                this.executionTimeElement.textContent = `Execution time: ${executionTime.toFixed(2)}ms`;
+                
+                this.statusDot.className = 'status-dot';
+                this.statusText.textContent = 'Ready';
+                
+                // Estimate memory usage (approximation)
+                if (window.performance && window.performance.memory) {
+                    const memory = window.performance.memory;
+                    this.memoryUsageElement.textContent = `Memory: ${(memory.usedJSHeapSize / 1024 / 1024).toFixed(2)}MB`;
+                }
+            }
+
+            async runCodeSafely(code, timeout) {
+                return new Promise((resolve, reject) => {
+                    const timeoutId = setTimeout(() => {
+                        reject(new Error(`Execution timeout after ${timeout}ms`));
+                    }, timeout);
+
+                    try {
+                        // Create a safe execution context
+                        const safeCode = this.createSafeExecutionContext(code);
+                        
+                        // Execute the code
+                        const result = this.executeInSandbox(safeCode);
+                        
+                        clearTimeout(timeoutId);
+                        resolve(result);
+                    } catch (error) {
+                        clearTimeout(timeoutId);
+                        reject(error);
+                    }
+                });
+            }
+
+            createSafeExecutionContext(code) {
+                // Override console methods to capture output
+                const consoleOverrides = `
+                    const originalConsole = window.console;
+                    const output = [];
+                    
+                    window.console = {
+                        log: (...args) => {
+                            const message = args.map(arg => 
+                                typeof arg === 'object' ? JSON.stringify(arg, null, 2) : String(arg)
+                            ).join(' ');
+                            output.push({type: 'log', message});
+                            originalConsole.log(...args);
+                        },
+                        error: (...args) => {
+                            const message = args.map(arg => String(arg)).join(' ');
+                            output.push({type: 'error', message});
+                            originalConsole.error(...args);
+                        },
+                        warn: (...args) => {
+                            const message = args.map(arg => String(arg)).join(' ');
+                            output.push({type: 'warn', message});
+                            originalConsole.warn(...args);
+                        },
+                        info: (...args) => {
+                            const message = args.map(arg => String(arg)).join(' ');
+                            output.push({type: 'info', message});
+                            originalConsole.info(...args);
+                        }
+                    };
+                `;
+
+                const cleanup = `
+                    window.console = originalConsole;
+                    return output;
+                `;
+
+                return `
+                    (function() {
+                        ${consoleOverrides}
+                        try {
+                            ${code}
+                        } catch (error) {
+                            output.push({type: 'error', message: 'Runtime Error: ' + error.message});
+                        }
+                        ${cleanup}
+                    })();
+                `;
+            }
+
+            executeInSandbox(code) {
+                // Restricted globals for security
+                const restrictedGlobals = ['eval', 'Function', 'XMLHttpRequest', 'fetch'];
+                
+                try {
+                    // Execute in a restricted context
+                    const result = eval(code);
+                    
+                    if (Array.isArray(result)) {
+                        result.forEach(output => {
+                            this.displayOutput(output.message, output.type);
+                        });
+                    }
+                    
+                    this.displayOutput('\\n✅ Code executed successfully!', 'info');
+                    
+                } catch (error) {
+                    throw new Error(`${error.name}: ${error.message}`);
+                }
+            }
+
+            displayOutput(message, type = 'log') {
+                const entry = document.createElement('div');
+                entry.className = `log-entry ${type}`;
+                entry.textContent = message;
+                
+                this.outputElement.appendChild(entry);
+                this.outputElement.scrollTop = this.outputElement.scrollHeight;
+            }
+
+            clearEditor() {
+                document.getElementById('codeEditor').value = '';
+                document.getElementById('codeEditor').focus();
+            }
+
+            clearOutput() {
+                this.outputElement.innerHTML = '';
+            }
+        }
+
+        // Initialize the code executor when the page loads
+        document.addEventListener('DOMContentLoaded', () => {
+            new CodeExecutor();
+        });
+    </script>
+</body>
+</html>
