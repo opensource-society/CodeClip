@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - CodeClip</title>
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/about.css">
+</head>
+<body>
+  <!-- Header -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <span class="logo-text">CodeClip</span>
+      </div>
+      <nav class="header__nav" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/challenges" class="nav__link">Challenges</a></li>
+          <li><a href="/editor" class="nav__link">Editor</a></li>
+          <li><a href="/profile" class="nav__link">Profile</a></li>
+          <li><a href="/about" class="nav__link active">About</a></li>
+        </ul>
+      </nav>
+      <button class="header__toggle" id="navToggle" aria-label="Open menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    <div class="container">
+      <div class="hero__content about-hero">
+        <div class="hero__text">
+          <p class="hero__subtitle">🧠 Learn About CodeClip</p>
+          <h1 class="hero__title">Your Lightweight Code Companion</h1>
+          <p class="hero__description">
+            CodeClip is a browser-first, zero-backend snippet manager that helps developers organize and reuse code effortlessly — right inside your browser.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Content -->
+  <section class="container about-section">
+    <div class="card about-card">
+      <h2 class="section-title">What is CodeClip?</h2>
+      <p>
+        <strong>CodeClip</strong> is a fast, clean code snippet manager made for developers who want zero clutter and 100% local privacy. Your code stays in your browser via <code>localStorage</code> — no databases, no accounts, no distractions.
+      </p>
+    </div>
+
+    <div class="card about-card">
+      <h2 class="section-title">Key Features</h2>
+      <ul class="feature-list">
+        <li>🌙 Light & Dark mode support</li>
+        <li>💾 Save, edit, and manage code snippets locally</li>
+        <li>🔍 Search functionality (coming soon)</li>
+        <li>📱 Fully responsive for mobile and desktop</li>
+        <li>🔐 100% privacy — nothing leaves your browser</li>
+      </ul>
+    </div>
+
+    <div class="card about-card">
+      <h2 class="section-title">Open Source</h2>
+      <p>
+        CodeClip is built with love for the open-source community. Contribute, fork, or star the project on GitHub:
+      </p>
+      <a href="https://github.com/opensource-society/CodeClip" class="btn btn-secondary" target="_blank">
+        🌐 View on GitHub
+      </a>
+    </div>
+  </section>
+
+  <!-- Theme Toggle -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
+  </div>
+
+  <!-- Footer -->
+  <div id="footer"></div>
+
+  <!-- Scripts -->
+  <script type="module" src="scripts/app.js"></script>
+  <script type="module" src="scripts/theme.js"></script>
+</body>
+</html>
