@@ -193,3 +193,12 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 50%;
 }
+/* Hamburger CSS */
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 4px 0;
+  transition: 0.4s;
+}
