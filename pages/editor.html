@@ -8,6 +8,9 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" xintegrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <!-- Bootstrap Icons CDN for checkmark -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+    <!-- Prism.js CSS for syntax highlighting -->
+    <link href="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/themes/prism-tomorrow.min.css" rel="stylesheet" />
+
     <style>
         /* Custom CSS Variables for the new theme */
         :root {
@@ -111,7 +114,6 @@
     </style>
 </head>
 <body class="bg-dark text-light">
-    <!-- Header Component -->
     <header style="background: #1a1a1a; padding: 1rem 0; border-bottom: 1px solid #333;">
         <div class="container-fluid">
             <div style="display: flex; justify-content: space-between; align-items: center;">
@@ -119,9 +121,9 @@
                     <div style="font-size: 1.5rem; font-weight: 700; color: #4FC3F7;">CodeClip</div>
                     <nav style="display: flex; gap: 1.5rem;">
                         <a href="/" data-route="/" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Home</a>
-                        <a href="/challenges" data-route="/challenges" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Challenges</a>
-                        <a href="/editor" data-route="/editor" style="color: #4FC3F7; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; background: rgba(79, 195, 247, 0.1);">Editor</a>
-                        <a href="/profile" data-route="/profile" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Profile</a>
+                        <a href="./challenges.html" data-route="/challenges" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Challenges</a>
+                        <a href="./editor.html" data-route="/editor" style="color: #4FC3F7; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; background: rgba(79, 195, 247, 0.1);">Editor</a>
+                        <a href="profile.html" data-route="/profile" style="color: #f8f9fa; text-decoration: none; padding: 0.5rem 1rem; border-radius: 0.5rem; transition: background 0.2s;">Profile</a>
                     </nav>
                 </div>
                 <div>
@@ -163,13 +165,13 @@ function reverseString(str) {
         <!-- Center Panel: Code Editor -->
         <div id="center-panel" class="panel m-2 pb-5">
             <h2 class="h4 mb-3 text-code-heading">Code Editor</h2>
-            <textarea id="code-editor" class="form-control flex-grow-1 p-3 rounded resize-none"
-                      placeholder="Write your code here...">
+            <pre id="code-editor" class="bg-dark p-3 rounded flex-grow-1 overflow-auto"><code class="language-javascript" contenteditable="true">
 function reverseString(str) {
-  // Implement your solution here
-  return str.split('').reverse().join('');
+// Your code here
+return str.split('').reverse().join('');
 }
-            </textarea>
+            </code></pre>
+
             <button class="btn btn-custom-blue mt-4 px-4 py-2 rounded shadow">
                 Run Code
             </button>
@@ -280,5 +282,10 @@ function reverseString(str) {
 
     <!-- Router Script -->
     <script type="module" src="scripts/app.js"></script>
+    <!-- Prism.js -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/prism.min.js"></script>
+    <!-- Language support (e.g., JavaScript) -->
+    <script src="https://cdn.jsdelivr.net/npm/prismjs@1.29.0/components/prism-javascript.min.js"></script>
+
 </body>
 </html>
