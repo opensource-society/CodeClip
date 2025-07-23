@@ -1,0 +1,258 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+
+:root {
+    --primary-color: #6a00ff; /* A purple tone for highlights */
+    --background-color: #1a1a1a; /* Dark background */
+    --card-background: #2a2a2a; /* Slightly lighter card background */
+    --text-color: #e0e0e0; /* Light grey text */
+    --light-text-color: #b0b0b0; /* Lighter grey for descriptions */
+    --border-color: #444444; /* Darker grey for borders */
+    --success-color: #28a745; /* Green for completed */
+    --pending-color: #ffc107; /* Yellow for pending (or leave as default) */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 3rem;
+    background-color: var(--card-background);
+    border-bottom: 1px solid var(--border-color);
+} */
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--primary-color);
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 2rem;
+}
+
+nav ul li a {
+    color: var(--light-text-color);
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: var(--primary-color);
+}
+
+/* Challenges Page Specific Styles */
+.challenges-page {
+    padding: 2rem 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-grow: 1;
+}
+
+.challenges-header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.challenges-header h1 {
+    font-size: 3.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
+}
+
+.challenges-header p {
+    font-size: 1.2rem;
+    color: var(--light-text-color);
+}
+
+.challenges-list {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+.challenge-category h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-color);
+    border-bottom: 2px solid var(--border-color);
+    padding-bottom: 0.5rem;
+}
+
+.problems-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    gap: 1.5rem;
+}
+
+.problem-card {
+    background-color: var(--card-background);
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    padding: 1.5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+}
+
+.problem-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+.problem-card h3 {
+    font-size: 1.5rem;
+    margin-bottom: 0.8rem;
+    color: var(--text-color);
+}
+
+.problem-card p {
+    font-size: 0.95rem;
+    color: var(--light-text-color);
+    margin-bottom: 1rem;
+    flex-grow: 1; /* Allows description to take available space */
+}
+
+.problem-meta {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.problem-difficulty {
+    font-weight: 600;
+    padding: 0.3rem 0.8rem;
+    border-radius: 5px;
+    font-size: 0.85rem;
+    text-transform: uppercase;
+}
+
+.difficulty-easy {
+    background-color: #2e7d32; /* Darker green */
+    color: #e0e0e0;
+}
+
+.difficulty-medium {
+    background-color: #ef6c00; /* Darker orange */
+    color: #e0e0e0;
+}
+
+.difficulty-hard {
+    background-color: #c62828; /* Darker red */
+    color: #e0e0e0;
+}
+
+.problem-status {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 0.9rem;
+    color: var(--light-text-color);
+}
+
+.problem-status input[type="checkbox"] {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color); /* Colors the checkbox when checked */
+    cursor: pointer;
+}
+
+.problem-status .status-text {
+    font-weight: 500;
+}
+
+.problem-card.completed {
+    border-left: 5px solid var(--success-color);
+    opacity: 0.8;
+}
+
+.problem-card.completed .status-text {
+    color: var(--success-color);
+    font-weight: 600;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column;
+        padding: 1rem 1.5rem;
+    }
+
+    nav ul {
+        margin-top: 1rem;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav ul li {
+        margin: 0.5rem 1rem;
+    }
+
+    .challenges-page {
+        padding: 1.5rem 3%;
+    }
+
+    .challenges-header h1 {
+        font-size: 2.5rem;
+    }
+
+    .challenges-header p {
+        font-size: 1rem;
+    }
+
+    .challenge-category h2 {
+        font-size: 2rem;
+    }
+
+    .problems-grid {
+        grid-template-columns: 1fr; /* Stack problems on small screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .logo {
+        font-size: 1.5rem;
+    }
+
+    nav ul li a {
+        font-size: 0.9rem;
+    }
+
+    .problem-card {
+        padding: 1rem;
+    }
+
+    .problem-card h3 {
+        font-size: 1.3rem;
+    }
+
+    .problem-card p {
+        font-size: 0.85rem;
+    }
+}
+
