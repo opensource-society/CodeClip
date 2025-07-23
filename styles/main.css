@@ -192,3 +192,27 @@
   color: whitesmoke;
 }
 
+@media (max-width: 768px) {
+  .nav__list {
+    display: none;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background: white;
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    z-index: 999;
+  }
+
+  .nav__list.open {
+    display: flex;
+  }
+
+  .header__toggle {
+    display: flex;
+    flex-direction: column;
+    cursor: pointer;
+  }
+}

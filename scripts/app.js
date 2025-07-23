@@ -162,13 +162,15 @@ if (navToggle && navMenu) {
   navToggle.addEventListener('click', () => {
     const navList = navMenu.querySelector('.nav__list');
     const isOpen = navList.classList.toggle('open');
-    navToggle.setAttribute('aria-label', isOpen ? 'Close navigation menu' : 'Open navigation menu');
     navToggle.setAttribute('aria-expanded', isOpen);
 
-    // Animate hamburger icon
     const [line1, line2, line3] = navToggle.children;
-    line1.style.transform = isOpen ? 'rotate(45deg) translate(6px, 6px)' : 'rotate(0deg)';
+    line1.style.transform = isOpen
+      ? 'rotate(45deg) translate(6px, 6px)'
+      : 'rotate(0deg)';
     line2.style.opacity = isOpen ? '0' : '1';
-    line3.style.transform = isOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'rotate(0deg)';
+    line3.style.transform = isOpen
+      ? 'rotate(-45deg) translate(6px, -6px)'
+      : 'rotate(0deg)';
   });
 }
