@@ -4,6 +4,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const setTheme = (theme) => {
       document.documentElement.setAttribute("data-theme", theme);
       localStorage.setItem("theme", theme);
+      if (theme === "dark") {
+        document.body.style.backgroundColor = "#222";
+      } else {
+        document.body.style.backgroundColor = "#fff";
+      }
     };
   
     // Apply saved theme on load
@@ -11,15 +16,15 @@ document.addEventListener("DOMContentLoaded", () => {
     const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
     const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
     setTheme(initialTheme);
-  
-    // Toggle button click
+  //
+    // Toggle theme on button click
     toggleBtn.addEventListener("click", () => {
       const current = document.documentElement.getAttribute("data-theme");
       const newTheme = current === "light" ? "dark" : "light";
       setTheme(newTheme);
     });
-  
-    // Real-time sync: The theme changed in one tab is linked and synced with the theme change in other tabs.
+
+    // // Real-time sync: The theme changed in one tab is linked and synced with the theme change in other tabs.
     window.addEventListener("storage", (event) => {
       if (event.key === "theme") {
         document.documentElement.setAttribute("data-theme", event.newValue);

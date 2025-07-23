@@ -1,15 +1,15 @@
-:root {
+  :root {
     --bg-color: #ffffff;
-    --text-color: #000000;
-    --header-bg: #f0f0f0;
+    --text-color: #181717;
+    --header-bg: #f1f1f1;
   }
   
   [data-theme="dark"] {
-    --bg-color: #121212;
+    --bg-color: #000000;
     --text-color: #f1f1f1;
-    --header-bg: #1e1e1e;
+    --header-bg: #181717;
   }
-  
+
   body {
     background-color: var(--bg-color);
     color: var(--text-color);
