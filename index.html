@@ -27,6 +27,14 @@
       crossorigin="anonymous"
     ></script>
   </head>
+  <h1>
+    <textarea id="code-editor" placeholder="Type your code here..."></textarea>
+
+<pre class="line-numbers">
+  <code id="code-output" class="language-javascript"></code>
+</pre>
+
+  </h1>
   <body>
     <!-- header code starts -->
     <header class="header">
@@ -49,6 +57,8 @@
           <span class="hamburger"></span>
         </button>
       </div>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.css" />
+      <link href="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/themes/prism.min.css" rel="stylesheet" />
     </header>
     <!-- header code ends -->
 
@@ -152,6 +162,27 @@
     <script type="module" src="./scripts/app.js"></script>
     <script type="module" src="./scripts/theme.js"></script>
     <!-- Scripts end -->
+<!-- Prism.js Core Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/prism.min.js"></script>
+
+<!-- Line numbers plugin Script -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/prism/1.29.0/plugins/line-numbers/prism-line-numbers.min.js"></script>
+<script src="script.js"></script>
+<script>
+  // JavaScript to highlight
+  const editor = document.getElementById('code-editor');
+  const output = document.getElementById('code-output');
+
+  editor.addEventListener('input', () => {
+    const escaped = editor.value
+      .replace(/&/g, '&amp;')
+      .replace(/</g, '&lt;')
+      .replace(/>/g, '&gt;');
+
+    output.innerHTML = escaped;
+    Prism.highlightElement(output);
+  });
+</script>
 
   </body>
 </html>
