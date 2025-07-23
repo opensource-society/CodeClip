@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CodeClip - Challenges</title>
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/challenges.css" />
+    
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+</head>
+
+
+<body>
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <span class="logo-text">CodeClip</span>
+        </div>
+        <nav class="header__nav" id="navMenu">
+          <ul class="nav__list">
+            <li><a href="/" data-route="/" class="nav__link">Home</a></li>
+            <li><a href="/pages/challenge.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
+            <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+            <li><a href="/profile" data-route="/profile" class="nav__link">Profile</a></li>
+            <li><a href="about.html" class="nav__link">About</a></li>
+          </ul>
+        </nav>
+        <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </header>
+
+    <main class="challenges-page">
+        <section class="challenges-header">
+            <h1>Challenges</h1>
+            <p>Track your progress and conquer coding problems.</p>
+        </section>
+
+        <section class="challenges-list">
+            <div class="challenge-category">
+                <h2>Easy</h2>
+                <div class="problems-grid" id="easy-problems">
+                    </div>
+            </div>
+
+            <div class="challenge-category">
+                <h2>Medium</h2>
+                <div class="problems-grid" id="medium-problems">
+                    </div>
+            </div>
+
+            <div class="challenge-category">
+                <h2>Hard</h2>
+                <div class="problems-grid" id="hard-problems">
+                    </div>
+            </div>
+        </section>
+    </main>
+
+    <script >
+
+      // your code goes here
+document.addEventListener('DOMContentLoaded', () => {
+    const problems = [
+        {
+            id: 'easy-1',
+            title: 'Two Sum',
+            description: 'Given an array of integers, return indices of the two numbers such that they add up to a specific target.',
+            difficulty: 'easy',
+            completed: false
+        },
+        {
+            id: 'easy-2',
+            title: 'Palindrome Number',
+            description: 'Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.',
+            difficulty: 'easy',
+            completed: false
+        },
+        {
+            id: 'easy-3',
+            title: 'FizzBuzz',
+            description: 'Write a program that outputs the string representation of numbers from 1 to n. But for multiples of three it should output "Fizz" instead of the number and for the multiples of five output "Buzz". For numbers which are multiples of both three and five output "FizzBuzz".',
+            difficulty: 'easy',
+            completed: false
+        },
+        {
+            id: 'easy-4',
+            title: 'Reverse String',
+            description: 'Write a function that reverses a string. The input string is given as an array of characters char[].',
+            difficulty: 'easy',
+            completed: false
+        },
+        {
+            id: 'medium-1',
+            title: 'Add Two Numbers',
+            description: 'You are given two non-empty linked lists representing two non-negative integers. The digits are stored in reverse order, and each of their nodes contains a single digit. Add the two numbers and return the sum as a linked list.',
+            difficulty: 'medium',
+            completed: false
+        },
+        {
+            id: 'medium-2',
+            title: 'Longest Substring Without Repeating Characters',
+            description: 'Given a string s, find the length of the longest substring without repeating characters.',
+            difficulty: 'medium',
+            completed: false
+        },
+        {
+            id: 'medium-3',
+            title: 'Container With Most Water',
+            description: 'Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). n vertical lines are drawn such that the two endpoints of the line i is at (i, ai) and (i, 0). Find two lines, which, together with the x-axis forms a container, such that the container contains the most water.',
+            difficulty: 'medium',
+            completed: false
+        },
+        {
+            id: 'hard-1',
+            title: 'Median of Two Sorted Arrays',
+            description: 'Given two sorted arrays nums1 and nums2 of size m and n respectively, return the median of the two sorted arrays.',
+            difficulty: 'hard',
+            completed: false
+        },
+        {
+            id: 'hard-2',
+            title: 'Regular Expression Matching',
+            description: 'Given an input string (s) and a pattern (p), implement regular expression matching with support for \'.\' and \'*\'',
+            difficulty: 'hard',
+            completed: false
+        }
+    ];
+
+    const easyProblemsGrid = document.getElementById('easy-problems');
+    const mediumProblemsGrid = document.getElementById('medium-problems');
+    const hardProblemsGrid = document.getElementById('hard-problems');
+
+    // Function to load problem state from localStorage
+    const loadProblemState = () => {
+        const storedState = localStorage.getItem('codingChallengeProgress');
+        if (storedState) {
+            return JSON.parse(storedState);
+        }
+        return {}; // Return empty object if no state found
+    };
+
+    // Function to save problem state to localStorage
+    const saveProblemState = (state) => {
+        localStorage.setItem('codingChallengeProgress', JSON.stringify(state));
+    };
+
+    // Initialize problem states from storage
+    let problemStates = loadProblemState();
+    problems.forEach(problem => {
+        if (problemStates[problem.id] !== undefined) {
+            problem.completed = problemStates[problem.id];
+        } else {
+            problemStates[problem.id] = problem.completed; // Initialize if not in storage
+        }
+    });
+    saveProblemState(problemStates); // Save initial state if new problems are added
+
+    const createProblemCard = (problem) => {
+        const problemCard = document.createElement('div');
+        problemCard.classList.add('problem-card');
+        if (problem.completed) {
+            problemCard.classList.add('completed');
+        }
+        problemCard.setAttribute('data-id', problem.id);
+
+        problemCard.innerHTML = `
+            <h3>${problem.title}</h3>
+            <p>${problem.description}</p>
+            <div class="problem-meta">
+                <span class="problem-difficulty difficulty-${problem.difficulty}">${problem.difficulty}</span>
+                <label class="problem-status">
+                    <input type="checkbox" ${problem.completed ? 'checked' : ''}>
+                    <span class="status-text">${problem.completed ? 'Done' : 'Pending'}</span>
+                </label>
+            </div>
+        `;
+
+        const checkbox = problemCard.querySelector('input[type="checkbox"]');
+        const statusText = problemCard.querySelector('.status-text');
+
+        checkbox.addEventListener('change', (event) => {
+            problem.completed = event.target.checked;
+            problemStates[problem.id] = problem.completed; // Update state
+            saveProblemState(problemStates); // Save to localStorage
+
+            if (problem.completed) {
+                problemCard.classList.add('completed');
+                statusText.textContent = 'Done';
+            } else {
+                problemCard.classList.remove('completed');
+                statusText.textContent = 'Pending';
+            }
+        });
+
+        return problemCard;
+    };
+
+    const renderProblems = () => {
+        easyProblemsGrid.innerHTML = '';
+        mediumProblemsGrid.innerHTML = '';
+        hardProblemsGrid.innerHTML = '';
+
+        problems.forEach(problem => {
+            const problemCard = createProblemCard(problem);
+            if (problem.difficulty === 'easy') {
+                easyProblemsGrid.appendChild(problemCard);
+            } else if (problem.difficulty === 'medium') {
+                mediumProblemsGrid.appendChild(problemCard);
+            } else if (problem.difficulty === 'hard') {
+                hardProblemsGrid.appendChild(problemCard);
+            }
+        });
+    };
+
+    renderProblems();
+});
+    </script>
+</body>
+</html>
