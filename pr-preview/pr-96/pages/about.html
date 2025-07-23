@@ -29,9 +29,10 @@
       <nav class="header__nav" id="navMenu">
         <ul class="nav__list">
           <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-          <li><a href="./challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
-          <li><a href="./editor.html" data-route="/editor" class="nav__link">Editor</a></li>
-          <li><a href="./profile.html" data-route="/profile" class="nav__link">Profile</a></li>
+          <li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
+          <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+          <li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
+          <li><a href="about.html" class="nav__link">About</a></li>
         </ul>
       </nav>
       <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
@@ -42,135 +43,29 @@
     </div>
   </header>
 
-  <!-- Main Content -->
-  <main>
-    <!-- Challenges Hero Section -->
-    <section class="challenges-hero">
-      <div class="container">
-        <div class="challenges-hero__content">
-          <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
-          </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
-        </div>
-      </div>
-    </section>
+  <div class="about-container">
+    <h1>About CodeClip</h1>
+    <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
 
-    <!-- Controls (merged from both versions) -->
-    <section class="challenges-filter">
-      <div class="container">
-        <div class="filter-controls">
-          <div class="filter-group">
-            <label for="difficulty-filter">Difficulty:</label>
-            <select id="difficulty-filter" class="filter-select">
-              <option value="">All Levels</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="category-filter">Category:</label>
-            <select id="category-filter" class="filter-select">
-              <option value="">All Categories</option>
-              <option value="arrays">Arrays</option>
-              <option value="strings">Strings</option>
-              <option value="algorithms">Algorithms</option>
-              <option value="data-structures">Data Structures</option>
-              <option value="frontend">Frontend</option>
-              <option value="backend">Backend</option>
-              <option value="fullstack">Fullstack</option>
-            </select>
-          </div>
-          <div class="search-group">
-            <input type="text" id="search-challenges" placeholder="Search challenges..." class="search-input">
-          </div>
-        </div>
-      </div>
-    </section>
+    <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
 
-    <!-- Challenges Grid -->
-    <section class="challenges-grid">
-      <div class="container">
-        <div class="challenges-list" id="challengesList">
-          <!-- Challenge cards can be rendered here dynamically via JS -->
-          <div class="challenge-card" data-difficulty="easy" data-category="arrays">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Two Sum</h3>
-              <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
-            <p class="challenge-card__description">
-              Given an array of integers and a target sum, return indices of two numbers that add up to the target.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Arrays</span>
-              <span class="category-tag">Hash Table</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
-            </div>
-          </div>
+    <h2> Features</h2>
+    <ul>
+      <li> Light/Dark mode support</li>
+      <li> Save and manage code snippets effortlessly</li>
+      <li> Search functionality (in progress)</li>
+      <li> Responsive design for mobile and desktop</li>
+      <li> 100% privacy – nothing leaves your browser</li>
+    </ul>
 
-          <div class="challenge-card" data-difficulty="medium" data-category="strings">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Longest Palindromic Substring</h3>
-              <span class="difficulty-badge difficulty-medium">Medium</span>
-            </div>
-            <p class="challenge-card__description">
-              Given a string, find the longest palindromic substring within it.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Strings</span>
-              <span class="category-tag">Dynamic Programming</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
-            </div>
-          </div>
+    
+    <p>View the source code or contribute here:  
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
+        github.com/opensource-society/CodeClip
+      </a>
+    </p>
 
-          <div class="challenge-card" data-difficulty="hard" data-category="algorithms">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Merge K Sorted Lists</h3>
-              <span class="difficulty-badge difficulty-hard">Hard</span>
-            </div>
-            <p class="challenge-card__description">
-              Merge k sorted linked lists and return it as one sorted list.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Linked List</span>
-              <span class="category-tag">Divide and Conquer</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-difficulty="easy" data-category="data-structures">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Valid Parentheses</h3>
-              <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
-            <p class="challenge-card__description">
-              Determine if the input string has valid parentheses.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Stack</span>
-              <span class="category-tag">Strings</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
-            </div>
-          </div>
-        </div>
-        <div id="no-results" class="no-results-message" style="display: none;">
-          <h2>🤔 No challenges found...</h2>
-          <p>Try adjusting your search or filter criteria.</p>
-        </div>
-      </div>
-    </section>
-  </main>
+  </div>
 
   <!-- Footer -->
   <footer class="footer">
