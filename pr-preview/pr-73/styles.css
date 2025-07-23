@@ -242,7 +242,10 @@ body {
   left: 30%;
   animation-delay: 4s;
 }
+#theme-toggle:hover{
+  cursor: pointer;
 
+}
 @keyframes float {
   0%, 100% { transform: translateY(0); }
   50% { transform: translateY(-20px); }
@@ -385,6 +388,19 @@ body {
 .theme-toggle-btn:hover {
   background: #475569;
 }
+
+
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero__cta {
+    justify-content: center;
+  }
+  .hero__visual {
+    margin: 0 auto;
 
 /* Content Section - Fixed for proper centering */
 .content {
@@ -588,9 +604,11 @@ a {
     justify-content: center;
     align-items: center;
     width: 100%;
+
     max-width: 400px;
   }
 }
+
 
   .content {
     padding-top: 50px;
@@ -602,6 +620,7 @@ a {
   .card {
     margin: 15px 0;
   }
+
 
 
 @media (max-width: 768px) {
@@ -639,10 +658,12 @@ a {
   .hero__title {
     font-size: 2.5rem;
   }
+
   
   .content {
     padding-top: 300px;
   }
+
 }
 
 @media (max-width: 480px) {
@@ -655,6 +676,7 @@ a {
   .hero__title {
     font-size: 2rem;
   }
+
   
   /* Ensure hero still uses full width on mobile and centers content */
   .hero .container {
@@ -669,5 +691,7 @@ a {
     justify-items: center;
   }
 }
-
+#navid {
+  background-color: skyblue;
+}
 
