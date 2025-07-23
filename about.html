@@ -1,26 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Challenges - CodeClip</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Merge both font options for flexibility -->
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About - CodeClip</title>
 
-    <!-- Styles -->
-    <!-- If you want to keep all challenge styles in one file, use: -->
-    <link rel="stylesheet" href="../styles.css">
-    <!-- Or, if you want to scope styles to just challenges, use: -->
-    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+
+  <!-- Material Icons -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles/styles.css">
+  <link rel="stylesheet" href="styles/about.css">
 </head>
 <body>
-  <!-- Header Component -->
+  <!-- Header -->
   <header class="header">
     <div class="container header__container">
       <div class="header__logo">
@@ -28,14 +26,14 @@
       </div>
       <nav class="header__nav" id="navMenu">
         <ul class="nav__list">
-      <!-- Home link -->     <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-          <li><a href="/challenges" data-route="/challenges" class="nav__link active">Challenges</a></li>
-          <li><a href="/editor" data-route="/editor" class="nav__link">Editor</a></li>
-          <li><a href="/profile" data-route="/profile" class="nav__link">Profile</a></li>
-      <!-- about link -->     <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="/" class="nav__link">Home</a></li>
+          <li><a href="/challenges" class="nav__link">Challenges</a></li>
+          <li><a href="/editor" class="nav__link">Editor</a></li>
+          <li><a href="/profile" class="nav__link">Profile</a></li>
+          <li><a href="/about" class="nav__link active">About</a></li>
         </ul>
       </nav>
-      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+      <button class="header__toggle" id="navToggle" aria-label="Open menu">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -43,259 +41,67 @@
     </div>
   </header>
 
-  <div class="about-container">
-    <h1>About CodeClip</h1>
-    <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
+  <!-- Hero -->
+  <section class="hero">
+    <div class="floating-elements">
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+      <div class="floating-element"></div>
+    </div>
+    <div class="container">
+      <div class="hero__content about-hero">
+        <div class="hero__text">
+          <p class="hero__subtitle">🧠 Learn About CodeClip</p>
+          <h1 class="hero__title">Your Lightweight Code Companion</h1>
+          <p class="hero__description">
+            CodeClip is a browser-first, zero-backend snippet manager that helps developers organize and reuse code effortlessly — right inside your browser.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
 
-    <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
+  <!-- About Content -->
+  <section class="container about-section">
+    <div class="card about-card">
+      <h2 class="section-title">What is CodeClip?</h2>
+      <p>
+        <strong>CodeClip</strong> is a fast, clean code snippet manager made for developers who want zero clutter and 100% local privacy. Your code stays in your browser via <code>localStorage</code> — no databases, no accounts, no distractions.
+      </p>
+    </div>
 
-    <h2> Features</h2>
-    <ul>
-      <li> Light/Dark mode support</li>
-      <li> Save and manage code snippets effortlessly</li>
-      <li> Search functionality (in progress)</li>
-      <li> Responsive design for mobile and desktop</li>
-      <li> 100% privacy – nothing leaves your browser</li>
-    </ul>
+    <div class="card about-card">
+      <h2 class="section-title">Key Features</h2>
+      <ul class="feature-list">
+        <li>🌙 Light & Dark mode support</li>
+        <li>💾 Save, edit, and manage code snippets locally</li>
+        <li>🔍 Search functionality (coming soon)</li>
+        <li>📱 Fully responsive for mobile and desktop</li>
+        <li>🔐 100% privacy — nothing leaves your browser</li>
+      </ul>
+    </div>
 
-    
-    <p>View the source code or contribute here:  
-      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
-        github.com/opensource-society/CodeClip
+    <div class="card about-card">
+      <h2 class="section-title">Open Source</h2>
+      <p>
+        CodeClip is built with love for the open-source community. Contribute, fork, or star the project on GitHub:
+      </p>
+      <a href="https://github.com/opensource-society/CodeClip" class="btn btn-secondary" target="_blank">
+        🌐 View on GitHub
       </a>
-    </p>
+    </div>
+  </section>
 
+  <!-- Theme Toggle -->
+  <div class="theme-toggle-container">
+    <button id="theme-toggle" class="theme-toggle-btn">Toggle Theme</button>
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__section">
-          <h4>CodeClip</h4>
-          <p>Master coding challenges in your browser</p>
-        </div>
-        <div class="footer__section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="/" data-route="/">Home</a></li>
-            <li><a href="/challenges" data-route="/challenges">Challenges</a></li>
-            <li><a href="/editor" data-route="/editor">Editor</a></li>
-          </ul>
-        </div>
-        <div class="footer__section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
-      </div>
-      <div class="footer__bottom">
-        <p>&copy; 2024 CodeClip. All rights reserved.</p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Theme Toggle Button (from main branch version) -->
-  <button id="theme-toggle" title="Toggle theme">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
-  </button>
+  <div id="footer"></div>
 
   <!-- Scripts -->
-  <script type="module" src="../scripts/app.js"></script>
-  <script type="module" src="../scripts/theme.js"></script>
-  <script src="../scripts/challenges.js"></script>
-  
-  <style>
-    /* Additional styles for challenges page */
-    .challenges-hero {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      padding: 6rem 0 4rem;
-      text-align: center;
-    }
-
-    .challenges-hero__title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: white;
-    }
-
-    .challenges-hero__description {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
-    }
-
-    .challenges-filter {
-      background: var(--bg-secondary);
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .filter-controls {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .filter-select, .search-input {
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 0.5rem;
-      background: white;
-      font-size: 0.9rem;
-    }
-
-    .search-group {
-      margin-left: auto;
-    }
-
-    .search-input {
-      width: 300px;
-    }
-
-    .challenges-grid {
-      padding: 3rem 0;
-    }
-
-    .challenges-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .challenge-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .challenge-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .challenge-card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
-
-    .challenge-card__title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin: 0;
-    }
-
-    .difficulty-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .difficulty-easy {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .difficulty-medium {
-      background: #fff3cd;
-      color: #856404;
-    }
-
-    .difficulty-hard {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
-    .challenge-card__description {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .challenge-card__meta {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .category-tag {
-      background: var(--bg-light);
-      color: var(--primary-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .challenge-card__actions {
-      text-align: right;
-    }
-
-    .btn-sm {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-    }
-
-    #theme-toggle {
-      position: fixed;
-      right: 2rem;
-      bottom: 2rem;
-      background: var(--bg-primary, #fff);
-      border: none;
-      border-radius: 50%;
-      padding: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.2s;
-    }
-
-    #theme-toggle svg {
-      vertical-align: middle;
-    }
-
-    @media (max-width: 768px) {
-      .challenges-hero__title {
-        font-size: 2.5rem;
-      }
-
-      .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .search-group {
-        margin-left: 0;
-      }
-
-      .search-input {
-        width: 100%;
-      }
-
-      .challenges-list {
-        grid-template-columns: 1fr;
-      }
-    }
-  </style>
+  <script type="module" src="scripts/app.js"></script>
+  <script type="module" src="scripts/theme.js"></script>
 </body>
 </html>
