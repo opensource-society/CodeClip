@@ -373,7 +373,7 @@
     apiKey: "AIzaSyB6QxjKkA9-SttEB-ZOAvoOCMX3AbAJq_g",
     authDomain: "codeclip-open2.firebaseapp.com",
     projectId: "codeclip-open2",
-    storageBucket: "codeclip-open2.appspot.com",  // ✅ Typo fixed
+    storageBucket: "codeclip-open2.appspot.com",  
     messagingSenderId: "365736988332",
     appId: "1:365736988332:web:f79a5663e3631a33d99909",
     measurementId: "G-8E9EHXGVES"
@@ -397,67 +397,90 @@
       }
     });
 
-  async function renderLeaderboard() {
-    const leaderboardRef = collection(db, "leaderboard");
-    const q = query(leaderboardRef, orderBy("score", "desc"));
+  // 🔁 Display leaderboard from array of data
+  function displayLeaderboard(dataArray) {
     const container = document.getElementById("leaderboard");
 
-    try {
-      const querySnapshot = await getDocs(q);
+    if (!dataArray || dataArray.length === 0) {
+      container.innerHTML = "<p>No leaderboard data yet.</p>";
+      return;
+    }
 
-      if (querySnapshot.empty) {
-        container.innerHTML = "<p>No leaderboard data yet.</p>";
-        return;
-      }
+    let rank = 1;
+    let html = `
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Username</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+    `;
 
-      let rank = 1;
-      let html = `
-        <table>
-          <thead>
-            <tr><th>Rank</th><th>Username</th><th>Score</th></tr>
-          </thead>
-          <tbody>
-      `;
+    dataArray.forEach(({ username, score }) => {
+      const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
+      html += `
+        <tr>
+          <td>${medal}</td>
+          <td>${username}</td>
+          <td>${score}</td>
+        </tr>`;
+      rank++;
+    });
 
-      querySnapshot.forEach((doc) => {
-        const { username, score } = doc.data();
-        const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
-        html += `
-          <tr>
-            <td>${medal}</td>
-            <td>${username}</td>
-            <td>${score}</td>
-          </tr>`;
-        rank++;
-      });
+    html += "</tbody></table>";
+    container.innerHTML = html;
+  }
 
-      html += "</tbody></table>";
-      container.innerHTML = html;
-    } catch (err) {
-      console.error("❌ Error fetching leaderboard:", err);
-      container.innerHTML = "<p>Failed to load leaderboard.</p>";
+  // 📦 Fetch leaderboard from Firestore
+  async function fetchLeaderboardData() {
+    const leaderboardRef = collection(db, "leaderboard");
+    const q = query(leaderboardRef, orderBy("score", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const data = [];
+    querySnapshot.forEach((doc) => {
+      const { username, score } = doc.data();
+      data.push({ username, score });
+    });
+
+    return data;
+  }
+
+  // ⚠️ Show offline banner
+  function showOfflineBanner() {
+    const banner = document.getElementById("offline-banner");
+    if (banner) {
+      banner.style.display = "block";
     }
   }
 
-  document.addEventListener("DOMContentLoaded", renderLeaderboard);
+  // 🌐 Setup online/offline detection and render leaderboard
+  document.addEventListener("DOMContentLoaded", async () => {
+    const banner = document.getElementById("offline-banner");
 
-  // Show offline banner if offline
-window.addEventListener('load', () => {
-  const banner = document.getElementById("offline-banner");
-  if (!navigator.onLine) {
-    banner.style.display = "block";
-  }
+    // Online/offline listeners
+    if (!navigator.onLine) showOfflineBanner();
+    window.addEventListener("offline", showOfflineBanner);
+    window.addEventListener("online", () => {
+      if (banner) banner.style.display = "none";
+    });
 
-  window.addEventListener("offline", () => {
-    banner.style.display = "block";
+    try {
+      const data = await fetchLeaderboardData();
+      localStorage.setItem('cachedLeaderboard', JSON.stringify(data));
+      displayLeaderboard(data);
+    } catch (err) {
+      console.error("❌ Error fetching leaderboard:", err);
+      const cached = localStorage.getItem('cachedLeaderboard');
+      if (cached) {
+        showOfflineBanner();
+        displayLeaderboard(JSON.parse(cached));
+      } else {
+        document.getElementById("leaderboard").innerHTML = "<p>Failed to load leaderboard.</p>";
+      }
+    }
   });
-
-  window.addEventListener("online", () => {
-    banner.style.display = "none";
-  });
-});
-
 </script>
+
 
   <style>
     /* Additional styles for profile page */

@@ -25,7 +25,12 @@ if (form && preview) {
       .replace(/\*(.*?)\*/gim, '<i>$1</i>')
       .replace(/\n/gim, '<br />');
 
-    preview.innerHTML = formatted;
+const preview = document.getElementById("preview");
+if (preview) {
+  preview.innerHTML = formatted;
+}
+
+
   });
 
 }
