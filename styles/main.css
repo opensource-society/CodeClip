@@ -1,132 +1,463 @@
+/* ================== Google Fonts Family ================== */
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
 
 
-      html,body{
-        background-color: #242124;
-        margin: 0;
-        padding: 1% 5%;
-        box-sizing: border-box;
-        font-family: system-ui, "Segoe UI","Helvetica Neue", Arial, sans-serif;
-        font-size: 16px;
-        min-height: 100vh;
-        height: 100%;
-        display: flex;
-        flex-direction: column;
-        color: ivory;
-      }
-      #navbar{
-        height: 10%;
-        width: 100%;
-        /* background-color: red; */
-      }
-      #hero-section{
-        height: 70%;
-        width: 100%;
-        /* background-color: yellow; */
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        position: relative;
-        z-index: 1;
-      }
-      .bars-container {
-        position: absolute;
-        top: 0;
-        left: 0;
-        height: 100%;
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 2rem;
-        z-index: 0;
-        overflow: hidden;
-      }
-
-      .bar {
-        width: 100px;
-        height: 100px;
-        border-radius: 50%;
-        animation: bounceY 1.2s ease-in-out infinite alternate;
-        opacity: 0.8;
-        z-index: 2;
-      }
-/* // fails for users with color blindness  */
-      /* .bar.red { background-color: red; animation-delay: 0s; }
-      .bar.green { background-color: yellow; animation-delay: 0.7s; }
-      .bar.yellow { background-color: green; animation-delay: 1.4s; }
-      .bar.blue { background-color: rgb(22, 22, 240); animation-delay: 2.1s; } */
-
-      .bar.red { background-color: #b00020; }       /* dark red */
-      .bar.yellow { background-color: #c77900; }    /* dark amber */
-      .bar.green { background-color: #006400; }     /* dark green */
-      .bar.blue { background-color: #0033cc; }      /* dark blue */
-      @keyframes bounceY {
-        from {
-          transform: translateY(200px);
-        }
-        to {
-          transform: translateY(-60px);
-        }
-      }
-
-      /* On hover over hero-section, speed up bars */
-      #hero-section:hover .bar {
-        animation-duration: 0.9s;
-      }
-
-      #hero-section h1{
-        font-size: 5rem;
-        font-family: 'Bitcount';
-        margin-bottom: 2%;
-        z-index: 10;
-      }
-      #hero-section h3{
-        font-family: 'Oooh Baby';
-        font-size: 2rem;
-        color: #EFEFFE;
-        /* text-decoration: underline wavy; */
-      }
-    
-      /* This helps keyboard users see which element is focused — crucial for accessibility. */
-      :focus {
-        outline: 2px dashed #FFD700;
-        outline-offset: 4px;
-      }
-
-.hero__content{
-  display: flex;
-  flex-direction: row;
+/* ================== Universal Selector ================== */
+* {
+    font-family: "Lato", sans-serif;
 }
 
-@media (max-width:1025px){
-  .hero__content{
-    flex-direction: column;
-  }
-  .hero__visual, .hero__text{
-    flex: 1;
-    width: 70%;
-  }
+html {
+    scroll-padding-top: 56px;
+    overflow-x: hidden;
 }
-.hero__text{
-  flex: 1;
-  display: flex;
-  flex-direction: column;
+
+
+
+/* ================== Navbar Styles Start Here ================== */
+.navbar {
+    background-color: #1a0b0b;
+
 }
-.hero__cta{
-  display: flex;
-  flex-direction: row;
+
+.navbar-brand {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #798cb4;
 }
-.hero__text .hero__cta a{
-  flex: 1;
+
+.navbar-brand:hover {
+    color: #2563eb;
 }
-@media (max-width:939px){
-  .hero__cta{
+
+.navbar-brand span {
+    color: #1e2c44;
+}
+
+.nav-item a {
+    color: #1e2c44;
+    font-size: 20px;
+
+}
+
+/* ================== Navbar Styles End Here ================== */
+
+
+/* ================== Hero Styles Start Here ================== */
+.heroSection {
+    margin-top: 56px;
+    background-color: #abb6c0;
+    padding: 2rem 0;
+}
+
+
+.heroSection-Container {
     display: flex;
-    flex-direction: column;
-    padding: 0 10%;
-  }
+    justify-content: center;
+    align-items: center;
 }
-.hero__visual{
-  flex: 1;
-  padding: 0px 5%;
+
+
+.gssoc-logo {
+    height: 14px;
+    width: 17px;
 }
+
+.gssocContainer {
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    justify-content: center;
+    border-radius: 36px;
+    padding: 3px 0;
+    color: rgb(158, 145, 145);
+    background: #e0ecfa;
+    margin: 1rem 0;
+}
+
+.gssocContainer p {
+    margin-bottom: 0;
+    display: inline-block;
+    font-size: 12px;
+    color: #81a6d3;
+}
+
+.shinning-effect {
+    mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/450% 100%;
+    animation: shiningEff 2.5s infinite;
+}
+
+@keyframes shiningEff {
+    100% {
+        mask-position: left;
+    }
+}
+
+
+.heroDescription {
+    margin-bottom: 1.2rem;
+}
+
+.heroSection-Left h1 {
+    color: black;
+    font-size: 58px;
+    font-weight: 900;
+    margin: 1rem 0;
+}
+
+.blueCol {
+    color: #2563eb;
+
+}
+
+.heroSection-Left p {
+    color: #7e7f88;
+    text-align: justify;
+    font-size: 14px;
+    hyphens: auto;
+}
+
+.ctaBtn-Container {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+    gap: 10px;
+}
+
+.heroSectionBtn {
+    text-align: center;
+    padding: 7px 60px !important;
+    border-radius: 40px !important;
+    background: #2563eb !important;
+    color: white !important;
+    transition: all 0.2s ease-in-out;
+}
+
+.heroSectionBtn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #0b5ed7;
+}
+
+.heroSectionBtn i {
+    font-size: 14px;
+    margin-right: 5px;
+}
+
+/* ================== Hero Styles End Here ================== */
+
+
+/* ================== Challenge Styles Start Here ================== */
+#challengeSection {
+    padding: 2rem 0;
+}
+
+.challengeContainer .card {
+    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px;
+    margin: 15px 0;
+}
+
+.challengeContainer .card:hover {
+    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.challengeContainer .card:hover {
+    transform: translateY(-2px);
+
+}
+
+.card-TopContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card-Header {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 0;
+}
+
+.card-Level {
+    margin-bottom: 0;
+    font-size: 12px;
+    padding: 4px 25px;
+    border-radius: 17px;
+    background: #d5edda;
+    color: #1a7071;
+    font-weight: 700;
+}
+
+.medium-Col {
+    background-color: #fff3cd;
+    color: #a88825;
+}
+
+.hard-Col {
+    background-color: #f8d7da;
+    color: #7d1c1c;
+}
+
+.card-Participate {
+    font-size: 13px;
+    color: #8b8b8b;
+    margin-bottom: 8px;
+    margin-top: 1px;
+    opacity: 0.9;
+}
+
+.card-Text {
+    font-size: 14px;
+    opacity: 0.8;
+    text-align: justify;
+    hyphens: auto;
+}
+
+
+
+.card-CTAButton {
+    display: flex;
+    align-items: center;
+    justify-content: end;
+
+}
+
+.card-Btn {
+    text-decoration: none;
+    font-size: 13px;
+    padding: 8px 36px;
+    border-radius: 5px;
+    background-color: #2563eb;
+    color: white;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    font-weight: 700;
+}
+
+.card-Btn:hover {
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+    background-color: #0b5ed7;
+}
+
+/* ================== Challenge Styles End Here ================== */
+
+
+/* ================== Leaderboard Styles Starts Here ================== */
+#leaderboardSection {
+    padding: 2rem 0;
+    background-color: #f8fafc;
+}
+
+.owl-carousel .card {
+    border: none;
+    background: transparent;
+
+}
+
+
+.secHeader {
+    text-align: center;
+    font-size: 2rem;
+    font-weight: 600;
+}
+
+.secHeader span {
+    color: #2563eb;
+}
+
+.leaderboard-Para {
+    text-align: center;
+    opacity: 0.8;
+}
+
+
+.leaderboard-Img {
+    width: 100px !important;
+    border: 5px solid #e0ecfa;
+    border-radius: 100%;
+}
+
+.userName {
+    opacity: 0.9;
+    font-weight: 700;
+}
+
+.leaderBoard-userContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.leaderBoard-Container {
+    text-align: center;
+}
+
+.leaderBoard-Container h5 {
+    font-size: 24px;
+    margin: 1rem 0;
+
+}
+
+.leaderboradUser-RankContainer {
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+.leaderboradUser-RankContainer p {
+    margin-bottom: 0;
+    padding: 10px 30px;
+    border-radius: 10px;
+    background: #0000ff;
+    color: white;
+    font-weight: 700;
+    border: none;
+    font-size: 13px;
+
+}
+
+.rankPosition {
+    padding: 10px 40px !important;
+}
+
+.rankPoints {
+    background-color: skyblue !important;
+    color: darkblue !important;
+    transition: all 0.3s ease-in-out;
+    cursor: pointer;
+}
+
+.rankPoints:hover {
+    background-color: #0000ff !important;
+    color: white !important;
+}
+
+.leaderBoard-Container:hover .leaderboard-Img,
+.leaderBoard-Container:hover .rankPoints,
+.leaderBoard-Container:hover .rankPosition {
+    mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right / 450% 100%;
+    -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right / 450% 100%;
+    animation: rankList 2.5s infinite;
+    -webkit-animation: rankList 2.5s infinite;
+}
+
+@keyframes rankList {
+    100% {
+        mask-position: left;
+        -webkit-mask-position: left;
+    }
+}
+
+/* ================== Leaderboard Styles End Here ================== */
+
+
+/* ================== About Styles Start Here ================== */
+#aboutSection {
+    padding: 2rem 0;
+}
+
+.aboutContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.aboutContainer .col-10 {
+    opacity: 0.8;
+    text-align: center;
+}
+
+.aboutCTA-Btn {
+    text-decoration: none;
+    padding: 10px 50px;
+    border-radius: 10px;
+    background: #d5edda;
+    color: #1a7071;
+    font-weight: 700;
+    display: inline-block;
+    margin-top: 1.5rem;
+}
+
+/* ================== About Styles End Here ================== */
+
+
+/* ================== Footer Styles Start Here ================== */
+footer {
+    padding-top: 2rem;
+    background-color: #6a6d70;
+}
+
+footer .row {
+    display: flex;
+    align-items: start;
+    justify-content: space-evenly;
+}
+
+.footer-About h4 {
+    font-size: 2.1rem;
+    font-weight: bolder;
+    color: #353943;
+}
+
+.footer-About h4 span {
+    color: black;
+}
+
+.footer-About p {
+    opacity: 0.8;
+}
+
+.footer-ImpLinks h4 {
+    font-weight: 600;
+}
+
+.footer-ImpLinks ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-ImpLinks ul li {
+    margin: 10px 0;
+    transition: all 0.2s ease-in-out;
+    opacity: 0.8;
+}
+
+.footer-ImpLinks ul li:hover {
+    transform: translateX(5px);
+    opacity: 1;
+}
+
+.footer-ImpLinks ul li a {
+    text-decoration: none;
+    color: black;
+}
+
+.footerNote {
+    text-align: center;
+    margin-bottom: 0;
+    padding-bottom: 1rem;
+}
+
+/* ================== Footer Styles End Here ================== */
+
+/* ================== Media queries start here for home screen and carousel buttons ================== */
+
+@media (max-width: 992px) {
+    .heroSectionBtn {
+        padding: 4px 40px !important;
+    }
+
+
+}
+
+@media (max-width: 576px) {
+
+    .rankPosition,
+    .rankPoints {
+        padding: 4px 30px !important;
+    }
+}
+
+/* ================== Media queries end here for home screen and carousel buttons ================== */
