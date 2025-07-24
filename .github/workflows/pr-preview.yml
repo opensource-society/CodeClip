@@ -10,16 +10,17 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
       pages: write
+      id-token: write
 
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
           ref: ${{ github.event.pull_request.head.sha }}
-          fetch-depth: 1
+          fetch-depth: 0
 
       - name: Copy files to preview folder
         run: |
@@ -31,20 +32,13 @@ jobs:
         uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
+          publish_dir: ./preview
           publish_branch: gh-pages
-          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          keep_files: false # Clean up old files to avoid bloat
+          destination_dir: pr-preview
+          keep_files: true
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
-
-      - name: Get GitHub Pages URL
-        id: pages
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const response = await github.rest.repos.getPages({ owner: context.repo.owner, repo: context.repo.repo });
-            return response.data.html_url;
+          force_orphan: true
 
       - name: Comment PR with preview URL
         uses: marocchino/sticky-pull-request-comment@v2
@@ -52,4 +46,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           header: preview-url
           message: |
-            🚀 PR Preview: ${{ steps.pages.outputs.result }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+            🚀 **PR Preview Deployed!** 
+
+            📱 **Preview URL:** https://${{ github.repository_owner }}.github.io/${{ github.event.repository.name }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+
+            ✨ Your changes are now live! Click the link above to test your CodeClip enhancements.
