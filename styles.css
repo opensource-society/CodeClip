@@ -402,7 +402,7 @@ body {
   }
   .hero__visual {
     margin: 0 auto;
-
+  }}
 /* Content Section - Fixed for proper centering */
 .content {
   max-width: 1024px;
@@ -695,5 +695,61 @@ a {
 #navid {
   background-color: skyblue;
 }
-  }
+
+.footer {
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  padding: 40px 0 20px;
+  font-family: 'Inter', sans-serif;
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
+}
+
+.footer__section {
+  flex: 1 1 200px;
+}
+
+.footer__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
+}
+
+.footer__text {
+  font-size: 0.95rem;
+  color: #ccc;
+}
+
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__list li {
+  margin-bottom: 0.4rem;
+}
+
+.footer__list a {
+  text-decoration: none;
+  color: #cccccc;
+  transition: color 0.3s ease;
+}
+
+.footer__list a:hover {
+  color: #ffffff;
+}
+
+.footer__bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  border-top: 1px solid #222;
+  padding-top: 10px;
 }
