@@ -129,3 +129,31 @@ document.addEventListener('DOMContentLoaded', () => {
   // Initial render of all challenges
   applyFilters();
 });
+
+//Copy button
+const copyBtns = document.querySelectorAll('.copy-button');
+
+copyBtns.forEach(btn => {
+  btn.setAttribute('tabindex', '0'); // Make it keyboard-focusable
+
+  btn.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      btn.click(); // Trigger the action
+    }
+  });
+});
+
+document.querySelectorAll('.copy-button').forEach(button => {
+  button.setAttribute('tabindex', '0'); // Now can be focused with Tab
+});
+
+document.querySelectorAll('.copy-button').forEach(button => {
+  button.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter' || e.key === ' ') {
+      e.preventDefault();
+      button.click(); // Simulates mouse click
+    }
+  });
+});
+

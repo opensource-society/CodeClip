@@ -8,7 +8,7 @@
     --bg-color: #121212;
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
-  }
+  } 
   
   body {
     background-color: var(--bg-color);
@@ -36,8 +36,58 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  #theme-toggle:hover {
+  /* #theme-toggle:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+  } */
+
+  #theme-toggle:focus {
+  outline: 2px dashed #FFD700;
+  outline-offset: 3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --header-bg: #1e1e1e;
   }
+
+  /* --- NAVIGATION --- */
+
+/* Mobile-first: hide nav list */
+.nav__list {
+  display: none;
+  flex-direction: column;
+  gap: 1rem;
+  position: absolute;
+  top: 60px; /* adjust if needed */
+  right: 20px;
+  background-color: var(--card-bg);
+  padding: 1rem;
+  border-radius: 8px;
+  box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+  z-index: 10;
+}
+
+/* Show when open */
+.nav__list.open {
+  display: flex;
+}
+
+/* Desktop view */
+@media (min-width: 768px) {
+  .nav__list {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    box-shadow: none;
+  }
+
+  #navToggle {
+    display: none;
+  }
+
+}
+
   
