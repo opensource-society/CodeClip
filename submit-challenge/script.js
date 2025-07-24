@@ -33,3 +33,26 @@ form.addEventListener('submit', (e) => {
     <p><strong>Sample Solution:</strong><br><pre>${solution}</pre></p>
   `;
 });
+function sendMessage() {
+    const input = document.getElementById("user-input");
+    const message = input.value.trim();
+    if (!message) return;
+
+    appendMessage("user", message);
+    input.value = "";
+    
+    // Simulate AI reply (you can replace this with API call)
+    setTimeout(() => {
+      const botReply = "You said: " + message;
+      appendMessage("bot", botReply);
+    }, 500);
+  }
+
+  function appendMessage(sender, text) {
+    const chatBox = document.getElementById("chat-box");
+    const msg = document.createElement("div");
+    msg.className = "chat-message " + sender;
+    msg.textContent = text;
+    chatBox.appendChild(msg);
+    chatBox.scrollTop = chatBox.scrollHeight;
+  }
