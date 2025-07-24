@@ -32,6 +32,8 @@ form.addEventListener('submit', (e) => {
     <p><strong>Test Cases:</strong><ul>${testCases.map(tc => `<li>${tc}</li>`).join('')}</ul></p>
     <p><strong>Sample Solution:</strong><br><pre>${solution}</pre></p>
   `;
+  });
+
   function sendMessage() {
     const input = document.getElementById("user-input");
     const message = input.value.trim();
@@ -55,4 +57,4 @@ form.addEventListener('submit', (e) => {
     chatBox.appendChild(msg);
     chatBox.scrollTop = chatBox.scrollHeight;
   }
-});
+  
