@@ -41,7 +41,7 @@ jobs:
       - name: Copy files to preview folder
         run: |
           mkdir -p preview/pr-${{ github.event.pull_request.number }}
-          cp -r ./dist/* preview/pr-${{ github.event.pull_request.number }}/ || cp -r ./* preview/pr-${{ github.event.pull_request.number }}/
+          cp -r ./*.html ./styles ./assets preview/pr-${{ github.event.pull_request.number }}/ || echo "Copy fallback"
         # Copies from `dist` if a build step exists, otherwise copies all files (excluding .git, .github)
 
       - name: Deploy to GitHub Pages
