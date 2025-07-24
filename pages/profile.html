@@ -44,11 +44,21 @@
   <!-- Main Content -->
   <main>
 
+    <!-- Profile Stats and leader board section-->
+
+    <!-- leaderboard section -->
+<div id="leaderboard"></div>
+<div id="offline-banner" style="display:none; background-color: #ffcc00; color: #000; padding: 10px; text-align: center; font-weight: bold;">
+  ⚠️ You are currently offline. Displaying cached leaderboard data.
+</div>
 
 
+<!-- Profile stats -->
+=======
     <!-- Profile Stats -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
     <section class="profile-stats">
       <div class="profile-header">
         <div class="icon-box">
@@ -344,6 +354,412 @@
   <!-- Scripts -->
   <script type="module" src="../scripts/app.js"></script>
   <script type="module" src="../scripts/theme.js"></script>
-  
+
+
+  <!--Leader board script initialised using firebase-->
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy,
+    enableIndexedDbPersistence
+  } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6QxjKkA9-SttEB-ZOAvoOCMX3AbAJq_g",
+    authDomain: "codeclip-open2.firebaseapp.com",
+    projectId: "codeclip-open2",
+    storageBucket: "codeclip-open2.appspot.com",  
+    messagingSenderId: "365736988332",
+    appId: "1:365736988332:web:f79a5663e3631a33d99909",
+    measurementId: "G-8E9EHXGVES"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ✅ Enable offline persistence
+  enableIndexedDbPersistence(db)
+    .then(() => {
+      console.log("✅ Offline persistence enabled");
+    })
+    .catch((err) => {
+      if (err.code === 'failed-precondition') {
+        console.warn("⚠️ Offline persistence failed: Multiple tabs open");
+      } else if (err.code === 'unimplemented') {
+        console.warn("⚠️ Offline persistence not supported by this browser");
+      } else {
+        console.error("❌ Unexpected error enabling offline persistence:", err);
+      }
+    });
+
+  // 🔁 Display leaderboard from array of data
+  function displayLeaderboard(dataArray) {
+    const container = document.getElementById("leaderboard");
+
+    if (!dataArray || dataArray.length === 0) {
+      container.innerHTML = "<p>No leaderboard data yet.</p>";
+      return;
+    }
+
+    let rank = 1;
+    let html = `
+      <table>
+        <thead>
+          <tr><th>Rank</th><th>Username</th><th>Score</th></tr>
+        </thead>
+        <tbody>
+    `;
+
+    dataArray.forEach(({ username, score }) => {
+      const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
+      html += `
+        <tr>
+          <td>${medal}</td>
+          <td>${username}</td>
+          <td>${score}</td>
+        </tr>`;
+      rank++;
+    });
+
+    html += "</tbody></table>";
+    container.innerHTML = html;
+  }
+
+  // 📦 Fetch leaderboard from Firestore
+  async function fetchLeaderboardData() {
+    const leaderboardRef = collection(db, "leaderboard");
+    const q = query(leaderboardRef, orderBy("score", "desc"));
+    const querySnapshot = await getDocs(q);
+
+    const data = [];
+    querySnapshot.forEach((doc) => {
+      const { username, score } = doc.data();
+      data.push({ username, score });
+    });
+
+    return data;
+  }
+
+  // ⚠️ Show offline banner
+  function showOfflineBanner() {
+    const banner = document.getElementById("offline-banner");
+    if (banner) {
+      banner.style.display = "block";
+    }
+  }
+
+  // 🌐 Setup online/offline detection and render leaderboard
+  document.addEventListener("DOMContentLoaded", async () => {
+    const banner = document.getElementById("offline-banner");
+
+    // Online/offline listeners
+    if (!navigator.onLine) showOfflineBanner();
+    window.addEventListener("offline", showOfflineBanner);
+    window.addEventListener("online", () => {
+      if (banner) banner.style.display = "none";
+    });
+
+    try {
+      const data = await fetchLeaderboardData();
+      localStorage.setItem('cachedLeaderboard', JSON.stringify(data));
+      displayLeaderboard(data);
+    } catch (err) {
+      console.error("❌ Error fetching leaderboard:", err);
+      const cached = localStorage.getItem('cachedLeaderboard');
+      if (cached) {
+        showOfflineBanner();
+        displayLeaderboard(JSON.parse(cached));
+      } else {
+        document.getElementById("leaderboard").innerHTML = "<p>Failed to load leaderboard.</p>";
+      }
+    }
+  });
+</script>
+
+
+  <style>
+    /* Additional styles for profile page */
+    .profile-hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 4rem 0;
+      text-align: center;
+    }
+
+    .profile-avatar {
+      margin-bottom: 2rem;
+    }
+
+    .avatar-circle {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      background: rgba(255, 255, 255, 0.2);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto;
+      border: 4px solid rgba(255, 255, 255, 0.3);
+    }
+
+    .avatar-initial {
+      font-size: 3rem;
+      font-weight: 700;
+      color: white;
+      color: #000;
+    }
+
+    .profile-hero__title {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      color: white;
+    }
+
+    .profile-hero__subtitle {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      color: #000;
+    }
+
+    .profile-stats {
+      background: var(--bg-secondary);
+      padding: 3rem 0;
+    }
+
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 2rem;
+    }
+
+    .stat-card {
+      background: white;
+      color: #000;
+      padding: 2rem;
+      border-radius: 1rem;
+      text-align: center;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .stat-number {
+      font-size: 2.5rem;
+      font-weight: 700;
+      color: var(--primary-color);
+      margin-bottom: 0.5rem;
+    }
+
+    .stat-label {
+      color: var(--text-muted);
+      font-weight: 500;
+    }
+
+    .profile-content {
+      padding: 4rem 0;
+    }
+
+    .profile-grid {
+      display: grid;
+      gap: 3rem;
+    }
+
+    .profile-section {
+      background: white;
+      color: #000;
+      padding: 2rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    }
+
+    .section-title {
+      font-size: 1.5rem;
+      font-weight: 600;
+      margin-bottom: 2rem;
+      color: var(--text-dark);
+    }
+
+    .progress-cards {
+      display: grid;
+      gap: 2rem;
+    }
+
+    .progress-card {
+      background: var(--bg-light);
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+    }
+
+    .progress-card h3 {
+      margin-bottom: 1.5rem;
+      color: var(--text-dark);
+    }
+
+    .difficulty-progress {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+    }
+
+    .difficulty-item {
+      display: grid;
+      grid-template-columns: 80px 1fr 60px;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .difficulty-label {
+      font-weight: 500;
+      font-size: 0.9rem;
+    }
+
+    .progress-bar {
+      height: 8px;
+      background: #e9ecef;
+      color: #000;
+      border-radius: 4px;
+      overflow: hidden;
+    }
+
+    .progress-fill {
+      height: 100%;
+      background: var(--primary-color);
+      transition: width 0.3s ease;
+    }
+
+    .progress-text {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+      text-align: right;
+    }
+
+    .category-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .category-tag {
+      padding: 0.5rem 1rem;
+      border-radius: 1rem;
+      font-size: 0.875rem;
+      font-weight: 500;
+      background: #e9ecef;
+      color: #000;
+      color: var(--text-muted);
+    }
+
+    .category-tag.completed {
+      background: var(--primary-color);
+      color: white;
+      color: #000;
+    }
+
+    .category-tag.in-progress {
+      background: #ffc107;
+      color: #856404;
+    }
+
+    .activity-list {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+    }
+
+    .activity-item {
+      display: flex;
+      align-items: flex-start;
+      gap: 1rem;
+      padding: 1rem;
+      background: var(--bg-light);
+      border-radius: 0.75rem;
+    }
+
+    .activity-icon {
+      font-size: 1.5rem;
+      margin-top: 0.25rem;
+    }
+
+    .activity-content h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .activity-content p {
+      color: var(--text-muted);
+      margin-bottom: 0.5rem;
+    }
+
+    .activity-time {
+      font-size: 0.875rem;
+      color: var(--text-muted);
+    }
+
+    .achievements-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .achievement-card {
+      padding: 1.5rem;
+      border-radius: 0.75rem;
+      text-align: center;
+      background: var(--bg-light);
+      opacity: 0.5;
+      transition: opacity 0.3s ease;
+    }
+
+    .achievement-card.earned {
+      opacity: 1;
+      background: white;
+      color: #000;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    }
+
+    .achievement-icon {
+      font-size: 2rem;
+      margin-bottom: 1rem;
+    }
+
+    .achievement-card h4 {
+      margin-bottom: 0.5rem;
+      color: var(--text-dark);
+    }
+
+    .achievement-card p {
+      color: var(--text-muted);
+      font-size: 0.875rem;
+    }
+
+    @media (max-width: 768px) {
+      .profile-hero__title {
+        font-size: 2rem;
+      }
+
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .difficulty-item {
+        grid-template-columns: 1fr;
+        gap: 0.5rem;
+      }
+
+      .achievements-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+  </style>
+=======
+
 </body>
 </html>

@@ -434,6 +434,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #000;
   cursor: pointer;
 }
 
@@ -633,6 +634,7 @@ a {
     top: 60px;
     right: 0;
     background: #ffffff;
+    color: #000;
     flex-direction: column;
     width: 200px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -692,7 +694,50 @@ a {
     justify-items: center;
   }
 }
+
+
+/* Leaderboard Styles */
+=======
 #navid {
   background-color: skyblue;
 }
 
+
+    #leaderboard-container {
+      width: 90%;
+      margin: 30px auto;
+    }
+#leaderboard {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  background-color: #f9f9f9;
+  margin-bottom: 1rem;
+}
+
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background-color: #fff;
+  color: #000;
+  width: 100%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #41464b;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
