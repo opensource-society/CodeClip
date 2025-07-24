@@ -21,28 +21,11 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
 
-      - name: Set up Node.js
-        if: env.BUILD_REQUIRED == 'true'  # Set this environment variable in the repository settings if a build is needed
-        uses: actions/setup-node@v4
-        with:
-          node-version: '20'
-          cache: 'npm'  # Cache dependencies for faster builds
-
-      - name: Install dependencies
-        if: env.BUILD_REQUIRED == 'true'
-        run: npm ci  # Use npm ci for reproducible builds
-
-      - name: Build project
-        if: env.BUILD_REQUIRED == 'true'
-        run: npm run build  # Replace with your build command (e.g., `hugo`, `vite build`, etc.)
-        env:
-          BASE_URL: /${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/
-
       - name: Copy files to preview folder
         run: |
           mkdir -p preview/pr-${{ github.event.pull_request.number }}
-          cp -r ./dist/* preview/pr-${{ github.event.pull_request.number }}/ || cp -r ./* preview/pr-${{ github.event.pull_request.number }}/
-        # Copies from `dist` if a build step exists, otherwise copies all files (excluding .git, .github)
+          rsync -av --exclude='.git' --exclude='.github' --exclude='preview' ./ preview/pr-${{ github.event.pull_request.number }}/
+        # Static site - copy all files except git directories and preview folder
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -51,9 +34,9 @@ jobs:
           publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
           destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          keep_files: false  # Clean up old files to avoid bloat
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          keep_files: false # Clean up old files to avoid bloat
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
 
       - name: Get GitHub Pages URL
         id: pages
