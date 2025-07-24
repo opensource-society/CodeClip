@@ -367,3 +367,57 @@ input:focus, textarea:focus, select:focus, button:focus {
   0% { transform: translate(-50%, -50%) rotate(0deg); }
   100% { transform: translate(-50%, -50%) rotate(360deg); }
 }
+.chatbox-container {
+      position: fixed;
+      bottom: 40px;
+      right: 40px;
+      width: 300px;
+      max-height: 400px;
+      background-color: #f1f1f1;
+      border: 1px solid #ccc;
+      border-radius: 10px;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .chatbox-header {
+      background-color:#059669;
+      color: white;
+      padding: 10px;
+      font-size: 16px;
+      text-align: center;
+    }
+
+    .chatbox-messages {
+      flex: 1;
+      padding: 10px;
+      overflow-y: auto;
+      font-size: 14px;
+    }
+
+    .chatbox-input {
+      display: flex;
+      border-top: 1px solid #ccc;
+    }
+
+    .chatbox-input input[type="text"] {
+      flex: 1;
+      padding: 10px;
+      border: none;
+      border-right: 1px solid #ccc;
+      outline: none;
+    }
+
+    .chatbox-input button {
+      padding: 10px 15px;
+      border: none;
+      background-color: #059669;
+      color: white;
+      cursor: pointer;
+    }
+
+    .chatbox-input button:hover {
+      background-color: #059669;
+    }
