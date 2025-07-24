@@ -156,6 +156,8 @@ body {
 .nav__link:hover,
 .nav__link:focus {
   color: #2563eb;
+  transform: translateY(-5px) scale(1.05);
+  text-shadow: 0 2px 5px rgba(0,0,0,0.2);
 }
 
 .nav__link::after {
