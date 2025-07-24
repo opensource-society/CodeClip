@@ -8,7 +8,7 @@
     --bg-color: #121212;
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
-  }
+  } 
   
   body {
     background-color: var(--bg-color);
@@ -36,10 +36,22 @@
     transition: background-color 0.3s ease, color 0.3s ease;
   }
   
-  #theme-toggle:hover {
+  /* #theme-toggle:hover {
     background-color: var(--text-color);
     color: var(--bg-color);
+  } */
+
+  #theme-toggle:focus {
+  outline: 2px dashed #FFD700;
+  outline-offset: 3px;
+}
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-color: #121212;
+    --text-color: #f1f1f1;
+    --header-bg: #1e1e1e;
   }
+
   /* --- NAVIGATION --- */
 
 /* Mobile-first: hide nav list */
@@ -75,6 +87,7 @@
   #navToggle {
     display: none;
   }
+
 }
 
   

@@ -1,7 +1,7 @@
 name: PR Preview to GitHub Pages
 
 on:
-  pull_request_target:
+  pull_request:
     types: [opened, synchronize, reopened]
     branches:
       - main
@@ -10,26 +10,39 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     permissions:
-      contents: write
+      contents: read
       pull-requests: write
+      pages: write
 
     steps:
       - name: Checkout PR branch
         uses: actions/checkout@v4
         with:
-          repository: ${{ github.event.pull_request.head.repo.full_name }}
-          ref: ${{ github.event.pull_request.head.ref }}
+          ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
 
       - name: Set up Node.js
+        if: env.BUILD_REQUIRED == 'true'  # Set this environment variable in the repository settings if a build is needed
         uses: actions/setup-node@v4
         with:
           node-version: '20'
+          cache: 'npm'  # Cache dependencies for faster builds
+
+      - name: Install dependencies
+        if: env.BUILD_REQUIRED == 'true'
+        run: npm ci  # Use npm ci for reproducible builds
+
+      - name: Build project
+        if: env.BUILD_REQUIRED == 'true'
+        run: npm run build  # Replace with your build command (e.g., `hugo`, `vite build`, etc.)
+        env:
+          BASE_URL: /${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/
 
       - name: Copy files to preview folder
         run: |
           mkdir -p preview/pr-${{ github.event.pull_request.number }}
-          rsync -av --exclude 'preview' --exclude '.git' --exclude '.github' ./ preview/pr-${{ github.event.pull_request.number }}/
+          cp -r ./dist/* preview/pr-${{ github.event.pull_request.number }}/ || cp -r ./* preview/pr-${{ github.event.pull_request.number }}/
+        # Copies from `dist` if a build step exists, otherwise copies all files (excluding .git, .github)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
@@ -38,7 +51,17 @@ jobs:
           publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
           destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          keep_files: true
+          keep_files: false  # Clean up old files to avoid bloat
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Get GitHub Pages URL
+        id: pages
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const response = await github.rest.repos.getPages({ owner: context.repo.owner, repo: context.repo.repo });
+            return response.data.html_url;
 
       - name: Comment PR with preview URL
         uses: marocchino/sticky-pull-request-comment@v2
@@ -46,4 +69,4 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           header: preview-url
           message: |
-            🚀 PR Preview: https://opensource-society.github.io/CodeClip/pr-preview/pr-${{ github.event.pull_request.number }}/index.html
+            🚀 PR Preview: ${{ steps.pages.outputs.result }}/pr-preview/pr-${{ github.event.pull_request.number }}/

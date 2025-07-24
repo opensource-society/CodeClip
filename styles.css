@@ -52,7 +52,8 @@ body {
 
 [data-theme="dark"] .hero__subtitle,
 [data-theme="dark"] .hero__description {
-  color: #cccccc;
+  /* color: #cccccc;   Black is not enough contrast*/
+  color: #f5f5f5;
 }
 
 [data-theme="dark"] .hero__title .highlight {

@@ -12,7 +12,8 @@
   --easy-bg: #d4edda;
   --easy-text: #155724;
   --medium-bg: #fff3cd;
-  --medium-text: #856404;
+  /* --medium-text: #856404; very low contrast on light background */
+  --medium-text: #5a4501; /* darker brown for better contrast */
   --hard-bg: #f8d7da;
   --hard-text: #721c24;
 }
@@ -64,7 +65,8 @@ body {
 
 .page-header p {
   font-size: 1.1rem;
-  color: #718096; /* Neutral color, works in both themes */
+  /* color: #718096; Neutral color, works in both themes */
+  color: #4a5568; /* more readable */
 }
 
 
@@ -148,7 +150,11 @@ body {
 }
 
 .badge.easy { background-color: var(--easy-bg); color: var(--easy-text); }
-.badge.medium { background-color: var(--medium-bg); color: var(--medium-text); }
+/* .badge.medium { background-color: var(--medium-bg); color: var(--medium-text); } */
+.badge.medium {
+  background-color: #ffe69b;
+  color: #5a4501;
+}
 .badge.hard { background-color: var(--hard-bg); color: var(--hard-text); }
 
 .card-body {
@@ -157,7 +163,8 @@ body {
 
 .language {
   font-size: 0.9rem;
-  color: #718096;
+  /* color: #718096; Fail on white */
+  color: #4a5568; /* darker grey for better contrast */
 }
 
 .card-footer {
@@ -193,6 +200,12 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 50%;
 }
+
+
+.copy-button:focus {
+  outline: 2px solid #00f;
+  outline-offset: 2px;
+
 /* Hamburger CSS */
 .hamburger {
   display: block;
@@ -201,4 +214,5 @@ body {
   background: var(--text-color);
   margin: 4px 0;
   transition: 0.4s;
+
 }
