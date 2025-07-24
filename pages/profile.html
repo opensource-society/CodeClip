@@ -54,7 +54,16 @@
       </div>
     </section>
 
-    <!-- Profile Stats -->
+    <!-- Profile Stats and leader board section-->
+
+    <!-- leaderboard section -->
+<div id="leaderboard"></div>
+<div id="offline-banner" style="display:none; background-color: #ffcc00; color: #000; padding: 10px; text-align: center; font-weight: bold;">
+  ⚠️ You are currently offline. Displaying cached leaderboard data.
+</div>
+
+
+<!-- Profile stats -->
     <section class="profile-stats">
       <div class="container">
         <div class="stats-grid">
@@ -236,7 +245,110 @@
   <!-- Scripts -->
   <script type="module" src="../scripts/app.js"></script>
   <script type="module" src="../scripts/theme.js"></script>
-  
+
+  <!--Leader board script initialised using firebase-->
+
+<script type="module">
+  import { initializeApp } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-app.js";
+  import {
+    getFirestore,
+    collection,
+    getDocs,
+    query,
+    orderBy,
+    enableIndexedDbPersistence
+  } from "https://www.gstatic.com/firebasejs/12.0.0/firebase-firestore.js";
+
+  const firebaseConfig = {
+    apiKey: "AIzaSyB6QxjKkA9-SttEB-ZOAvoOCMX3AbAJq_g",
+    authDomain: "codeclip-open2.firebaseapp.com",
+    projectId: "codeclip-open2",
+    storageBucket: "codeclip-open2.appspot.com",  // ✅ Typo fixed
+    messagingSenderId: "365736988332",
+    appId: "1:365736988332:web:f79a5663e3631a33d99909",
+    measurementId: "G-8E9EHXGVES"
+  };
+
+  const app = initializeApp(firebaseConfig);
+  const db = getFirestore(app);
+
+  // ✅ Enable offline persistence
+  enableIndexedDbPersistence(db)
+    .then(() => {
+      console.log("✅ Offline persistence enabled");
+    })
+    .catch((err) => {
+      if (err.code === 'failed-precondition') {
+        console.warn("⚠️ Offline persistence failed: Multiple tabs open");
+      } else if (err.code === 'unimplemented') {
+        console.warn("⚠️ Offline persistence not supported by this browser");
+      } else {
+        console.error("❌ Unexpected error enabling offline persistence:", err);
+      }
+    });
+
+  async function renderLeaderboard() {
+    const leaderboardRef = collection(db, "leaderboard");
+    const q = query(leaderboardRef, orderBy("score", "desc"));
+    const container = document.getElementById("leaderboard");
+
+    try {
+      const querySnapshot = await getDocs(q);
+
+      if (querySnapshot.empty) {
+        container.innerHTML = "<p>No leaderboard data yet.</p>";
+        return;
+      }
+
+      let rank = 1;
+      let html = `
+        <table>
+          <thead>
+            <tr><th>Rank</th><th>Username</th><th>Score</th></tr>
+          </thead>
+          <tbody>
+      `;
+
+      querySnapshot.forEach((doc) => {
+        const { username, score } = doc.data();
+        const medal = rank === 1 ? "🥇" : rank === 2 ? "🥈" : rank === 3 ? "🥉" : rank;
+        html += `
+          <tr>
+            <td>${medal}</td>
+            <td>${username}</td>
+            <td>${score}</td>
+          </tr>`;
+        rank++;
+      });
+
+      html += "</tbody></table>";
+      container.innerHTML = html;
+    } catch (err) {
+      console.error("❌ Error fetching leaderboard:", err);
+      container.innerHTML = "<p>Failed to load leaderboard.</p>";
+    }
+  }
+
+  document.addEventListener("DOMContentLoaded", renderLeaderboard);
+
+  // Show offline banner if offline
+window.addEventListener('load', () => {
+  const banner = document.getElementById("offline-banner");
+  if (!navigator.onLine) {
+    banner.style.display = "block";
+  }
+
+  window.addEventListener("offline", () => {
+    banner.style.display = "block";
+  });
+
+  window.addEventListener("online", () => {
+    banner.style.display = "none";
+  });
+});
+
+</script>
+
   <style>
     /* Additional styles for profile page */
     .profile-hero {
@@ -265,6 +377,7 @@
       font-size: 3rem;
       font-weight: 700;
       color: white;
+      color: #000;
     }
 
     .profile-hero__title {
@@ -277,6 +390,7 @@
     .profile-hero__subtitle {
       font-size: 1.2rem;
       color: rgba(255, 255, 255, 0.9);
+      color: #000;
     }
 
     .profile-stats {
@@ -292,6 +406,7 @@
 
     .stat-card {
       background: white;
+      color: #000;
       padding: 2rem;
       border-radius: 1rem;
       text-align: center;
@@ -326,6 +441,7 @@
 
     .profile-section {
       background: white;
+      color: #000;
       padding: 2rem;
       border-radius: 1rem;
       box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -375,6 +491,7 @@
     .progress-bar {
       height: 8px;
       background: #e9ecef;
+      color: #000;
       border-radius: 4px;
       overflow: hidden;
     }
@@ -403,12 +520,14 @@
       font-size: 0.875rem;
       font-weight: 500;
       background: #e9ecef;
+      color: #000;
       color: var(--text-muted);
     }
 
     .category-tag.completed {
       background: var(--primary-color);
       color: white;
+      color: #000;
     }
 
     .category-tag.in-progress {
@@ -469,6 +588,7 @@
     .achievement-card.earned {
       opacity: 1;
       background: white;
+      color: #000;
       box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     }
 

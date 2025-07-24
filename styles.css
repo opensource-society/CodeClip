@@ -417,6 +417,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  color: #000;
   cursor: pointer;
 }
 
@@ -613,6 +614,7 @@ a {
     top: 60px;
     right: 0;
     background: #ffffff;
+    color: #000;
     flex-direction: column;
     width: 200px;
     box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
@@ -670,4 +672,39 @@ a {
   }
 }
 
+/* Leaderboard Styles */
 
+    #leaderboard-container {
+      width: 90%;
+      margin: 30px auto;
+    }
+    #leaderboard {
+  width: 90%;
+  margin: auto;
+  max-width: 800px;
+}
+
+table {
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 0 10px rgba(255, 255, 255, 0.2);
+  background-color: #fff;
+  color: #000;
+  width: 90%;
+}
+
+th, td {
+  padding: 15px;
+  text-align: center;
+}
+
+th {
+  background-color: #41464b;
+  border: none;
+  color: #fff;
+  font-size: 1.1em;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #fafafa;
+}
