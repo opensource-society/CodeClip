@@ -371,7 +371,7 @@ input:focus, textarea:focus, select:focus, button:focus {
       width: 400px;
       /* margin: 50px auto; */
       position: fixed;
-      bottom: 20px;
+      bottom: 90px;
       right: 20px;
       background: white;
       border-radius: 10px;
@@ -410,4 +410,21 @@ input:focus, textarea:focus, select:focus, button:focus {
       color: white;
       border: none;
       cursor: pointer;
+    }
+    .to-top {
+      position: fixed;
+      bottom: 20px;
+      right: 150px;
+       background-color: #059669;
+      color: white;
+      z-index: 10;
+      padding: 10px 15px;
+      border-radius: 5px;
+      text-decoration: none;
+      font-weight: bold;
+    
+    }
+
+    .to-top:hover {
+      background-color: green;
     }
