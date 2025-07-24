@@ -14,6 +14,10 @@
     <!-- Styles -->
     <link rel="stylesheet" href="../styles.css">
     <link rel="stylesheet" href="/styles/profile.css">
+    
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <link rel="stylesheet" href="../styles/progress-dashboard.css">
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
@@ -104,6 +108,10 @@
           </div>
         </div>
       </div>
+      <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+      <!-- Progress Dashboard Container - will be populated by JavaScript -->
+      <div id="progress-dashboard-container"></div>
+      <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
       <!-- Completed Challenges -->
       <div class="challenges-section">
         <div class="challenges-section-header">
@@ -345,5 +353,9 @@
   <script type="module" src="../scripts/app.js"></script>
   <script type="module" src="../scripts/theme.js"></script>
   
+  <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+  <script type="module" src="../scripts/progress-dashboard.js"></script>
+  <script type="module" src="../scripts/demo-data.js"></script>
+  <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 </body>
 </html>
