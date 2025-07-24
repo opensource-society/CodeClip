@@ -47,7 +47,7 @@ jobs:
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          personal_token: ${{ secrets.DEPLOY_PATj }}
+          personal_token: ${{ secrets.DEPLOY_PAT }}
           external_repository: Mastercoder0406/CodeClip
           publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
