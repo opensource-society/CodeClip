@@ -17,6 +17,7 @@
     
     <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
     <link rel="stylesheet" href="../styles/progress-dashboard.css">
+    <link rel="stylesheet" href="../styles/profile-enhanced.css">
     <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
@@ -109,8 +110,187 @@
         </div>
       </div>
       <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
-      <!-- Progress Dashboard Container - will be populated by JavaScript -->
-      <div id="progress-dashboard-container"></div>
+      <!-- Enhanced Progress Dashboard Container -->
+      <div id="progress-dashboard-container" class="enhanced-dashboard-wrapper">
+        <!-- Dashboard will be populated by JavaScript with enhanced styling -->
+        <div class="dashboard-loading">
+          <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+          </div>
+          <p class="loading-text">Loading your progress dashboard...</p>
+        </div>
+      </div>
+      
+      <!-- Professional Dashboard Layout -->
+      <div class="dashboard-extras">
+        <div class="dashboard-main-grid">
+          <!-- Unified Skills & Actions Panel -->
+          <div class="unified-skills-actions-panel">
+            <div class="panel-header">
+              <h3 class="panel-main-title">
+                <i class="fas fa-dashboard"></i>
+                Skills & Quick Actions
+              </h3>
+              <p class="panel-subtitle">Monitor your progress and take action</p>
+            </div>
+        
+            <div class="unified-content">
+              <!-- Skills Section -->
+              <div class="skills-section-unified">
+                <div class="section-header">
+                  <h4 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    Your Skills Progress
+                  </h4>
+                </div>
+                <div class="skills-grid-compact">
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">JavaScript</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">85%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">Python</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 78%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">78%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-react"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">React</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 92%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">92%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">Algorithms</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 67%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">67%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Quick Actions Section -->
+              <div class="actions-section-unified">
+                <div class="section-header">
+                  <h4 class="section-title">
+                    <i class="fas fa-bolt"></i>
+                    Quick Actions
+                  </h4>
+                </div>
+                <div class="action-buttons-compact">
+                  <button class="action-btn-compact action-btn-compact--primary">
+                    <i class="fas fa-play"></i>
+                    <span>Start Challenge</span>
+                  </button>
+                  <button class="action-btn-compact action-btn-compact--secondary">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>View Analytics</span>
+                  </button>
+                  <button class="action-btn-compact action-btn-compact--accent">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Share Progress</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity Timeline -->
+          <div class="activity-timeline-panel">
+            <div class="panel-header">
+              <h3 class="panel-main-title">
+                <i class="fas fa-history"></i>
+                Recent Activity
+              </h3>
+              <p class="panel-subtitle">Track your latest achievements</p>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--success">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Completed "Two Sum" Challenge</h4>
+                  <p>Solved in 12 minutes with optimal solution</p>
+                  <span class="timeline-time">2 hours ago</span>
+                </div>
+              </div>
+        
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--warning">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Achievement Unlocked: Problem Solver</h4>
+                  <p>Completed 10 challenges milestone</p>
+                  <span class="timeline-time">1 day ago</span>
+                </div>
+              </div>
+        
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--info">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Streak Extended to 15 Days</h4>
+                  <p>Keep up the consistent practice!</p>
+                  <span class="timeline-time">1 day ago</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--primary">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Started "Binary Tree" Challenge</h4>
+                  <p>Medium difficulty algorithm problem</p>
+                  <span class="timeline-time">3 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
       <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
       <!-- Completed Challenges -->
       <div class="challenges-section">
@@ -219,8 +399,8 @@
           </div>
         </div>
       </div>
-<!--progress bars-->
-        <div class="charts-container">
+<!--progress bars - HIDDEN TO AVOID CONFLICT WITH ENHANCED DASHBOARD-->
+<div class="charts-container" style="display: none;">
           <div class="chart-box">
             <div class="progress-header">
               <div class="progress-icon-box">
