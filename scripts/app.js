@@ -52,9 +52,10 @@ class Router {
       '/': 'index.html',
       '/home': 'index.html',
       '/challenges': 'pages/challenges.html',
-      '/editor': 'editor.html',
+      '/editor': 'pages/editor.html',
       '/profile': 'pages/profile.html',
-      '/coding': 'editor.html'
+      '/about': 'pages/about.html',
+      '/coding': 'pages/editor.html'
     };
     this.init();
   }
@@ -108,9 +109,11 @@ class Router {
       case 'challenges.html':
         return 'pages/challenges.html';
       case 'editor.html':
-        return 'editor.html';
+        return 'pages/editor.html';
       case 'profile.html':
         return 'pages/profile.html';
+      case 'about.html':
+        return 'pages/about.html';
       default:
         return 'index.html';
     }
