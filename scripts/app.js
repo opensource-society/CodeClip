@@ -60,6 +60,10 @@ if (form) {
 }
 
 import { saveUserProgress, loadUserProgress, saveCompletedChallenges, loadCompletedChallenges } from './data.js';
+
+console.log('app script loaded');
+const form = document.getElementById('challengeForm');
+const preview = document.getElementById('preview');
 =======
 
   form.addEventListener('submit', function (e) {
