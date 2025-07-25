@@ -20,17 +20,13 @@ $(document).ready(function () {
     }
 });
 
-const toggler = document.querySelector('.navbar-toggler');
+
 const hamburgerIcon = toggler.querySelector('.hamburger-icon');
 const closeIcon = toggler.querySelector('.close-icon');
 const navbarCollapse = document.getElementById('navbarSupportedContent');
 
-    // Toggle icons on click
-toggler.addEventListener('click', () => {
-        const isCollapsed = navbarCollapse.classList.contains('show');
-        hamburgerIcon.classList.toggle('d-none', isCollapsed);
-        closeIcon.classList.toggle('d-none', !isCollapsed);
-    });
+ 
+
 
     // Hide cross icon when menu closes (on clicking nav-link or outside)
 navbarCollapse.addEventListener('hidden.bs.collapse', () => {
