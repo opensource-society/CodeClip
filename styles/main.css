@@ -26,17 +26,26 @@ html {
     color: #2563eb;
 }
 
-.navbar-brand:hover {
-    color: #2563eb;
-}
+/* .navbar-brand:hover {
+    color: #5a6f9b;
+} */
 
 .navbar-brand span {
     color: #1e2c44;
 }
 
+.navbar-nav{
+    display: flex;
+    gap: 1vw;
+}
 .nav-item a {
     color: #1e2c44;
     font-size: 20px;
+
+}
+.nav-item a:hover{
+    color: #2563eb;
+    scale: 1.02;
 
 }
 
