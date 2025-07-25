@@ -32,8 +32,14 @@
     <link rel="stylesheet" href="styles/owl.theme.default.min.css">
     <link rel="stylesheet" href="styles/fontawesome.css">
 
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="styles/main.css">
+    <!-- Styles -->
+    <!-- If you want to keep all challenge styles in one file, use: -->
+    <link rel="stylesheet" href="./styles.css">
+    <!-- Or, if you want to scope styles to just challenges, use: -->
+    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <link rel="stylesheet" href="./styles/progress-dashboard.css">
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 </head>
 
 <body>
@@ -425,14 +431,22 @@
 
     <!-- ================================ Footer Section End Here ================================ -->
 
-    <!-- ================ Vendor JS ================  -->
-    <script src="scripts/jquery.min.js"></script>
-    <script src="scripts/owl.carousel.min.js"></script>
-    <script src="scripts/bootstrap.bundle.min.js"></script>
-
-    <!-- ================ Custom JS ================  -->
-    <script src="scripts/main.js"></script>
-
-</body>
+    <!-- Scripts begin -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Code", "Challenge", "Conquer"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+    <script type="module" src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/theme.js"></script>
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <script type="module" src="./scripts/progress-dashboard.js"></script>
+    <script type="module" src="./scripts/demo-data.js"></script>
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+    <!-- Scripts end -->
 
 </html>
