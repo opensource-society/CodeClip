@@ -40,14 +40,15 @@
           text-decoration: none;
           color:white
         }
-        .grid-container {
+        .grid-container { /* Updated: Grid layout to adjust the alignment of the buttons */
             display: grid;
             /* Updated: Horizontal split with three columns */
             grid-template-rows: 1fr;
             grid-template-columns: 1fr 8px 2fr 8px 1fr; /* Columns for panels and grabbers */
-            height: 100vh;
+            height: calc(100vh - 80px); /* Full height minus header */
             width: 100vw;
             overflow: hidden; /* Prevent content overflow during resize */
+            padding-top: 0.5rem; /* Add small top padding */
         }
 
         .panel {
@@ -136,7 +137,7 @@
     <div id="grid-container" class="grid-container">
       
         <!-- Left Panel: Challenge Description -->
-        <div id="left-panel" class="panel m-2">
+        <div id="left-panel" class="panel m-2">  <!-- Changed margins to fix allignment -->
             <h2 class="h4 mb-3 text-challenge-heading">Challenge Description</h2>
             <div class="text-secondary flex-grow-1">
                 <p>Welcome to the coding challenge! Your task is to implement a function that reverses a given string. Consider edge cases such as empty strings or strings with special characters.</p>
@@ -163,16 +164,16 @@ function reverseString(str) {
         <div id="grabber-1" class="grabber"></div>
 
         <!-- Center Panel: Code Editor -->
-        <div id="center-panel" class="panel m-2 pb-5">
-            <h2 class="h4 mb-3 text-code-heading">Code Editor</h2>
-            <pre id="code-editor" class="bg-dark p-3 rounded flex-grow-1 overflow-auto"><code class="language-javascript" contenteditable="true">
+        <div id="center-panel" class="panel m-2"> <!-- Changed margins to fix allignment -->
+            <h2 class="h4 mb-1 text-code-heading">Code Editor</h2>
+            <pre id="code-editor" class="bg-dark p-3 rounded flex-grow-1 overflow-auto "><code class="language-javascript" contenteditable="true">
 function reverseString(str) {
 // Your code here
 return str.split('').reverse().join('');
 }
             </code></pre>
 
-            <button class="btn btn-custom-blue mt-4 px-4 py-2 rounded shadow">
+            <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
                 Run Code
             </button>
         </div>
@@ -181,9 +182,9 @@ return str.split('').reverse().join('');
         <div id="grabber-2" class="grabber"></div>
 
         <!-- Right Panel: Output/Test Results -->
-        <div id="right-panel" class="panel m-2 pb-5">
+        <div id="right-panel" class="panel m-2">
             <h2 class="h4 mb-3 text-output-heading">Output / Test Results</h2>
-            <div id="output-area" class="flex-grow-1 p-3 rounded overflow-auto">
+            <div id="output-area" class="flex-grow-1 p-3 rounded overflow-auto mb-2">
                 <p class="text-muted">Click "Run Code" to see output here.</p>
                 <pre class="mt-2 text-sm"><code>
 // Example Test Case:
@@ -197,7 +198,7 @@ return str.split('').reverse().join('');
 // Actual Output: (will appear here)
                 </code></pre>
             </div>
-            <button class="btn btn-custom-orange mt-4 px-4 py-2 rounded shadow">
+            <button class="btn btn-custom-orange mt-2 px-4 py-2 rounded shadow">
                 Run Tests
             </button>
         </div>
