@@ -1,95 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head><meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClip</title>
+    <link rel="stylesheet" href="styles.css" />
+    <script
+      src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
+      crossorigin="anonymous"
+    ></script>
+
+    <!-- this is my first contribution to CodeClip at gssoc 25 program -->
+  </head>
+
+  <body>
+    <!-- Header Component Start -->
+    <header class="header">
+      <div class="container header__container">
+        <div class="header__logo">
+          <span class="logo-text">CodeClip</span>
+        </div>
+        <nav class="header__nav" id="navMenu">
+          <ul class="nav__list">
+            <li><a href="#" class="nav__link">Home</a></li>
+            <li><a href="#" class="nav__link">Challenges</a></li>
+            <li><a href="#" class="nav__link">Editor</a></li>
+            <li><a href="#" class="nav__link">Profile</a></li>
+          </ul>
+        </nav>
+        <button
+          class="header__toggle"
+          id="navToggle"
+          aria-label="Open navigation menu"
+        >
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+          <span class="hamburger"></span>
+        </button>
+      </div>
+    </header>
+    <!-- Header Component End -->
+  </body>
+  <script src="scripts/app.js"></script>
 
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeClip</title>
-
-    <link rel="stylesheet" href="styles.css">
-
-    <script
-  src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
-  crossorigin="anonymous"
-></script>
-
-<!-- this is my first contribution to CodeClip at gssoc 25 program -->
+    <link rel="stylesheet" href="./styles/themes.css" />
   </head>
-
   <body>
-    <!-- Header Component Start -->
-<header class="header">
-  <div class="container header__container">
-    <div class="header__logo">
-      <span class="logo-text">CodeClip</span>
-    </div>
-    <nav class="header__nav" id="navMenu">
-      <ul class="nav__list">
-        <li><a href="#" class="nav__link">Home</a></li>
-        <li><a href="#" class="nav__link">Challenges</a></li>
-        <li><a href="#" class="nav__link">Editor</a></li>
-        <li><a href="#" class="nav__link">Profile</a></li>
-      </ul>
-    </nav>
-    <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-      <span class="hamburger"></span>
-      <span class="hamburger"></span>
-      <span class="hamburger"></span>
-    </button>
-  </div>
-</header>
-<!-- Header Component End -->
+    <main>
+      <h1>Hello from CodeClip!</h1>
+    </main>
+
+    <!-- Text-based Theme Toggle -->
+    <p id="theme-toggle">Toggle Theme</p>
+
+    <!-- for feature section -->
+    <section class="features">
+      <h2>CodeClip Features</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <img src="icons/grunge-style-bank-vault.jpg" alt="Challenge Vault" />
+          <h3>Challenge Vault</h3>
+        </div>
+
+        <div class="feature-card">
+          <img src="icons/codeeditor.jpg" alt="Code Editor" />
+          <h3>Code Editor</h3>
+        </div>
+
+        <div class="feature-card">
+          <img src="icons/sharing.jpg" alt="Solution Sharing" />
+          <h3>Solution Sharing</h3>
+        </div>
+
+        <div class="feature-card">
+          <img
+            src="icons/programming-background-with-html.jpg"
+            alt="AI Recommendations"
+          />
+          <h3>AI Recommendations</h3>
+        </div>
+      </div>
+    </section>
+
+    <script src="./scripts/theme.js"></script>
   </body>
-<script src="scripts/app.js"></script>
-
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>CodeClip</title>
-  <link rel="stylesheet" href="./styles/themes.css" />
-</head>
-<body>
-  <main>
-    <h1>Hello from CodeClip!</h1>
-  </main>
-
-  <!-- Text-based Theme Toggle -->
-  <p id="theme-toggle">Toggle Theme</p>
-
-
-
-
-<!-- for feature section -->
- <section class="features">
-  <h2>CodeClip Features</h2>
-  <div class="features-grid">
-    <div class="feature-card">
-      <img src="icons/grunge-style-bank-vault.jpg" alt="Challenge Vault">
-      <h3>Challenge Vault</h3>
-      
-    </div>
-
-    <div class="feature-card">
-      <img src="icons/codeeditor.jpg" alt="Code Editor">
-      <h3>Code Editor</h3>
-      
-    </div>
-
-    <div class="feature-card">
-      <img src="icons/sharing.jpg" alt="Solution Sharing">
-      <h3>Solution Sharing</h3>
-      
-    </div>
-
-    <div class="feature-card">
-      <img src="icons/programming-background-with-html.jpg" alt="AI Recommendations">
-      <h3>AI Recommendations</h3>
-     
-    </div>
-  </div>
-</section>
-
-  <script src="./scripts/theme.js"></script>
-</body>
-
 </html>
