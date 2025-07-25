@@ -9,6 +9,9 @@
     <!-- ================ Favicon ================  -->
     <link rel="shortcut icon" href="assets/favicon/codeClip-favicon.png" type="image/png">
 
+    <!--================= Font Awesome for Favicon icons =====================-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
     <!-- ================ Meta Tags ================  -->
     <meta name="keywords"
         content="CodeClip, Coding Challenges, Open Source, GSSoC, Frontend Practice, JavaScript Logics, GitHub Contributions, Web Development Tasks">
@@ -34,6 +37,9 @@
 
     <!-- ================ Custom CSS ================  -->
     <link rel="stylesheet" href="styles/main.css">
+
+    
+
 </head>
 
 <body>
@@ -63,6 +69,11 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#aboutSection">About</a>
                         </li>
+
+                        <li class="Login nav-item" style="background-color: #007bff; color: white; padding: 3px 8px; border-radius: 8px; cursor: pointer; margin-left: 15px; max-width: fit-content; ">
+                            <a class="nav-link" style="color: white; font-size: large; text-decoration: none;" href="../pages/Login.html">Login</a>
+                        </li>
+
                     </ul>
 
                 </div>
@@ -74,6 +85,9 @@
 
     <!-- ================================ Hero Section Start Here ================================ -->
     <section id="homeSection" class="heroSection">
+        <div style="margin-left: 110px; margin-top: 20px; font-weight: bold; font-size:xx-large;">
+            Practice Coding. Ace Interviews. Get Hired!
+        </div>
         <div class="container">
             <div class="row heroSection-Container">
                 <div class="col-12 col-md-6 heroSection-Left">
@@ -370,58 +384,108 @@
     <!-- ================================ Leaderboard Section End Here ================================ -->
 
 
-    <!-- ================================ About Section Start Here ================================ -->
-    <section id="aboutSection">
-        <div class="container">
-            <h3 class="secHeader"><span>About</span> CodeClip</h3>
-            <div class="row aboutContainer">
-                <div class="col-10">
-                    <p>CodeClip is a lightweight, browser-based platform designed to make coding practice simple,
-                        accessible, and collaborative. Whether you're a beginner looking to sharpen your skills or an
-                        aspiring contributor to open source, CodeClip offers a clean interface where you can solve
-                        real-world coding challenges, run your code live, and share your solutions — all without any
-                        setup, Built entirely with HTML, CSS, and JavaScript, CodeClip is not just a tool but a learning
-                        experience itself. It’s an open-source project proudly developed as part of <strong>GirlScript
-                            Summer of Code (GSSoC)</strong>, aimed at empowering developers through hands-on practice
-                        and meaningful contributions.</p>
+<!-- ================================ About Section Start Here ================================ -->
+<section id="aboutSection">
+    <div class="container">
+        <h3 class="secHeader"><span>About</span> CodeClip</h3>
+        <div class="row aboutContainer">
+            <div class="col-10">
+                <p>CodeClip is a lightweight, browser-based platform designed to make coding practice simple,
+                    accessible, and collaborative. Whether you're a beginner looking to sharpen your skills or an
+                    aspiring contributor to open source, CodeClip offers a clean interface where you can solve
+                    real-world coding challenges, run your code live, and share your solutions — all without any
+                    setup. Built entirely with HTML, CSS, and JavaScript, CodeClip is not just a tool but a learning
+                    experience itself. It’s an open-source project proudly developed as part of <strong>GirlScript
+                        Summer of Code (GSSoC)</strong>, aimed at empowering developers through hands-on practice
+                    and meaningful contributions.</p>
 
-                    <p class="ctaBtn"><a href="https://github.com/opensource-society/CodeClip" target="_blank"
-                            title="click here to start contributing in CodeClip Project under GSSoC'25"
-                            class="aboutCTA-Btn">Contribute to CodeClip</a></p>
-
+                <!-- Features Section -->
+                <div style="margin-top: 30px;">
+                    <h4 style="font-weight: bold; margin-bottom: 15px;">Why Use This Platform?</h4>
+                    <div style="display: flex; flex-wrap: wrap; gap: 20px;">
+                        <div style="flex: 1 1 250px; background-color: #f4f4f4; padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <h5 style="margin-bottom: 10px;">✅ Real-time Code Editor</h5>
+                            <p style="margin: 0;">Write and execute code directly in your browser without setup.</p>
+                        </div>
+                        <div style="flex: 1 1 250px; background-color: #f4f4f4; padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <h5 style="margin-bottom: 10px;">✅ Instant Feedback</h5>
+                            <p style="margin: 0;">Test case results appear instantly to speed up your learning.</p>
+                        </div>
+                        <div style="flex: 1 1 250px; background-color: #f4f4f4; padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <h5 style="margin-bottom: 10px;">✅ Discussion & Hints</h5>
+                            <p style="margin: 0;">Collaborate, seek help, and learn better with community support.</p>
+                        </div>
+                        <div style="flex: 1 1 250px; background-color: #f4f4f4; padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <h5 style="margin-bottom: 10px;">✅ Profiles & Rankings</h5>
+                            <p style="margin: 0;">Track your progress, compete, and earn a spot on the leaderboard.</p>
+                        </div>
+                        <div style="flex: 1 1 250px; background-color: #f4f4f4; padding: 15px 20px; border-radius: 12px; box-shadow: 0 2px 6px rgba(0,0,0,0.1);">
+                            <h5 style="margin-bottom: 10px;">✅ Light / Dark Mode</h5>
+                            <p style="margin: 0;">Switch between light and dark themes to suit your style.</p>
+                        </div>
+                    </div>
                 </div>
+
+                <p class="ctaBtn" style="margin-top: 25px;">
+                    <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                        title="click here to start contributing in CodeClip Project under GSSoC'25"
+                        class="aboutCTA-Btn">Contribute to CodeClip</a>
+                </p>
             </div>
         </div>
-    </section>
-    <!-- ================================ About Section End Here ================================ -->
+    </div>
+</section>
+<!-- ================================ About Section End Here ================================ -->
+
 
 
     <!-- ================================ Footer Section Start Here ================================ -->
     <footer>
-        <div class="container">
-            <div class="row">
-                <div class="col-10 col-md-5 footer-About">
-                    <!-- codeclip -->
-                    <h4>Code<span>Clip</span></h4>
-                    <p>CodeClip is a open source project under GirlScript Summer of Code (GSSoC) 2025 to open for
-                        contribution</p>
-
-                </div>
-                <div class="col-10 col-md-5 footer-ImpLinks">
-                    <!-- important links -->
-                    <h4>Important Links</h4>
-                    <ul>
-                        <li><a href="#homeSection">Home</a></li>
-                        <li><a href="#challengeSection">Challenge</a></li>
-                        <li><a href="#leaderboardSection">Leaderboard</a></li>
-                        <li><a href="#aboutSection">About</a></li>
-                    </ul>
-                </div>
+    <div class="container">
+        <div class="row">
+            <!-- About Section -->
+            <div class="col-10 col-md-4 footer-About">
+                <h4>Code<span>Clip</span></h4>
+                <p>CodeClip is an open source project under GirlScript Summer of Code (GSSoC) 2025 open for contribution.</p>
             </div>
-            <hr>
-            <p class="footerNote">&copy; CodeClip | Open Source Project 2025</p>
+
+            <!-- Important Links -->
+            <div class="col-10 col-md-3 footer-ImpLinks">
+                <h4>Important Links</h4>
+                <ul>
+                    <li><a href="#homeSection">Home</a></li>
+                    <li><a href="#challengeSection">Challenge</a></li>
+                    <li><a href="#leaderboardSection">Leaderboard</a></li>
+                    <li><a href="#aboutSection">About</a></li>
+                </ul>
+            </div>
+
+            <!-- Contact -->
+            <div class="col-10 col-md-2 footer-Contact">
+                <h4 style="font-weight: bold;">Contact</h4>
+                <p><a href="mailto:codeclip@example.com">codeclip@example.com</a></p>
+            </div>
+
+            <!-- Socials -->
+            <div class="col-10 col-md-3 footer-Socials">
+                <h4 style="font-weight: bold;">Follow Us</h4>
+                <a href="https://github.com/yourrepo" target="_blank"><i class="fab fa-github" style="margin-right: 15px;"></i></a>
+                <a href="https://twitter.com/yourprofile" target="_blank"><i class="fab fa-twitter" style="margin-right: 15px;"></i></a>
+                <a href="https://linkedin.com/in/yourprofile" target="_blank"><i class="fab fa-linkedin" style="margin-right: 15px;"></i></a>
+            </div>
         </div>
-    </footer>
+
+        <div class="row mt-3">
+            <!-- Contributors Link -->
+            <div class="col-12 text-center">
+                <a style="font-size: large;" href="https://github.com/opensource-society/CodeClip"" target="_blank">View Contributors</a>
+            </div>
+        </div>
+
+        <hr>
+        <p class="footerNote text-center">&copy; CodeClip | Open Source Project 2025. All rights reserved.</p>
+    </div>
+</footer>
 
     <!-- ================================ Footer Section End Here ================================ -->
 

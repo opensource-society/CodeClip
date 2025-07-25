@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../styles.css">
+    <!-- ✅ Tailwind CSS via CDN -->
+     <script src="https://cdn.tailwindcss.com"></script>
+
+</head>
+<body>
+    <div class="bg-blue-100 min-h-screen flex items-center justify-center">
+        <div class="bg-white p-8 rounded-lg shadow-2xl w-full max-w-md h-96">
+
+            <h1 class="text-2xl text-center --text-dark font-bold mb-4">Login</h1>
+            <form id="loginForm">
+        <div class="mb-4">
+            <label for="username" class="text-black-600 font-semibold block mb-1 solid text-lg">Username:</label>
+            <input type="text" id="username" name="username" required class="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black-400">
+        </div>
+        <div class="mb-4">
+            <label for="password" class="text-black-600 font-semibold block mb-1 solid text-lg">Password:</label>
+            <input type="text" id="password" name="password" required class="border border-gray-300 rounded px-3 py-2 w-full focus:outline-none focus:ring-2 focus:ring-black-400">
+        </div>
+        <div class="flex items-center justify-center">
+        <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 mb-2">
+            Login
+        </button>
+        
+        </div>
+        <p class="flex items-center justify-center text-gray-600">
+            No account?
+            <a href="../pages/register.html" class="text-blue-500 hover:underline">Register</a>
+        </p>
+    </form>
+        </div>
+    </div>
+    <h1>Login Page</h1>
+</body>
+</html>
