@@ -34,6 +34,9 @@
 
     <!-- ================ Custom CSS ================  -->
     <link rel="stylesheet" href="styles/main.css">
+    <!-- =========== Icons  -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
 </head>
 
 <body>
@@ -50,7 +53,7 @@
                 <div class="collapse navbar-collapse" id="navbarSupportedContent">
                     <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
+                            <a class="nav-link " aria-current="page" href="#homeSection">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#challengeSection">Challenges</a>
@@ -64,6 +67,8 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contactFooter">Contact</a>
                         </li>
+                        <i class="fa-solid fa-moon custom-icon" id="theme-toggle"></i>
+                        
                     </ul>
                 </div>
             </div>
@@ -84,7 +89,7 @@
                         <p>GSSOC 2025</p>
                     </div>
 
-                    <h1>Code Run <br> <span class="blueCol">Contribute</span></h1>
+                    <h1 class="code-run">Code Run <br> <span class="blueCol">Contribute</span></h1>
                     <p class="heroDescription">CodeClip is a lightweight, browser-based platform designed to make coding
                         practice simple, accessible, and collaborative. Whether you're a beginner looking to sharpen
                         your skills or an aspiring contributor to open source, CodeClip offers a clean interface where
@@ -246,9 +251,9 @@
     <!-- ================================ Challenge Section End Here ================================ -->
 
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
-    <section id="leaderboardSection">
+    <section id="leaderboardSection" class="leaderboard-section">
         <div class="container">
-            <h3 class="secHeader"><span class="">Top Coder</span> of the Week</h3>
+            <h3 class="secHeader"><span class="top-coder">Top Coder</span> of the Week</h3>
             <p class="leaderboard-Para">Meet our top coders who accepted challenges, wrote great code, contributed to
                 open source, and stood out as the best performers of the week.</p>
             <div class="row">
@@ -402,7 +407,8 @@
             <div class="row align-items-start justify-content-between py-4">
                 <div class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
                     <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
-                    <p class="footer-desc mb-0">CodeClip is a open source project under GirlScript Summer of Code (GSSoC) 2025 to open for contribution</p>
+                    <p class="footer-desc mb-0">CodeClip is a open source project under GirlScript Summer of Code
+                        (GSSoC) 2025 to open for contribution</p>
                 </div>
                 <div class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
                     <h5 class="footer-title">Important Links</h5>
@@ -417,18 +423,22 @@
                     <h5 class="footer-title">Contact Us</h5>
                     <div class="footer-contact-row d-flex justify-content-center">
                         <div class="footer-contact-col d-flex flex-column align-items-center">
-                            <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
+                            <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
                                 <i class="fab fa-github me-2"></i> GitHub
                             </a>
-                            <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
+                            <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
                                 <i class="fab fa-discord me-2"></i> Discord
                             </a>
                         </div>
                         <div class="footer-contact-col d-flex flex-column align-items-center">
-                            <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
+                            <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px;">
                                 <i class="fab fa-linkedin me-2"></i> LinkedIn
                             </a>
-                            <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="btn btn-primary footer-contact-btn" style="max-width: 250px;">
+                            <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                                class="btn btn-primary footer-contact-btn" style="max-width: 250px;">
                                 <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
                             </a>
                         </div>
