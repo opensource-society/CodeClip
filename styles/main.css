@@ -35,10 +35,19 @@ html {
 }
 
 .nav-item a {
-    color: #1e2c44;
-    font-size: 20px;
+    color: #55565a;
+    font-size: 18px;
+    font-weight: 500;
 
 }
+.nav-item a:hover {
+    color: #2563eb;
+    transform: scale(1.1);
+    
+
+}
+
+
 
 /* ================== Navbar Styles End Here ================== */
 
