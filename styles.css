@@ -417,7 +417,7 @@ body {
 }
 
 /* Card Styles */
-.card {
+/* .card {
   width: 100%;
   max-width: 300px;
   min-width: 200px;
@@ -435,6 +435,40 @@ body {
   align-items: center;
   flex-direction: column;
   cursor: pointer;
+} */
+.card {
+  flex: 1;
+  /* width: 100%; */
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  max-width: 300px;
+  /* min-width: 200px; */
+  height: 100%;
+  min-height: 350px;
+  background-color: var(--background-color, #292929);
+  margin: 10px;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
+  border: 2px solid rgba(7, 7, 7, 0.12);
+  font-size: 16px;
+  transition: all 0.3s ease;
+  position: relative;
+  align-items: stretch;
+  cursor: pointer;
+}
+.card-body {
+  display: flex;
+  flex-direction: column;
+  flex: 1; /* Makes card-body take all available space */
+  padding: 20px;
+}
+
+.card-CTAButton {
+  margin-top: auto; /* Push the button to the bottom */
+}
+.challengeContainer > .col-md-4 {
+  display: flex;
 }
 
 [data-theme="dark"] .card {
