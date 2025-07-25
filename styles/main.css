@@ -40,7 +40,6 @@ html {
 
 }
 .nav-item:hover{
-    transform:translate(-5px);
     text-shadow:0 2px 5px rgba(0,0,0,0.2);
 }
 
