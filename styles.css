@@ -518,6 +518,7 @@ body {
 .card:hover .icon i {
   background: linear-gradient(90deg, #93C5FD, #3B82F6);
   -webkit-background-clip: text;
+  background-clip: text;
   -webkit-text-fill-color: transparent;
   opacity: 1;
   transition: all 0.3s ease;
