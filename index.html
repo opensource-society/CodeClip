@@ -1,352 +1,761 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-
-    <title>Challenges - CodeClip</title>
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Merge both font options for flexibility -->
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-
-    <!-- Styles -->
-    <!-- If you want to keep all challenge styles in one file, use: -->
-    <link rel="stylesheet" href="../styles.css">
-    <!-- Or, if you want to scope styles to just challenges, use: -->
-    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
-</head>
-<body>
-  <!-- Header Component -->
-  <header class="header" role="banner">
-    <div class="container header__container">
-      <div class="header__logo">
-        <span class="logo-text">CodeClip</span>
-      </div>
-      <nav class="header__nav" id="navMenu">
-        <ul class="nav__list">
-          <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-          <li><a href="/challenges" data-route="/challenges" class="nav__link active">Challenges</a></li>
-          <!-- Added a editor page in the website -->
-          <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
-          <li><a href="/profile" data-route="/profile" class="nav__link">Profile</a></li>
-        </ul>
-      </nav>
-      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
-        <span class="hamburger"></span>
+ <head>
+  <meta charset="utf-8"/>
+  <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+  <title>
+   CodeClip - Project Overview
+  </title>
+  <link href="styles/style.css" rel="stylesheet"/>
+ </head>
+ <body>
+  <div class="demo-container">
+   <header class="demo-header">
+    <div>
+     <div class="demo-title">
+      🪄 CodeClip
+     </div>
+     <div class="demo-subtitle">
+      Project Overview &amp; Demo
+     </div>
+    </div>
+    <div class="demo-controls">
+     <div class="page-tabs">
+      <button class="page-tab active" data-page="landing">
+       Landing
       </button>
+      <button class="page-tab" data-page="challenges">
+       Challenges
+      </button>
+      <button class="page-tab" data-page="editor">
+       Editor
+      </button>
+      <button class="page-tab" data-page="profile">
+       Profile
+      </button>
+     </div>
+     <button class="theme-toggle" id="themeToggle">
+      🌙
+     </button>
     </div>
-  </header>
-
-  <!-- Main Content -->
-  <main role="main">
-    <!-- Challenges Hero Section -->
-    <section class="challenges-hero">
-      <div class="container">
-        <div class="challenges-hero__content">
-          <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
-          </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
-        </div>
+   </header>
+   <main class="demo-content">
+    <!-- Landing Page View -->
+    <div class="page-view active" id="landing">
+     <div class="hero">
+      <h1>
+       Store, Solve &amp; Share Coding Challenges
+      </h1>
+      <p>
+       A lightweight, client-side web app for developers to practice coding challenges with an in-browser editor and execution environment.
+      </p>
+      <div class="hero-buttons">
+       <a class="btn btn-primary" href="#">
+        📚 Browse Challenges
+       </a>
+       <a class="btn btn-secondary" href="#">
+        ✏️ Start Coding
+       </a>
       </div>
-    </section>
-
-    <!-- Controls (merged from both versions) -->
-    <section class="challenges-filter">
-      <div class="container">
-        <h2 id="filters-heading">Filter Challenges</h2>
-        <section class="challenges-filter" aria-labelledby="filters-heading">
-        <div class="filter-controls">
-          <div class="filter-group">
-            <label for="difficulty-filter">Difficulty:</label>
-            <select id="difficulty-filter" class="filter-select" aria-label="Filter challenges by difficulty">
-              <option value="">All Levels</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="category-filter">Category:</label>
-            <select id="category-filter" class="filter-select" aria-label="Filter challenges by category">
-              <option value="">All Categories</option>
-              <option value="arrays">Arrays</option>
-              <option value="strings">Strings</option>
-              <option value="algorithms">Algorithms</option>
-              <option value="data-structures">Data Structures</option>
-              <option value="frontend">Frontend</option>
-              <option value="backend">Backend</option>
-              <option value="fullstack">Fullstack</option>
-            </select>
-          </div>
-          <div class="search-group">
-            <!-- <input type="text" id="search-challenges" placeholder="Search challenges..." class="search-input"> -->
-             <input type="text" id="search-challenges" placeholder="Search challenges..." class="search-input" aria-label="Search coding challenges by title or tag">
-
-          </div>
-
-        </div>
-        <nav class="header__nav" id="navMenu">
-          <ul class="nav__list">
-            <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-            <li><a href="pages/challenges.html" data-route="/challenges" class="nav__link">Challenges</a></li>
-            <li><a href="pages/editor.html" data-route="/editor" class="nav__link">Editor</a></li>
-            <li><a href="pages/profile.html" data-route="/profile" class="nav__link">Profile</a></li>
-            <li><a href="/about" data-route="/about" class="nav__link">About</a></li>
-          </ul>
-        </nav>
-        <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-          <span class="hamburger"></span>
-        </button>
+     </div>
+     <div class="features-grid">
+      <div class="feature-card">
+       <div class="feature-icon">
+        📚
+       </div>
+       <div class="feature-title">
+        Challenge Vault
+       </div>
+       <div class="feature-description">
+        Curated collection of coding challenges with difficulty levels, tags, and detailed explanations.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
       </div>
-    </header>
-    <!-- header code ends -->
-
-    <!-- Challenges Grid -->
-     <h2 id="challenge-heading">Available Coding Challenges</h2>
-    <section class="challenges-grid" aria-labelledby="challenge-heading">
-    <section class="challenges-grid">
-      <div class="container">
-        <div class="challenges-list" id="challengesList">
-          <!-- Challenge cards can be rendered here dynamically via JS -->
-          <div class="challenge-card" data-difficulty="easy" data-category="arrays">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Two Sum</h3>
-              <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
-            <p class="challenge-card__description">
-              Given an array of integers and a target sum, return indices of two numbers that add up to the target.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Arrays</span>
-              <span class="category-tag">Hash Table</span>
-            </div>
-            <div class="challenge-card__actions">
-              <!-- <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a> -->
-               <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm" aria-label="Solve challenge Two Sum">Solve Challenge</a>
-
-
-            </div>
-            <nav class="header__nav" id="navMenu">
-              <ul class="nav__list">
-                <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-                <li><a href="pages/challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
-                <li><a href="pages/editor.html" data-route="/editor" class="nav__link">Editor</a></li>
-                <li><a href="pages/profile.html" data-route="/profile" class="nav__link">Profile</a></li>
-                <li><a href="/about" data-route="/about" class="nav__link">About</a></li>
-              </ul>
-            </nav>
-            <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
-              <span class="hamburger"></span>
-              <span class="hamburger"></span>
-              <span class="hamburger"></span>
-            </button>
-          </div>
-
-
-          <div class="challenge-card" data-difficulty="medium" data-category="strings">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Longest Palindromic Substring</h3>
-              <span class="difficulty-badge difficulty-medium">Medium</span>
-            </div>
-            <p class="challenge-card__description">
-              Given a string, find the longest palindromic substring within it.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Strings</span>
-              <span class="category-tag">Dynamic Programming</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm" aria-label="Solve Challenge Longest Pallindromic Substring">Solve Challenge</a>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-difficulty="hard" data-category="algorithms">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Merge K Sorted Lists</h3>
-              <span class="difficulty-badge difficulty-hard">Hard</span>
-            </div>
-            <p class="challenge-card__description">
-              Merge k sorted linked lists and return it as one sorted list.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Linked List</span>
-              <span class="category-tag">Divide and Conquer</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm" aria-label="Solve challenge Merge K Sorted Lists">Solve Challenge</a>
-            </div>
-          </div>
-
-          <div class="challenge-card" data-difficulty="easy" data-category="data-structures">
-            <div class="challenge-card__header">
-              <h3 class="challenge-card__title">Valid Parentheses</h3>
-              <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
-            <p class="challenge-card__description">
-              Determine if the input string has valid parentheses.
-            </p>
-            <div class="challenge-card__meta">
-              <span class="category-tag">Stack</span>
-              <span class="category-tag">Strings</span>
-            </div>
-            <div class="challenge-card__actions">
-              <a href="/editor" data-route="/editor" class="btn btn-primary btn-sm" aria-label="Solve challenge valid Parentheses">Solve Challenge</a>
-
-      
-      <div class="content">
-        <div class="card">
-          <a href="#" target="_blank">
-            <div class="icon"><i class="material-icons md-36" alt="Challenge vault icon">security</i></div>
-            <p class="title">Challenge Vault</p>
-            <p class="text">All your challenges in one place — track, review, repeat.</p>
-          </a>
-        </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        ⚡
+       </div>
+       <div class="feature-title">
+        In-Browser Execution
+       </div>
+       <div class="feature-description">
+        Run JavaScript code directly in the browser with real-time console output and error handling.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
       </div>
-    </main>
-    <!-- main code ends -->
-
-
-    <!-- footer code starts -->
-    <footer class="footer" role="contentinfo">
-      <div class="container">
-        <div class="footer__content">
-          <div class="footer__section">
-            <h4>CodeClip</h4>
-            <p>Master coding challenges in your browser</p>
-          </div>
-          <div class="footer__section">
-            <h4>Quick Links</h4>
-            <ul>
-              <li><a href="/" data-route="/">Home</a></li>
-              <li><a href="pages/challenges.html" data-route="/challenges">Challenges</a></li>
-              <li><a href="pages/editor.html" data-route="/editor">Editor</a></li>
-            </ul>
-          </div>
-          <div class="footer__section">
-            <h4>Community</h4>
-            <ul>
-              <li><a href="https://github.com/opensource-society/CodeClip">GitHub</a></li>
-              <li><a href="#">Discord</a></li>
-              <li><a href="#">Twitter</a></li>
-            </ul>
-
-        </header>
-        <!-- header code ends -->
-
-        <!-- main code starts -->
-        <main>
-          <div class="container">
-            <div class="hero__content">
-              <div class="hero__text">
-                <p class="hero__subtitle">🚀 An Interactive Coding Platform</p>
-                <h1 class="hero__title">
-                  <span id="element"></span>
-                </h1>
-                <p class="hero__description">
-                  Discover CodeClip, an exhilarating, lightweight web app that
-                  empowers developers to master coding challenges right in their
-                  browser! Whether you're tackling algorithms, debugging scripts,
-                  or showcasing your solutions to the open-source community,
-                  CodeClip offers a seamless, interactive experience with a sleek
-                  interface, real-time feedback, and effortless sharing via unique
-                  URLs or GitHub Gists.
-                </p>
-                <div class="hero__cta">
-                  <a href="/coding" class="btn btn-primary">🎯 Start Coding</a>
-                  <a href="pages/challenges.html" class="btn btn-secondary">📚 View Challenges</a>
-                </div>
-              </div>
-              <div class="hero__visual">
-                <div class="code-window">
-                  <div class="code-window__header">
-                    <span class="circle red"></span>
-                    <span class="circle yellow"></span>
-                    <span class="circle green"></span>
-                  </div>
-                  <div class="code-content">
-                    <div class="code-line"><span class="comment">// Welcome to CodeClip</span></div>
-                    <div class="code-line"><span class="keyword">function</span> <span class="string">solveProblem</span>() {</div>
-                    <div class="code-line">  <span class="keyword">return</span> <span class="string">'Success!'</span>;</div>
-                    <div class="code-line">}</div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          
-          <div class="content">
-            <div class="card">
-              <a href="#" target="_blank">
-                <div class="icon"><i class="material-icons md-36" alt="Challenge vault icon">security</i></div>
-                <p class="title">Challenge Vault</p>
-                <p class="text">All your challenges in one place — track, review, repeat.</p>
-              </a>
-            </div>
-
-          </div>
-        </main>
-        <!-- main code ends -->
-
-        <!-- footer code starts -->
-        <footer class="footer">
-          <div class="container">
-            <div class="footer__content">
-              <div class="footer__section">
-                <h4>CodeClip</h4>
-                <p>Master coding challenges in your browser</p>
-              </div>
-              <div class="footer__section">
-                <h4>Quick Links</h4>
-                <ul>
-                  <li><a href="/" data-route="/">Home</a></li>
-                  <li><a href="pages/challenges.html" data-route="/challenges">Challenges</a></li>
-                  <li><a href="pages/editor.html" data-route="/editor">Editor</a></li>
-                </ul>
-              </div>
-              <div class="footer__section">
-                <h4>Community</h4>
-                <ul>
-                  <li><a href="https://github.com/opensource-society/CodeClip">GitHub</a></li>
-                  <li><a href="#">Discord</a></li>
-                  <li><a href="#">Twitter</a></li>
-                </ul>
-              </div>
-            </div>
-            <div class="footer__bottom">
-              <p>&copy; 2024 CodeClip. All rights reserved.</p>
-            </div>
-          </div>
-        </footer>
-        <!-- footer code ends -->
+      <div class="feature-card">
+       <div class="feature-icon">
+        ✏️
+       </div>
+       <div class="feature-title">
+        Code Editor
+       </div>
+       <div class="feature-description">
+        CodeMirror-based editor with syntax highlighting, auto-completion, and multiple themes.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        🤖
+       </div>
+       <div class="feature-title">
+        AI Recommendations
+       </div>
+       <div class="feature-description">
+        Smart challenge suggestions based on your progress, preferences, and skill level.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        🏆
+       </div>
+       <div class="feature-title">
+        Progress Tracking
+       </div>
+       <div class="feature-description">
+        Track your coding journey with badges, streaks, achievements, and detailed statistics.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        🌙
+       </div>
+       <div class="feature-title">
+        Dark Mode
+       </div>
+       <div class="feature-description">
+        Toggle between light and dark themes for comfortable coding in any environment.
+       </div>
+       <span class="feature-status">
+        Planned
+       </span>
+      </div>
+     </div>
     </div>
-
-
-    <!-- Scripts begin -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
-    <script>
-      var typed = new Typed("#element", {
-        strings: ["Code", "Challenge", "Conquer"],
-        typeSpeed: 50,
-        loop: true,
-      });
-    </script>
-    <script type="module" src="./scripts/data.js"></script>
-    <script type="module" src="./scripts/app.js"></script>
-    <script type="module" src="./scripts/theme.js"></script>
-    <!-- Scripts end -->
-
-  </body>
+    <!-- Challenges Page View -->
+    <div class="page-view" id="challenges">
+     <div class="challenges-header">
+      <h1>
+       Coding Challenges
+      </h1>
+      <p>
+       Practice your skills with our curated collection of coding problems
+      </p>
+     </div>
+     <div class="challenges-filters">
+      <input class="filter-input" placeholder="🔍 Search challenges..." style="flex: 1; min-width: 300px;" type="text"/>
+      <select class="filter-input">
+       <option>
+        All Difficulties
+       </option>
+       <option>
+        Easy
+       </option>
+       <option>
+        Medium
+       </option>
+       <option>
+        Hard
+       </option>
+      </select>
+      <select class="filter-input">
+       <option>
+        All Categories
+       </option>
+       <option>
+        Arrays
+       </option>
+       <option>
+        Strings
+       </option>
+       <option>
+        Dynamic Programming
+       </option>
+       <option>
+        Trees
+       </option>
+      </select>
+     </div>
+     <div class="challenges-grid">
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Two Sum
+        </div>
+        <span class="difficulty-badge difficulty-easy">
+         Easy
+        </span>
+       </div>
+       <div class="challenge-description">
+        Given an array of integers and a target sum, return indices of two numbers that add up to the target.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         array
+        </span>
+        <span class="tag">
+         hash-table
+        </span>
+       </div>
+      </div>
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Longest Substring
+        </div>
+        <span class="difficulty-badge difficulty-medium">
+         Medium
+        </span>
+       </div>
+       <div class="challenge-description">
+        Find the length of the longest substring without repeating characters.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         string
+        </span>
+        <span class="tag">
+         sliding-window
+        </span>
+       </div>
+      </div>
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Binary Tree Traversal
+        </div>
+        <span class="difficulty-badge difficulty-hard">
+         Hard
+        </span>
+       </div>
+       <div class="challenge-description">
+        Implement inorder, preorder, and postorder traversal of a binary tree.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         tree
+        </span>
+        <span class="tag">
+         recursion
+        </span>
+        <span class="tag">
+         dfs
+        </span>
+       </div>
+      </div>
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Valid Parentheses
+        </div>
+        <span class="difficulty-badge difficulty-easy">
+         Easy
+        </span>
+       </div>
+       <div class="challenge-description">
+        Determine if the input string has valid parentheses combinations.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         stack
+        </span>
+        <span class="tag">
+         string
+        </span>
+       </div>
+      </div>
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Merge Sort
+        </div>
+        <span class="difficulty-badge difficulty-medium">
+         Medium
+        </span>
+       </div>
+       <div class="challenge-description">
+        Implement the merge sort algorithm to sort an array of integers.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         sorting
+        </span>
+        <span class="tag">
+         divide-conquer
+        </span>
+       </div>
+      </div>
+      <div class="challenge-card">
+       <div class="challenge-header">
+        <div class="challenge-title">
+         Dynamic Programming
+        </div>
+        <span class="difficulty-badge difficulty-hard">
+         Hard
+        </span>
+       </div>
+       <div class="challenge-description">
+        Solve the classic coin change problem using dynamic programming.
+       </div>
+       <div class="challenge-tags">
+        <span class="tag">
+         dp
+        </span>
+        <span class="tag">
+         optimization
+        </span>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Editor Page View -->
+    <div class="page-view" id="editor">
+     <h1 style="margin-bottom: 2rem;">
+      Code Editor
+     </h1>
+     <div class="editor-layout">
+      <div class="editor-panel">
+       <div class="panel-header">
+        Challenge: Two Sum
+       </div>
+       <div class="panel-content">
+        <p>
+         <strong>
+          Difficulty:
+         </strong>
+         <span class="difficulty-badge difficulty-easy">
+          Easy
+         </span>
+        </p>
+        <br/>
+        <p>
+         <strong>
+          Description:
+         </strong>
+        </p>
+        <p>
+         Given an array of integers
+         <code>
+          nums
+         </code>
+         and an integer
+         <code>
+          target
+         </code>
+         , return indices of the two numbers such that they add up to
+         <code>
+          target
+         </code>
+         .
+        </p>
+        <br/>
+        <p>
+         <strong>
+          Example:
+         </strong>
+        </p>
+        <div class="code-editor">
+         <div class="code-editor-content">
+          Input: nums = [2,7,11,15], target = 9
+          <br/>
+          Output: [0,1]
+          <br/>
+          Explanation: nums[0] + nums[1] == 9
+         </div>
+        </div>
+        <br/>
+        <p>
+         <strong>
+          Test Cases:
+         </strong>
+        </p>
+        <ul>
+         <li>
+          nums = [2,7,11,15], target = 9 → [0,1]
+         </li>
+         <li>
+          nums = [3,2,4], target = 6 → [1,2]
+         </li>
+         <li>
+          nums = [3,3], target = 6 → [0,1]
+         </li>
+        </ul>
+       </div>
+      </div>
+      <div class="editor-panel">
+       <div class="code-editor">
+        <div class="code-editor-header">
+         <div class="code-editor-tabs">
+          <span class="code-tab active">
+           solution.js
+          </span>
+         </div>
+         <div style="display: flex; gap: 0.5rem;">
+          <button class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">
+           ▶ Run
+          </button>
+          <button class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">
+           ↻ Reset
+          </button>
+          <button class="btn" style="padding: 0.25rem 0.75rem; font-size: 0.75rem;">
+           ✓ Submit
+          </button>
+         </div>
+        </div>
+        <div class="code-editor-content">
+         <span style="color: #0066cc;">
+          function
+         </span>
+         <span style="color: #0066cc;">
+          twoSum
+         </span>
+         (
+         <span style="color: #cc6600;">
+          nums
+         </span>
+         ,
+         <span style="color: #cc6600;">
+          target
+         </span>
+         ) {
+         <br/>
+         <span style="color: #0066cc;">
+          const
+         </span>
+         <span style="color: #cc6600;">
+          map
+         </span>
+         =
+         <span style="color: #0066cc;">
+          new
+         </span>
+         <span style="color: #0066cc;">
+          Map
+         </span>
+         ();
+         <br/>
+         <span style="color: #0066cc;">
+          return
+         </span>
+         [];
+         <br/>
+         }
+        </div>
+       </div>
+       <div class="output-panel">
+        <div style="margin-bottom: 0.5rem; color: #00ff00; font-weight: bold;">
+         Console Output:
+        </div>
+        <div>
+         Running test case 1...
+        </div>
+        <div style="color: #00ff00;">
+         ✓ Test passed: [0, 1]
+        </div>
+        <div>
+         Running test case 2...
+        </div>
+        <div style="color: #00ff00;">
+         ✓ Test passed: [1, 2]
+        </div>
+        <div>
+         Running test case 3...
+        </div>
+        <div style="color: #00ff00;">
+         ✓ Test passed: [0, 1]
+        </div>
+        <div style="color: #00ff00; margin-top: 0.5rem;">
+         All tests passed! 🎉
+        </div>
+       </div>
+      </div>
+     </div>
+    </div>
+    <!-- Profile Page View -->
+    <div class="page-view" id="profile">
+     <div class="profile-header">
+      <div class="profile-avatar">
+       👨‍💻
+      </div>
+      <div class="profile-info" style="flex: 1;">
+       <h1>
+        CodeClip Developer
+       </h1>
+       <div class="profile-level">
+        Level 3 • JavaScript Ninja
+       </div>
+       <div class="profile-stats">
+        <div class="stat-item">
+         <div class="stat-number">
+          25
+         </div>
+         <div>
+          Solved
+         </div>
+        </div>
+        <div class="stat-item">
+         <div class="stat-number">
+          7
+         </div>
+         <div>
+          Streak
+         </div>
+        </div>
+        <div class="stat-item">
+         <div class="stat-number">
+          142
+         </div>
+         <div>
+          Points
+         </div>
+        </div>
+       </div>
+      </div>
+     </div>
+     <h2 style="margin-bottom: 1rem;">
+      Progress Overview
+     </h2>
+     <div class="features-grid" style="margin-bottom: 3rem;">
+      <div class="feature-card">
+       <div class="feature-icon">
+        📊
+       </div>
+       <div class="feature-title">
+        Coding Activity
+       </div>
+       <div class="feature-description">
+        Track your daily coding sessions, time spent, and consistency over time.
+       </div>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        🎯
+       </div>
+       <div class="feature-title">
+        Skill Assessment
+       </div>
+       <div class="feature-description">
+        Analyze your strengths and weaknesses across different programming topics.
+       </div>
+      </div>
+      <div class="feature-card">
+       <div class="feature-icon">
+        📈
+       </div>
+       <div class="feature-title">
+        Performance Metrics
+       </div>
+       <div class="feature-description">
+        Monitor your solution efficiency, code quality, and problem-solving speed.
+       </div>
+      </div>
+     </div>
+     <h2 style="margin-bottom: 1rem;">
+      Achievement Badges
+     </h2>
+     <div class="badges-grid">
+      <div class="badge-card">
+       <div class="badge-icon">
+        🏆
+       </div>
+       <div class="badge-name">
+        First Solve
+       </div>
+       <div class="badge-description">
+        Completed your first challenge
+       </div>
+      </div>
+      <div class="badge-card">
+       <div class="badge-icon">
+        🔥
+       </div>
+       <div class="badge-name">
+        Week Streak
+       </div>
+       <div class="badge-description">
+        7 days of consistent coding
+       </div>
+      </div>
+      <div class="badge-card">
+       <div class="badge-icon">
+        ⚡
+       </div>
+       <div class="badge-name">
+        Speed Demon
+       </div>
+       <div class="badge-description">
+        Solved 5 challenges in under 10 minutes
+       </div>
+      </div>
+      <div class="badge-card">
+       <div class="badge-icon">
+        🧠
+       </div>
+       <div class="badge-name">
+        Problem Solver
+       </div>
+       <div class="badge-description">
+        Solved 25 different challenges
+       </div>
+      </div>
+      <div class="badge-card">
+       <div class="badge-icon">
+        🎨
+       </div>
+       <div class="badge-name">
+        Clean Coder
+       </div>
+       <div class="badge-description">
+        Solutions with optimal time complexity
+       </div>
+      </div>
+      <div class="badge-card" style="opacity: 0.5;">
+       <div class="badge-icon">
+        👑
+       </div>
+       <div class="badge-name">
+        Challenge Master
+       </div>
+       <div class="badge-description">
+        Complete 100 challenges (47/100)
+       </div>
+      </div>
+     </div>
+    </div>
+   </main>
+  </div>
+  <script src="scripts/script.js">
+  </script>
+ </body>
 </html>
+<span style="color: #0066cc;">
+ for
+</span>
+(
+<span style="color: #0066cc;">
+ let
+</span>
+<span style="color: #cc6600;">
+ i
+</span>
+=
+<span style="color: #009900;">
+ 0
+</span>
+;
+<span style="color: #cc6600;">
+ i
+</span>
+&lt;
+<span style="color: #cc6600;">
+ nums
+</span>
+.
+<span style="color: #cc6600;">
+ length
+</span>
+;
+<span style="color: #cc6600;">
+ i
+</span>
+++) {
+<br/>
+<span style="color: #0066cc;">
+ const
+</span>
+<span style="color: #cc6600;">
+ complement
+</span>
+=
+<span style="color: #cc6600;">
+ target
+</span>
+-
+<span style="color: #cc6600;">
+ nums
+</span>
+[
+<span style="color: #cc6600;">
+ i
+</span>
+];
+<br/>
+<br/>
+<span style="color: #0066cc;">
+ if
+</span>
+(
+<span style="color: #cc6600;">
+ map
+</span>
+.
+<span style="color: #cc6600;">
+ has
+</span>
+(
+<span style="color: #cc6600;">
+ complement
+</span>
+)) {
+<br/>
+<span style="color: #0066cc;">
+ return
+</span>
+[
+<span style="color: #cc6600;">
+ map
+</span>
+.
+<span style="color: #cc6600;">
+ get
+</span>
+(
+<span style="color: #cc6600;">
+ complement
+</span>
+),
+<span style="color: #cc6600;">
+ i
+</span>
+];
+<br/>
+}
+<br/>
+<br/>
+<span style="color: #cc6600;">
+ map
+</span>
+.
+<span style="color: #cc6600;">
+ set
+</span>
+(
+<span style="color: #cc6600;">
+ nums
+</span>
+[
+<span style="color: #cc6600;">
+ i
+</span>
+],
+<span style="color: #cc6600;">
+ i
+</span>
+);
+<br/>
+}
+<br/>
+<br/>
