@@ -85,9 +85,8 @@
     text-align: center;
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-2xl);
-    background: var(--glass-bg);
-    backdrop-filter: var(--glass-blur);
-    border: 1px solid var(--glass-border);
+    background: #ffffff;
+        border: 1px solid #e2e8f0;
     border-radius: var(--radius-3xl);
     box-shadow: var(--shadow-2xl);
     overflow: hidden;
@@ -108,12 +107,9 @@
 .dashboard-header h2 {
     font-size: 3rem;
     font-weight: var(--font-weight-black);
-    background: var(--primary-gradient);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
-    background-clip: text;
+    color: #1e293b;
     margin-bottom: var(--spacing-md);
-    text-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-shadow: none;
     letter-spacing: -0.02em;
 }
 
@@ -122,7 +118,6 @@
     font-weight: var(--font-weight-medium);
     color: #64748b;
     margin: 0;
-    opacity: 0.8;
 }
 
 /* Enhanced Dashboard Stats Grid */
@@ -2028,20 +2023,7 @@
 }
 
 .timeline::before {
-    content: '';
-    position: absolute;
-    left: 18px;
-    top: 8px;
-    bottom: 0;
-    width: 3px;
-    background: linear-gradient(to bottom,
-            #667eea 0%,
-            #764ba2 25%,
-            #f093fb 50%,
-            #f5576c 75%,
-            #4facfe 100%);
-    border-radius: 2px;
-    box-shadow: 0 0 8px rgba(102, 126, 234, 0.3);
+    display: none !important;
 }
 
 .timeline-item {
