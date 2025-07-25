@@ -6,33 +6,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
-| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
-| [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
-| [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 0 | 1 | 0 | 4 |
-| [@Ishuuu1213](https://github.com/Ishuuu1213) | 1 | 1 | 0 | 2 |
-| [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
-| [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
-| [@faisal07777](https://github.com/faisal07777) | 2 | 1 | 0 | 0 |
-| [@AmritRaj29](https://github.com/AmritRaj29) | 2 | 1 | 0 | 0 |
-| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
-| [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
-| [@Kalika-Jay](https://github.com/Kalika-Jay) | 1 | 0 | 0 | 1 |
-| [@Sanyam2511](https://github.com/Sanyam2511) | 1 | 0 | 0 | 1 |
-| [@pbln](https://github.com/pbln) | 1 | 0 | 0 | 1 |
-| [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 1 |
-| [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
-| [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
-| [@Copilot](https://github.com/Copilot) | 0 | 0 | 1 | 1 |
-| [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
-| [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 1 | 0 | 1 |
-| [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
-| [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
-| [@snehhhcodes](https://github.com/snehhhcodes) | 1 | 0 | 0 | 0 |
-| [@yashp386](https://github.com/yashp386) | 1 | 0 | 0 | 0 |
-| [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
-| [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
-| [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
-| [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
+| *No contributors yet* | - | - | - | - |
 
 ---
 
