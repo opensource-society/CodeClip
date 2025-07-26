@@ -691,3 +691,38 @@ footer .row.align-items-start {
     border-radius: 2px;
     margin: 0.4rem auto 0 auto;
 }
+
+
+
+/* Custom Navbar Styling */
+.custom-navbar {
+  background-color: #0d1b2a; /* Dark blue/navy background */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Base link color */
+.custom-navbar .nav-link,
+.custom-navbar .nav-link:visited,
+.custom-navbar .nav-link.active {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active-hover effect */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active:hover {
+  color: #fca311 !important; /* Gold */
+  text-decoration: underline;
+}
+
+/* Brand name styling */
+.custom-navbar .navbar-brand {
+  color: #fca311;
+  font-weight: bold;
+}
+
+/* Brand name span (the 'Clip' part in CodeClip) */
+.custom-navbar .navbar-brand span {
+  color: #ffffff;
+}
