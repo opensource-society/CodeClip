@@ -1,0 +1,633 @@
+/* === GITHUB-STYLE LEARNING STREAK CALENDAR STYLES === */
+
+.streak-calendar-section {
+    background: rgba(255, 255, 255, 0.8);
+    backdrop-filter: blur(20px);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    position: relative;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    height: fit-content;
+    min-height: 280px;
+}
+
+.streak-calendar-section:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+/* Card Header - matching the compact design */
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+    position: relative;
+}
+
+.calendar-title-section {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    flex: 1;
+}
+
+.calendar-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #22c55e 0%, #16a34a 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.2rem;
+    box-shadow: 0 4px 12px rgba(34, 197, 94, 0.25);
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+
+.streak-calendar-section:hover .calendar-icon {
+    transform: scale(1.05) rotate(2deg);
+}
+
+.calendar-title-content {
+    flex: 1;
+}
+
+.calendar-main-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1e293b;
+    margin: 0 0 4px 0;
+    line-height: 1.3;
+}
+
+.calendar-subtitle {
+    color: #64748b;
+    font-size: 0.875rem;
+    font-weight: 500;
+    margin: 0;
+    line-height: 1.4;
+}
+
+/* Metric section - matching the image layout */
+.calendar-metric {
+    text-align: right;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+.calendar-metric-value {
+    font-size: 2rem;
+    font-weight: 800;
+    color: #22c55e;
+    line-height: 1;
+    margin-bottom: 4px;
+}
+
+.calendar-metric-label {
+    font-size: 0.75rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Main Calendar Content */
+.calendar-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    margin-top: 0.25rem;
+}
+
+.calendar-months {
+    margin-bottom: 6px;
+}
+
+.month-labels {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+    padding: 0 35px 0 20px;
+    margin-bottom: 4px;
+}
+
+.month-label {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    text-align: left;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.calendar-grid-wrapper {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    overflow: hidden;
+    align-items: flex-start;
+}
+
+.weekday-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 8px;
+    font-size: 9px;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+    height: 91px;
+}
+
+.weekday-label {
+    height: 11px;
+    display: flex;
+    align-items: center;
+    line-height: 1;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(53, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+    flex: 1;
+    padding: 6px;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+}
+
+.calendar-cell {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    background: #ebedf0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.calendar-cell:hover {
+    transform: scale(1.15);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    z-index: 10;
+    border: 1px solid rgba(255, 255, 255, 0.6);
+}
+
+/* GitHub-style activity levels with improved colors */
+.calendar-cell.level-0 {
+    background: #ebedf0;
+    border-color: #d1d5db;
+}
+
+.calendar-cell.level-1 {
+    background: #9be9a8;
+    border-color: #7dd3fc;
+}
+
+.calendar-cell.level-2 {
+    background: #40c463;
+    border-color: #22d3ee;
+}
+
+.calendar-cell.level-3 {
+    background: #30a14e;
+    border-color: #0891b2;
+}
+
+.calendar-cell.level-4 {
+    background: #216e39;
+    border-color: #0e7490;
+}
+
+/* Activity Legend */
+.activity-legend {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 6px;
+    margin-top: 8px;
+    padding: 6px 10px;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+}
+
+.legend-text {
+    font-size: 10px;
+    color: #64748b;
+    font-weight: 600;
+    margin-right: 4px;
+}
+
+.legend-scale {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.legend-cell {
+    width: 11px;
+    height: 11px;
+    border-radius: 2px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+/* Compact Stats Section */
+.calendar-stats {
+    display: flex;
+    justify-content: space-between;
+    gap: 6px;
+    margin-top: 8px;
+    flex-wrap: wrap;
+}
+
+.streak-stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 8px;
+    padding: 6px 10px;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 60px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.streak-stat:hover {
+    background: rgba(255, 255, 255, 0.7);
+    transform: translateY(-1px);
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
+}
+
+.streak-number {
+    display: block;
+    font-size: 1rem;
+    font-weight: 800;
+    color: #22c55e;
+    margin-bottom: 0.1rem;
+}
+
+.streak-label {
+    font-size: 0.6rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Compact Stats */
+.calendar-stats {
+    display: flex;
+    justify-content: center;
+    gap: 1.5rem;
+    margin-bottom: 1.5rem;
+    flex-wrap: wrap;
+}
+
+.streak-stat {
+    text-align: center;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 12px;
+    padding: 0.75rem 1rem;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: all 0.3s ease;
+    flex: 1;
+    min-width: 80px;
+    max-width: 120px;
+}
+
+.streak-stat:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.5);
+    border-radius: 12px;
+    padding: 1rem;
+    border: 1px solid rgba(226, 232, 240, 0.6);
+}
+
+.streak-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    min-width: 80px;
+    padding: 0.5rem;
+}
+
+.streak-number {
+    display: block;
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: #22c55e;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    margin-bottom: 0.2rem;
+}
+
+.streak-label {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+/* Compact Calendar Container */
+.calendar-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.calendar-months {
+    margin-bottom: 0.5rem;
+}
+
+.month-labels {
+    display: grid;
+    grid-template-columns: repeat(12, 1fr);
+    gap: 2px;
+    padding: 0 40px 0 20px;
+}
+
+.month-label {
+    font-size: 0.65rem;
+    color: #64748b;
+    font-weight: 600;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.calendar-grid-wrapper {
+    display: flex;
+    gap: 8px;
+    flex: 1;
+    overflow: hidden;
+}
+
+.weekday-labels {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding-right: 8px;
+    font-size: 0.65rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+}
+
+.weekday-label {
+    height: 10px;
+    display: flex;
+    align-items: center;
+}
+
+.calendar-grid {
+    display: grid;
+    grid-template-columns: repeat(53, 1fr);
+    grid-template-rows: repeat(7, 1fr);
+    gap: 2px;
+    flex: 1;
+    padding: 4px;
+    background: rgba(255, 255, 255, 0.3);
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.calendar-cell {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+    background: #ebedf0;
+    transition: all 0.2s ease;
+    cursor: pointer;
+    position: relative;
+}
+
+.calendar-cell:hover {
+    transform: scale(1.3);
+    border-radius: 3px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+    z-index: 10;
+}
+
+.calendar-cell.level-0 {
+    background: #ebedf0;
+}
+
+.calendar-cell.level-1 {
+    background: #9be9a8;
+}
+
+.calendar-cell.level-2 {
+    background: #40c463;
+}
+
+.calendar-cell.level-3 {
+    background: #30a14e;
+}
+
+.calendar-cell.level-4 {
+    background: #216e39;
+}
+
+/* Compact Activity Legend */
+.activity-legend {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-top: 1rem;
+    padding: 0.75rem;
+    background: rgba(255, 255, 255, 0.4);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+}
+
+.legend-text {
+    font-size: 0.7rem;
+    color: #64748b;
+    font-weight: 600;
+}
+
+.legend-scale {
+    display: flex;
+    gap: 2px;
+    align-items: center;
+}
+
+.legend-cell {
+    width: 8px;
+    height: 8px;
+    border-radius: 2px;
+}
+
+/* Compact Insights Section */
+.streak-insights {
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+
+.insight-card {
+    background: rgba(255, 255, 255, 0.4);
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 10px;
+    padding: 0.75rem;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.insight-card:hover {
+    background: rgba(255, 255, 255, 0.6);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.insight-value {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #22c55e;
+    display: block;
+    margin-bottom: 0.2rem;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.insight-label {
+    font-size: 0.65rem;
+    color: #64748b;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.3px;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .streak-calendar-section {
+        padding: 1rem;
+        min-height: 240px;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: center;
+        text-align: center;
+        margin-bottom: 0.5rem;
+    }
+
+    .calendar-title-section {
+        justify-content: center;
+    }
+
+    .calendar-metric {
+        align-items: center;
+    }
+
+    .calendar-stats {
+        flex-direction: row;
+        gap: 6px;
+        margin-top: 8px;
+    }
+
+    .calendar-grid {
+        gap: 1px;
+        padding: 4px;
+    }
+
+    .calendar-cell {
+        width: 9px;
+        height: 9px;
+        border-radius: 1.5px;
+    }
+
+    .legend-cell {
+        width: 9px;
+        height: 9px;
+        border-radius: 1.5px;
+    }
+
+    .month-labels {
+        padding: 0 25px 0 15px;
+    }
+
+    .weekday-labels {
+        height: 75px;
+        font-size: 8px;
+    }
+}
+
+@media (max-width: 480px) {
+    .streak-calendar-section {
+        padding: 0.75rem;
+        min-height: 250px;
+    }
+
+    .calendar-main-title {
+        font-size: 1.1rem;
+    }
+
+    .calendar-metric-value {
+        font-size: 1.4rem;
+    }
+
+    .month-label {
+        font-size: 8px;
+    }
+
+    .calendar-cell {
+        width: 7px;
+        height: 7px;
+        border-radius: 1px;
+    }
+
+    .legend-cell {
+        width: 7px;
+        height: 7px;
+        border-radius: 1px;
+    }
+
+    .calendar-grid {
+        gap: 1px;
+        padding: 3px;
+    }
+
+    .weekday-labels {
+        height: 60px;
+        font-size: 7px;
+    }
+
+    .legend-text {
+        font-size: 8px;
+    }
+
+    .streak-stat {
+        padding: 6px 8px;
+        min-width: 60px;
+    }
+}
