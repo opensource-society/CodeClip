@@ -44,21 +44,107 @@
   <!-- Main Content -->
   <main>
     <!-- Profile Hero Section -->
-    <section class="profile-hero">
-      <div class="container">
-        <div class="profile-hero__content">
-          <div class="profile-info">
-            <div class="profile-avatar">
-              <label for="upload-avatar" class="avatar-circle" id="avatarCircle">
-                <img id="avatarPreview" src="" alt="Profile Avatar" hidden />
-                <span id="avatarInitial" class="avatar-initial">U</span>
-                <input type="file" id="upload-avatar" accept="image/*" hidden />
-              </label>
+   <<section class="profile-hero">
+  <div class="container">
+    <!-- Combined Profile Section -->
+    <div class="profile-section">
+      <div class="profile-info">
+        <!-- Left Side (40%) - Profile Info -->
+         
+        <div class="profile-left">
+          <div class="profile-avatar">
+            <label for="upload-avatar" class="avatar-circle" id="avatarCircle">
+              <img id="avatarPreview" src="" alt="Profile Avatar" hidden />
+              <span id="avatarInitial" class="avatar-initial">U</span>
+              <input type="file" id="upload-avatar" accept="image/*" hidden />
+            </label>
+          </div>
+          <h1 class="profile-hero__title">User Profile</h1>
+          <p class="profile-hero__subtitle" id="profileSubtitle">
+            <span id="subtitleText">Track your coding journey</span>
+          </p>
+          
+          <div class="stats-grid">
+            <div class="stat-card">
+              <div class="stat-icon">🎯</div>
+              <div class="stat-number">15</div>
+              <div class="stat-label">Challenges Solved</div>
             </div>
-            <h1 class="profile-hero__title">User Profile</h1>
-            <p class="profile-hero__subtitle" id="profileSubtitle">
-              <span id="subtitleText">Track your coding journey</span>
-            </p>
+            <div class="stat-card">
+              <div class="stat-icon">⭐</div>
+              <div class="stat-number">1,250</div>
+              <div class="stat-label">Points Earned</div>
+            </div>
+            <div class="stat-card">
+              <div class="stat-icon">🏆</div>
+              <div class="stat-number">3</div>
+              <div class="stat-label">Achievements</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Right Side (60%) - Contest Rating -->
+        <div class="profile-right">
+          <div class="contest-rating-card">
+            <div class="rating-header">
+              <h3>Contest Rating</h3>
+              <div class="rating-number">1,412</div>
+            </div>
+            
+            <div class="stats-container">
+              <div class="stat-group">
+                <div class="stat-item">
+                  <span class="stat-label">Global Ranking</span>
+                  <span class="stat-value">584,547/725,492</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attended</span>
+                  <span class="stat-value">1</span>
+                </div>
+              </div>
+              
+              <div class="stat-group">
+                <div class="stat-item">
+                  <span class="stat-label">Solved</span>
+                  <span class="stat-value">128/3626</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Attempting</span>
+                  <span class="stat-value">9</span>
+                </div>
+              </div>
+              
+              <div class="stat-group">
+                <div class="stat-item">
+                  <span class="stat-label">Easy</span>
+                  <span class="stat-value">82/886</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Medium</span>
+                  <span class="stat-value">43/1885</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Hard</span>
+                  <span class="stat-value">3/855</span>
+                </div>
+              </div>
+              
+              <div class="stat-group">
+                <div class="stat-item">
+                  <span class="stat-label">Badges</span>
+                  <span class="stat-value">2</span>
+                </div>
+                <div class="stat-item">
+                  <span class="stat-label">Recent Badge</span>
+                  <span class="stat-value">50 Days</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
             <section class="profile-stats">
               <!-- <div class="container"> -->
                 <div class="stat-card heatmap-card">
@@ -468,23 +554,7 @@
                         <span class="heatmap-day"></span>
                     </div>
                 </div>
-                <div class="stats-grid">
-                  <div class="stat-card">
-                    <div class="stat-icon">🎯</div>
-                    <div class="stat-number">15</div>
-                    <div class="stat-label">Challenges Solved</div>
-                  </div>
                 
-                  <div class="stat-card">
-                    <div class="stat-icon">⭐</div>
-                    <div class="stat-number">1,250</div>
-                    <div class="stat-label">Points Earned</div>
-                  </div>
-                  <div class="stat-card">
-                    <div class="stat-icon">🏆</div>
-                    <div class="stat-number">3</div>
-                    <div class="stat-label">Achievements</div>
-                  </div>
                 </div>
               <!-- </div> -->
             </section>

@@ -1,3 +1,136 @@
+
+.container {
+  max-width: 1500px;
+  margin: 0 auto;
+  padding: 90px;
+}
+
+/* Profile Section */
+.profile-section {
+  width: 96%;
+}
+
+.profile-info {
+  display: flex;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  overflow: hidden;
+}
+
+/* Left Profile Side (40%) */
+.profile-left {
+  flex: 0 0 40%;
+  padding: 10px;
+  border-right: 1px solid #eee;
+  
+}
+
+.profile-avatar {
+  width: 190px;
+  height: 190px;
+  margin: 0 auto; /* Centers horizontally */
+  display: flex; /* Enables flexbox */
+  justify-content: center; /* Centers horizontally (flexbox) */
+  align-items: center; /* Centers vertically */
+  position: relative; /* Needed for absolute positioning of child elements */
+}
+.profile-hero__title {
+  font-size: 24px;
+  margin-bottom: 1px;
+  text-align: center;
+}
+
+.profile-hero__subtitle {
+  color: #666;
+  text-align: center;
+  margin-bottom: 2px;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+  margin-top: 20px;
+}
+
+/* Right Contest Rating Side (60%) */
+.profile-right {
+  flex: 0 0 60%;
+  padding: 25px;
+}
+
+.contest-rating-card {
+  height: 100%;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #eee;
+}
+
+.rating-header h3 {
+  font-size: 30px;
+  color: #333;
+  margin: 0;
+}
+
+.rating-number {
+  font-size: 30px;
+  font-weight: bold;
+  color: #3a86ff;
+}
+
+.stats-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 15px;
+}
+
+.stat-group {
+  background: #f8f9fa;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.stat-item {
+  margin-bottom: 10px;
+}
+
+.stat-label {
+  font-size: 13px;
+  color: #666;
+  display: block;
+}
+
+.stat-value {
+  font-size: 20px;
+  font-weight: 600;
+  color: #333;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .profile-info {
+    flex-direction: column;
+  }
+  .profile-left,
+  .profile-right {
+    flex: 1;
+    width: 100%;
+    border-right: none;
+    border-bottom: 1px solid #eee;
+  }
+  .stats-container {
+    grid-template-columns: 1fr;
+  }
+}
+
 .profile-header {
     display: flex;
     align-items: center;
