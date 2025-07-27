@@ -859,3 +859,11 @@ body {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+/*  Navbar Toggler */
+
+.navbar-toggler .hamburger-icon,.navbar-toggler .close-icon {
+        font-size: 1.5rem;
+        color: #000;
+}
+
