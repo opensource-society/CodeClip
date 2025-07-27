@@ -521,6 +521,30 @@ footer .row.align-items-start {
     color: #2563eb;
     opacity: 1;
 }
+.scroll_to_top{
+  position: fixed;
+  color: white;
+  bottom: 15px;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  border-radius: 50%; 
+  text-decoration: none;
+}
+.scroll_to_top:hover{
+    background: linear-gradient(45deg, #2563eb , #0000ff);
+    transform: translateY(-3px) scale(1.05);
+}
+
+
 @media (min-width: 992px) {
     .footer-logo, .footer-desc {
         text-align: center;
