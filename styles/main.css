@@ -691,3 +691,6 @@ footer .row.align-items-start {
     border-radius: 2px;
     margin: 0.4rem auto 0 auto;
 }
+.navbar {
+    background-color: #2564eba0;
+}
