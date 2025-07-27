@@ -18,24 +18,6 @@
   --hard-text: #721c24;
 }
 
-[data-theme="dark"] {
-  --bg-color: #1a202c;
-  --text-color: #e2e8f0;
-  --card-bg: #2d3748;
-  --border-color: #4a5568;
-  --input-bg: #2d3748;
-  --accent-color: #63b3ed;
-  --accent-color-hover: #90cdf4;
-
-  /* Badge Colors */
-  --easy-bg: #1c4532;
-  --easy-text: #68d391;
-  --medium-bg: #4a3a19;
-  --medium-text: #f6e05e;
-  --hard-bg: #521b22;
-  --hard-text: #f56565;
-}
-
 body {
   margin: 0;
   padding: 0;
@@ -205,7 +187,7 @@ body {
 .copy-button:focus {
   outline: 2px solid #00f;
   outline-offset: 2px;
-
+}
 /* Hamburger CSS */
 .hamburger {
   display: block;
@@ -214,6 +196,4 @@ body {
   background: var(--text-color);
   margin: 4px 0;
   transition: 0.4s;
-
-}
 }

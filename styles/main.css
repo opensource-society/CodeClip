@@ -55,12 +55,22 @@ body.dark-mode .card {
 
 /* Footer */
 body.dark-mode footer {
-  background-color: #1a1a1a;
-  color: #ffffff;
+  background: linear-gradient(90deg, #1a1a1a 60%, #0e0e0e 100%) !important;
+  color: #d0caca !important;
+  border-top: 1.5px solid #333 !important;
+  box-shadow: none !important;
+}
+
+body.dark-mode .footer-title {
+  color: #f1f1f1 !important;
 }
 
 body.dark-mode .footer-links a {
-  color: black;
+  color: #cccccc !important;
+}
+
+body.dark-mode .footer-desc {
+  color: #bbbbbb !important;
 }
 
 body.dark-mode .footer-contact-btn {
@@ -69,7 +79,7 @@ body.dark-mode .footer-contact-btn {
 }
 
 body.dark-mode .footerNote {
-  color: rgb(46, 44, 44);
+  color: rgb(236, 225, 225);
 }
 body.dark-mode .navbar-toggler-icon{
     filter: invert(100%);
@@ -823,7 +833,5 @@ footer .row.align-items-start {
 
     }
 }
-@media (max-width:1000px){
-    
-}
+
 
