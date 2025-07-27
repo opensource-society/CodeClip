@@ -300,14 +300,6 @@
     letter-spacing: 0.3px;
 }
 
-/* Compact Calendar Container */
-.calendar-container {
-    flex: 1;
-    display: flex;
-    flex-direction: column;
-    overflow: hidden;
-}
-
 .calendar-months {
     margin-bottom: 0.5rem;
 }
