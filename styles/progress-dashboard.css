@@ -690,10 +690,13 @@
 
     .chart-container {
         padding: 1.5rem;
+        height: 300px;
+            position: relative;
     }
 
     .chart-container canvas {
-        height: 250px !important;
+        max-height: 250px;
+            width: 100%;
     }
 
     .achievement-icon {
