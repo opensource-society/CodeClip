@@ -1,3 +1,116 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+}
+.contest-rating-section {
+  flex: 1;
+  padding: 0 10px;
+}
+
+.contest-rating-card {
+  background: rgb(106, 109, 110);
+  border-radius: 12px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  height: 100%;
+}
+
+.rating-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.rating-header h3 {
+  font-size: 18px;
+  color: #444;
+  font-weight: 600;
+  margin: 0;
+}
+
+.rating-number {
+  font-size: 28px;
+  font-weight: 700;
+  color: #3a86ff;
+  background: #f5f9ff;
+  padding: 5px 12px;
+  border-radius: 6px;
+}
+
+.stats-container {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.stat-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+}
+
+.stat-item {
+  flex: 1;
+  min-width: 120px;
+  background: #f9fafc;
+  padding: 12px 15px;
+  border-radius: 8px;
+  border: 1px solid #eaeef5;
+}
+
+.stat-label {
+  display: block;
+  font-size: 13px;
+  color: #666;
+  margin-bottom: 4px;
+  font-weight: 500;
+}
+
+.stat-value {
+  display: block;
+  font-size: 15px;
+  font-weight: 600;
+  color: #333;
+}
+
+@media (max-width: 768px) {
+  .stat-group {
+    flex-direction: column;
+  }
+  .stat-item {
+    min-width: 100%;
+  }
+}
+
+.top-row {
+  display: flex;
+  gap: 20px;
+}
+
+/* Profile Section (40% width) */
+.profile-section {
+  flex: 0 0 40%;
+}
+
+/* Contest Rating Section (60% width) */
+.contest-rating-section {
+  flex: 1;
+}
+
+/* Heatmap Section (full width below) */
+.heatmap-container {
+  width: 100%;
+  overflow-x: auto;
+}
+
+
 .profile-header {
     display: flex;
     align-items: center;
