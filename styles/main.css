@@ -31,16 +31,12 @@ html {
 }
 
 .nav-item a {
-  color: #1e2c44;
-  font-size: 20px;
-}
-
-.nav-item a {
   position: relative;
   color: #1e2c44; /* Default dark color */
   font-size: 20px;
   text-decoration: none;
   transition: color 0.3s ease;
+  font-size: 20px;
 }
 
 .nav-item a::after {
@@ -62,7 +58,7 @@ html {
   width: 100%; /* Full underline on hover */
 }
 
-.nav-link:hover::after {
+.nav-item a:hover::after {
   width: 100%;
 }
 
@@ -429,6 +425,11 @@ html {
   border-radius: 8px;
   gap: 0.4em;
 } */
+
+.footer-title-wrapper {
+  text-align: center;
+}
+
 .footer-title {
   display: inline-block; /* needed for border-bottom */
   font-size: 1.2rem;
@@ -520,14 +521,6 @@ footer .row.align-items-start {
   margin-top: 0.3rem;
   max-width: 320px;
   padding-right: 1.5rem;
-}
-.footer-title {
-  font-size: 1.2rem;
-  font-weight: 600;
-  margin-bottom: 0.7rem;
-  color: #1e2c44;
-  letter-spacing: 0.5px;
-  text-align: center;
 }
 
 .footer-contact-links {
