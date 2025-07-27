@@ -210,6 +210,13 @@ class GoalManager {
             return JSON.parse(saved);
         }
 
+        // Generate dynamic dates relative to current date
+        const today = new Date();
+        const nextWeek = new Date(today.getTime() + 7 * 24 * 60 * 60 * 1000);
+        const twoWeeksFromNow = new Date(today.getTime() + 14 * 24 * 60 * 60 * 1000);
+        const nextMonth = new Date(today.getFullYear(), today.getMonth() + 1, today.getDate());
+        const lastWeek = new Date(today.getTime() - 7 * 24 * 60 * 60 * 1000);
+
         return {
             weekly: [
                 {
@@ -218,7 +225,7 @@ class GoalManager {
                     description: 'Focus on fundamental array operations',
                     target: 5,
                     current: 5,
-                    deadline: '2025-07-23',
+                    deadline: lastWeek.toISOString().split('T')[0],
                     status: 'completed',
                     category: 'challenges'
                 },
@@ -228,7 +235,7 @@ class GoalManager {
                     description: 'Code every day for a week straight',
                     target: 7,
                     current: 5,
-                    deadline: '2025-07-27',
+                    deadline: nextWeek.toISOString().split('T')[0],
                     status: 'in-progress',
                     category: 'streak'
                 },
@@ -238,7 +245,7 @@ class GoalManager {
                     description: 'Complete 3 React hook challenges',
                     target: 3,
                     current: 1,
-                    deadline: '2025-07-30',
+                    deadline: twoWeeksFromNow.toISOString().split('T')[0],
                     status: 'pending',
                     category: 'skills'
                 }
@@ -250,7 +257,7 @@ class GoalManager {
                     description: 'Solve challenges across all difficulty levels',
                     target: 25,
                     current: 25,
-                    deadline: '2025-07-20',
+                    deadline: lastWeek.toISOString().split('T')[0],
                     status: 'completed',
                     category: 'challenges'
                 },
@@ -260,7 +267,7 @@ class GoalManager {
                     description: 'Complete 10 advanced data structure problems',
                     target: 10,
                     current: 6,
-                    deadline: '2025-07-31',
+                    deadline: nextMonth.toISOString().split('T')[0],
                     status: 'in-progress',
                     category: 'skills'
                 }
