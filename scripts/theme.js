@@ -1,53 +1,37 @@
-import { saveUserSettings, loadUserSettings } from "./data.js";
 
-document.addEventListener("DOMContentLoaded", () => {
-  const toggleBtn = document.getElementById("theme-toggle");
+// =============== DARK MODE 
+try {
+    const themeToggle = document.getElementById('theme-toggle');
+    const body = document.body;
 
-  const setTheme = (theme) => {
-    document.documentElement.setAttribute("data-theme", theme);
-
-    // Toggle icon based on theme
-    if (theme === "dark") {
-      toggleBtn.classList.remove("fa-sun");
-      toggleBtn.classList.add("fa-moon");
-    } else {
-      toggleBtn.classList.remove("fa-moon");
-      toggleBtn.classList.add("fa-sun");
+    if (!themeToggle) {
+        throw new Error('Theme toggle button not found');
     }
 
-    const success = saveUserSettings({ ...loadUserSettings(), theme });
-    if (!success) {
-      alert("Failed to save theme preference.");
+    // Check and apply saved theme on page load
+    if (localStorage.getItem('theme') === 'dark') {
+        body.classList.add('dark-mode');
+        themeToggle.classList.remove('fa-moon');
+        themeToggle.classList.add('fa-sun');
     }
-  };
 
-  // Apply saved theme on load
-  const savedSettings = loadUserSettings();
-  const savedTheme = savedSettings.theme;
-  const prefersDark = window.matchMedia("(prefers-color-scheme: dark)").matches;
-  const initialTheme = savedTheme || (prefersDark ? "dark" : "light");
-  setTheme(initialTheme);
+    // Toggle dark mode on icon click
+    themeToggle.addEventListener('click', () => {
+        body.classList.toggle('dark-mode');
 
-  // Toggle button click
-  toggleBtn.addEventListener("click", () => {
-    const current = document.documentElement.getAttribute("data-theme");
-    const newTheme = current === "light" ? "dark" : "light";
-    setTheme(newTheme);
-  });
+        const isDark = body.classList.contains('dark-mode');
+        localStorage.setItem('theme', isDark ? 'dark' : 'light');
 
-  // Real-time sync: The theme changed in one tab is linked and synced with the theme change in other tabs.
-  window.addEventListener("storage", (event) => {
-    if (event.key === "codeclip_user_settings") {
-      try {
-        const newSettings = JSON.parse(event.newValue);
-        if (newSettings && newSettings.theme) {
-          document.documentElement.setAttribute(
-            "data-theme",
-            newSettings.theme
-          );
+        // Switch icon between moon and sun
+        if (isDark) {
+            themeToggle.classList.remove('fa-moon');
+            themeToggle.classList.add('fa-sun');
+        } else {
+            themeToggle.classList.remove('fa-sun');
+            themeToggle.classList.add('fa-moon');
         }
-      } catch (e) {
-      }
-    }
-  });
-});
+    });
+} catch (error) {
+    console.error('Dark mode toggle failed:', error);
+}
+

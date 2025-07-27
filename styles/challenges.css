@@ -17,6 +17,8 @@
   --hard-text: #721c24;
 }
 
+ enhance-darkmode
+
 [data-theme="dark"] {
   --bg-color: #1a202c;
   --text-color: #e2e8f0;
@@ -39,6 +41,7 @@
   box-sizing: border-box;
 }
 
+ main
 body {
   margin: 0;
   font-family: 'Inter', sans-serif;
@@ -426,6 +429,20 @@ body {
   stroke: var(--text-color);
 }
 
+ enhance-darkmode
+.copy-button:focus {
+  outline: 2px solid #00f;
+  outline-offset: 2px;
+}
+/* Hamburger CSS */
+.hamburger {
+  display: block;
+  width: 25px;
+  height: 3px;
+  background: var(--text-color);
+  margin: 4px 0;
+  transition: 0.4s;
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .nav__list {
@@ -508,6 +525,7 @@ body {
   .challenges-hero__title {
     font-size: 2rem;
   }
+ main
 }
 
 

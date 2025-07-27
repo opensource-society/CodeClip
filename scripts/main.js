@@ -19,3 +19,4 @@ $(document).ready(function () {
         console.error('Owl Carousel initialization failed:', error);
     }
 });
+
