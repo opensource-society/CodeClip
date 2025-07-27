@@ -58,6 +58,7 @@
  main
 
   <body>
+    <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
  enhance-darkmode
@@ -114,12 +115,12 @@
                 <a
                   class="nav-link active"
                   aria-current="page"
-                  href="#homeSection"
+                  href="#top"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#challengeSection">Challenges</a>
+                <a class="nav-link" href="../CodeClip/pages/challenges.html">Challenges</a>
               </li>
               <li class="nav-item">
                 <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
@@ -255,7 +256,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of frontend challenge and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="frontendChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -281,7 +282,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of javascript logics and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="jslogics.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -307,7 +308,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of backend bbasic and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="backendChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -333,7 +334,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of ui design challenge and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="uiChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -359,7 +360,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpages of open source challenge and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="gitChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -661,6 +662,7 @@
     </section>
 
     <!-- ================================ Footer Section Start Here ================================ -->
+ enhance-darkmode
     <footer id="contactFooter">
  enhance-darkmode
         <div class="container">
@@ -710,21 +712,50 @@
           <div class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
             <a class="navbar-brand mb-2" href="#homeSection"
               >Code<span>Clip</span></a
+
+<footer id="contactFooter">
+  <div class="container">
+    <div class="row align-items-start justify-content-between py-4">
+      <div class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
+        <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
+        <p class="footer-desc mb-0">
+          CodeClip is an open-source project under GirlScript Summer of Code (GSSoC) 2025 open for contribution.
+        </p>
+      </div>
+
+      <div class="col-12 col-md-3 mb-4 mb-md-0 footer-links-col">
+        <h5 class="footer-title">Important Links</h5>
+        <ul class="footer-links list-unstyled mb-0">
+          <li><a href="#homeSection">Home</a></li>
+          <li><a href="#challengeSection">Challenges</a></li>
+          <li><a href="#leaderboardSection">Leaderboard</a></li>
+          <li><a href="#aboutSection">About</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-6 footer-contact-col-main">
+        <h5 class="footer-title">Contact Us</h5>
+        <div class="footer-contact-row row">
+          <div class="col-12 col-sm-6 d-flex flex-column align-items-center mb-3">
+            <a
+              href="https://github.com/opensource-society/CodeClip"
+              target="_blank"
+              class="btn btn-primary mb-2 footer-contact-btn"
+              style="max-width: 250px"
+ main
             >
-            <p class="footer-desc mb-0">
-              CodeClip is a open source project under GirlScript Summer of Code
-              (GSSoC) 2025 to open for contribution
-            </p>
+              <i class="fab fa-github me-2"></i> GitHub
+            </a>
+            <a
+              href="https://discord.gg/Nf2yBMHx"
+              target="_blank"
+              class="btn btn-primary mb-2 footer-contact-btn"
+              style="max-width: 250px"
+            >
+              <i class="fab fa-discord me-2"></i> Discord
+            </a>
           </div>
-          <div class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
-            <h5 class="footer-title">Important Links</h5>
-            <ul class="footer-links list-unstyled mb-0">
-              <li><a href="#homeSection">Home</a></li>
-              <li><a href="#challengeSection">Challenges</a></li>
-              <li><a href="#leaderboardSection">Leaderboard</a></li>
-              <li><a href="#aboutSection">About</a></li>
-            </ul>
-          </div>
+ enhance-darkmode
           <div class="col-12 col-md-6 footer-contact-col-main">
             <h5 class="footer-title">Contact Us</h5>
             <div class="footer-contact-row d-flex justify-content-center">
@@ -762,14 +793,35 @@
               </div>
  main
             </div>
+
+          <div class="col-12 col-sm-6 d-flex flex-column align-items-center">
+            <a
+              href="https://github.com/opensource-society/CodeClip/issues"
+              target="_blank"
+              class="btn btn-primary mb-2 footer-contact-btn"
+              style="max-width: 250px"
+            >
+              <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
+            </a>
+            <a
+              href="mailto:contact@codeclip.org"
+              class="btn btn-primary footer-contact-btn"
+              style="max-width: 250px"
+            >
+              <i class="fas fa-envelope me-2"></i> Email Us
+            </a>
+ main
           </div>
         </div>
-        <hr />
-        <p class="footerNote text-center mb-0">
-          &copy; CodeClip | Open Source Project 2025
-        </p>
       </div>
-    </footer>
+    </div>
+    <hr />
+    <p class="footerNote text-center mb-0">
+      &copy; CodeClip | Open Source Project 2025
+    </p>
+  </div>
+</footer>
+
     <!-- ================================ Footer Section End Here ================================ -->
 
     <!-- ================ Vendor JS ================  -->

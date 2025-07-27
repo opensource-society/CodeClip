@@ -5,6 +5,11 @@
   padding: 0;
 }
 
+/* Enable smooth scrolling when clicking anchor links like #top */
+html {
+  scroll-behavior: smooth;
+}
+
 body {
   font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
   color: #1e293b;

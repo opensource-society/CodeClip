@@ -62,6 +62,10 @@
     <!-- Filter Controls -->
     <section class="challenges-filter" aria-labelledby="filters-heading">
       <div class="container filter-controls">
+        <div class="filter-group">
+  
+</div>
+
         <h2 id="filters-heading" class="visually-hidden">Filter Challenges</h2>
 
         <div class="filter-group">
@@ -88,7 +92,7 @@
           </select>
         </div>
 
-        <div class="search-group" style="margin-left:auto;">
+        <div class="search-group" style="display: flex; gap: 0.5rem; margin-left: auto;">
           <input
             type="search"
             id="search-challenges"
@@ -96,6 +100,7 @@
             placeholder="Search challenges..."
             aria-label="Search coding challenges by title or tag"
           />
+          <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
         </div>
       </div>
     </section>
@@ -121,6 +126,7 @@
             </div>
             <div class="challenge-card__actions">
               <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Two Sum">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
 
@@ -138,6 +144,7 @@
             </div>
             <div class="challenge-card__actions">
               <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Longest Palindromic Substring">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
 
@@ -155,6 +162,7 @@
             </div>
             <div class="challenge-card__actions">
               <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Merge K Sorted Lists">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
 
@@ -172,6 +180,7 @@
             </div>
             <div class="challenge-card__actions">
               <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Valid Parentheses">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
         </div>
@@ -279,6 +288,59 @@
       localStorage.setItem('theme', newTheme);
     });
   </script>
+  <script>
+  const searchInput = document.getElementById("search-challenges");
+  const difficultyFilter = document.getElementById("difficulty-filter");
+  const categoryFilter = document.getElementById("category-filter");
+  const challengesList = document.getElementById("challengesList");
+  const noResults = document.getElementById("no-results");
+
+  const challengeCards = Array.from(challengesList.getElementsByClassName("challenge-card"));
+
+  function filterChallenges() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const difficulty = difficultyFilter.value;
+    const category = categoryFilter.value;
+
+    let visibleCount = 0;
+
+    challengeCards.forEach(card => {
+      const title = card.querySelector(".challenge-card__title").textContent.toLowerCase();
+      const cardDifficulty = card.dataset.difficulty;
+      const cardCategory = card.dataset.category;
+
+      const matchesSearch = title.includes(searchTerm);
+      const matchesDifficulty = !difficulty || cardDifficulty === difficulty;
+      const matchesCategory = !category || cardCategory === category;
+
+      const isVisible = matchesSearch && matchesDifficulty && matchesCategory;
+
+      card.style.display = isVisible ? "block" : "none";
+
+      if (isVisible) visibleCount++;
+    });
+
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+  }
+
+  // Event listeners for real-time filtering
+  searchInput.addEventListener("input", filterChallenges);
+  difficultyFilter.addEventListener("change", filterChallenges);
+  categoryFilter.addEventListener("change", filterChallenges);
+  const clearBtn = document.getElementById("clearFilters");
+
+clearBtn.addEventListener("click", () => {
+  // Reset all filters
+  searchInput.value = "";
+  difficultyFilter.value = "";
+  categoryFilter.value = "";
+
+  // Re-run the filtering function to show all challenges again
+  filterChallenges();
+});
+
+</script>
+
 
 </body>
 </html>
