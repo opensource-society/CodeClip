@@ -675,19 +675,17 @@ footer .row.align-items-start {
     }
 }
 .footer-contact-col-main .footer-title {
-    font-size: 1.45rem;
-    font-weight: 700;
-    color: #2563eb;
-    letter-spacing: 1px;
-    margin-bottom: 1.1rem;
-    position: relative;
+  display: inline-block; /* Ensures text width is respected */
+  position: relative;
 }
+
 .footer-contact-col-main .footer-title::after {
-    content: '';
-    display: block;
-    width: 38px;
-    height: 3px;
-    background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
-    border-radius: 2px;
-    margin: 0.4rem auto 0 auto;
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -5px; 
+  width: 100%; /* Makes it exactly as wide as the text */
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+  border-radius: 2px;
 }
