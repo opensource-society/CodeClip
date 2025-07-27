@@ -464,14 +464,32 @@ li a:hover{
 
 .aboutCTA-Btn {
     text-decoration: none;
-    padding: 10px 50px;
-    border-radius: 10px;
-    background: #d5edda;
-    color: #1a7071;
     font-weight: 700;
-    display: inline-block;
     margin-top: 1.5rem;
+    display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
+  transition: all 0.3s ease;
+
 }
+.aboutCTA-Btn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+}
+@keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
 
 /* ================== About Styles End Here ================== */
 
