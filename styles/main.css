@@ -691,3 +691,16 @@ footer .row.align-items-start {
     border-radius: 2px;
     margin: 0.4rem auto 0 auto;
 }
+/* Hover effect for navbar and footer links */
+.navbar a,
+.footer-links a {
+    display: inline-block;     
+    transition: all 0.3s ease-in-out;
+}
+
+.navbar a:hover,
+.footer-links a:hover {
+    color: #2563eb;
+    transform: scale(1.05);
+    cursor: pointer;
+}
