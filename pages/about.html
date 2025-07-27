@@ -15,7 +15,7 @@
 
     <!-- Styles -->
     <!-- If you want to keep all challenge styles in one file, use: -->
-    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="/CodeClip/styles/about.css">
     <!-- Or, if you want to scope styles to just challenges, use: -->
     <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 </head>
@@ -28,11 +28,12 @@
       </div>
       <nav class="header__nav" id="navMenu">
         <ul class="nav__list">
-          <li><a href="/" data-route="/" class="nav__link">Home</a></li>
-          <li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
-          <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
-          <li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
-          <li><a href="about.html" class="nav__link">About</a></li>
+          <li><a href="index.html" data-route="/" class="nav__link">Home</a></li>
+<li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
+<li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+<li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
+<li><a href="about.html" class="nav__link">About</a></li>
+
         </ul>
       </nav>
       <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
@@ -78,17 +79,19 @@
         <div class="footer__section">
           <h4>Quick Links</h4>
           <ul>
-            <li><a href="/" data-route="/">Home</a></li>
-            <li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
-            <li><a href="editor.html" data-route="/editor">Editor</a></li>
+            <li><a href="index.html" data-route="/">Home</a></li>
+<li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
+<li><a href="editor.html" data-route="/editor">Editor</a></li>
+
           </ul>
         </div>
         <div class="footer__section">
           <h4>Community</h4>
-          <ul>
-            <li><a href="#">GitHub</a></li>
+          <ul class="social-links">
+            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank">GitHub</a></li>
             <li><a href="#">Discord</a></li>
             <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
           </ul>
         </div>
       </div>
@@ -104,10 +107,9 @@
   </button>
 
   <!-- Scripts -->
-  <script type="module" src="../scripts/app.js"></script>
-  <script type="module" src="../scripts/theme.js"></script>
-  <script src="../scripts/challenges.js"></script>
-  
+ <script type="module" src="app.js"></script>
+<script type="module" src="theme.js"></script>
+<script src="challenges.js"></script>
   <style>
     /* Additional styles for challenges page */
     .challenges-hero {
@@ -295,6 +297,7 @@
       .challenges-list {
         grid-template-columns: 1fr;
       }
+
     }
   </style>
 </body>
