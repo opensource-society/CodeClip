@@ -86,7 +86,7 @@
     margin-bottom: var(--spacing-2xl);
     padding: var(--spacing-2xl);
     background: #ffffff;
-        border: 1px solid #e2e8f0;
+    border: 1px solid #e2e8f0;
     border-radius: var(--radius-3xl);
     box-shadow: var(--shadow-2xl);
     overflow: hidden;
@@ -1315,14 +1315,6 @@
     display: flex;
     align-items: center;
     gap: var(--spacing-sm);
-}
-
-.skill-percentage-compact {
-    font-weight: var(--font-weight-bold);
-    color: #667eea;
-    font-size: 0.9rem;
-    min-width: 40px;
-    text-align: right;
 }
 
 .skill-bar-compact {
