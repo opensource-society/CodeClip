@@ -14,7 +14,7 @@ html {
 
 
 
-/* ================== Navbar Styles Start Here ================== */
+/* =================== Navbar Styles Start Here ================== */
 .navbar {
     background-color: #ffffff;
 
@@ -371,76 +371,214 @@ html {
 
 .aboutCTA-Btn {
     text-decoration: none;
-    padding: 10px 50px;
-    border-radius: 10px;
-    background: #d5edda;
-    color: #1a7071;
     font-weight: 700;
-    display: inline-block;
     margin-top: 1.5rem;
+    display: inline-block;
+  padding: 0.75rem 1.75rem;
+  background: linear-gradient(135deg, #28a745, #218838);
+  color: #fff;
+  font-size: 1rem;
+  border-radius: 12px;
+  text-decoration: none;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
+  transition: all 0.3s ease;
+
 }
+.aboutCTA-Btn:hover {
+  background: linear-gradient(135deg, #218838, #1e7e34);
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+}
+@keyframes pulse {
+    0%, 100% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.03);
+    }
+  }
 
 /* ================== About Styles End Here ================== */
 
 
-/* ================== Footer Styles Start Here ================== */
+/* --- Footer Redesign --- */
+.footer-contact-btn {
+    width: 150px;
+    min-width: 100px;
+    max-width: 170px;
+    font-size: 0.97rem;
+    padding: 0.45em 0;
+    border-radius: 8px;
+    gap: 0.4em;
+}
+.footer-contact-btn:hover {
+    background: linear-gradient(90deg, #1e2c44 60%, #2563eb 100%);
+    color: #fff;
+    box-shadow: 0 4px 20px rgba(30,44,68,0.15);
+    transform: translateY(-2px) scale(1.03);
+}
+.footer-contact-btn i {
+    font-size: 1em;
+    margin-right: 0.4em;
+}
+
 footer {
-    padding-top: 2rem;
-    background-color: #f8fafc;
+    padding-top: 2.5rem;
+    padding-bottom: 1.5rem;
+    background: linear-gradient(90deg, #f8fafc 60%, #e0ecfa 100%);
+    border-top: 1.5px solid #e5e7eb;
+    box-shadow: 0 -2px 16px rgba(30,44,68,0.06);
 }
-
-footer .row {
+footer .container {
+    max-width: 1200px;
+}
+footer .row.align-items-start {
     display: flex;
-    align-items: start;
-    justify-content: space-evenly;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0;
+    row-gap: 2.5rem;
 }
-
-.footer-About h4 {
-    font-size: 2.1rem;
+.footer-logo-col, .footer-links-col, .footer-contact-col-main {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-width: 220px;
+    flex: 1 1 0;
+    padding: 0 1rem;
+}
+.footer-links-col, .footer-contact-col-main {
+    border-left: 1.5px solid #e5e7eb;
+}
+.footer-logo-col {
+    border-right: 2px solid #e5e7eb;
+    min-height: 140px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+@media (max-width: 991px) {
+    .footer-logo-col {
+        border-right: none;
+        min-height: unset;
+    }
+}
+.footer-logo, .footer-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-logo {
+    font-size: 2.3rem;
     font-weight: bolder;
     color: #2563eb;
+    margin-bottom: 0.3rem;
+    letter-spacing: 1px;
 }
-
-.footer-About h4 span {
-    color: black;
+.footer-desc {
+    font-size: 1rem;
+    color: #4a5568;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+    max-width: 320px;
+    padding-right: 1.5rem;
 }
-
-.footer-About p {
-    opacity: 0.8;
-}
-
-.footer-ImpLinks h4 {
+.footer-title {
+    font-size: 1.2rem;
     font-weight: 600;
+    margin-bottom: 0.7rem;
+    color: #1e2c44;
+    letter-spacing: 0.5px;
+    text-align: center;
 }
-
-.footer-ImpLinks ul {
-    list-style-type: none;
+.footer-contact-links {
+    margin-top: 0;
+}
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+    margin: 0;
     padding: 0;
 }
-
-.footer-ImpLinks ul li {
-    margin: 10px 0;
-    transition: all 0.2s ease-in-out;
-    opacity: 0.8;
+.footer-links li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
 }
-
-.footer-ImpLinks ul li:hover {
-    transform: translateX(5px);
+.footer-links a {
+    color: #1e2c44;
+    text-decoration: none;
+    font-size: 1rem;
+    opacity: 0.85;
+    transition: color 0.2s, opacity 0.2s;
+}
+.footer-links a:hover {
+    color: #2563eb;
     opacity: 1;
 }
-
-.footer-ImpLinks ul li a {
-    text-decoration: none;
-    color: black;
+@media (min-width: 992px) {
+    .footer-logo, .footer-desc {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-title {
+        font-size: 1.2rem;
+    }
 }
-
-.footerNote {
-    text-align: center;
-    margin-bottom: 0;
-    padding-bottom: 1rem;
+@media (max-width: 991px) {
+    footer .row.align-items-start {
+        flex-direction: column;
+        align-items: center;
+        gap: 1.5rem;
+    }
+    .footer-logo-col, .footer-links-col, .footer-contact-col-main {
+        border: none;
+        padding: 0;
+        min-width: 0;
+    }
+    .footer-logo, .footer-desc, .footer-title {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        padding-right: 0;
+    }
+    .footer-links, .footer-contact-links {
+        align-items: center;
+        text-align: center;
+    }
+    .footer-contact-btn {
+        margin-left: auto;
+        margin-right: auto;
+    }
+    .footer-links {
+        margin-bottom: 2rem;
+        margin-right: 0;
+    }
+    .footer-title {
+        margin-bottom: 0.8rem;
+    }
 }
-
-/* ================== Footer Styles End Here ================== */
+@media (max-width: 768px) {
+    footer .row {
+        flex-direction: column;
+        align-items: center;
+    }
+    .footer-links, .footer-contact-links {
+        margin-bottom: 1.5rem;
+        margin-right: 0;
+    }
+    .footer-contact-btn {
+        width: 100%;
+        min-width: 0;
+        max-width: 100%;
+    }
+}
 
 /* ================== Media queries start here for home screen and carousel buttons ================== */
 
@@ -461,3 +599,95 @@ footer .row {
 }
 
 /* ================== Media queries end here for home screen and carousel buttons ================== */
+
+.footer-logo, .footer-desc, .navbar-brand {
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+.footer-desc {
+    font-size: 1rem;
+    color: #4a5568;
+    opacity: 0.85;
+    margin-top: 0.3rem;
+    max-width: 380px;
+    padding: 0 1.5rem;
+    line-height: 1.6;
+}
+@media (min-width: 992px) {
+    .footer-logo, .footer-desc, .navbar-brand {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+        max-width: 420px;
+    }
+    .footer-desc {
+        max-width: 420px;
+        padding: 0 2rem;
+    }
+}
+
+.footer-links-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+.footer-links-row .footer-links {
+    margin: 0;
+    padding: 0;
+    min-width: 110px;
+}
+@media (max-width: 768px) {
+    .footer-links-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .footer-links-row .footer-links {
+        min-width: 0;
+        margin-bottom: 0.5rem;
+    }
+}
+
+.footer-contact-row {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 2.5rem;
+}
+.footer-contact-col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.2rem;
+}
+@media (max-width: 768px) {
+    .footer-contact-row {
+        flex-direction: column;
+        align-items: center;
+        gap: 0.5rem;
+    }
+    .footer-contact-col {
+        gap: 0.2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+.footer-contact-col-main .footer-title {
+    font-size: 1.45rem;
+    font-weight: 700;
+    color: #2563eb;
+    letter-spacing: 1px;
+    margin-bottom: 1.1rem;
+    position: relative;
+}
+.footer-contact-col-main .footer-title::after {
+    content: '';
+    display: block;
+    width: 38px;
+    height: 3px;
+    background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+    border-radius: 2px;
+    margin: 0.4rem auto 0 auto;
+}
