@@ -363,15 +363,7 @@
     border: 1px solid rgba(255, 255, 255, 0.2);
 }
 
-.calendar-cell {
-    width: 8px;
-    height: 8px;
-    border-radius: 2px;
-    background: #ebedf0;
-    transition: all 0.2s ease;
-    cursor: pointer;
-    position: relative;
-}
+/* Note: .calendar-cell is already defined above at line 174 with 11px dimensions */
 
 .calendar-cell:hover {
     transform: scale(1.3);
