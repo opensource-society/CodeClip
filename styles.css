@@ -864,3 +864,33 @@ body {
   width: 1px !important;
   white-space: nowrap !important;
 }
+
+
+/* Navbar Links */
+.navbar .nav-link:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.footer-links a:hover {
+  color: #0d6efd;
+  text-decoration: underline;
+  transition: 0.3s;
+}
+
+.heroSectionBtn:hover,
+.card-Btn:hover,
+.footer-contact-btn:hover,
+.aboutCTA-Btn:hover {
+  background-color: #0d6efd;
+  color: white;
+  transform: scale(1.05);
+  transition: 0.3s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  transform: translateY(-5px);
+  transition: 0.3s ease;
+}
