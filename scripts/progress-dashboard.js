@@ -55,7 +55,25 @@ class ProgressDashboard {
 
         try {
             const saved = localStorage.getItem(this.storageKey);
-            return saved ? { ...defaultData, ...JSON.parse(saved) } : defaultData;
+            if (saved) {
+                const parsedData = JSON.parse(saved);
+
+                // Migrate old Set data to arrays if necessary
+                if (parsedData.dailyActivity) {
+                    Object.values(parsedData.dailyActivity).forEach(activity => {
+                        // Convert Set objects (which become empty objects) to arrays
+                        if (activity.difficulties && typeof activity.difficulties === 'object' && !Array.isArray(activity.difficulties)) {
+                            activity.difficulties = [];
+                        }
+                        if (activity.categories && typeof activity.categories === 'object' && !Array.isArray(activity.categories)) {
+                            activity.categories = [];
+                        }
+                    });
+                }
+
+                return { ...defaultData, ...parsedData };
+            }
+            return defaultData;
         } catch (error) {
             console.warn('Error loading progress data:', error);
             return defaultData;
@@ -97,14 +115,20 @@ class ProgressDashboard {
             this.userData.dailyActivity[today] = {
                 challenges: 0,
                 timeSpent: 0,
-                difficulties: new Set(),
-                categories: new Set()
+                difficulties: [],
+                categories: []
             };
         }
 
         this.userData.dailyActivity[today].challenges++;
-        this.userData.dailyActivity[today].difficulties.add(challengeData.difficulty);
-        this.userData.dailyActivity[today].categories.add(challengeData.category);
+
+        // Add to arrays only if not already present (maintaining Set-like behavior)
+        if (!this.userData.dailyActivity[today].difficulties.includes(challengeData.difficulty)) {
+            this.userData.dailyActivity[today].difficulties.push(challengeData.difficulty);
+        }
+        if (!this.userData.dailyActivity[today].categories.includes(challengeData.category)) {
+            this.userData.dailyActivity[today].categories.push(challengeData.category);
+        }
 
         // Update skill progress
         if (this.userData.skillProgress[challengeData.category] !== undefined) {
@@ -225,8 +249,8 @@ class ProgressDashboard {
             this.userData.dailyActivity[date] = {
                 challenges: Math.floor(Math.random() * 3) + 1,
                 timeSpent: Math.floor(Math.random() * 60) + 30,
-                difficulties: new Set(['Easy', 'Medium']),
-                categories: new Set(['arrays', 'algorithms'])
+                difficulties: ['Easy', 'Medium'],
+                categories: ['arrays', 'algorithms']
             };
         }
 
@@ -1907,24 +1931,6 @@ if (typeof module !== 'undefined' && module.exports) {
 // Auto-initialize on page load
 document.addEventListener('DOMContentLoaded', () => {
     window.progressDashboard = new ProgressDashboard();
-
-    // Demo function to test notifications (remove in production)
-    window.testNotifications = () => {
-        setTimeout(() => {
-            window.progressDashboard.showNotification('🏆 Achievement Unlocked: Problem Solver!', 'achievement');
-        }, 1000);
-
-        setTimeout(() => {
-            window.progressDashboard.showNotification('🔥 Streak Extended to 5 Days', 'streak');
-        }, 3000);
-    };
-
-    // Auto-show sample notifications after 2 seconds (for demo)
-    if (window.location.pathname.includes('profile')) {
-        setTimeout(() => {
-            window.testNotifications();
-        }, 2000);
-    }
 });
 
 /* === SMART PROGRESS DASHBOARD FEATURE END === */
