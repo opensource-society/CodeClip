@@ -218,53 +218,6 @@
         margin-top: 15px;
 }
 
-.charts-container {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    justify-content: center;
-}
-
-.chart-box {
-    background: #fff;
-    padding: 20px;
-    border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    width: 600px;
-    box-sizing: border-box;
-}
-
-.chart-box canvas {
-    width: 100% !important;
-    height: 300px !important;
-}
-
-.progress-header {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-    margin-bottom: 15px;
-    font-family: 'Poppins', sans-serif;
-}
-
-.progress-icon-box {
-    width: 40px;
-    height: 40px;
-    background-color: #007BFF;
-    color: white;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 6px;
-    font-size: 18px;
-}
-
-.chart-box h3 {
-    font-size: 18px;
-    font-weight: 600;
-    color: #222;
-    margin: 0;
-}
 /* === LEADERBOARD SECTION === */
 .leaderboard-section {
     background: #fff;
