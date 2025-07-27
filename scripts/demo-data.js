@@ -81,8 +81,8 @@ function generateSampleActivity() {
             activity[dateStr] = {
                 challenges: challenges,
                 timeSpent: challenges * (30 + Math.random() * 60), // 30-90 mins per challenge
-                difficulties: new Set(['easy', 'medium', 'hard'].slice(0, challenges)),
-                categories: new Set(['arrays', 'algorithms', 'frontend'].slice(0, challenges))
+                difficulties: ['easy', 'medium', 'hard'].slice(0, challenges),
+                categories: ['arrays', 'algorithms', 'frontend'].slice(0, challenges)
             };
         }
     }
