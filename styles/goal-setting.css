@@ -678,11 +678,6 @@
     }
 }
 
-/* Goal Actions */
-.goal-actions {
-    padding-top: 12px;
-    border-top: 1px solid rgba(255, 255, 255, 0.1);
-    margin-top: 16px;
-}
+/* Note: .goal-actions is already defined above at lines 284-289 with proper flex styling */
 
 /* Note: .create-goal-btn is already defined above at lines 380-402 */
