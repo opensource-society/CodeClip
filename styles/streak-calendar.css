@@ -249,59 +249,23 @@
     border: 1px solid rgba(255, 255, 255, 0.3);
 }
 
-/* Compact Stats Section */
-.calendar-stats {
-    display: flex;
-    justify-content: space-between;
-    gap: 6px;
-    margin-top: 8px;
-    flex-wrap: wrap;
-}
-
-.streak-stat {
-    text-align: center;
-    background: rgba(255, 255, 255, 0.6);
-    border-radius: 8px;
-    padding: 6px 10px;
-    border: 1px solid rgba(255, 255, 255, 0.4);
-    transition: all 0.3s ease;
-    flex: 1;
-    min-width: 60px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
-}
-
-.streak-stat:hover {
-    background: rgba(255, 255, 255, 0.7);
-    transform: translateY(-1px);
-    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.1);
-}
-
-.streak-number {
-    display: block;
-    font-size: 1rem;
-    font-weight: 800;
-    color: #22c55e;
-    margin-bottom: 0.1rem;
-}
-
-.streak-label {
-    font-size: 0.6rem;
-    color: #64748b;
-    font-weight: 600;
-    text-transform: uppercase;
-    letter-spacing: 0.3px;
-}
-
-/* Compact Stats */
+/* Calendar Stats Section */
 .calendar-stats {
     display: flex;
     justify-content: center;
     gap: 1.5rem;
     margin-bottom: 1.5rem;
     flex-wrap: wrap;
+    background: rgba(255, 255, 255, 0.5);
+        border-radius: 12px;
+        padding: 1rem;
+        border: 1px solid rgba(226, 232, 240, 0.6);
 }
 
 .streak-stat {
+    display: flex;
+        flex-direction: column;
+        align-items: center;
     text-align: center;
     background: rgba(255, 255, 255, 0.4);
     border-radius: 12px;
@@ -319,25 +283,6 @@
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 }
 
-.calendar-stats {
-    display: flex;
-    gap: 1.5rem;
-    flex-wrap: wrap;
-    background: rgba(255, 255, 255, 0.5);
-    border-radius: 12px;
-    padding: 1rem;
-    border: 1px solid rgba(226, 232, 240, 0.6);
-}
-
-.streak-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    min-width: 80px;
-    padding: 0.5rem;
-}
-
 .streak-number {
     display: block;
     font-size: 1.3rem;
@@ -348,11 +293,11 @@
 }
 
 .streak-label {
-    font-size: 0.7rem;
+    font-size: 0.6rem;
     color: #64748b;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.5px;
+    letter-spacing: 0.3px;
 }
 
 /* Compact Calendar Container */
