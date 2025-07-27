@@ -70,7 +70,7 @@ The dashboard integrates seamlessly with existing CodeClip functionality:
 - `scripts/progress-dashboard.js` - Main dashboard functionality and analytics
 - `scripts/demo-data.js` - Sample data initialization for dashboard demo
 - `scripts/streak-goal-manager.js` - Goal setting, streak tracking, and calendar management
-- Automatic event listeners for "Solve Challenge" buttons
+- Automatic challenge tracking via click event listeners on "Solve Challenge" buttons
 - Real-time dashboard updates with localStorage persistence
 - GitHub-style streak calendar integration
 - Goal setting and progress tracking system
