@@ -561,7 +561,7 @@ Ready to execute code in 75+ languages...</div>
                 this.apiEndpoint = 'https://judge0-ce.p.rapidapi.com';
                 this.isExecuting = false;
                 this.pollInterval = null;
-                
+                this.languageCodes = {};
                 this.initializeElements();
                 this.initializeEventListeners();
                 this.setupExamples();
@@ -618,6 +618,48 @@ Ready to execute code in 75+ languages...</div>
                     });
                 });
             }
+            
+onLanguageChange() {
+    // Save current code for previous language
+    const currentLang = this.prevLang || this.elements.languageSelect.value;
+    this.languageCodes[currentLang] = this.elements.codeEditor.value;
+
+    // Load code for new language, or starter template
+    const selectedLang = this.elements.languageSelect.value;
+    const starterTemplates = {
+        '63': '// Write your JavaScript code here...',
+        '71': '# Write your Python code here...',
+        '62': '// Write your Java code here...',
+        '54': '// Write your C++ code here...',
+        '50': '// Write your C code here...',
+        '51': '// Write your C# code here...',
+        '68': '// Write your PHP code here...',
+        '72': '# Write your Ruby code here...',
+        '60': '// Write your Go code here...',
+        '78': '// Write your Kotlin code here...',
+        '85': '# Write your Perl code here...',
+        '43': '// Write your code here...'
+    };
+    this.elements.codeEditor.value = this.languageCodes[selectedLang] || starterTemplates[selectedLang] || '';
+    this.prevLang = selectedLang;
+
+    // Update placeholder as before
+    const selectedOption = this.elements.languageSelect.selectedOptions[0];
+    if (selectedOption) {
+        const langName = selectedOption.textContent.toLowerCase();
+        if (langName.includes('python')) {
+            this.elements.codeEditor.placeholder = '# Write your Python code here...';
+        } else if (langName.includes('java')) {
+            this.elements.codeEditor.placeholder = '// Write your Java code here...';
+        } else if (langName.includes('c++') || langName.includes('cpp')) {
+            this.elements.codeEditor.placeholder = '// Write your C++ code here...';
+        } else if (langName.includes('javascript')) {
+            this.elements.codeEditor.placeholder = '// Write your JavaScript code here...';
+        } else {
+            this.elements.codeEditor.placeholder = '// Write your code here...';
+        }
+    }
+}
 
             loadApiKey() {
                 const saved = localStorage.getItem('judge0_api_key');
@@ -694,50 +736,6 @@ Ready to execute code in 75+ languages...</div>
                     this.elements.languageSelect.value = currentValue;
                 }
             }
-
-            // ...inside class MultiLanguageExecutor...
-
-onLanguageChange() {
-    // Save current code for previous language
-    const currentLang = this.prevLang || this.elements.languageSelect.value;
-    this.languageCodes[currentLang] = this.elements.codeEditor.value;
-
-    // Load code for new language, or starter template
-    const selectedLang = this.elements.languageSelect.value;
-    const starterTemplates = {
-        '63': '// Write your JavaScript code here...',
-        '71': '# Write your Python code here...',
-        '62': '// Write your Java code here...',
-        '54': '// Write your C++ code here...',
-        '50': '// Write your C code here...',
-        '51': '// Write your C# code here...',
-        '68': '// Write your PHP code here...',
-        '72': '# Write your Ruby code here...',
-        '60': '// Write your Go code here...',
-        '78': '// Write your Kotlin code here...',
-        '85': '# Write your Perl code here...',
-        '43': '// Write your code here...'
-    };
-    this.elements.codeEditor.value = this.languageCodes[selectedLang] || starterTemplates[selectedLang] || '';
-    this.prevLang = selectedLang;
-
-    // Update placeholder as before
-    const selectedOption = this.elements.languageSelect.selectedOptions[0];
-    if (selectedOption) {
-        const langName = selectedOption.textContent.toLowerCase();
-        if (langName.includes('python')) {
-            this.elements.codeEditor.placeholder = '# Write your Python code here...';
-        } else if (langName.includes('java')) {
-            this.elements.codeEditor.placeholder = '// Write your Java code here...';
-        } else if (langName.includes('c++') || langName.includes('cpp')) {
-            this.elements.codeEditor.placeholder = '// Write your C++ code here...';
-        } else if (langName.includes('javascript')) {
-            this.elements.codeEditor.placeholder = '// Write your JavaScript code here...';
-        } else {
-            this.elements.codeEditor.placeholder = '// Write your code here...';
-        }
-    }
-}
 
       
             async executeCode() {
