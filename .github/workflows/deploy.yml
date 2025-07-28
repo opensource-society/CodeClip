@@ -8,6 +8,7 @@ on:
 
 jobs:
   deploy:
+    if: github.repository == 'opensource-society/CodeClip'
     runs-on: ubuntu-latest
     permissions:
       contents: read
