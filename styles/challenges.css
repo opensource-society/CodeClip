@@ -219,6 +219,19 @@ body {
   box-shadow: 0 0 6px var(--accent-color-hover);
 }
 
+.clearFilters{
+   border: none;
+  border-radius: 0.5rem;
+  padding: 0.55rem 1.1rem;
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+  user-select: none;
+ 
+}
 /* === CHALLENGES GRID === */
 .challenges-grid {
   padding: 3rem 0 5rem;
@@ -293,7 +306,7 @@ body {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.4;
-  color: #555;
+  color: #f9f8f8;
   margin-bottom: 1rem;
 }
 
@@ -316,6 +329,7 @@ body {
 
 .challenge-card__actions {
   text-align: right;
+  color:white
 }
 
 .btn {
@@ -329,10 +343,11 @@ body {
   display: inline-block;
   transition: background-color 0.3s ease;
   user-select: none;
+  color: white;
 }
 
 .btn-sm {
-  font-size: 0.85rem;
+  font-size: 0.90rem;
   padding: 0.4rem 0.8rem;
 }
 
