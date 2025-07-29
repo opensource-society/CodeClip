@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -8,11 +9,15 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap"
+    rel="stylesheet" />
 
   <!-- Link your separate CSS file here -->
-  <link rel="stylesheet" href="/CodeClip/styles/challenges.css" />
+  <link rel="stylesheet" href="../styles/challenges.css" />
+
 </head>
+
 <body>
 
   <!-- Header -->
@@ -24,18 +29,14 @@
       <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
         <ul class="nav__list">
           <li><a href="/CodeClip" class="nav__link" aria-label="Home">Home</a></li>
-          <li><a href="/challenges" class="nav__link active" aria-current="page" aria-label="Challenges">Challenges</a></li>
+          <li><a href="/challenges" class="nav__link active" aria-current="page" aria-label="Challenges">Challenges</a>
+          </li>
           <li><a href="/CodeClip/pages/editor.html" class="nav__link" aria-label="Editor">Editor</a></li>
           <li><a href="/CodeClip/pages/profile.html" class="nav__link" aria-label="Profile">Profile</a></li>
         </ul>
       </nav>
-      <button
-        class="header__toggle"
-        id="navToggle"
-        aria-label="Toggle navigation menu"
-        aria-expanded="false"
-        aria-controls="navMenu"
-      >
+      <button class="header__toggle" id="navToggle" aria-label="Toggle navigation menu" aria-expanded="false"
+        aria-controls="navMenu">
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -53,7 +54,8 @@
             Coding <span class="highlight">Challenges</span>
           </h1>
           <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
+            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to
+            advanced algorithms, there's something for every developer.
           </p>
         </div>
       </div>
@@ -62,9 +64,6 @@
     <!-- Filter Controls -->
     <section class="challenges-filter" aria-labelledby="filters-heading">
       <div class="container filter-controls">
-        <div class="filter-group">
-  
-</div>
 
         <h2 id="filters-heading" class="visually-hidden">Filter Challenges</h2>
 
@@ -93,13 +92,8 @@
         </div>
 
         <div class="search-group" style="display: flex; gap: 0.5rem; margin-left: auto;">
-          <input
-            type="search"
-            id="search-challenges"
-            class="search-input"
-            placeholder="Search challenges..."
-            aria-label="Search coding challenges by title or tag"
-          />
+          <input type="search" id="search-challenges" class="search-input" placeholder="Search challenges..."
+            aria-label="Search coding challenges by title or tag" />
           <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
         </div>
       </div>
@@ -112,7 +106,8 @@
 
         <div class="challenges-list" id="challengesList">
           <!-- Sample challenges -->
-          <article class="challenge-card" data-difficulty="easy" data-category="arrays" tabindex="0" aria-label="Challenge Two Sum, difficulty easy, category arrays">
+          <article class="challenge-card" data-difficulty="easy" data-category="arrays" tabindex="0"
+            aria-label="Challenge Two Sum, difficulty easy, category arrays">
             <header class="challenge-card__header">
               <h3 class="challenge-card__title">Two Sum</h3>
               <span class="difficulty-badge difficulty-easy">Easy</span>
@@ -125,12 +120,15 @@
               <span class="category-tag">Hash Table</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Two Sum">Solve Challenge</a>
-              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Two Sum">Solve
+                Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run
+                in JS Executor</a>
             </div>
           </article>
 
-          <article class="challenge-card" data-difficulty="medium" data-category="strings" tabindex="0" aria-label="Challenge Longest Palindromic Substring, difficulty medium, category strings">
+          <article class="challenge-card" data-difficulty="medium" data-category="strings" tabindex="0"
+            aria-label="Challenge Longest Palindromic Substring, difficulty medium, category strings">
             <header class="challenge-card__header">
               <h3 class="challenge-card__title">Longest Palindromic Substring</h3>
               <span class="difficulty-badge difficulty-medium">Medium</span>
@@ -143,12 +141,15 @@
               <span class="category-tag">Dynamic Programming</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Longest Palindromic Substring">Solve Challenge</a>
-              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+              <a href="editor.html" class="btn btn-primary btn-sm"
+                aria-label="Solve challenge Longest Palindromic Substring">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run
+                in JS Executor</a>
             </div>
           </article>
 
-          <article class="challenge-card" data-difficulty="hard" data-category="algorithms" tabindex="0" aria-label="Challenge Merge K Sorted Lists, difficulty hard, category algorithms">
+          <article class="challenge-card" data-difficulty="hard" data-category="algorithms" tabindex="0"
+            aria-label="Challenge Merge K Sorted Lists, difficulty hard, category algorithms">
             <header class="challenge-card__header">
               <h3 class="challenge-card__title">Merge K Sorted Lists</h3>
               <span class="difficulty-badge difficulty-hard">Hard</span>
@@ -161,12 +162,15 @@
               <span class="category-tag">Divide and Conquer</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Merge K Sorted Lists">Solve Challenge</a>
-              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+              <a href="editor.html" class="btn btn-primary btn-sm"
+                aria-label="Solve challenge Merge K Sorted Lists">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run
+                in JS Executor</a>
             </div>
           </article>
 
-          <article class="challenge-card" data-difficulty="easy" data-category="data-structures" tabindex="0" aria-label="Challenge Valid Parentheses, difficulty easy, category data structures">
+          <article class="challenge-card" data-difficulty="easy" data-category="data-structures" tabindex="0"
+            aria-label="Challenge Valid Parentheses, difficulty easy, category data structures">
             <header class="challenge-card__header">
               <h3 class="challenge-card__title">Valid Parentheses</h3>
               <span class="difficulty-badge difficulty-easy">Easy</span>
@@ -179,8 +183,10 @@
               <span class="category-tag">Strings</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Valid Parentheses">Solve Challenge</a>
-              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Valid Parentheses">Solve
+                Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run
+                in JS Executor</a>
             </div>
           </article>
         </div>
@@ -228,18 +234,8 @@
 
   <!-- Theme Toggle Button -->
   <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light or dark theme">
-    <svg
-      xmlns="http://www.w3.org/2000/svg"
-      width="24"
-      height="24"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="currentColor"
-      stroke-width="2"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-      class="feather feather-sun"
-    >
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+      stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun">
       <circle cx="12" cy="12" r="5" />
       <line x1="12" y1="1" x2="12" y2="3" />
       <line x1="12" y1="21" x2="12" y2="23" />
@@ -289,58 +285,59 @@
     });
   </script>
   <script>
-  const searchInput = document.getElementById("search-challenges");
-  const difficultyFilter = document.getElementById("difficulty-filter");
-  const categoryFilter = document.getElementById("category-filter");
-  const challengesList = document.getElementById("challengesList");
-  const noResults = document.getElementById("no-results");
+    const searchInput = document.getElementById("search-challenges");
+    const difficultyFilter = document.getElementById("difficulty-filter");
+    const categoryFilter = document.getElementById("category-filter");
+    const challengesList = document.getElementById("challengesList");
+    const noResults = document.getElementById("no-results");
 
-  const challengeCards = Array.from(challengesList.getElementsByClassName("challenge-card"));
+    const challengeCards = Array.from(challengesList.getElementsByClassName("challenge-card"));
 
-  function filterChallenges() {
-    const searchTerm = searchInput.value.toLowerCase();
-    const difficulty = difficultyFilter.value;
-    const category = categoryFilter.value;
+    function filterChallenges() {
+      const searchTerm = searchInput.value.toLowerCase();
+      const difficulty = difficultyFilter.value;
+      const category = categoryFilter.value;
 
-    let visibleCount = 0;
+      let visibleCount = 0;
 
-    challengeCards.forEach(card => {
-      const title = card.querySelector(".challenge-card__title").textContent.toLowerCase();
-      const cardDifficulty = card.dataset.difficulty;
-      const cardCategory = card.dataset.category;
+      challengeCards.forEach(card => {
+        const title = card.querySelector(".challenge-card__title").textContent.toLowerCase();
+        const cardDifficulty = card.dataset.difficulty;
+        const cardCategory = card.dataset.category;
 
-      const matchesSearch = title.includes(searchTerm);
-      const matchesDifficulty = !difficulty || cardDifficulty === difficulty;
-      const matchesCategory = !category || cardCategory === category;
+        const matchesSearch = title.includes(searchTerm);
+        const matchesDifficulty = !difficulty || cardDifficulty === difficulty;
+        const matchesCategory = !category || cardCategory === category;
 
-      const isVisible = matchesSearch && matchesDifficulty && matchesCategory;
+        const isVisible = matchesSearch && matchesDifficulty && matchesCategory;
 
-      card.style.display = isVisible ? "block" : "none";
+        card.style.display = isVisible ? "block" : "none";
 
-      if (isVisible) visibleCount++;
+        if (isVisible) visibleCount++;
+      });
+
+      noResults.style.display = visibleCount === 0 ? "block" : "none";
+    }
+
+    // Event listeners for real-time filtering
+    searchInput.addEventListener("input", filterChallenges);
+    difficultyFilter.addEventListener("change", filterChallenges);
+    categoryFilter.addEventListener("change", filterChallenges);
+    const clearBtn = document.getElementById("clearFilters");
+
+    clearBtn.addEventListener("click", () => {
+      // Reset all filters
+      searchInput.value = "";
+      difficultyFilter.value = "";
+      categoryFilter.value = "";
+
+      // Re-run the filtering function to show all challenges again
+      filterChallenges();
     });
 
-    noResults.style.display = visibleCount === 0 ? "block" : "none";
-  }
-
-  // Event listeners for real-time filtering
-  searchInput.addEventListener("input", filterChallenges);
-  difficultyFilter.addEventListener("change", filterChallenges);
-  categoryFilter.addEventListener("change", filterChallenges);
-  const clearBtn = document.getElementById("clearFilters");
-
-clearBtn.addEventListener("click", () => {
-  // Reset all filters
-  searchInput.value = "";
-  difficultyFilter.value = "";
-  categoryFilter.value = "";
-
-  // Re-run the filtering function to show all challenges again
-  filterChallenges();
-});
-
-</script>
+  </script>
 
 
 </body>
+
 </html>
