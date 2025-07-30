@@ -40,6 +40,21 @@
     />
 
     <!-- ================ Vendor CSS ================  -->
+
+ <main>
+    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+
+    <link rel="stylesheet" href="styles/bootstrap.min.css">
+    <link rel="stylesheet" href="styles/owl.carousel.min.css">
+    <link rel="stylesheet" href="styles/owl.theme.default.min.css">
+    <link rel="stylesheet" href="styles/fontawesome.css">
+
+    <!-- ================ Custom CSS ================  -->
+    <link rel="stylesheet" href="styles/main.css">
+    
+
+</head>
+
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
     <link rel="stylesheet" href="styles/owl.carousel.min.css" />
     <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
@@ -48,10 +63,43 @@
     <!-- ================ Custom CSS ================  -->
     <link rel="stylesheet" href="styles/main.css" />
   </head>
+  </main>
 
   <body>
+    <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
+<main>
+        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+            <div class="container">
+                <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challengeSection">Challenges</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutSection">About</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#contactFooter">Contact</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
           <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
@@ -68,35 +116,36 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
+              <li class="nav-item ">
                 <a
-                  class="nav-link active"
+                  class="active"
                   aria-current="page"
-                  href="#homeSection"
+                  href="#top"
                   >Home</a
                 >
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#challengeSection">Challenges</a>
+                <a href="../CodeClip/pages/challenges.html">Challenges</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
+                <a href="#leaderboardSection">Leaderboard</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#aboutSection">About</a>
+                <a href="#aboutSection">About</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#contactFooter">Contact</a>
+                <a  href="#contactFooter">Contact</a>
               </li>
             </ul>
           </div>
         </div>
       </nav>
+      </main>
     </header>
     <!-- ================================ Header Section Start Here ================================ -->
 
     <!-- ================================ Hero Section Start Here ================================ -->
-    <section id="homeSection" class="heroSection">
+    <section id="homeSection top" class="heroSection">
       <div class="container">
         <div class="row heroSection-Container">
           <div class="col-12 col-md-6 heroSection-Left">
@@ -176,7 +225,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of frontend challenge and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="frontendChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -202,7 +251,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of javascript logics and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="jslogics.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -228,7 +277,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of backend bbasic and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="backendChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -254,7 +303,7 @@
 
                 <div class="card-CTAButton">
                   <!-- === Create webpage of ui design challenge and add link here === -->
-                  <a href="#" class="card-Btn">Join Now</a>
+                  <a href="uiChallenges.html" class="card-Btn">Join Now</a>
                 </div>
               </div>
             </div>
@@ -276,6 +325,30 @@
                   Practice real world contribution workflows using Git and
                   GitHub. You'll learn how to contribute to projects, manage
                   pull requests.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpages of open source challenge and add link here === -->
+                  <a href="gitChallenges.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- added card 6 -->
+          <!-- === Card 6 === -->
+           <div class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">JavaScript Mini Projects</h5>
+                  <p class="card-Level medium-Col">Easy</p>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 300 coders joined
+                </p>
+                <p class="card-Text">
+                  Created an interactive form/input area,Applied CSS styles for visual consistency .Added features like auto-focus, clear input after add, and animation.
                 </p>
 
                 <div class="card-CTAButton">
@@ -473,10 +546,10 @@
     </section>
 
     <!-- ================================ Footer Section Start Here ================================ -->
- <footer id="contactFooter">
+<footer id="contactFooter">
   <div class="container">
     <div class="row align-items-start justify-content-between py-4">
-      
+
       <div class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
         <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
         <p class="footer-desc mb-0">
@@ -528,7 +601,8 @@
 </footer>
 
     <!-- ================================ Footer Section End Here ================================ -->
-
+   <!--add scroll to top button -->
+    <a href="#top" class="scroll_to_top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
     <!-- ================ Vendor JS ================  -->
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/owl.carousel.min.js"></script>
