@@ -426,6 +426,12 @@ body {
   stroke: var(--text-color);
 }
 
+@media (max-width: 1020px) {
+  .search-group{
+    width: 100%;
+  }
+}
+
 /* === RESPONSIVE === */
 @media (max-width: 768px) {
   .nav__list {
