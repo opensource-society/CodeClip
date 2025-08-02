@@ -1,0 +1,90 @@
+.qr-header {
+  text-align: center;
+  color: black;
+  padding: 15px 20px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+}
+
+.qr-header h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.home-btn {
+  background: gray;
+  color: black;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 6px;
+  font-size: 14px;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+.home-btn:hover {
+  background: #e6e6e6;
+}
+
+.qr-container {
+  max-width: 550px;
+  margin: 30px auto;
+  padding: 25px;
+  padding-right: 30px;
+  text-align: center;
+  background: var(--card-bg, #ffffff);
+  border-radius: 12px;
+  box-shadow: 0 6px 14px rgba(0,0,0,0.1);
+}
+
+.qr-container textarea {
+  width: 90%;
+  height: 100px;
+  margin-bottom: 15px;
+  padding: 12px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  resize: none;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.qr-container textarea:focus {
+  border-color: #0078ff;
+}
+
+.qr-container button {
+  background: #0078ff;
+  color: white;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s;
+}
+.qr-container button:hover {
+  background: #005fcc;
+  transform: scale(1.05);
+}
+
+.note {
+  font-size: 14px;
+  color: #666;
+  margin-top: 10px;
+}
+
+#qrcode {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+}
+
+.qr-footer {
+  text-align: center;
+  padding: 15px 20px;
+  color: white;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+}
