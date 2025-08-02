@@ -198,6 +198,13 @@ body {
   background-color: #3a54c3;
 }
 
+.navbar-collapse {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
 @media (max-width: 991px) {
   .navbar-collapse {
     display: flex !important;
