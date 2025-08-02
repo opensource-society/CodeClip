@@ -194,7 +194,7 @@ body {
   transition: background-color 0.3s;
 }
 
-.navbar-nav a:fover {
+.navbar-nav a:hover {
   background-color: #3a54c3;
 }
 
