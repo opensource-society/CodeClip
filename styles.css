@@ -11,7 +11,8 @@ html {
 }
 
 body {
-  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    sans-serif;
   color: #1e293b;
   background: #f8fafc;
   line-height: 1.6;
@@ -163,7 +164,7 @@ body {
 }
 
 .nav__link::after {
-  content: '';
+  content: "";
   display: block;
   width: 0;
   height: 2px;
@@ -178,6 +179,49 @@ body {
 .nav__link:focus::after,
 .nav__link.active::after {
   width: 100%;
+}
+
+/* Keep button styles */
+.navbar-nav a {
+  padding: 10px 20px;
+  background-color: #4c68ef;
+  color: #fff;
+  margin: 5px;
+  border-radius: 5px;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: background-color 0.3s;
+}
+
+.navbar-nav a:hover {
+  background-color: #3a54c3;
+}
+
+.navbar-collapse {
+  background-color: white;
+  padding: 10px;
+  border-radius: 10px;
+}
+
+
+@media (max-width: 991px) {
+  .navbar-collapse {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-nav {
+    flex-direction: row !important;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .navbar-nav .nav-item {
+    margin: 5px;
+  }
 }
 
 .header__toggle {
@@ -245,8 +289,13 @@ body {
 }
 
 @keyframes float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-20px); }
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-20px);
+  }
 }
 
 .hero__content {
@@ -311,7 +360,6 @@ body {
   background: #64748b;
 }
 
-
 .btn-primary:hover {
   background: #1e40af;
 }
@@ -350,12 +398,18 @@ body {
   border-radius: 50%;
 }
 
-.red { background: #ff5f56; }
-.yellow { background: #ffbd2e; }
-.green { background: #27c93f; }
+.red {
+  background: #ff5f56;
+}
+.yellow {
+  background: #ffbd2e;
+}
+.green {
+  background: #27c93f;
+}
 
 .code-content {
-  font-family: 'Fira Code', monospace;
+  font-family: "Fira Code", monospace;
   font-size: 0.9rem;
   line-height: 1.5;
 }
@@ -364,9 +418,15 @@ body {
   margin-bottom: 0.5rem;
 }
 
-.comment { color: #64748b; }
-.keyword { color: #2563eb; }
-.string { color: #16a34a; }
+.comment {
+  color: #64748b;
+}
+.keyword {
+  color: #2563eb;
+}
+.string {
+  color: #16a34a;
+}
 
 /* Filter Section */
 .challenges-filter {
@@ -375,7 +435,7 @@ body {
   border-radius: 10px;
   margin-top: 20px;
   margin-bottom: 4rem;
-  margin-left:2rem;
+  margin-left: 2rem;
   margin-right: 2rem;
   box-shadow: 0 2px 15px rgba(0, 0, 0, 0.05);
 }
@@ -567,7 +627,7 @@ body {
 }
 
 [data-theme="light"] .card {
-  --background-color: #C9D9F6;
+  --background-color: #c9d9f6;
   color: #212121;
 }
 
@@ -581,7 +641,8 @@ body {
 .vault-card {
   background: linear-gradient(135deg, #e0e7ff 0%, #f8fafc 100%);
   border-radius: 18px;
-  box-shadow: 0 8px 32px rgba(37,99,235,0.07), 0 1.5px 7px rgba(37,99,235,0.09);
+  box-shadow: 0 8px 32px rgba(37, 99, 235, 0.07),
+    0 1.5px 7px rgba(37, 99, 235, 0.09);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -669,7 +730,12 @@ body {
   margin: 0 auto;
   width: 80px;
   height: 80px;
-  background: linear-gradient(90deg, #93C5FD 0%, #3B82F6 40%, rgba(0, 0, 0, 0.28) 60%);
+  background: linear-gradient(
+    90deg,
+    #93c5fd 0%,
+    #3b82f6 40%,
+    rgba(0, 0, 0, 0.28) 60%
+  );
   border-radius: 100%;
   display: flex;
   justify-content: center;
@@ -717,7 +783,7 @@ body {
 }
 
 .card:hover .icon i {
-  background: linear-gradient(90deg, #93C5FD, #3B82F6);
+  background: linear-gradient(90deg, #93c5fd, #3b82f6);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
@@ -863,5 +929,3 @@ body {
   width: 1px !important;
   white-space: nowrap !important;
 }
-
-
