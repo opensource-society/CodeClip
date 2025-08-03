@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login - CodeClip</title>
+  <link
+      rel="shortcut icon"
+      href="assets/favicon/codeClip-favicon.png"
+      type="image/png"
+   />
+  <style>
+    * {
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      background-color: #f0f2fa;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+
+    .card {
+      display: flex;
+      width: 700px;
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+      overflow: hidden;
+    }
+
+    .left {
+      flex: 1;
+      padding: 40px 30px;
+    }
+
+    .brand {
+      font-size: 30px;
+      font-weight: bold;
+      color: #2563eb;
+      margin-bottom: 25px;
+    }
+
+    .brand span {
+      color: #1e2c44;
+    }
+
+    h2 {
+      margin: 0;
+      font-size: 14px;
+      color: #2c313c;
+    }
+
+    p {
+      font-size: 14px;
+      color: #6b7280;
+      margin-bottom: 20px;
+      margin-top: -1px;
+    }
+
+    label {
+      font-size: 13px;
+      color: #374151;
+      margin-bottom: 4px;
+      display: block;
+    }
+
+    input[type="email"],
+    input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 15px;
+      border-radius: 6px;
+      border: 1px solid #ccc;
+      font-size: 14px;
+    }
+
+    .remember-row {
+      font-size: 13px;
+      margin-bottom: 20px;
+    }
+
+    .remember-row a {
+      text-decoration: none;
+      color: #2563eb;
+    }
+
+    .btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #2563eb;
+      color: white;
+      font-size: 15px;
+      border: none;
+      border-radius: 6px;
+      cursor: pointer;
+      margin-bottom: 15px;
+    }
+
+    .google-btn {
+      width: 100%;
+      padding: 10px;
+      background-color: #fff;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      cursor: pointer;
+    }
+
+    .google-btn img {
+      width: 18px;
+      height: 18px;
+    }
+
+    .signup {
+      text-align: center;
+      font-size: 13px;
+      margin-top: 12px;
+    }
+
+    .signup a {
+      color: #2563eb;
+      text-decoration: none;
+    }
+
+    .right {
+      flex: 1;
+      background-color: #eef2ff;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 20px;
+    }
+
+    .right img {
+      width: 90%;
+      max-width: 250px;
+    }
+
+    @media (max-width: 700px) {
+      .card {
+        flex-direction: column;
+        width: 90%;
+      }
+
+      .right {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="left">
+      <div class="brand">
+        <strong>Code</strong><span>Clip</span>
+      </div>
+      <h2>Welcome back !</h2>
+      <p>Login to your account</p>
+
+      <form>
+        <label>Email</label>
+        <input type="email" placeholder="Enter your Email" required />
+
+        <label>Password</label>
+        <input type="password" placeholder="Enter your password" required />
+
+        <div class="remember-row">
+          <a href="#">Forgot password?</a>
+        </div>
+
+        <button class="btn" type="submit">Sign in</button>
+
+        <button class="google-btn" type="button">
+          <img src="https://img.icons8.com/color/16/google-logo.png" alt="Google" />
+          Sign in with Google
+        </button>
+
+        <div class="signup">
+          Don’t have an account? <a href="#">Sign up</a>
+        </div>
+      </form>
+    </div>
+
+    <div class="right">
+      <img src="assets/images/hero-section/hero-Img.png">
+    </div>
+  </div>
+</body>
+</html>
