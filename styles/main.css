@@ -770,3 +770,16 @@ footer .row.align-items-start {
 .custom-navbar .navbar-brand span {
   color: #ffffff;
 }
+@media screen and (max-width: 799px) {
+  nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+  }
+
+  body {
+    padding-top: 60px; /* adjust based on nav height */
+  }
+}
