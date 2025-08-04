@@ -9,17 +9,22 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Community logos -->
+     <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
   <!-- Link your separate CSS file here -->
-  <link rel="stylesheet" href="/CodeClip/styles/challenges.css" />
+  <link rel="stylesheet" href="CodeClip-Gssoc-25\styles\challenges.css" />
 </head>
 <body>
 
-  <!-- Header -->
+  <Header>
   <header class="header" role="banner">
     <div class="container header__container">
       <div class="header__logo">
-        <span class="logo-text">CodeClip</span>
+        <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
       </div>
       <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
         <ul class="nav__list">
@@ -43,6 +48,10 @@
     </div>
   </header>
 
+
+
+  
+
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
@@ -50,11 +59,12 @@
       <div class="container">
         <div class="challenges-hero__content">
           <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
+            Coding <span class="highlight">Challenges &lt/&gt </span>
           </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
+      <p class="challenges-hero__description">
+  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, 
+  <span class="typing-loop">for every developer.</span>
+</p>
         </div>
       </div>
     </section>
@@ -69,7 +79,7 @@
         <h2 id="filters-heading" class="visually-hidden">Filter Challenges</h2>
 
         <div class="filter-group">
-          <label for="difficulty-filter">Difficulty:</label>
+          <label for="difficulty-filter"><H3>Difficulty:</H3></label>
           <select id="difficulty-filter" class="filter-select" aria-label="Filter challenges by difficulty">
             <option value="">All Levels</option>
             <option value="easy">Easy</option>
@@ -79,7 +89,7 @@
         </div>
 
         <div class="filter-group">
-          <label for="category-filter">Category:</label>
+          <label for="category-filter"><h3>Category:</h3></label>
           <select id="category-filter" class="filter-select" aria-label="Filter challenges by category">
             <option value="">All Categories</option>
             <option value="arrays">Arrays</option>
@@ -198,12 +208,14 @@
     <div class="container">
       <div class="footer__content">
         <section class="footer__section">
-          <h4>CodeClip</h4>
+          <h2><div class="header__logo">
+        <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+      </div></h2>
           <p>Master coding challenges in your browser</p>
         </section>
 
         <section class="footer__section">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="challenges.html">Challenges</a></li>
@@ -211,14 +223,15 @@
           </ul>
         </section>
 
-        <section class="footer__section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#" aria-label="GitHub link">GitHub</a></li>
-            <li><a href="#" aria-label="Discord link">Discord</a></li>
-            <li><a href="#" aria-label="Twitter link">Twitter</a></li>
-          </ul>
-        </section>
+  <section class="footer__section">
+  <h2>Community</h2>
+  <ul>
+    <li><a href="#" aria-label="GitHub link">GitHub <i class="fab fa-github"></i></a></li>
+    <li><a href="#" aria-label="Discord link">Discord <i class="fab fa-discord"></i></a></li>
+    <li><a href="#" aria-label="Twitter link">Twitter <i class="fab fa-twitter"></i></a></li>
+  </ul>
+</section>
+
       </div>
       <div class="footer__bottom">
         <p>&copy; 2024 CodeClip. All rights reserved.</p>
