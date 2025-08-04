@@ -147,7 +147,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-nav__link.active {
+.nav__link.active {
   color: #3366ff;
 }
 
