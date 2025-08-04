@@ -1,0 +1,62 @@
+name: PR Preview to GitHub Pages
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches:
+      - main
+
+jobs:
+  deploy-preview:
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pull-requests: write
+      pages: write
+      id-token: write
+
+    steps:
+      - name: Checkout PR branch
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.event.pull_request.head.sha }}
+          fetch-depth: 1
+
+      - name: Create preview directory
+        run: |
+          mkdir -p preview
+
+      - name: Copy files to preview folder
+        run: |
+          # Copy only the necessary files for the static site, excluding git and github folders
+          rsync -av --exclude='.git*' --exclude='.github' --exclude='node_modules' --exclude='*.md' \
+            --exclude='LICENSE' --exclude='CONTRIBUTING.md' --exclude='CODE_OF_CONDUCT.md' \
+            --exclude='SECURITY.md' --exclude='LEADERBOARD.md' --exclude='NAVIGATION_IMPLEMENTATION.md' \
+            ./ preview/
+          
+          # List contents to debug
+          echo "Preview directory contents:"
+          find preview -type f | head -20
+
+      - name: Deploy to GitHub Pages
+        uses: peaceiris/actions-gh-pages@v4
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./preview
+          publish_branch: gh-pages
+          destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
+          keep_files: true  # Keep other PR previews
+          user_name: 'github-actions[bot]'
+          user_email: 'github-actions[bot]@users.noreply.github.com'
+
+      - name: Comment PR with preview URL
+        uses: marocchino/sticky-pull-request-comment@v2
+        with:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          header: preview-url
+          message: |
+            🚀 **PR Preview deployed!**
+            
+            📍 **Preview URL:** https://opensource-society.github.io/CodeClip/pr-preview/pr-${{ github.event.pull_request.number }}/
+            
+            The preview will be available in a few minutes after the deployment completes.

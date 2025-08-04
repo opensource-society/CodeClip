@@ -1,0 +1,52 @@
+name: Deploy to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:  # Allow manual triggering
+
+jobs:
+  deploy:
+    if: github.repository == 'opensource-society/CodeClip'
+    runs-on: ubuntu-latest
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Create deployment directory
+        run: |
+          mkdir -p _site
+
+      - name: Copy files for deployment
+        run: |
+          # Copy only the necessary files for the static site, excluding git and github folders
+          rsync -av --exclude='.git*' --exclude='.github' --exclude='node_modules' --exclude='*.md' \
+            --exclude='LICENSE' --exclude='CONTRIBUTING.md' --exclude='CODE_OF_CONDUCT.md' \
+            --exclude='SECURITY.md' --exclude='LEADERBOARD.md' --exclude='NAVIGATION_IMPLEMENTATION.md' \
+            ./ _site/
+          
+          # List contents to debug
+          echo "Site directory contents:"
+          find _site -type f | head -20
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: './_site'
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
