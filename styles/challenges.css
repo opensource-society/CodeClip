@@ -25,7 +25,24 @@
   --input-bg: #2d3748;
   --accent-color: #63b3ed;
   --accent-color-hover: #90cdf4;
-.nav__link {
+[data-theme="dark"] {
+  --bg-color: #1a202c;
+  --text-color:white;
+  --card-bg: #2d3748;
+  --border-color: #4a5568;
+  --input-bg: #2d3748;
+  --accent-color: #63b3ed;
+  --accent-color-hover: #90cdf4;
+
+  --easy-bg: #1c4532;
+  --easy-text: #68d391;
+  --medium-bg: #4a3a19;
+  --medium-text: #f6e05e;
+  --hard-bg: #521b22;
+  --hard-text: #f56565;
+}
+
+[data-theme="dark"] .nav__link {
   color: white;
 }
   --easy-bg: #1c4532;
