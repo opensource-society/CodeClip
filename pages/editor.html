@@ -173,9 +173,130 @@ return str.split('').reverse().join('');
 }
             </code></pre>
 
-            <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
+             <button id="runCodeBtn" class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
                 Run Code
             </button>
+
+            <div id="feedbackModal" style="display:none; position:fixed; top:0; left:0; width:100%; height:100%;
+    background:rgba(0,0,0,0.5); z-index:1000; justify-content:center; align-items:center;">
+
+                <div
+                    style="background:#fff; padding:20px; border-radius:8px; max-width:400px; width:90%; text-align:center;">
+                    <h4 style="margin-bottom:10px; color:black;">Enjoying the experience?</h4>
+                    <p style="margin-bottom:10px; color:black;">Please rate us</p>
+
+                    <div id="starRating" style="font-size: 24px; margin-bottom:10px; cursor:pointer; color: lightgray;">
+                        <span class="star" data-value="1">&#9733;</span>
+                        <span class="star" data-value="2">&#9733;</span>
+                        <span class="star" data-value="3">&#9733;</span>
+                        <span class="star" data-value="4">&#9733;</span>
+                        <span class="star" data-value="5">&#9733;</span>
+                    </div>
+
+                    <p style="margin-bottom:10px; color:black;">Leave your feedback below:</p>
+
+                    <textarea placeholder="Your feedback..." id="feedbackInput"
+                        style="width:100%; height:80px; resize:none;"></textarea><br><br>
+                    <button id="submitFeedback" class="feedback-btn submit-btn">Submit</button>
+                    <button id="cancelFeedback" class="feedback-btn cancel-btn"
+                        style="margin-left:10px;">Cancel</button>
+                </div>
+            </div>
+        
+        <style>
+            #starRating .star {
+                transition: color 0.2s;
+            }
+
+            #starRating .star.hover,
+            #starRating .star.selected {
+                color: gold;
+            }
+
+            .feedback-btn {
+                padding: 8px 16px;
+                color: black;
+                border: none;
+                border-radius: 4px;
+                cursor: pointer;
+                outline: none;
+                transition: background-color 0.3s ease;
+            }
+
+            /* Submit button */
+            .submit-btn {
+                background-color: #28a745;
+            }
+
+            .submit-btn:hover {
+                background-color: #218838;
+            }
+
+
+            .cancel-btn {
+                background-color: #dc3545;
+                margin-left: 10px;
+            }
+
+            .cancel-btn:hover {
+                background-color: #c82333;
+            }
+        </style>
+        <script>
+            const runCodeBtn = document.getElementById("runCodeBtn");
+            const feedbackModal = document.getElementById("feedbackModal");
+            const submitBtn = document.getElementById("submitFeedback");
+            const cancelBtn = document.getElementById("cancelFeedback");
+
+            runCodeBtn.addEventListener("click", () => {
+                feedbackModal.style.display = "flex";
+            });
+
+            submitBtn.addEventListener("click", () => {
+                const feedback = document.getElementById("feedbackInput").value;
+                console.log("User feedback:", feedback);
+              
+                feedbackModal.style.display = "none";
+            });
+
+            cancelBtn.addEventListener("click", () => {
+                feedbackModal.style.display = "none";
+            });
+
+
+            const stars = document.querySelectorAll("#starRating .star");
+            let selectedRating = 0;
+
+            stars.forEach((star, index) => {
+                // Hover effect
+                star.addEventListener("mouseover", () => {
+                    highlightStars(index);
+                });
+
+                star.addEventListener("mouseout", () => {
+                    highlightStars(selectedRating - 1);
+                });
+
+                // Click to select rating
+                star.addEventListener("click", () => {
+                    selectedRating = index + 1;
+                    highlightStars(index);
+                    console.log("Selected rating:", selectedRating);
+                });
+            });
+
+            function highlightStars(index) {
+                stars.forEach((star, i) => {
+                    if (i <= index) {
+                        star.classList.add("selected");
+                    } else {
+                        star.classList.remove("selected");
+                    }
+                });
+            }
+
+
+        </script>
         </div>
 
         <!-- Grabber between center and right panels -->
