@@ -164,18 +164,20 @@ function reverseString(str) {
         <div id="grabber-1" class="grabber"></div>
 
         <!-- Center Panel: Code Editor -->
-        <div id="center-panel" class="panel m-2"> <!-- Changed margins to fix allignment -->
+        <div id="center-panel" class="panel m-2">
             <h2 class="h4 mb-1 text-code-heading">Code Editor</h2>
-            <pre id="code-editor" class="bg-dark p-3 rounded flex-grow-1 overflow-auto "><code class="language-javascript" contenteditable="true">
-function reverseString(str) {
-// Your code here
-return str.split('').reverse().join('');
-}
-            </code></pre>
-
-            <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
-                Run Code
-            </button>
+            <pre id="code-editor" class="bg-dark p-3 rounded flex-grow-1 overflow-auto" contenteditable="true">
+        <code class="language-javascript">
+        function reverseString(str) {
+  // Your code here
+        return str.split('').reverse().join('');    
+        }
+        </code>
+        </pre>
+        <div class="mt-2">
+        <button class="btn btn-custom-blue me-2" id="reset-button">Reset Editor</button>
+        </div>
+        </div>
         </div>
 
         <!-- Grabber between center and right panels -->
@@ -187,15 +189,6 @@ return str.split('').reverse().join('');
             <div id="output-area" class="flex-grow-1 p-3 rounded overflow-auto mb-2">
                 <p class="text-muted">Click "Run Code" to see output here.</p>
                 <pre class="mt-2 text-sm"><code>
-// Example Test Case:
-// Input: "hello"
-// Expected Output: "olleh"
-// Actual Output: (will appear here)
-
-// Test Case 2:
-// Input: ""
-// Expected Output: ""
-// Actual Output: (will appear here)
                 </code></pre>
             </div>
             <button class="btn btn-custom-orange mt-2 px-4 py-2 rounded shadow">
@@ -211,6 +204,36 @@ return str.split('').reverse().join('');
             const gridContainer = document.getElementById('grid-container');
             const grabber1 = document.getElementById('grabber-1');
             const grabber2 = document.getElementById('grabber-2');
+
+            
+            // Reset Button Logic
+            const resetButton = document.getElementById('reset-button');
+            const codeEditor = document.querySelector('#code-editor code');
+
+            resetButton.addEventListener('click', () => {
+                codeEditor.innerText = '// Start typing your code here';
+                showToast('Editor cleared!');
+            });
+
+            // Optional Toast Message
+            function showToast(message) {
+                const toast = document.createElement('div');
+                toast.innerText = message;
+                toast.style.position = 'fixed';
+                toast.style.bottom = '20px';
+                toast.style.right = '20px';
+                toast.style.backgroundColor = '#333';
+                toast.style.color = '#fff';
+                toast.style.padding = '10px 20px';
+                toast.style.borderRadius = '5px';
+                toast.style.zIndex = 9999;
+                document.body.appendChild(toast);
+                setTimeout(() => {
+                    document.body.removeChild(toast);
+                }, 2000);
+            }
+        });
+
 
             // Function to handle resizing logic
             const handleResize = (e, grabber) => {
@@ -278,7 +301,24 @@ return str.split('').reverse().join('');
             grabber2.addEventListener('touchstart', (e) => {
                 handleResize(e, grabber2);
             });
-        });
+    // Run Tests logic
+document.querySelector('.btn-custom-orange').addEventListener('click', () => {
+  const code = document.querySelector('#code-editor code').innerText;
+  let outputText = '';
+  try {
+    eval(code); // Runs the user's code
+    if (typeof reverseString === 'function') {
+      const result = reverseString("hello");
+      outputText = `reverseString("hello") ➜ ${result}`;
+    } else {
+      outputText = 'Function reverseString() is not defined.';
+    }
+  } catch (err) {
+    outputText = `Error: ${err.message}`;
+  }
+  document.querySelector('#output-area code').innerText = outputText;
+});
+
     </script>
 
     <!-- Router Script -->
