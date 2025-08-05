@@ -16,7 +16,7 @@
   --hard-bg: #f8d7da;
   --hard-text: #721c24;
 }
-
+/* correction acc to github bot */
 [data-theme="dark"] {
   --bg-color: #1a202c;
   --text-color:white;
@@ -33,7 +33,6 @@
   --input-bg: #2d3748;
   --accent-color: #63b3ed;
   --accent-color-hover: #90cdf4;
-
   --easy-bg: #1c4532;
   --easy-text: #68d391;
   --medium-bg: #4a3a19;
@@ -41,7 +40,6 @@
   --hard-bg: #521b22;
   --hard-text: #f56565;
 }
-
 [data-theme="dark"] .nav__link {
   color: white;
 }
@@ -147,7 +145,7 @@ body {
   box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
 }
 
-.nav__link.active {
+nav__link.active {
   color: #3366ff;
 }
 
