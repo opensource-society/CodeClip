@@ -1,0 +1,805 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dark Mode Toggle - CodeClip</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        :root {
+            /* Light mode colors */
+            --bg-primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --bg-secondary: rgba(255, 255, 255, 0.9);
+            --bg-card: rgba(255, 255, 255, 0.15);
+            --text-primary: #2d3748;
+            --text-secondary: #4a5568;
+            --text-light: rgba(255, 255, 255, 0.9);
+            --border-color: rgba(255, 255, 255, 0.2);
+            --shadow-light: rgba(0, 0, 0, 0.1);
+            --shadow-medium: rgba(0, 0, 0, 0.15);
+            --shadow-heavy: rgba(0, 0, 0, 0.25);
+            --accent-color: #667eea;
+            --success-color: #48bb78;
+            --warning-color: #ed8936;
+        }
+
+        [data-theme="dark"] {
+            /* Dark mode colors */
+            --bg-primary: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            --bg-secondary: rgba(45, 55, 72, 0.95);
+            --bg-card: rgba(45, 55, 72, 0.8);
+            --text-primary: #e2e8f0;
+            --text-secondary: #a0aec0;
+            --text-light: rgba(226, 232, 240, 0.9);
+            --border-color: rgba(226, 232, 240, 0.1);
+            --shadow-light: rgba(0, 0, 0, 0.3);
+            --shadow-medium: rgba(0, 0, 0, 0.4);
+            --shadow-heavy: rgba(0, 0, 0, 0.6);
+            --accent-color: #63b3ed;
+            --success-color: #68d391;
+            --warning-color: #fbb036;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: var(--bg-primary);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 20px;
+            position: relative;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            overflow-x: hidden;
+        }
+
+        .back-home {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            background: var(--bg-card);
+            backdrop-filter: blur(10px);
+            border: 1px solid var(--border-color);
+            padding: 12px 20px;
+            border-radius: 50px;
+            color: var(--text-light);
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 1000;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .back-home:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px var(--shadow-light);
+        }
+
+        .back-home.hidden-on-scroll {
+            transform: translateY(-100px);
+            opacity: 0;
+        }
+
+        .container {
+            max-width: 1200px;
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 3rem;
+        }
+
+        .page-title {
+            text-align: center;
+            color: var(--text-light);
+            margin-bottom: 2rem;
+        }
+
+        .page-title h1 {
+            font-size: 3.5rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            text-shadow: 0 4px 15px var(--shadow-medium);
+            background: linear-gradient(45deg, var(--accent-color), var(--success-color));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .page-title p {
+            font-size: 1.3rem;
+            opacity: 0.9;
+            font-weight: 400;
+        }
+
+        /* Dark Mode Toggle Switch */
+        .theme-switch-wrapper {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+            margin-bottom: 2rem;
+        }
+
+        .theme-switch {
+            display: inline-block;
+            height: 60px;
+            position: relative;
+            width: 120px;
+        }
+
+        .theme-switch input {
+            display: none;
+        }
+
+        .slider {
+            background: var(--bg-secondary);
+            bottom: 0;
+            cursor: pointer;
+            left: 0;
+            position: absolute;
+            right: 0;
+            top: 0;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            border-radius: 50px;
+            border: 2px solid var(--border-color);
+            backdrop-filter: blur(10px);
+            box-shadow: 0 8px 25px var(--shadow-light);
+        }
+
+        .slider:before {
+            content: "";
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 48px;
+            height: 48px;
+            background: linear-gradient(135deg, #fbbf24, #f59e0b);
+            border-radius: 50%;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 4px 15px rgba(251, 191, 36, 0.4);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .slider:after {
+            content: "☀️";
+            position: absolute;
+            left: 4px;
+            top: 4px;
+            width: 48px;
+            height: 48px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            z-index: 2;
+        }
+
+        input:checked + .slider {
+            background: var(--bg-secondary);
+        }
+
+        input:checked + .slider:before {
+            transform: translateX(60px);
+            background: linear-gradient(135deg, #4f46e5, #7c3aed);
+            box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+        }
+
+        input:checked + .slider:after {
+            content: "🌙";
+            transform: translateX(60px);
+        }
+
+        .theme-label {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--text-light);
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        /* Demo Content */
+        .demo-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            width: 100%;
+            max-width: 1200px;
+        }
+
+        .demo-card {
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--border-color);
+            border-radius: 24px;
+            padding: 2.5rem;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .demo-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(45deg, var(--accent-color), var(--success-color));
+            opacity: 0;
+            transition: opacity 0.4s ease;
+            pointer-events: none;
+            border-radius: 24px;
+        }
+
+        .demo-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px var(--shadow-heavy);
+            border-color: var(--accent-color);
+        }
+
+        .demo-card:hover::before {
+            opacity: 0.1;
+        }
+
+        .card-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 1.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .demo-card:hover .card-icon {
+            transform: scale(1.1) rotate(5deg);
+        }
+
+        .card-title {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--text-light);
+            margin-bottom: 0.8rem;
+        }
+
+        .card-description {
+            color: var(--text-secondary);
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+
+        .card-features {
+            list-style: none;
+            margin-bottom: 2rem;
+        }
+
+        .card-features li {
+            color: var(--text-secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .card-features li::before {
+            content: "✨";
+            font-size: 0.9rem;
+        }
+
+        .card-button {
+            background: linear-gradient(135deg, var(--accent-color), var(--success-color));
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 50px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+        }
+
+        .card-button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.4);
+            filter: brightness(1.1);
+        }
+
+        /* Theme transition effects */
+        .theme-transition {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: radial-gradient(circle, var(--accent-color) 0%, transparent 70%);
+            opacity: 0;
+            pointer-events: none;
+            z-index: 9999;
+            transition: opacity 0.6s ease;
+        }
+
+        .theme-transition.active {
+            opacity: 0.3;
+        }
+
+        /* Progress indicators */
+        .toggle-progress {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background: var(--bg-card);
+            backdrop-filter: blur(20px);
+            border: 2px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            opacity: 0;
+            scale: 0.5;
+            transition: all 0.3s ease;
+            z-index: 10000;
+        }
+
+        .toggle-progress.show {
+            opacity: 1;
+            scale: 1;
+        }
+
+        /* Floating particles effect */
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .particle {
+            position: absolute;
+            background: var(--accent-color);
+            border-radius: 50%;
+            pointer-events: none;
+            opacity: 0.6;
+            animation: float 6s infinite ease-in-out;
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            25% { transform: translateY(-20px) rotate(90deg); }
+            50% { transform: translateY(-10px) rotate(180deg); }
+            75% { transform: translateY(-30px) rotate(270deg); }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .demo-card {
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .demo-card:nth-child(2) { animation-delay: 0.1s; }
+        .demo-card:nth-child(3) { animation-delay: 0.2s; }
+        .demo-card:nth-child(4) { animation-delay: 0.3s; }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .page-title h1 {
+                font-size: 2.5rem;
+            }
+
+            .page-title p {
+                font-size: 1.1rem;
+            }
+
+            .demo-content {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .demo-card {
+                padding: 2rem;
+            }
+
+            .theme-switch-wrapper {
+                flex-direction: column;
+                gap: 1rem;
+            }
+
+            .back-home {
+                top: 10px;
+                left: 10px;
+                padding: 10px 16px;
+                font-size: 0.9rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .demo-card {
+                padding: 1.5rem;
+            }
+
+            .card-title {
+                font-size: 1.3rem;
+            }
+
+            .theme-switch {
+                width: 100px;
+                height: 50px;
+            }
+
+            .slider:before,
+            .slider:after {
+                width: 40px;
+                height: 40px;
+            }
+
+            input:checked + .slider:before,
+            input:checked + .slider:after {
+                transform: translateX(50px);
+            }
+        }
+
+        /* Loading animation */
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
+
+        .loading {
+            animation: pulse 1.5s infinite;
+        }
+    </style>
+</head>
+<body>
+    <a href="index.html" class="back-home">
+        <i class="fas fa-arrow-left"></i>
+        Back to Home
+    </a>
+
+    <div class="particles" id="particles"></div>
+    <div class="theme-transition" id="themeTransition"></div>
+    <div class="toggle-progress" id="toggleProgress">🌓</div>
+
+    <div class="container">
+        <div class="page-title">
+            <h1>Dark Mode Toggle</h1>
+            <p>Experience smooth theme transitions with beautiful effects</p>
+        </div>
+
+        <div class="theme-switch-wrapper">
+            <span class="theme-label">
+                <i class="fas fa-sun"></i>
+                Light Mode
+            </span>
+            <label class="theme-switch" for="checkbox">
+                <input type="checkbox" id="checkbox" />
+                <div class="slider"></div>
+            </label>
+            <span class="theme-label">
+                <i class="fas fa-moon"></i>
+                Dark Mode
+            </span>
+        </div>
+
+        <div class="demo-content">
+            <!-- Card 1 -->
+            <div class="demo-card">
+                <div class="card-icon">
+                    <i class="fas fa-palette"></i>
+                </div>
+                <h3 class="card-title">Theme Customization</h3>
+                <p class="card-description">
+                    Seamlessly switch between light and dark themes with smooth animations and transitions.
+                </p>
+                <ul class="card-features">
+                    <li>Instant theme switching</li>
+                    <li>Smooth color transitions</li>
+                    <li>Persistent user preferences</li>
+                    <li>System theme detection</li>
+                </ul>
+                <button class="card-button">
+                    <i class="fas fa-magic"></i>
+                    Try Magic
+                </button>
+            </div>
+
+            <!-- Card 2 -->
+            <div class="demo-card">
+                <div class="card-icon">
+                    <i class="fas fa-moon"></i>
+                </div>
+                <h3 class="card-title">Eye Comfort</h3>
+                <p class="card-description">
+                    Dark mode reduces eye strain during nighttime browsing and extends battery life on OLED displays.
+                </p>
+                <ul class="card-features">
+                    <li>Reduced eye strain</li>
+                    <li>Better for low light</li>
+                    <li>Battery conservation</li>
+                    <li>Modern aesthetic</li>
+                </ul>
+                <button class="card-button">
+                    <i class="fas fa-eye"></i>
+                    Learn More
+                </button>
+            </div>
+
+            <!-- Card 3 -->
+            <div class="demo-card">
+                <div class="card-icon">
+                    <i class="fas fa-cogs"></i>
+                </div>
+                <h3 class="card-title">Advanced Features</h3>
+                <p class="card-description">
+                    Built with CSS custom properties, smooth transitions, and particle effects for enhanced user experience.
+                </p>
+                <ul class="card-features">
+                    <li>CSS custom properties</li>
+                    <li>Particle animations</li>
+                    <li>Responsive design</li>
+                    <li>Accessibility support</li>
+                </ul>
+                <button class="card-button">
+                    <i class="fas fa-rocket"></i>
+                    Explore
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        class DarkModeToggle {
+            constructor() {
+                this.toggleSwitch = document.querySelector('#checkbox');
+                this.currentTheme = localStorage.getItem('theme') || 'light';
+                this.particles = [];
+                this.init();
+            }
+
+            init() {
+                // Set initial theme
+                document.documentElement.setAttribute('data-theme', this.currentTheme);
+                this.toggleSwitch.checked = this.currentTheme === 'dark';
+                
+                // Add event listeners
+                this.toggleSwitch.addEventListener('change', () => this.switchTheme());
+                
+                // Initialize particles
+                this.createParticles();
+                
+                // Detect system theme preference
+                this.detectSystemTheme();
+                
+                // Initialize scroll behavior
+                this.initScrollBehavior();
+                
+                console.log('Dark Mode Toggle initialized!');
+            }
+
+            switchTheme() {
+                const isChecked = this.toggleSwitch.checked;
+                const newTheme = isChecked ? 'dark' : 'light';
+                
+                this.showTransitionEffect(newTheme);
+                
+                setTimeout(() => {
+                    document.documentElement.setAttribute('data-theme', newTheme);
+                    localStorage.setItem('theme', newTheme);
+                    this.currentTheme = newTheme;
+                    
+                    // Update particles color
+                    this.updateParticles();
+                    
+                    // Show completion feedback
+                    this.showToggleProgress();
+                    
+                }, 200);
+            }
+
+            showTransitionEffect(theme) {
+                const transition = document.getElementById('themeTransition');
+                transition.classList.add('active');
+                
+                setTimeout(() => {
+                    transition.classList.remove('active');
+                }, 600);
+            }
+
+            showToggleProgress() {
+                const progress = document.getElementById('toggleProgress');
+                progress.innerHTML = this.currentTheme === 'dark' ? '🌙' : '☀️';
+                progress.classList.add('show');
+                
+                setTimeout(() => {
+                    progress.classList.remove('show');
+                }, 1000);
+            }
+
+            createParticles() {
+                const particleContainer = document.getElementById('particles');
+                const particleCount = 20;
+                
+                for (let i = 0; i < particleCount; i++) {
+                    const particle = document.createElement('div');
+                    particle.classList.add('particle');
+                    
+                    // Random positioning and size
+                    const size = Math.random() * 4 + 2;
+                    const startX = Math.random() * window.innerWidth;
+                    const startY = Math.random() * window.innerHeight;
+                    const animationDelay = Math.random() * 6;
+                    
+                    particle.style.width = `${size}px`;
+                    particle.style.height = `${size}px`;
+                    particle.style.left = `${startX}px`;
+                    particle.style.top = `${startY}px`;
+                    particle.style.animationDelay = `${animationDelay}s`;
+                    
+                    particleContainer.appendChild(particle);
+                    this.particles.push(particle);
+                }
+            }
+
+            updateParticles() {
+                this.particles.forEach(particle => {
+                    particle.style.opacity = this.currentTheme === 'dark' ? '0.3' : '0.6';
+                });
+            }
+
+            detectSystemTheme() {
+                if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches && !localStorage.getItem('theme')) {
+                    this.currentTheme = 'dark';
+                    document.documentElement.setAttribute('data-theme', 'dark');
+                    this.toggleSwitch.checked = true;
+                }
+
+                // Listen for system theme changes
+                if (window.matchMedia) {
+                    window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', (e) => {
+                        if (!localStorage.getItem('theme')) {
+                            const newTheme = e.matches ? 'dark' : 'light';
+                            this.currentTheme = newTheme;
+                            document.documentElement.setAttribute('data-theme', newTheme);
+                            this.toggleSwitch.checked = e.matches;
+                        }
+                    });
+                }
+            }
+
+            initScrollBehavior() {
+                let lastScrollY = window.scrollY;
+                const backButton = document.querySelector('.back-home');
+
+                window.addEventListener('scroll', () => {
+                    const currentScrollY = window.scrollY;
+                    
+                    if (currentScrollY > lastScrollY && currentScrollY > 100) {
+                        backButton.classList.add('hidden-on-scroll');
+                    } else {
+                        backButton.classList.remove('hidden-on-scroll');
+                    }
+                    
+                    lastScrollY = currentScrollY;
+                });
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            new DarkModeToggle();
+        });
+
+        // Add ripple effects to buttons
+        document.addEventListener('click', function(e) {
+            if (e.target.classList.contains('card-button')) {
+                const ripple = document.createElement('span');
+                const rect = e.target.getBoundingClientRect();
+                const size = Math.max(rect.width, rect.height);
+                const x = e.clientX - rect.left - size / 2;
+                const y = e.clientY - rect.top - size / 2;
+                
+                ripple.style.width = ripple.style.height = size + 'px';
+                ripple.style.left = x + 'px';
+                ripple.style.top = y + 'px';
+                ripple.style.position = 'absolute';
+                ripple.style.borderRadius = '50%';
+                ripple.style.background = 'rgba(255, 255, 255, 0.3)';
+                ripple.style.transform = 'scale(0)';
+                ripple.style.animation = 'ripple 0.6s linear';
+                ripple.style.pointerEvents = 'none';
+                
+                e.target.style.position = 'relative';
+                e.target.style.overflow = 'hidden';
+                e.target.appendChild(ripple);
+                
+                setTimeout(() => {
+                    ripple.remove();
+                }, 600);
+            }
+        });
+
+        // Add CSS for ripple animation
+        const style = document.createElement('style');
+        style.textContent = `
+            @keyframes ripple {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+
+        // Keyboard navigation
+        document.addEventListener('keydown', (e) => {
+            if ((e.key === 'Enter' || e.key === ' ') && e.target.id === 'checkbox') {
+                e.preventDefault();
+                e.target.checked = !e.target.checked;
+                e.target.dispatchEvent(new Event('change'));
+            }
+        });
+
+        // Add intersection observer for animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Observe all demo cards
+        document.querySelectorAll('.demo-card').forEach(card => {
+            observer.observe(card);
+        });
+    </script>
+</body>
+</html>

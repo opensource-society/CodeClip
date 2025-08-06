@@ -1,0 +1,413 @@
+/* Modern Pricing Cards CSS */
+
+/* ================ Reset and Base Styles ================  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    color: #333;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================ Header Styles ================  */
+.header {
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.header h1 {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+
+.header p {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 1.1rem;
+    font-weight: 300;
+}
+
+/* ================ Toggle Switch Styles ================  */
+.layout-toggle {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.toggle-label {
+    color: white;
+    font-weight: 500;
+}
+
+.toggle-switch {
+    position: relative;
+    display: inline-block;
+    width: 60px;
+    height: 34px;
+}
+
+.toggle-switch input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.slider {
+    position: absolute;
+    cursor: pointer;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #ccc;
+    transition: .4s;
+    border-radius: 34px;
+}
+
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    transition: .4s;
+    border-radius: 50%;
+}
+
+input:checked + .slider {
+    background-color: #2196F3;
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+/* ================ Layout Styles ================  */
+/* Flexbox Layout */
+.pricing-cards-flex {
+    display: flex;
+    gap: 2rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+/* Grid Layout */
+.pricing-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* ================ Pricing Card Styles ================  */
+.pricing-card {
+    background: white;
+    border-radius: 20px;
+    padding: 2.5rem 2rem;
+    text-align: center;
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+    position: relative;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    min-height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.pricing-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+.pricing-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 30px 60px rgba(0, 0, 0, 0.15);
+}
+
+.pricing-card.featured {
+    border: 2px solid #667eea;
+    transform: scale(1.05);
+}
+
+.pricing-card.featured::before {
+    height: 6px;
+}
+
+.featured-badge {
+    position: absolute;
+    top: 20px;
+    right: -30px;
+    background: #667eea;
+    color: white;
+    padding: 5px 40px;
+    font-size: 0.8rem;
+    font-weight: 600;
+    transform: rotate(45deg);
+    text-transform: uppercase;
+}
+
+/* ================ Card Content Styles ================  */
+.plan-name {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.plan-description {
+    color: #666;
+    margin-bottom: 2rem;
+    font-size: 0.95rem;
+}
+
+.price {
+    margin-bottom: 2rem;
+}
+
+.price-amount {
+    font-size: 3rem;
+    font-weight: 700;
+    color: #333;
+    line-height: 1;
+}
+
+.price-period {
+    font-size: 1rem;
+    color: #666;
+    font-weight: 400;
+}
+
+/* ================ Features List Styles ================  */
+.features-list {
+    list-style: none;
+    margin-bottom: 2.5rem;
+    text-align: left;
+    flex-grow: 1;
+}
+
+.features-list li {
+    padding: 0.75rem 0;
+    display: flex;
+    align-items: center;
+    font-size: 0.95rem;
+}
+
+.features-list li i {
+    color: #667eea;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+    width: 16px;
+}
+
+.features-list li.unavailable {
+    color: #ccc;
+}
+
+.features-list li.unavailable i {
+    color: #ccc;
+}
+
+/* ================ Button Styles ================  */
+.cta-button {
+    width: 100%;
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 50px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    margin-top: auto;
+}
+
+.cta-button.primary {
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+}
+
+.cta-button.primary:hover {
+    background: linear-gradient(135deg, #5a6fd8, #6a4190);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.3);
+}
+
+.cta-button.secondary {
+    background: transparent;
+    color: #667eea;
+    border: 2px solid #667eea;
+}
+
+.cta-button.secondary:hover {
+    background: #667eea;
+    color: white;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 20px rgba(102, 126, 234, 0.2);
+}
+
+/* ================ Navigation Styles ================  */
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    text-decoration: none;
+    transform: translateX(-5px);
+}
+
+.back-button.hidden-on-scroll {
+    opacity: 0;
+    transform: translateY(-100px);
+    pointer-events: none;
+}
+
+/* ================ Utility Classes ================  */
+.hidden {
+    display: none;
+}
+
+/* ================ Responsive Design ================  */
+@media (max-width: 768px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .pricing-cards-flex {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-cards-grid {
+        grid-template-columns: 1fr;
+        padding: 0 1rem;
+    }
+
+    .pricing-card {
+        max-width: 350px;
+        min-height: auto;
+    }
+
+    .pricing-card.featured {
+        transform: scale(1);
+        margin: 1rem 0;
+    }
+
+    .header h1 {
+        font-size: 2rem;
+    }
+
+    .header p {
+        font-size: 1rem;
+    }
+
+    .price-amount {
+        font-size: 2.5rem;
+    }
+
+    .back-button {
+        position: static;
+        display: inline-block;
+        margin-bottom: 2rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .pricing-card {
+        padding: 2rem 1.5rem;
+        margin: 0 0.5rem;
+    }
+
+    .layout-toggle {
+        flex-direction: column;
+        gap: 0.5rem;
+    }
+
+    .featured-badge {
+        font-size: 0.7rem;
+        padding: 3px 35px;
+    }
+}
+
+/* ================ Animation Enhancements ================  */
+.pricing-card {
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.pricing-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.pricing-card:nth-child(3) {
+    animation-delay: 0.4s;
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================ Dark Mode Support (Optional) ================  */
+@media (prefers-color-scheme: dark) {
+    .pricing-card {
+        background: #1a1a2e;
+        color: #eee;
+    }
+
+    .plan-name {
+        color: #fff;
+    }
+
+    .price-amount {
+        color: #fff;
+    }
+
+    .plan-description {
+        color: #ccc;
+    }
+}
