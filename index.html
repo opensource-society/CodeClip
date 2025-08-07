@@ -51,8 +51,72 @@
 
     <!-- ================ Custom CSS ================  -->
     <link rel="stylesheet" href="styles/main.css">
-    
+    <style>
+    /* Base styles */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      transition: background-color 0.3s ease, color 0.3s ease;
+    }
 
+    nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      background-color: #f1f1f1;
+    }
+
+    [data-theme="dark"] nav {
+      background-color: #1e1e1e;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: #333;
+      font-size: 1rem;
+      transition: color 0.3s ease;
+    }
+
+    [data-theme="dark"] .nav-links a {
+      color: #f1f1f1;
+    }
+
+    #themeToggle {
+      background: none;
+      border: none;
+      font-size: 1.4rem;
+      cursor: pointer;
+      color: #333;
+      transition: transform 0.3s, color 0.3s;
+    }
+
+    #themeToggle:hover {
+      transform: rotate(15deg);
+    }
+
+    [data-theme="dark"] #themeToggle {
+      color: #f1f1f1;
+    }
+
+    main {
+      padding: 2rem;
+      transition: background-color 0.3s, color 0.3s;
+      background-color: white;
+      color: black;
+    }
+
+    [data-theme="dark"] main {
+      background-color: #121212;
+      color: #eaeaea;
+    }
+  </style>
 </head>
 
     <link rel="stylesheet" href="styles/bootstrap.min.css" />
@@ -62,10 +126,31 @@
 
     <!-- ================ Custom CSS ================  -->
     <link rel="stylesheet" href="styles/main.css" />
-  </head>
+     
   </main>
 
   <body>
+  <!-- JavaScript -->
+  <script>
+    const themeToggle = document.getElementById("themeToggle");
+    const htmlEl = document.documentElement;
+
+    // Load saved theme
+    const savedTheme = localStorage.getItem("theme");
+    if (savedTheme) {
+      htmlEl.setAttribute("data-theme", savedTheme);
+      themeToggle.textContent = savedTheme === "dark" ? "☀" : "🌙";
+    }
+
+    // Toggle theme
+    themeToggle.addEventListener("click", () => {
+      const currentTheme = htmlEl.getAttribute("data-theme");
+      const newTheme = currentTheme === "dark" ? "light" : "dark";
+      htmlEl.setAttribute("data-theme", newTheme);
+      localStorage.setItem("theme", newTheme);
+      themeToggle.textContent = newTheme === "dark" ? "☀" : "🌙";
+    });
+  </script>
     <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
@@ -95,6 +180,7 @@
                         <li class="nav-item">
                             <a class="nav-link" href="#contactFooter">Contact</a>
                         </li>
+                        <li><button id="themeToggle" title="Toggle Dark/Light Mode">🌙</button></li>
                     </ul>
                 </div>
             </div>
