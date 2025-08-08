@@ -144,7 +144,7 @@ body {
   display: flex;
   gap: 2.5rem;
   list-style: none;
-  transition: all 0.3s ease;
+  transition: all 0.2s ease-in-out;
 }
 
 .nav__link {
@@ -153,13 +153,15 @@ body {
   font-size: 1.1rem;
   font-weight: 500;
   position: relative;
-  transition: color 0.3s ease;
+  transition: color 0.3s ease-in-out;
 }
 
 .nav__link:hover,
 .nav__link:focus,
 .nav__link.active {
   color: #2563eb;
+  transition: width 0.3s ease-in-out;
+
 }
 
 .nav__link::after {
@@ -168,7 +170,7 @@ body {
   width: 0;
   height: 2px;
   background: #2563eb;
-  transition: width 0.3s ease;
+  transition: width 0.3s ease-in-out;
   position: absolute;
   bottom: -4px;
   left: 0;
@@ -178,6 +180,7 @@ body {
 .nav__link:focus::after,
 .nav__link.active::after {
   width: 100%;
+  transition: width 0.3s ease-in-out;
 }
 
 .header__toggle {
@@ -187,6 +190,7 @@ body {
   width: 40px;
   height: 40px;
   background: none;
+  transition: width 0.5s ease-in-out;
   border: none;
   cursor: pointer;
 }
@@ -196,7 +200,7 @@ body {
   height: 4px;
   background: #2563eb;
   border-radius: 3px;
-  transition: all 0.3s ease;
+  transition: all 0.3s ease-in-out;
 }
 
 /* Hero Section */
