@@ -49,6 +49,12 @@
   --medium-text: #f6e05e;
   --hard-bg: #521b22;
   --hard-text: #f56565;
+
+  --challenge-description-color: #e0e0e0;
+}
+
+[data-theme="light"] {
+  --challenge-description-color: #333;
 }
 
 /* === GLOBAL RESET & BASE === */
@@ -355,7 +361,7 @@ nav__link.active {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.4;
-  color: #555;
+  color: var(--challenge-description-color);
   margin-bottom: 1rem;
 }
 
@@ -401,6 +407,11 @@ nav__link.active {
 .btn-primary {
   background-color: var(--accent-color);
   color: white;
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
 }
 
 .btn-primary:hover,

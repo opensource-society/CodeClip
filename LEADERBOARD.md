@@ -2,7 +2,9 @@
 
 This leaderboard tracks contributors who have completed issues labeled as `level1`, `level2`, or `level3`, along with their merged pull requests.
 
-*Last updated: 2025-08-05*
+
+*Last updated: 2025-08-08*
+
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
@@ -14,6 +16,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
+| [@Nikhil-coder390](https://github.com/Nikhil-coder390) | 1 | 0 | 0 | 1 |
 | [@ankita-mohantyy](https://github.com/ankita-mohantyy) | 1 | 0 | 0 | 1 |
 | [@Iqra-hussain235](https://github.com/Iqra-hussain235) | 1 | 0 | 0 | 1 |
 | [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
@@ -31,6 +34,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
 | [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
 | [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
+| [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 1 | 0 | 1 |
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
@@ -39,6 +43,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@Rupali-gituser](https://github.com/Rupali-gituser) | 1 | 0 | 0 | 0 |
 | [@shreyas1103](https://github.com/shreyas1103) | 1 | 0 | 0 | 0 |
+| [@Sneha-Amballa](https://github.com/Sneha-Amballa) | 1 | 0 | 0 | 0 |
 | [@snehhhcodes](https://github.com/snehhhcodes) | 1 | 0 | 0 | 0 |
 | [@unnati-joshi](https://github.com/unnati-joshi) | 1 | 0 | 0 | 0 |
 | [@Prakashray-dev](https://github.com/Prakashray-dev) | 0 | 0 | 1 | 0 |
