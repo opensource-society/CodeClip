@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Details Form</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background: linear-gradient(135deg, #6a11cb 0%, #2575fc 100%);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 900px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: flex;
+        }
+        
+        .form-container {
+            padding: 40px;
+            width: 60%;
+        }
+        
+        .graphic-container {
+            width: 40%;
+            background: linear-gradient(to right bottom, #4776E6, #8E54E9);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            color: white;
+            text-align: center;
+        }
+        
+        .graphic-container img {
+            width: 80%;
+            max-width: 200px;
+            margin-bottom: 20px;
+        }
+        
+        .graphic-container h2 {
+            font-size: 24px;
+            margin-bottom: 15px;
+            font-weight: 600;
+        }
+        
+        .graphic-container p {
+            font-size: 14px;
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+        
+        h1 {
+            color: #2c3e50;
+            margin-bottom: 10px;
+            font-size: 28px;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            color: #7f8c8d;
+            margin-bottom: 30px;
+            font-size: 16px;
+        }
+        
+        .form-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group.full {
+            grid-column: span 2;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 14px;
+        }
+        
+        .input-with-icon {
+            position: relative;
+        }
+        
+        .input-with-icon i {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #7f8c8d;
+        }
+        
+        input, select {
+            width: 100%;
+            padding: 15px 15px 15px 45px;
+            border: 2px solid #e0e0e0;
+            border-radius: 8px;
+            font-size: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        input:focus, select:focus {
+            border-color: #4776E6;
+            outline: none;
+            box-shadow: 0 0 0 3px rgba(71, 118, 230, 0.2);
+        }
+        
+        .error-message {
+            color: #e74c3c;
+            font-size: 13px;
+            margin-top: 5px;
+            display: none;
+        }
+        
+        button {
+            background: linear-gradient(to right, #4776E6, #8E54E9);
+            color: white;
+            border: none;
+            padding: 16px 30px;
+            border-radius: 8px;
+            cursor: pointer;
+            font-size: 16px;
+            font-weight: 600;
+            width: 100%;
+            transition: all 0.3s ease;
+            box-shadow: 0 4px 15px rgba(71, 118, 230, 0.3);
+        }
+        
+        button:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(71, 118, 230, 0.4);
+        }
+        
+        button:active {
+            transform: translateY(0);
+        }
+        
+        .success-message {
+            background: #2ecc71;
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+            margin-top: 20px;
+            display: none;
+        }
+        
+        .success-message i {
+            font-size: 40px;
+            margin-bottom: 10px;
+        }
+        
+        .required:after {
+            content: " *";
+            color: #e74c3c;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+            
+            .form-container, .graphic-container {
+                width: 100%;
+            }
+            
+            .graphic-container {
+                padding: 30px 20px;
+            }
+            
+            .form-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group.full {
+                grid-column: span 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="form-container">
+            <h1>User Details Form</h1>
+            <p class="subtitle">Please fill in all required fields to complete your registration</p>
+            
+            <form id="userDetailsForm">
+                <div class="form-grid">
+                    <div class="form-group">
+                        <label for="firstName" class="required">First Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="firstName" name="firstName" placeholder="Enter your first name">
+                        </div>
+                        <div class="error-message" id="firstNameError">First name is required</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="lastName" class="required">Last Name</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-user"></i>
+                            <input type="text" id="lastName" name="lastName" placeholder="Enter your last name">
+                        </div>
+                        <div class="error-message" id="lastNameError">Last name is required</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="email" class="required">Email Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-envelope"></i>
+                            <input type="email" id="email" name="email" placeholder="Enter your email">
+                        </div>
+                        <div class="error-message" id="emailError">Please enter a valid email address</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="phone" class="required">Phone Number</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-phone"></i>
+                            <input type="tel" id="phone" name="phone" placeholder="Enter your phone number">
+                        </div>
+                        <div class="error-message" id="phoneError">Please enter a valid 10-digit phone number</div>
+                    </div>
+                    
+                    <div class="form-group full">
+                        <label for="address" class="required">Street Address</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-home"></i>
+                            <input type="text" id="address" name="address" placeholder="Enter your street address">
+                        </div>
+                        <div class="error-message" id="addressError">Address is required</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="city" class="required">City</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-city"></i>
+                            <input type="text" id="city" name="city" placeholder="Enter your city">
+                        </div>
+                        <div class="error-message" id="cityError">City is required</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="state" class="required">State</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <select id="state" name="state">
+                                <option value="">Select your state</option>
+                                <option value="AP">Andhra Pradesh</option>
+                                <option value="AR">Arunachal Pradesh</option>
+                                <option value="AS">Assam</option>
+                                <option value="BH">Bihar</option>
+                                <option value="CH">Chhattisgarh</option>
+                                <option value="GO">Goa</option>
+                                <option value="GU">Gujarat</option>
+                                <option value="HA">Haryana</option>
+                                <option value="HP">Himachal Pradesh</option>
+                                <option value="JH">Jharkhand</option>
+                                <option value="IL">Karnataka</option>
+                                <option value="KE">Kerela</option>
+                                <option value="MP">Madhya Pradesh</option>
+                                <option value="MH">Maharastra</option>
+                                <option value="MA">Manipur</option>
+                                <option value="MG">Meghalaya</option>
+                                <option value="MI">Mizoram</option>
+                                <option value="NG">Nagaland</option>
+                                <option value="OH">Odisha</option>
+                                <option value="PB">Punjab</option>
+                                <option value="RJ">Rajasthan</option>
+                                <option value="SK">Sikkim</option>
+                                <option value="TN">Tamil Nadu</option>
+                                <option value="TL">Telangana</option>
+                                <option value="TP">Tripura</option>
+                                <option value="UT">Uttarkhand</option>
+                                <option value="UP">Uttar Pradesh</option>
+                                <option value="AN">Andaman Nicobar</option>
+                                <option value="CH">Chandigarh</option>
+                                <option value="JK">Jammu And Kashmir</option>
+                                <option value="LA">Ladakh</option>
+                                <option value="LD">Lakshadweep</option>
+                                <option value="PD">Puducherry</option>
+                               
+                            </select>
+                        </div>
+                        <div class="error-message" id="stateError">Please select your state</div>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="zip" class="required">ZIP Code</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-map-pin"></i>
+                            <input type="text" id="zip" name="zip" placeholder="Enter your ZIP code">
+                        </div>
+                        <div class="error-message" id="zipError">Please enter a valid 6-digit ZIP code</div>
+                    </div>
+                </div>
+                
+                <button type="submit">Submit Details</button>
+                
+                <div class="success-message" id="successMessage">
+                    <i class="fas fa-check-circle"></i>
+                    <h3>Successfully Submitted!</h3>
+                    <p>Your details have been saved successfully.</p>
+                </div>
+            </form>
+        </div>
+        
+        <div class="graphic-container">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" width="120" height="120" style="opacity: 0.8;">
+                <path d="M16 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"></path>
+                <circle cx="8.5" cy="7" r="4"></circle>
+                <line x1="20" y1="8" x2="20" y2="14"></line>
+                <line x1="23" y1="11" x2="17" y2="11"></line>
+            </svg>
+            <h2>Complete Your Profile</h2>
+            <p>Help us serve you better by providing your details. All information is securely stored and will not be shared with third parties.</p>
+        </div>
+    </div>
+    
+    <script>
+        document.getElementById('userDetailsForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Reset previous errors
+            document.querySelectorAll('.error-message').forEach(el => {
+                el.style.display = 'none';
+            });
+            
+            // Validate form
+            const firstName = document.getElementById('firstName').value.trim();
+            const lastName = document.getElementById('lastName').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const phone = document.getElementById('phone').value.trim();
+            const address = document.getElementById('address').value.trim();
+            const city = document.getElementById('city').value.trim();
+            const state = document.getElementById('state').value;
+            const zip = document.getElementById('zip').value.trim();
+            
+            let isValid = true;
+            
+            if (!firstName) {
+                document.getElementById('firstNameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!lastName) {
+                document.getElementById('lastNameError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!email || !validateEmail(email)) {
+                document.getElementById('emailError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!phone || !validatePhone(phone)) {
+                document.getElementById('phoneError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!address) {
+                document.getElementById('addressError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!city) {
+                document.getElementById('cityError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!state) {
+                document.getElementById('stateError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (!zip || !validateZip(zip)) {
+                document.getElementById('zipError').style.display = 'block';
+                isValid = false;
+            }
+            
+            if (isValid) {
+                // In a real application, you would submit the form to a server here
+                // For this example, we'll just show a success message
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Reset form after submission
+                setTimeout(() => {
+                    document.getElementById('userDetailsForm').reset();
+                    document.getElementById('successMessage').style.display = 'none';
+                }, 3000);
+            }
+        });
+        
+        function validateEmail(email) {
+            const re = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+            return re.test(email);
+        }
+        
+        function validatePhone(phone) {
+            const cleaned = phone.replace(/\D/g, '');
+            return cleaned.length === 10;
+        }
+        
+        function validateZip(zip) {
+            return /^\d{6}$/.test(zip);
+        }
+        
+        // Add real-time validation for phone and zip
+        document.getElementById('phone').addEventListener('input', function() {
+            if (this.value && !validatePhone(this.value)) {
+                document.getElementById('phoneError').style.display = 'block';
+            } else {
+                document.getElementById('phoneError').style.display = 'none';
+            }
+        });
+        
+        document.getElementById('zip').addEventListener('input', function() {
+            if (this.value && !validateZip(this.value)) {
+                document.getElementById('zipError').style.display = 'block';
+            } else {
+                document.getElementById('zipError').style.display = 'none';
+            }
+        });
+    </script>
+</body>
+</html>
