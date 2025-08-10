@@ -19,6 +19,211 @@
     <!-- Or, if you want to scope styles to just challenges, use: -->
     <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 </head>
+<style>
+    
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+
+.logo-code {
+  color: #add8e6;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo-clip {
+  color: #4fc3f7;
+  font-style: italic;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  background-color: #1a1a1a; /* Darker background */
+  color: #add8e6;
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  animation: slideInLeft 1s ease-out;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #87cefa;
+}
+
+
+.header__nav .nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: #add8e6;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+
+.nav__link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #87cefa;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.nav__link:hover::after {
+  width: 100%;
+}
+
+
+.nav__link.active {
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #add8e6;
+  border-radius: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .header__nav.open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #f1f4f5; /* Light blue text */
+}
+
+/* Container styling */
+.about-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Headings */
+.about-container h1,
+.about-container h2 {
+  color: #87cefa;
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Paragraph and list */
+.about-container p,
+.about-container ul,
+.about-container li {
+  line-height: 1.6;
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Link styling */
+.about-container a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+.about-container a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rule */
+.about-container hr {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+/* Animation keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .about-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+  </style>
+
 <body>
   <!-- Header Component -->
   <header class="header">
@@ -31,6 +236,7 @@
           <li><a href="index.html" data-route="/" class="nav__link">Home</a></li>
 <li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
 <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+<li><a href="form.html" data-route= "/form" class="nav__link" >User Details</a></li>
 <li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
 <li><a href="about.html" class="nav__link">About</a></li>
 
@@ -49,7 +255,7 @@
     <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
 
     <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
-
+ <hr>
     <h2> Features</h2>
     <ul>
       <li> Light/Dark mode support</li>
@@ -81,6 +287,7 @@
           <ul>
             <li><a href="index.html" data-route="/">Home</a></li>
 <li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
+<li><a href="form.html" data-route= "/form">User Details</a></li>
 <li><a href="editor.html" data-route="/editor">Editor</a></li>
 
           </ul>

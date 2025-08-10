@@ -32,6 +32,12 @@
   --medium-text: #f6e05e;
   --hard-bg: #521b22;
   --hard-text: #f56565;
+
+  --challenge-description-color: #e0e0e0;
+}
+
+[data-theme="light"] {
+  --challenge-description-color: #333;
 }
 
 /* === GLOBAL RESET & BASE === */
@@ -293,7 +299,7 @@ body {
   flex-grow: 1;
   font-size: 1rem;
   line-height: 1.4;
-  color: #555;
+  color: var(--challenge-description-color);
   margin-bottom: 1rem;
 }
 
@@ -339,6 +345,11 @@ body {
 .btn-primary {
   background-color: var(--accent-color);
   color: white;
+}
+
+.btn-secondary {
+  background-color: var(--btn-secondary-bg);
+  color: var(--btn-secondary-text);
 }
 
 .btn-primary:hover,
@@ -467,14 +478,6 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-  }
-
-  .hamburger {
-    width: 100%;
-    height: 3px;
-    background-color: var(--text-color);
-    border-radius: 2px;
-    transition: background-color 0.3s;
   }
 
   .filter-controls {

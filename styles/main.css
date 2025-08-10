@@ -34,10 +34,30 @@ html {
     color: #1e2c44;
 }
 
+/* added gap in nav links */
+.navbar-nav {
+    display: flex; 
+    gap: 1rem;
+}
+/* added shadow box and hover effact in nav-links */
 .nav-item a {
-    color: #1e2c44;
-    font-size: 20px;
-
+    color: #1e2c44; 
+    /* adding box hover effact */
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem 0.75rem;  
+    border-radius: 12px;  
+    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
+    transition: all 0.3s ease-in-out;
+} 
+.nav-item a:hover{
+    background: linear-gradient(90deg , #1e2c44 40%, #2563eb 100%);
+    border-color: #2563eb;
+    transform: translateY(-2px) scale(1.02);
+    box-shadow: 0 8px 20px rgba(33 , 136 , 56 , 0.4);
+    color: white;
+    font-size: 1.1rem;
 }
 
 /* ================== Navbar Styles End Here ================== */
@@ -521,6 +541,30 @@ footer .row.align-items-start {
     color: #2563eb;
     opacity: 1;
 }
+.scroll_to_top{
+  position: fixed;
+  color: white;
+  bottom: 15px;
+  right: 20px;
+  z-index: 999;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #2563eb;
+  transform: translateY(0);
+  transition: all 0.3s ease;
+  border-radius: 50%; 
+  text-decoration: none;
+}
+.scroll_to_top:hover{
+    background: linear-gradient(45deg, #2563eb , #0000ff);
+    transform: translateY(-3px) scale(1.05);
+}
+
+
 @media (min-width: 992px) {
     .footer-logo, .footer-desc {
         text-align: center;
@@ -690,4 +734,39 @@ footer .row.align-items-start {
     background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
     border-radius: 2px;
     margin: 0.4rem auto 0 auto;
+}
+
+
+
+/* Custom Navbar Styling */
+.custom-navbar {
+  background-color: #0d1b2a; /* Dark blue/navy background */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Base link color */
+.custom-navbar .nav-link,
+.custom-navbar .nav-link:visited,
+.custom-navbar .nav-link.active {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active-hover effect */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active:hover {
+  color: #fca311 !important; /* Gold */
+  text-decoration: underline;
+}
+
+/* Brand name styling */
+.custom-navbar .navbar-brand {
+  color: #fca311;
+  font-weight: bold;
+}
+
+/* Brand name span (the 'Clip' part in CodeClip) */
+.custom-navbar .navbar-brand span {
+  color: #ffffff;
 }
