@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>QR Clipboard Sharing | CodeClip</title>
+    <link rel="stylesheet" href="../styles/main.css" />
+    <link rel="stylesheet" href="../styles/qrshare.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+  </head>
+  <body>
+    <header class="qr-header">
+      <h1>Share Clipboard via QR</h1>
+    </header>
+
+    <main class="qr-container">
+      <textarea
+        id="clipInput"
+        placeholder="Paste or type your text here..."
+      ></textarea>
+      <button id="generateBtn">Generate QR Code</button>
+      <p class="note">
+        Tip: Works best for up to 1500 characters. Longer text will be shared as
+        a downloadable file.
+      </p>
+      <div id="qrcode"></div>
+    </main>
+
+    <footer class="qr-footer">
+      <button class="home-btn" onclick="window.location.href='../index.html'">
+        Home
+      </button>
+    </footer>
+
+    <script src="../scripts/qrshare.js"></script>
+  </body>
+</html>
