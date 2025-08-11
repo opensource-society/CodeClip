@@ -1,0 +1,488 @@
+/* Modern Login Form CSS */
+
+/* ================ Reset and Base Styles ================  */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', sans-serif;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem 1rem;
+}
+
+/* ================ Form Container Styles ================  */
+.form-container {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+    width: 100%;
+    max-width: 450px;
+    padding: 3rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+    animation: slideUp 0.6s ease-out;
+}
+
+.form-container::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 4px;
+    background: linear-gradient(90deg, #667eea, #764ba2);
+}
+
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(50px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ================ Form Header Styles ================  */
+.form-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+
+.form-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #2d3748;
+    margin-bottom: 0.5rem;
+    transition: all 0.3s ease;
+}
+
+.form-subtitle {
+    color: #718096;
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+/* ================ Toggle Switch Styles ================  */
+.form-toggle {
+    display: flex;
+    background: #f7fafc;
+    border-radius: 12px;
+    padding: 0.25rem;
+    margin-bottom: 2rem;
+    position: relative;
+}
+
+.toggle-option {
+    flex: 1;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    border-radius: 10px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    position: relative;
+    z-index: 2;
+}
+
+.toggle-option.active {
+    color: white;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+}
+
+/* ================ Form Field Styles ================  */
+.form-group {
+    margin-bottom: 1.5rem;
+    position: relative;
+}
+
+.form-label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: 500;
+    color: #4a5568;
+    font-size: 0.9rem;
+}
+
+.form-input {
+    width: 100%;
+    padding: 1rem 1.25rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 12px;
+    font-size: 1rem;
+    transition: all 0.3s ease;
+    background: white;
+    font-family: inherit;
+}
+
+.form-input:focus {
+    outline: none;
+    border-color: #667eea;
+    box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+    transform: translateY(-2px);
+}
+
+.form-input.error {
+    border-color: #e53e3e;
+    box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+}
+
+.form-input.success {
+    border-color: #38a169;
+    box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.1);
+}
+
+.input-icon {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #a0aec0;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+
+.form-input:focus + .input-icon {
+    color: #667eea;
+}
+
+/* ================ Password Toggle Styles ================  */
+.password-toggle {
+    position: absolute;
+    right: 1rem;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #a0aec0;
+    transition: all 0.3s ease;
+}
+
+.password-toggle:hover {
+    color: #667eea;
+}
+
+/* ================ Error Message Styles ================  */
+.error-message {
+    color: #e53e3e;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.error-message.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* ================ Forgot Password Styles ================  */
+.forgot-password {
+    text-align: right;
+    margin-bottom: 2rem;
+}
+
+.forgot-password a {
+    color: #667eea;
+    text-decoration: none;
+    font-size: 0.9rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.forgot-password a:hover {
+    color: #5a6fd8;
+    text-decoration: underline;
+}
+
+/* ================ Submit Button Styles ================  */
+.submit-btn {
+    width: 100%;
+    padding: 1rem 2rem;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    border: none;
+    border-radius: 12px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:active {
+    transform: translateY(0);
+}
+
+.submit-btn.loading {
+    pointer-events: none;
+}
+
+.btn-text {
+    transition: all 0.3s ease;
+}
+
+.loading-spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 20px;
+    height: 20px;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border-top-color: white;
+    animation: spin 1s ease-in-out infinite;
+    opacity: 0;
+}
+
+.submit-btn.loading .btn-text {
+    opacity: 0;
+}
+
+.submit-btn.loading .loading-spinner {
+    opacity: 1;
+}
+
+@keyframes spin {
+    to { transform: translate(-50%, -50%) rotate(360deg); }
+}
+
+/* ================ Social Login Styles ================  */
+.social-login {
+    margin-top: 2rem;
+    text-align: center;
+}
+
+.social-divider {
+    position: relative;
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.social-divider::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 0;
+    right: 0;
+    height: 1px;
+    background: #e2e8f0;
+}
+
+.social-divider span {
+    background: rgba(255, 255, 255, 0.95);
+    padding: 0 1rem;
+    color: #a0aec0;
+    font-size: 0.9rem;
+}
+
+.social-buttons {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-btn {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    padding: 0.75rem 1rem;
+    border: 2px solid #e2e8f0;
+    border-radius: 10px;
+    background: white;
+    color: #4a5568;
+    text-decoration: none;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+
+.social-btn:hover {
+    border-color: #667eea;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    color: #4a5568;
+    text-decoration: none;
+}
+
+/* ================ Navigation Styles ================  */
+.back-button {
+    position: fixed;
+    top: 2rem;
+    left: 2rem;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    border: 2px solid rgba(255, 255, 255, 0.3);
+    padding: 0.5rem 1rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 500;
+    backdrop-filter: blur(10px);
+    transition: all 0.3s ease;
+    z-index: 1000;
+}
+
+.back-button:hover {
+    background: rgba(255, 255, 255, 0.3);
+    color: white;
+    text-decoration: none;
+    transform: translateX(-5px);
+}
+
+/* ================ Signup Fields Styles ================  */
+.signup-fields {
+    opacity: 0;
+    max-height: 0;
+    overflow: hidden;
+    transition: all 0.4s ease;
+}
+
+.signup-fields.show {
+    opacity: 1;
+    max-height: 200px;
+}
+
+/* ================ Success Animation Styles ================  */
+.success-checkmark {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #38a169;
+    margin: 0 auto 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 1.5rem;
+    opacity: 0;
+    transform: scale(0);
+    transition: all 0.3s ease;
+}
+
+.success-checkmark.show {
+    opacity: 1;
+    transform: scale(1);
+}
+
+/* ================ Responsive Design ================  */
+@media (max-width: 480px) {
+    body {
+        padding: 1rem 0.5rem;
+    }
+
+    .form-container {
+        padding: 2rem 1.5rem;
+        margin: 1rem;
+    }
+    
+    .form-title {
+        font-size: 1.8rem;
+    }
+    
+    .social-buttons {
+        flex-direction: column;
+    }
+    
+    .back-button {
+        position: static;
+        margin-bottom: 1rem;
+        display: inline-block;
+    }
+
+    .form-input {
+        padding: 0.875rem 1rem;
+    }
+}
+
+@media (max-width: 320px) {
+    .form-container {
+        padding: 1.5rem 1rem;
+    }
+
+    .form-title {
+        font-size: 1.6rem;
+    }
+
+    .form-toggle {
+        padding: 0.2rem;
+    }
+
+    .toggle-option {
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ================ Accessibility Enhancements ================  */
+@media (prefers-reduced-motion: reduce) {
+    * {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+    }
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    .form-container {
+        border: 2px solid #000;
+    }
+
+    .form-input:focus {
+        border-color: #000;
+        box-shadow: 0 0 0 3px rgba(0, 0, 0, 0.2);
+    }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    .form-container {
+        background: rgba(26, 32, 44, 0.95);
+        color: #e2e8f0;
+    }
+
+    .form-title {
+        color: #f7fafc;
+    }
+
+    .form-subtitle {
+        color: #a0aec0;
+    }
+
+    .form-label {
+        color: #e2e8f0;
+    }
+
+    .form-input {
+        background: #2d3748;
+        border-color: #4a5568;
+        color: #e2e8f0;
+    }
+
+    .form-input:focus {
+        border-color: #667eea;
+    }
+
+    .social-btn {
+        background: #2d3748;
+        color: #e2e8f0;
+        border-color: #4a5568;
+    }
+}
