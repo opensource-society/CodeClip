@@ -40,24 +40,25 @@ html {
     gap: 1rem;
 }
 /* added shadow box and hover effact in nav-links */
-.nav-item a {
-    color: #1e2c44; 
-    /* adding box hover effact */
-    text-decoration: none;
-    font-weight: 700;
+.nav-item a{
+    gap: 0.5rem;
+    color: #1e2c44;
     font-size: 1rem;
-    padding: 0.75rem 0.75rem;  
-    border-radius: 12px;  
+    font-weight: 700;
+    text-decoration: none;
+    padding: 0.75rem 1rem;
+    border-radius: 12px;
     box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
-    transition: all 0.3s ease-in-out;
-} 
-.nav-item a:hover{
-    background: linear-gradient(90deg , #1e2c44 40%, #2563eb 100%);
+    transition: all 0.5s ease-in-out;
+}
+
+.nav-item a:hover {
+    background: linear-gradient(135deg, #2563eb, #1e2c44);
     border-color: #2563eb;
+    color: #ffffff;
+    box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+    font-size: 1.05rem;
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(33 , 136 , 56 , 0.4);
-    color: white;
-    font-size: 1.1rem;
 }
 
 /* ================== Navbar Styles End Here ================== */
