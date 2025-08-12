@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Editor - CodeClip</title>
   <link rel="stylesheet" href="./styles/themes.css" />
+  
 </head>
 <body>
   <main>
@@ -13,7 +14,29 @@
   </main>
 
   <!-- Same theme toggle text at bottom-right -->
-  <p id="theme-toggle">Toggle Theme</p>
+   <div class="container">
+    <h1>Dark & Light Mode Toggle</h1>
+    <button id="toggle-btn">🌙 Dark Mode</button>
+  </div>
+  
+  <script>
+    function setTheme(theme) {
+      document.documentElement.setAttribute("data-theme", theme);
+      document.getElementById("toggle-btn").textContent =
+        theme === "light" ? "🌙 Dark Mode" : "☀️ Light Mode";
+    }
+
+    const toggleBtn = document.getElementById("toggle-btn");
+
+    toggleBtn.addEventListener("click", () => {
+      const current = document.documentElement.getAttribute("data-theme");
+      const newTheme = current === "light" ? "dark" : "light";
+      setTheme(newTheme);
+    });
+  </script>
+
+  
+
 
   <script src="./scripts/theme.js"></script>
 </body>

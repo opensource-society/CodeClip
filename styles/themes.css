@@ -110,7 +110,7 @@ li a:hover {
 .container {
   display: flex;
   flex-wrap: nowrap;
-  background-color: DodgerBlue;
+
   justify-content: space-evenly;
 }
 .humburger {
@@ -129,4 +129,37 @@ li a:hover {
 }
 #mobileMenu.show {
   display: flex;
+}
+
+/*body {
+  background-color: white;
+  color: black;
+  font-family: Arial, sans-serif;
+  transition: background-color 0.3s, color 0.3s;
+}*/
+
+/* Dark Mode Styles */
+body.dark-mode {
+  background-color: #121212;
+  color: white;
+}
+
+.container {
+  text-align: center;
+  margin-top: 100px;
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border: none;
+  background-color: #ddd;
+  border-radius: 5px;
+  transition: background-color 0.3s;
+}
+
+body.dark-mode button {
+  background-color: #333;
+  color: white;
 }
