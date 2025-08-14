@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <!-- Styles -->
+    <link rel="stylesheet" href="/CodeClip/styles.css">
+    <link rel="stylesheet" href="..\styles\profile.css">
+</head>
+<style>
+    html {
+    scroll-behavior: smooth;
+}
+
+body {
+    /* background: rgb(8, 5, 21); */
+    background-color: #0b0c1d;
+    color: white;
+    line-height: 1.6;
+}
+    /* Contact Section */
+#contact {
+    padding: 100px 5%;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    color: rgb(153, 255, 0);
+    text-decoration: underline;
+}
+
+.contact-container {
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+#contact-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+input, textarea {
+    padding: 1rem;
+    background-color: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 5px;
+    color: var(--text-color);
+}
+
+textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.btn {
+    display: inline-block;
+    padding: 0.8rem 2rem;
+    background: rgb(153, 255, 0);
+    border: 2px solid rgb(153, 255, 0);
+    box-shadow: 0 0 10px rgb(153, 255, 0);
+    color: black;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    transition: transform 0.3s;
+    border-radius: 3rem;
+    /* position: fixed; */
+    /* position: absolute; */
+}
+
+footer {
+    text-align: center;
+    padding: 2rem;
+    background: #0b1225;
+}
+
+.btn:hover {
+    /* transform: translateY(-2px); */
+    background: transparent;
+    color:rgb(153, 255, 0);
+    /* box-shadow: none; */
+}
+</style>
+<body>
+
+    <header class="header" role="banner">
+    <div class="container header__container">
+      <div class="header__logo">
+        <a href="../index.html" class="logo-text">CodeClip</a>
+      </div>
+      <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
+        <ul class="nav__list">
+          <li><a href="/CodeClip" class="nav__link" aria-label="Home">Home</a></li>
+          <li><a href="/challenges" class="nav__link" aria-current="page" aria-label="Challenges">Challenges</a></li>
+          <li><a href="/CodeClip/pages/editor.html" class="nav__link" aria-label="Editor">Editor</a></li>
+          <li><a href="/CodeClip/pages/profile.html" class="nav__link" aria-label="Profile">Profile</a></li>
+          <li><a href="/CodeClip/pages/Contact.html" class="nav__link active">Contact</a></li>
+        </ul>
+      </nav>
+      <button
+        class="header__toggle"
+        id="navToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+    <section id="contact">
+        <h2 class="section-title">Contact Us</h2>
+        <div class="contact-container">
+            <form  action="https://formsubmit.co/yashsharmaa555@gmail.com" method="post" id="contact-form" >
+                <input type="text" placeholder="Enter Your Name" required>
+                <input type="email" placeholder="Email" required>
+                <textarea placeholder="Message" required></textarea>
+                <button type="submit" class="btn">Send</button>
+            </form>
+        </div>
+    </section>
+    <footer>
+        <p>Copyright © | All rights reserved</p>
+    </footer>
+    
+</body>
+</html>
