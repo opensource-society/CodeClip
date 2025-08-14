@@ -3,13 +3,40 @@
     align-items: center;
     font-family: 'Poppins', sans-serif;
     padding-left: 20px;
-    padding-top: 10px;
+    /* padding-top: 10px; */
+}
+
+.header {
+    margin: 0;
+}
+
+[data-theme="dark"] .header{
+    background-color: #2D3748;
+}
+
+.header .header__logo .logo-clip {
+    font-size: 2rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+.profile-info .profile-hero__title {
+    color: #1773dd;
+}
+
+section.profile-hero {
+    background-color: #fff;
+}
+
+[data-theme="dark"] section.profile-hero {
+    color: #ffffff;
+    background: #000000;
 }
 
 .icon-box {
     width: 43px;
     height: 43px;
-    background-color:#3B82F6;
+    background-color: #3B82F6;
     color: white;
     display: flex;
     align-items: center;
@@ -50,6 +77,10 @@
     transition: 0.3s ease;
 }
 
+[data-theme="dark"] .card{
+    background-color: #2D3748;
+}
+
 .card:hover {
     transform: translateY(-4px);
 }
@@ -78,11 +109,22 @@
     margin-bottom: 4px;
 }
 
+[data-theme="dark"] .card-title {
+    color: #939393;
+}
+
 .card-value {
     font-size: 18px;
     font-weight: 600;
     color: #222;
 }
+
+[data-theme="dark"] .card-value {
+    font-size: 18px;
+    font-weight: 600;
+    color: #fff;
+}
+
 /* Responsive for smaller screens */
 @media (max-width: 768px) {
     .dashboard-cards {
@@ -211,22 +253,25 @@
 .charts-container {
     display: flex;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: 110px;
     justify-content: center;
+    width: 100%;
 }
 
 .chart-box {
     background: #fff;
-    padding: 20px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-    width: 600px;
+    box-shadow: 3px 2px 8px rgba(0, 0, 0, 0.05);
+    width: 500px;
     box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px 0;
 }
 
-.chart-box canvas {
-    width: 100% !important;
-    height: 300px !important;
+[data-theme = "dark"] .chart-box{
+    background-color: #2D3748;
 }
 
 .progress-header {
@@ -255,20 +300,33 @@
     color: #222;
     margin: 0;
 }
+
+[data-theme="dark"] .chart-box h3{
+    color:#fff;
+}
+
+.chart-box h2 {
+    color: rgb(81, 81, 236);
+}
+
 .leaderboard-section {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
-    max-width: 800px;
-    margin: 40px auto;
+    box-shadow: 2px 2px 8px rgba(16, 136, 216, 0.05);
+    max-width: 500px;
+    margin: 40px;
     font-family: 'Poppins', sans-serif;
+}
+
+[data-theme="dark"] .leaderboard-section {
+    background: #2D3748;
 }
 
 .leaderboard-section-header {
     display: flex;
     align-items: center;
-    gap: 15px;
+    gap: 10px;
     margin-bottom: 20px;
 }
 
@@ -304,9 +362,15 @@
     font-size: 16px;
 }
 
+[data-theme="dark"] .leaderboard-table th {
+    background-color: #2D3748;
+    color: #0582e2;
+
+}
+
 .leaderboard-table th {
     background-color: #f8f9fa;
-    color: #555;
+    color: #0582e2;
 }
 
 .badge {
@@ -318,17 +382,20 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    width:150px
+    width: 150px;
 }
 .goals-section {
     background: #fff;
     padding: 30px;
     border-radius: 12px;
-    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     max-width: 800px;
     margin: 40px auto;
     font-family: 'Poppins', sans-serif;
 
+}
+[data-theme="dark"] .goals-section{
+    background-color: #2D3748;
 }
 
 .goals-section-header {
@@ -356,6 +423,10 @@
     color: #222;
 }
 
+[data-theme="dark"] .section-header h2{
+    color:#fff;
+}
+
 .goal-list {
     list-style: none;
     padding: 0;
@@ -373,6 +444,11 @@
     padding: 15px 20px;
     border-radius: 10px;
     border-left: 5px solid #007BFF;
+}
+
+[data-theme="dark"] .goal-list li{
+    background-color: #222;
+    color: #fff;
 }
 
 .goal-icon-box {
@@ -393,11 +469,20 @@
     display: block;
 }
 
+[data-theme ="dark"] .goal-text strong {
+    color: #fff;
+}
+
 .goal-text p {
     margin: 4px 0 0;
     font-size: 14px;
     color: #666;
 }
+
+[data-theme= "dark"] .goal-text p {
+    color: #939393;
+}
+
 .dashboard-row {
     display: flex;
     gap: 0px;

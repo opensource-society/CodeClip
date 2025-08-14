@@ -1,6 +1,6 @@
 import { saveUserProgress, loadUserProgress, saveCompletedChallenges, loadCompletedChallenges } from './data.js';
 
-console.log('app script loaded');
+// console.log('app script loaded');
 
 const form = document.getElementById('challengeForm');
 const preview = document.getElementById('preview');
@@ -138,7 +138,7 @@ if (!window.location.pathname.includes('submit-challenge')) {
 
 // ------------------- Save/Load Data ------------------- //
 const userProgress = loadUserProgress();
-console.log('Loaded user progress:', userProgress);
+// console.log('Loaded user progress:', userProgress);
 
 const updatedProgress = { ...userProgress, lastVisited: Date.now() };
 if (!saveUserProgress(updatedProgress)) {
@@ -146,7 +146,7 @@ if (!saveUserProgress(updatedProgress)) {
 }
 
 const completed = loadCompletedChallenges();
-console.log('Loaded completed challenges:', completed);
+// console.log('Loaded completed challenges:', completed);
 
 const updatedCompleted = [...completed, 'challenge-1'];
 if (!saveCompletedChallenges(updatedCompleted)) {

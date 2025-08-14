@@ -97,7 +97,7 @@ body {
 .nav__list {
   list-style: none;
   display: flex;
-  gap: 2rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
   transition: all 0.3s ease;
@@ -114,28 +114,34 @@ body {
   font-weight: 500;
   font-size: 1rem;
   position: relative;
-  padding: 0.25rem 0;
+  padding: 10px;
   transition: color 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 1px 4px 12px rgba(180, 244, 202, 0.7);
+ 
 }
 
-.nav__link.active,
-.nav__link:hover,
-.nav__link:focus {
-  color: var(--accent-color);
+.nav__link:hover {
+  color: white;
+  background: #0a0101;
+  background: linear-gradient(90deg, rgba(10, 1, 1, 1) 0%, rgba(4, 4, 105, 1) 50%, rgba(7, 101, 184, 1) 100%);
+  box-shadow: 1px 4px 12px rgba(180, 244, 202, 0.7);
 }
 
-.nav__link.active::after,
-.nav__link:hover::after,
-.nav__link:focus::after {
+.nav__link.active::after{
   content: '';
   display: block;
+  border:2px solid rgb(164, 248, 188);
   width: 100%;
-  height: 2px;
-  background-color: var(--accent-color);
   position: absolute;
-  bottom: -4px;
+  bottom: 0px;
   left: 0;
   border-radius: 2px;
+}
+
+.nav__link.active:hover::after{
+  content: '';
+  display: none;
 }
 
 /* Hamburger toggle */

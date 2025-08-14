@@ -270,6 +270,11 @@ html {
     background-color: #f8fafc;
 }
 
+[data-theme="dark"] #leaderboardSection {
+  color: #ffffff;
+  background: #000000;
+}
+
 .owl-carousel .card {
     border: none;
     background: transparent;
