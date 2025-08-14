@@ -26,8 +26,8 @@ document.addEventListener("DOMContentLoaded", () => {
 
      // Real-time sync: The theme changed in one tab is linked and synced with the theme change in other tabs.
     window.addEventListener("storage", (event) => {
-      if (event.key === "theme") {
-        document.documentElement.setAttribute("data-theme", event.newValue);
+      if (event.key === "theme" && event.newValue) {
+        setTheme(event.newValue);
       }
     });
   });
