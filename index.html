@@ -1,17 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head><meta charset="UTF-8" />
+  <head>
+    <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>CodeClip</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="./styles/themes.css" />
     <script
       src="https://js.sentry-cdn.com/8994bf86fecf7733832520db1565ab1f.min.js"
       crossorigin="anonymous"
     ></script>
-
     <!-- this is my first contribution to CodeClip at gssoc 25 program -->
   </head>
-
   <body>
     <!-- Header Component Start -->
     <header class="header">
@@ -39,16 +39,7 @@
       </div>
     </header>
     <!-- Header Component End -->
-  </body>
-  <script src="scripts/app.js"></script>
 
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeClip</title>
-    <link rel="stylesheet" href="./styles/themes.css" />
-  </head>
-  <body>
     <main>
       <h1>Hello from CodeClip!</h1>
     </main>
@@ -85,6 +76,16 @@
       </div>
     </section>
 
+    <script src="scripts/app.js"></script>
     <script src="./scripts/theme.js"></script>
   </body>
 </html>
+<!-- There are a few issues in your HTML file:
+1. You have duplicate <head> and <body> tags. Only one <head> and one <body> should exist per HTML document.
+2. The <script src="scripts/app.js"></script> is placed outside the <body> and <head>, which is invalid.
+3. The structure should be: <html><head>...</head><body>...</body></html>
+4. Consider merging your theme and main content into the first <body> section.
+5. Remove the second <head> and <body> tags and move their content inside the first <body>.
+6. Ensure all scripts are inside <body> or at the end of <body>.
+
+To fix, refactor your HTML to have only one <head> and one <body>, and move all content and scripts inside them.
