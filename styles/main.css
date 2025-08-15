@@ -770,3 +770,47 @@ footer .row.align-items-start {
 .custom-navbar .navbar-brand span {
   color: #ffffff;
 }
+
+/* For medium devices (768px - 991px) */
+@media (min-width: 768px) and (max-width: 991px) {
+    footer .container{
+        display: flex;
+        justify-content: center;
+    }
+    footer .row.align-items-start {
+        flex-direction: column;
+        align-items: center;
+        gap: 2.5rem;
+    }
+
+    .footer-logo-col,
+    .footer-links-col,
+    .footer-contact-col-main {
+        width: 100%;
+        max-width: 500px;
+        border: none;
+        padding: 0;
+        text-align: center;
+    }
+
+    .footer-logo-col , .footer-links-col  {
+        padding-bottom: 1.5rem;
+    }
+
+    .footer-contact-col-main {
+        padding-bottom: 0;
+    }
+
+    .footer-desc {
+        max-width: 100%;
+        padding: 0;
+    }
+
+    .footer-links {
+        align-items: center;
+    }
+
+    .footer-contact-row {
+        justify-content: center;
+    }
+}
