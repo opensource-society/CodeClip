@@ -7,13 +7,13 @@ document.addEventListener("DOMContentLoaded", () => {
     document.documentElement.setAttribute("data-theme", theme);
 
     // Toggle icon based on theme
-    if (theme === "dark") {
-      toggleBtn.classList.remove("fa-sun");
-      toggleBtn.classList.add("fa-moon");
-    } else {
-      toggleBtn.classList.remove("fa-moon");
-      toggleBtn.classList.add("fa-sun");
-    }
+    // if (theme === "dark") {
+    //   toggleBtn.classList.remove("fa-sun");
+    //   toggleBtn.classList.add("fa-moon");
+    // } else {
+    //   toggleBtn.classList.remove("fa-moon");
+    //   toggleBtn.classList.add("fa-sun");
+    // }
 
     const success = saveUserSettings({ ...loadUserSettings(), theme });
     if (!success) {
