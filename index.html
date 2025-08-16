@@ -1,47 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>CodeClip</title>
 
-    <!-- ================ Favicon ================  -->
-    <link
-      rel="shortcut icon"
-      href="assets/favicon/codeClip-favicon.png"
-      type="image/png"
-    />
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CodeClip</title>
 
-    <!-- ================ Meta Tags ================  -->
-    <meta
-      name="keywords"
-      content="CodeClip, Coding Challenges, Open Source, GSSoC, Frontend Practice, JavaScript Logics, GitHub Contributions, Web Development Tasks"
-    />
-    <meta
-      name="description"
-      content="CodeClip is a browser-based platform where developers solve real-world coding challenges, practice frontend and logic tasks, and contribute to open source. Proudly built for GSSoC 2025."
-    />
-    <meta name="robots" content="index, follow" />
+  <!-- ================ Favicon ================  -->
+  <link rel="shortcut icon" href="assets/favicon/codeClip-favicon.png" type="image/png" />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="CodeClip - Code, Run & Contribute" />
-    <meta
-      property="og:description"
-      content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers."
-    />
+  <!-- ================ Meta Tags ================  -->
+  <meta name="keywords"
+    content="CodeClip, Coding Challenges, Open Source, GSSoC, Frontend Practice, JavaScript Logics, GitHub Contributions, Web Development Tasks" />
+  <meta name="description"
+    content="CodeClip is a browser-based platform where developers solve real-world coding challenges, practice frontend and logic tasks, and contribute to open source. Proudly built for GSSoC 2025." />
+  <meta name="robots" content="index, follow" />
 
-    <meta
-      property="twitter:title"
-      content="CodeClip - Code, Run & Contribute"
-    />
-    <meta
-      property="twitter:description"
-      content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers."
-    />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="CodeClip - Code, Run & Contribute" />
+  <meta property="og:description"
+    content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers." />
 
-    <!-- ================ Vendor CSS ================  -->
+  <meta property="twitter:title" content="CodeClip - Code, Run & Contribute" />
+  <meta property="twitter:description"
+    content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers." />
 
- <main>
+  <!-- ================ Vendor CSS ================  -->
+
+  <main>
     <!-- <link rel="stylesheet" href="styles/styles.css"> -->
 
     <link rel="stylesheet" href="styles/bootstrap.min.css">
@@ -62,9 +48,11 @@
         margin: 8px 0;
         font-size: 24px;
       }
+
       .icon-container i {
         transition: transform 0.2s ease;
       }
+
       .icon-container i:hover {
         transform: scale(1.2);
       }
@@ -72,44 +60,50 @@
 
 </head>
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/owl.carousel.min.css" />
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="styles/fontawesome.css" />
+<link rel="stylesheet" href="styles/bootstrap.min.css" />
+<link rel="stylesheet" href="styles/owl.carousel.min.css" />
+<link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+<link rel="stylesheet" href="styles/fontawesome.css" />
 
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="styles/main.css" />
-  </head>
-  </main>
+<!-- ================ Custom CSS ================  -->
+<link rel="stylesheet" href="styles/main.css" />
+</head>
+</main>
 
-  <body>
-    <a id="top"></a>  <!--added for issue 260 -->
-    <!-- ================================ Header Section Start Here ================================ -->
-    <header>
-      <nav class="navbar">
-        <div class="container">
-          <!-- Brand -->
-          <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
+<body>
+  <a id="top"></a> <!--added for issue 260 -->
+  <!-- ================================ Header Section Start Here ================================ -->
+  <header>
+    <nav class="navbar">
+      <div class="container">
+        <!-- Brand -->
+        <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
 
-    <!-- Hidden Checkbox -->
-    <input type="checkbox" id="nav-toggle" hidden />
+        <!-- Hidden Checkbox -->
+        <input type="checkbox" id="nav-toggle" hidden />
 
-    <!-- Hamburger / Close Icons -->
-    <label for="nav-toggle" class="nav-toggle-label">
-      <i class="fas fa-bars menu-icon"></i>
-      <i class="fas fa-xmark close-icon"></i>
-    </label>
+        <!-- Hamburger / Close Icons -->
+        <label for="nav-toggle" class="nav-toggle-label">
+          <i class="fas fa-bars menu-icon"></i>
+          <i class="fas fa-xmark close-icon"></i>
+        </label>
 
-    <!-- Navbar Links -->
-    <ul class="navbar-nav">
-      <li class="nav-item"><a href="#homeSection">Home</a></li>
-      <li class="nav-item"><a href="./pages/challenges.html">Challenges</a></li>
-      <li class="nav-item"><a href="#leaderboardSection">Leaderboard</a></li>
-      <li class="nav-item"><a href="#aboutSection">About</a></li>
-      <li class="nav-item"><a href="#contactFooter">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+        <!-- Navbar Links -->
+        <ul class="navbar-nav">
+          <li class="nav-item"><a href="#homeSection">Home</a></li>
+          <li class="nav-item"><a href="./pages/challenges.html">Challenges</a></li>
+          <li class="nav-item"><a href="#leaderboardSection">Leaderboard</a></li>
+          <li class="nav-item"><a href="#aboutSection">About</a></li>
+          <li class="nav-item"><a href="#contactFooter">Contact</a></li>
+          <button id="themeToggle" class="theme-toggle btn" aria-label="Toggle dark mode" title="Toggle dark mode">
+            <i class="fa-regular fa-moon" aria-hidden="true"></i>
+            <span class="visually-hidden">Toggle theme</span>
+          </button>
+
+
+        </ul>
+      </div>
+    </nav>
 
 
     <!-- ================================ Header Section Start Here ================================ -->
@@ -119,12 +113,8 @@
       <div class="container">
         <div class="row heroSection-Container">
           <div class="col-12 col-md-6 heroSection-Left">
-            <div  data-aos="fade-right" data-aos-duration="650" class="gssocContainer shinning-effect">
-              <img 
-                src="assets/images/hero-section/gssoc-log.png"
-                class="img-fluid gssoc-logo"
-                alt="gssoc logo"
-              />
+            <div data-aos="fade-right" data-aos-duration="650" class="gssocContainer shinning-effect">
+              <img src="assets/images/hero-section/gssoc-log.png" class="img-fluid gssoc-logo" alt="gssoc logo" />
               <p>GSSOC 2025</p>
             </div>
 
@@ -159,11 +149,8 @@
           </div>
 
           <div class="col-12 col-md-6 heroSection-Right d-none d-md-block">
-            <img  data-aos="zoom-in-left"
-              src="assets/images/hero-section/hero-Img.png"
-              class="img-fluid"
-              alt="hero section image"
-            />
+            <img data-aos="zoom-in-left" src="assets/images/hero-section/hero-Img.png" class="img-fluid"
+              alt="hero section image" />
           </div>
         </div>
       </div>
@@ -326,7 +313,7 @@
           </div>
           <!-- added card 6 -->
           <!-- === Card 6 === -->
-           <div class="col-12 col-md-4">
+          <div class="col-12 col-md-4">
             <div data-aos-duration="800" data-aos="fade-up" class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
@@ -342,7 +329,8 @@
                   <i class="fa-solid fa-people-group"></i> 300 coders joined
                 </p>
                 <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
-                  Created an interactive form/input area,Applied CSS styles for visual consistency .Added features like auto-focus, clear input after add, and animation.
+                  Created an interactive form/input area,Applied CSS styles for visual consistency .Added features like
+                  auto-focus, clear input after add, and animation.
                 </p>
 
                 <div class="card-CTAButton">
@@ -360,7 +348,8 @@
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
     <section id="leaderboardSection">
       <div class="container">
-        <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span class="">Top Coder</span> of the Week</h3>
+        <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span class="">Top Coder</span> of the Week
+        </h3>
         <p data-aos-duration="650" data-aos="fade-up" class="leaderboard-Para">
           Meet our top coders who accepted challenges, wrote great code,
           contributed to open source, and stood out as the best performers of
@@ -374,11 +363,8 @@
               <div class="card leaderboard-Card">
                 <div class="card-body leaderBoard-Container">
                   <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 1"
-                    />
+                    <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
+                      alt="user 1" />
                   </div>
 
                   <h5 class="card-title userName">Rahul</h5>
@@ -400,11 +386,8 @@
               <div class="card leaderboard-Card">
                 <div class="card-body leaderBoard-Container">
                   <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 2"
-                    />
+                    <img src="assets/images/leaderboard-section/user-2.png" class="img-fluid leaderboard-Img"
+                      alt="user 2" />
                   </div>
 
                   <h5 class="card-title userName">Manisha</h5>
@@ -426,11 +409,8 @@
               <div class="card leaderboard-Card">
                 <div class="card-body leaderBoard-Container">
                   <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 3"
-                    />
+                    <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
+                      alt="user 3" />
                   </div>
 
                   <h5 class="card-title userName">Pankaj</h5>
@@ -452,11 +432,8 @@
               <div class="card leaderboard-Card">
                 <div class="card-body leaderBoard-Container">
                   <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 4"
-                    />
+                    <img src="assets/images/leaderboard-section/user-2.png" class="img-fluid leaderboard-Img"
+                      alt="user 4" />
                   </div>
 
                   <h5 class="card-title userName">Simarn</h5>
@@ -478,11 +455,8 @@
               <div class="card leaderboard-Card">
                 <div class="card-body leaderBoard-Container">
                   <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 5"
-                    />
+                    <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
+                      alt="user 5" />
                   </div>
 
                   <h5 class="card-title userName">Rahul</h5>
@@ -526,13 +500,9 @@
             </p>
 
             <p data-aos-duration="650" data-aos="fade-up" class="ctaBtn">
-              <a
-                href="https://github.com/opensource-society/CodeClip"
-                target="_blank"
+              <a href="https://github.com/opensource-society/CodeClip" target="_blank"
                 title="click here to start contributing in CodeClip Project under GSSoC'25"
-                class="aboutCTA-Btn"
-                >Contribute to CodeClip</a
-              >
+                class="aboutCTA-Btn">Contribute to CodeClip</a>
             </p>
           </div>
         </div>
@@ -544,13 +514,11 @@
       <div class="container">
         <div class="row align-items-start justify-content-between py-4">
           <div data-aos-duration="650" data-aos="fade-up" class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
-            <a class="navbar-brand mb-2" href="#homeSection"
-              >Code<span>Clip</span></a
-            > 
+            <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
             <p class="footer-desc mb-0">
               CodeClip is a open source project under GirlScript Summer of Code
               (GSSoC) 2025 to open for contribution
-            </p> 
+            </p>
           </div>
           <div data-aos-duration="650" data-aos="fade-left" class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
             <h5 class="footer-title">Important Links</h5>
@@ -565,59 +533,41 @@
             <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
             <div class="footer-contact-row d-flex justify-content-center">
               <div data-aos-duration="650" data-aos="fade-right"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
+                class="footer-contact-col d-flex flex-column align-items-center">
+                <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
                   <i class="fab fa-github me-2"></i> GitHub
                 </a>
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
+                <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
                   <i class="fab fa-discord me-2"></i> Discord
                 </a>
               </div>
               <div data-aos-duration="650" data-aos="fade-left"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-              <!-- margin added -->
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
+                class="footer-contact-col d-flex flex-column align-items-center">
+                <!-- margin added -->
+                <a href="https://github.com/opensource-society/CodeClip" target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
                   <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
                 </a>
                 <!-- Added linkdin social connection -->
-                <a
-                  href="https://www.linkedin.com/in/adityai0"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
+                <a href="https://www.linkedin.com/in/adityai0" target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
                   <i class="fab fa-linkedin-in me-2"></i> LinkedIn
                 </a>
-                
+
               </div>
             </div>
           </div>
-        </div> 
-      </div> 
-    </div>
-    <hr />
-    <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
-      &copy; CodeClip | Open Source Project 2025
-    </p>
-  </div>
-</footer>
+        </div>
+      </div>
+      </div>
+      <hr />
+      <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
+        &copy; CodeClip | Open Source Project 2025
+      </p>
+      </div>
+    </footer>
     <!--AOS Animations-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -628,7 +578,7 @@
     </script>
 
     <!-- ================================ Footer Section End Here ================================ -->
-   <!--add scroll to top button -->
+    <!--add scroll to top button -->
     <a href="#top" class="scroll_to_top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
     <!-- ================ Vendor JS ================  -->
     <script src="scripts/jquery.min.js"></script>
@@ -637,5 +587,6 @@
 
     <!-- ================ Custom JS ================  -->
     <script src="scripts/main.js"></script>
-  </body>
+</body>
+
 </html>

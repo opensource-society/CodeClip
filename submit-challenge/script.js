@@ -56,3 +56,42 @@ function sendMessage() {
     chatBox.appendChild(msg);
     chatBox.scrollTop = chatBox.scrollHeight;
   }
+  // ---------- Theme Toggle ----------
+(function () {
+  const root = document.documentElement;
+  const btn = document.getElementById("themeToggle");
+
+  // Prefer saved theme; otherwise respect system preference
+  const saved = localStorage.getItem("theme");
+  const prefersDark = window.matchMedia && window.matchMedia("(prefers-color-scheme: dark)").matches;
+  const initial = saved || (prefersDark ? "dark" : "light");
+
+  applyTheme(initial);
+
+  // keep icon in sync
+  updateToggleIcon(initial);
+
+  if (btn) {
+    btn.addEventListener("click", () => {
+      const next = root.getAttribute("data-theme") === "dark" ? "light" : "dark";
+      applyTheme(next);
+      updateToggleIcon(next);
+      try { localStorage.setItem("theme", next); } catch (_) {}
+    });
+  }
+
+  // helpers
+  function applyTheme(mode) {
+    root.setAttribute("data-theme", mode);
+  }
+
+  function updateToggleIcon(mode) {
+    if (!btn) return;
+    btn.innerHTML =
+      mode === "dark"
+        ? '<i class="fa-regular fa-sun" aria-hidden="true"></i><span class="visually-hidden">Switch to light mode</span>'
+        : '<i class="fa-regular fa-moon" aria-hidden="true"></i><span class="visually-hidden">Switch to dark mode</span>';
+    btn.setAttribute("aria-pressed", mode === "dark" ? "true" : "false");
+  }
+})();
+
