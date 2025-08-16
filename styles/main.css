@@ -12,54 +12,156 @@ html {
     overflow-x: hidden;
 }
 
-
-
 /* =================== Navbar Styles Start Here ================== */
-.navbar {
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
     background-color: #ffffff;
-
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.navbar-brand {
+.navbar .container .navbar-nav{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+.nav .container,
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navbar-brand {
     font-size: 2.1rem;
     font-weight: 900;
     color: #2563eb;
+    text-shadow: 2px 2px 5px rgba(37, 99, 235, 0.5),
+                 2px 2px 8px rgba(0, 0, 0, 0.3),
+                 1px 1px 3px rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    transform: scale(0.9);
+    animation: scaleUp 1s ease forwards;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
 }
 
-.navbar-brand:hover {
-    color: #2563eb;
+/* Hover effect for desktop */
+.container .navbar-brand:hover {
+    transform: scale(1.1);
+    color: #1d4ed8;
+    text-shadow: 3px 3px 6px rgba(37, 99, 235, 0.7),
+                 3px 3px 10px rgba(0, 0, 0, 0.4),
+                 1px 1px 4px rgba(255, 255, 255, 0.7);
 }
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1);
+    }
+}
+
 
 .navbar-brand span {
     color: #1e2c44;
 }
 
-/* added gap in nav links */
-.navbar-nav {
-    display: flex; 
-    gap: 1rem;
-}
-/* added shadow box and hover effact in nav-links */
 .nav-item a {
-    color: #1e2c44; 
-    /* adding box hover effact */
+    color: #1e2c44;
     text-decoration: none;
     font-weight: 700;
     font-size: 1rem;
-    padding: 0.75rem 0.75rem;  
-    border-radius: 12px;  
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
-    transition: all 0.3s ease-in-out;
-} 
-.nav-item a:hover{
-    background: linear-gradient(90deg , #1e2c44 40%, #2563eb 100%);
-    border-color: #2563eb;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(33 , 136 , 56 , 0.4);
-    color: white;
-    font-size: 1.1rem;
+    padding: 0.75rem 0.75rem;
+    position: relative;
 }
 
+.nav-item a:hover {
+    color: #2563eb;
+    animation: underline-slide 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.nav-item a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+    border-radius: 2px;
+    animation: underline-slide 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+@keyframes underline-slide {
+    from {
+        width: 0;
+        opacity: 0.5;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Hamburger menu hidden by default */
+.nav-toggle-label {
+    display: none;
+}
+
+/* ================== Mobile Styles ================== */
+@media (max-width: 768px) {
+
+    /* Navbar links hidden initially */
+    .navbar .container .navbar-nav{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        z-index: 999;
+    }
+    .navbar .container .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    /* Show menu when checkbox is checked */
+    #nav-toggle:checked ~ .navbar-nav {
+        display: flex;
+    }
+
+    /* Hamburger toggle visible on mobile */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: #2563eb;
+        z-index: 1000;
+    }
+
+    /* Close icon hidden initially */
+    .close-icon {
+        display: none;
+    }
+
+    /* Toggle hamburger and close icons */
+    #nav-toggle:checked + .nav-toggle-label .menu-icon {
+        display: none;
+    }
+    #nav-toggle:checked + .nav-toggle-label .close-icon {
+        display: inline-block;
+    }
+
+}
 /* ================== Navbar Styles End Here ================== */
 
 
@@ -736,40 +838,6 @@ footer .row.align-items-start {
     margin: 0.4rem auto 0 auto;
 }
 
-
-
-/* Custom Navbar Styling */
-.custom-navbar {
-  background-color: #0d1b2a; /* Dark blue/navy background */
-  transition: background-color 0.3s ease;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
-}
-
-/* Base link color */
-.custom-navbar .nav-link,
-.custom-navbar .nav-link:visited,
-.custom-navbar .nav-link.active {
-  color: #ffffff !important;
-  transition: color 0.3s ease;
-}
-
-/* Hover and active-hover effect */
-.custom-navbar .nav-link:hover,
-.custom-navbar .nav-link.active:hover {
-  color: #fca311 !important; /* Gold */
-  text-decoration: underline;
-}
-
-/* Brand name styling */
-.custom-navbar .navbar-brand {
-  color: #fca311;
-  font-weight: bold;
-}
-
-/* Brand name span (the 'Clip' part in CodeClip) */
-.custom-navbar .navbar-brand span {
-  color: #ffffff;
-}
 
 /* For medium devices (768px - 991px) */
 @media (min-width: 768px) and (max-width: 991px) {
