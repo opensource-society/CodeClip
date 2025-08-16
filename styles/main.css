@@ -528,14 +528,16 @@ nav {
     width: 150px;
     min-width: 100px;
     max-width: 170px;
+    background: linear-gradient(90deg, #2563eb 0%, #2563eb 100%);
+    color: #fff;
     font-size: 0.97rem;
     padding: 0.45em 0;
     border-radius: 8px;
     gap: 0.4em;
+    transition: background 0.3s;
 }
 .footer-contact-btn:hover {
     background: linear-gradient(90deg, #1e2c44 60%, #2563eb 100%);
-    color: #fff;
     box-shadow: 0 4px 20px rgba(30,44,68,0.15);
     transform: translateY(-2px) scale(1.03);
 }
