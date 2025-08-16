@@ -86,79 +86,32 @@
     <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
-<main>
-        <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
-            <div class="container">
-                <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
-                <button  class="navbar-toggler" type="button" data-bs-toggle="collapse"
-                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                    aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-                        <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#challengeSection">Challenges</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#aboutSection">About</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#contactFooter">Contact</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-
-      <nav class="navbar navbar-expand-lg fixed-top">
+      <nav class="navbar">
         <div class="container">
+          <!-- Brand -->
           <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item ">
-                <a
-                  class="active"
-                  aria-current="page"
-                  href="#top"
-                  >Home</a
-                >
-              </li>
-              <li class="nav-item">
-                <a href="../CodeClip/pages/challenges.html">Challenges</a>
-              </li>
-              <li class="nav-item">
-                <a href="#leaderboardSection">Leaderboard</a>
-              </li>
-              <li class="nav-item">
-                <a href="#aboutSection">About</a>
-              </li>
-              <li class="nav-item">
-                <a  href="#contactFooter">Contact</a>
-              </li>
-            </ul>
-          </div>
-        </div>
-      </nav>
-      </main>
-    </header>
+
+    <!-- Hidden Checkbox -->
+    <input type="checkbox" id="nav-toggle" hidden />
+
+    <!-- Hamburger / Close Icons -->
+    <label for="nav-toggle" class="nav-toggle-label">
+      <i class="fas fa-bars menu-icon"></i>
+      <i class="fas fa-xmark close-icon"></i>
+    </label>
+
+    <!-- Navbar Links -->
+    <ul class="navbar-nav">
+      <li class="nav-item"><a href="#homeSection">Home</a></li>
+      <li class="nav-item"><a href="./pages/challenges.html">Challenges</a></li>
+      <li class="nav-item"><a href="#leaderboardSection">Leaderboard</a></li>
+      <li class="nav-item"><a href="#aboutSection">About</a></li>
+      <li class="nav-item"><a href="#contactFooter">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+
     <!-- ================================ Header Section Start Here ================================ -->
 
     <!-- ================================ Hero Section Start Here ================================ -->
