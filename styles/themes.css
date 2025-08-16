@@ -53,8 +53,9 @@
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
   }
+}
 
-  /* --- NAVIGATION --- */
+  /* --- NAVIGATION ---
 
 /* Mobile-first: hide nav list */
 .nav__list {
@@ -91,6 +92,3 @@
   }
 
 }
-}
-
-  
