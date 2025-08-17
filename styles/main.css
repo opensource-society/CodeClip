@@ -12,6 +12,7 @@ html {
 }
 
 /* =================== Navbar Styles Start Here ================== */
+Improvement-UI-Challenges
 .navbar {
   background-color: #ffffff;
 }
@@ -24,12 +25,66 @@ html {
 
 .navbar-brand:hover {
   color: #2563eb;
+nav {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    background-color: #ffffff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
 }
+
+.navbar .container .navbar-nav{
+    width: 80%;
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+}
+.nav .container,
+.navbar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container .navbar-brand {
+    font-size: 2.1rem;
+    font-weight: 900;
+    color: #2563eb;
+    text-shadow: 2px 2px 5px rgba(37, 99, 235, 0.5),
+                 2px 2px 8px rgba(0, 0, 0, 0.3),
+                 1px 1px 3px rgba(255, 255, 255, 0.6);
+    display: inline-block;
+    transform: scale(0.9);
+    animation: scaleUp 1s ease forwards;
+    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+/* Hover effect for desktop */
+.container .navbar-brand:hover {
+    transform: scale(1.1);
+    color: #1d4ed8;
+    text-shadow: 3px 3px 6px rgba(37, 99, 235, 0.7),
+                 3px 3px 10px rgba(0, 0, 0, 0.4),
+                 1px 1px 4px rgba(255, 255, 255, 0.7);
+}
+
+@keyframes scaleUp {
+    to {
+        transform: scale(1);
+    }
+ main
+}
+
 
 .navbar-brand span {
   color: #1e2c44;
 }
 
+ Improvement-UI-Challenges
 /* added gap in nav links */
 .navbar-nav {
   display: flex;
@@ -54,8 +109,99 @@ html {
   box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
   color: white;
   font-size: 1.1rem;
+
+.nav-item a {
+    color: #1e2c44;
+    text-decoration: none;
+    font-weight: 700;
+    font-size: 1rem;
+    padding: 0.75rem 0.75rem;
+    position: relative;
 }
 
+.nav-item a:hover {
+    color: #2563eb;
+    animation: underline-slide 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+}
+
+.nav-item a:hover::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 6px;
+    width: 100%;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+    border-radius: 2px;
+    animation: underline-slide 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+ main
+}
+
+@keyframes underline-slide {
+    from {
+        width: 0;
+        opacity: 0.5;
+    }
+    to {
+        width: 100%;
+        opacity: 1;
+    }
+}
+
+/* Hamburger menu hidden by default */
+.nav-toggle-label {
+    display: none;
+}
+
+/* ================== Mobile Styles ================== */
+@media (max-width: 768px) {
+
+    /* Navbar links hidden initially */
+    .navbar .container .navbar-nav{
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: #ffffff;
+        z-index: 999;
+    }
+    .navbar .container .navbar-brand {
+        margin-left: 1rem;
+    }
+
+    /* Show menu when checkbox is checked */
+    #nav-toggle:checked ~ .navbar-nav {
+        display: flex;
+    }
+
+    /* Hamburger toggle visible on mobile */
+    .nav-toggle-label {
+        display: block;
+        cursor: pointer;
+        font-size: 1.8rem;
+        color: #2563eb;
+        z-index: 1000;
+    }
+
+    /* Close icon hidden initially */
+    .close-icon {
+        display: none;
+    }
+
+    /* Toggle hamburger and close icons */
+    #nav-toggle:checked + .nav-toggle-label .menu-icon {
+        display: none;
+    }
+    #nav-toggle:checked + .nav-toggle-label .close-icon {
+        display: inline-block;
+    }
+
+}
 /* ================== Navbar Styles End Here ================== */
 
 /* ================== Hero Styles Start Here ================== */
@@ -141,6 +287,7 @@ html {
   border-radius: 40px !important;
   background: #2563eb !important;
   color: white !important;
+ Improvement-UI-Challenges
   transition: all 0.2s ease-in-out;
 }
 
@@ -152,6 +299,49 @@ html {
 .heroSectionBtn i {
   font-size: 14px;
   margin-right: 5px;
+
+  border: 1px solid #2563eb !important;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.heroSectionBtn:hover {
+  background: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(11, 94, 215, 0.3);
+  transform: translateY(-2px);
+  color:#2563eb !important;
+}
+
+.heroSectionBtnOutline {
+  text-align: center;
+  padding: 7px 60px !important;
+  border-radius: 40px !important;
+  background: white !important;
+  color: #2563eb !important;
+  border: 1px solid #2563eb !important;
+  transition: all 0.3s ease-in-out;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.heroSectionBtnOutline:hover {
+  background: #2563eb !important;
+  color: white !important;
+  box-shadow: 0 4px 12px rgba(37, 99, 235, 0.3);
+  transform: translateY(-2px);
+}
+.heroSectionBtn i,
+.heroSectionBtnOutline i {
+  font-size: 14px;
+  margin-right: 5px;
+  transition: transform 0.2s ease-in-out;
+}
+
+.heroSectionBtn:hover i,
+.heroSectionBtnOutline:hover i {
+  transform: translateX(3px);
+ main
 }
 
 /* ================== Hero Styles End Here ================== */
@@ -161,6 +351,7 @@ html {
   padding: 2rem 0;
 }
 
+ Improvement-UI-Challenges
 .challengeContainer .card {
   box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
   border: none;
@@ -175,6 +366,20 @@ html {
 
 .challengeContainer .card:hover {
   transform: translateY(-2px);
+
+.challengeContainer .card{
+    box-shadow: rgba(19, 117, 216, 0.2) 0px 8px 24px;
+    border: none;
+    transition: all 0.2s ease-in-out;
+    border-radius: 15px;
+    margin: 15px 0;
+    transition: transform 0.2s ease-in-out;
+}
+
+.challengeContainer .card:hover {
+    transform: translateY(-3px) scale(1);
+    box-shadow: 0 0 18px rgba(37,99,235,0.45);
+ main
 }
 
 .card-TopContainer {
@@ -243,8 +448,13 @@ html {
 }
 
 .card-Btn:hover {
+ Improvement-UI-Challenges
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   background-color: #0b5ed7;
+
+    box-shadow: #83aafe 0px 3px 8px;
+    background-color: #1d4ed8;
+ main
 }
 
 /* ================== Challenge Styles End Here ================== */
@@ -370,24 +580,55 @@ html {
 }
 
 .aboutCTA-Btn {
+ Improvement-UI-Challenges
   text-decoration: none;
   font-weight: 700;
   margin-top: 1.5rem;
+
+  position: relative;
+ main
   display: inline-block;
   padding: 0.75rem 1.75rem;
-  background: linear-gradient(135deg, #28a745, #218838);
-  color: #fff;
   font-size: 1rem;
-  border-radius: 12px;
+  font-weight: 600;
+  color: #fff;
+  background: #0000ff;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
   text-decoration: none;
+ Improvement-UI-Challenges
   box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
   transition: all 0.3s ease;
+
+  overflow: hidden;
+  z-index: 1;
+  transition: color 0.3s ease, transform 0.3s ease;
+ main
 }
+
 .aboutCTA-Btn:hover {
-  background: linear-gradient(135deg, #218838, #1e7e34);
-  transform: scale(1.05);
-  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+  color: #0000ff;
+  transform: translateY(-2px);
+  border: 1px solid #0000ff;
 }
+
+.aboutCTA-Btn::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  transition: left 0.4s ease;
+  z-index: -1;
+}
+
+.aboutCTA-Btn:hover::before {
+  left: 0;
+}
+ Improvement-UI-Challenges
 @keyframes pulse {
   0%,
   100% {
@@ -401,11 +642,19 @@ html {
 /* ================== About Styles End Here ================== */
 
 /* --- Footer Redesign --- */
+
+
+/* ================== About Styles End Here ================== */
+
+/* ================== Footer Styles Start Here ================== */
+
+ main
 .footer-contact-btn {
   width: 150px;
   min-width: 100px;
   max-width: 170px;
   font-size: 0.97rem;
+ Improvement-UI-Challenges
   padding: 0.45em 0;
   border-radius: 8px;
   gap: 0.4em;
@@ -415,18 +664,43 @@ html {
   color: #fff;
   box-shadow: 0 4px 20px rgba(30, 44, 68, 0.15);
   transform: translateY(-2px) scale(1.03);
+
+  padding: 0.5em 1.2em;
+  border-radius: 9999px;
+  background: #fff;
+  color: #2563eb;
+  border: 2px solid #2563eb;
+  font-weight: 500;
+  gap: 0.4em;
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
+}
+.footer-contact-btn:hover {
+  background: #2563eb;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(37,99,235,0.45);
+  transform: translateY(-2px) scale(1.04);
+ main
 }
 .footer-contact-btn i {
   font-size: 1em;
   margin-right: 0.4em;
 }
 
+/* Footer Container */
 footer {
+ Improvement-UI-Challenges
   padding-top: 2.5rem;
   padding-bottom: 1.5rem;
   background: linear-gradient(90deg, #f8fafc 60%, #e0ecfa 100%);
   border-top: 1.5px solid #e5e7eb;
   box-shadow: 0 -2px 16px rgba(30, 44, 68, 0.06);
+
+  padding: 2.5rem 0 1.5rem;
+  background: linear-gradient(90deg, #f8fafc 60%, #e0ecfa 100%);
+  border-top: 1.5px solid #e5e7eb;
+  box-shadow: 0 -2px 16px rgba(30,44,68,0.06);
+ main
 }
 footer .container {
   max-width: 1200px;
@@ -436,9 +710,15 @@ footer .row.align-items-start {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+ Improvement-UI-Challenges
   gap: 0;
   row-gap: 2.5rem;
 }
+
+  row-gap: 2.5rem;
+}
+
+ main
 .footer-logo-col,
 .footer-links-col,
 .footer-contact-col-main {
@@ -457,6 +737,7 @@ footer .row.align-items-start {
 .footer-logo-col {
   border-right: 2px solid #e5e7eb;
   min-height: 140px;
+ Improvement-UI-Challenges
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -473,33 +754,69 @@ footer .row.align-items-start {
   text-align: center;
   margin-left: auto;
   margin-right: auto;
+  main
 }
+
 .footer-logo {
   font-size: 2.3rem;
   font-weight: bolder;
   color: #2563eb;
   margin-bottom: 0.3rem;
   letter-spacing: 1px;
+ Improvement-UI-Challenges
+
+  text-align: center;
+ main
 }
 .footer-desc {
   font-size: 1rem;
   color: #4a5568;
   opacity: 0.85;
   margin-top: 0.3rem;
+ Improvement-UI-Challenges
   max-width: 320px;
   padding-right: 1.5rem;
+
+  line-height: 1.6;
+  max-width: 380px;
+  text-align: center;
+  padding: 0 1.5rem;
+ main
 }
+
 .footer-title {
   font-size: 1.2rem;
   font-weight: 600;
   margin-bottom: 0.7rem;
   color: #1e2c44;
+ Improvement-UI-Challenges
   letter-spacing: 0.5px;
   text-align: center;
 }
 .footer-contact-links {
   margin-top: 0;
+
+  text-align: center;
+  letter-spacing: 0.5px;
 }
+.footer-contact-col-main .footer-title,.imp-links  {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #2563eb;
+  margin-bottom: 1.1rem;
+  position: relative;
+}
+.footer-contact-col-main .footer-title::after ,.imp-links::after {
+  content: '';
+  display: block;
+  width: 55%;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+  border-radius: 2px;
+  margin: 0.4rem auto 0 auto;
+ main
+}
+
 .footer-links {
   display: flex;
   flex-direction: column;
@@ -509,8 +826,11 @@ footer .row.align-items-start {
   padding: 0;
 }
 .footer-links li {
+ Improvement-UI-Challenges
   margin: 0;
   padding: 0;
+
+ main
   list-style: none;
 }
 .footer-links a {
@@ -518,27 +838,111 @@ footer .row.align-items-start {
   text-decoration: none;
   font-size: 1rem;
   opacity: 0.85;
+ Improvement-UI-Challenges
   transition: color 0.2s, opacity 0.2s;
+  position: relative;
+  transition: color 0.3s ease, opacity 0.3s ease;
+}
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  bottom: -3px;
+  width: 0;
+  height: 2px;
+  background: #2563eb;
+  transition: width 0.3s ease;
+ main
 }
 .footer-links a:hover {
   color: #2563eb;
   opacity: 1;
+ Improvement-UI-Challenges
 }
+
+}
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.footer-contact-row {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.8rem; 
+}
+.open-issue{
+    margin-top: 10%;
+}
+/* First Row: Open Issue Button */
+.open-issue a {
+  width: 180px;
+  font-size: 1rem;
+  padding: 0.7em 1.6em;
+  border-radius: 9999px; 
+  background: #fff;
+  color: #2563eb;
+  border: 1px solid #2563eb;
+  font-weight: 600;
+  box-shadow: 0 0 0 transparent;
+  transition: all 0.3s ease;
+  text-decoration: none;
+
+}
+
+.open-issue a:hover {
+  background: #fff;
+  color: #2563eb;
+  transform: translateY(-2px) scale(1.05);
+  box-shadow: 0 0 15px rgba(37,99,235,0.35);
+}
+
+/* Second Row: Social Icons */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.2rem;
+}
+
+.contact-icons a {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2563eb;
+  color: #2563eb;
+  font-size: 1.2rem;
+  background: #fff;
+  transition: all 0.3s ease;
+  box-shadow: 0 0 8px rgba(37,99,235,0.18);
+}
+
+.contact-icons a:hover {
+  background: #4077ec;
+  color: #fff;
+  transform: translateY(-3px) scale(1.08);
+  box-shadow: 0 0 18px rgba(37,99,235,0.45);
+}
+
+/* Scroll to top button */
+ main
 .scroll_to_top {
   position: fixed;
-  color: white;
   bottom: 15px;
   right: 20px;
   z-index: 999;
   width: 40px;
   height: 40px;
-  padding: 0;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: #2563eb;
-  transform: translateY(0);
+  color: #fff;
+  border-radius: 50%;
   transition: all 0.3s ease;
+ Improvement-UI-Challenges
   border-radius: 50%;
   text-decoration: none;
 }
@@ -698,11 +1102,59 @@ footer .row.align-items-start {
   gap: 0.2rem;
 }
 @media (max-width: 768px) {
+
+  text-decoration: none;
+}
+.scroll_to_top:hover {
+  background: linear-gradient(45deg, #2563eb , #0000ff);
+  transform: translateY(-3px) scale(1.05);
+}
+
+.footer-line{
+    width: 100%;
+    height: 1px;
+    background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+    margin: 1.5rem 0;
+}
+
+#contactFooter {
+  background: #fff;
+  border-top: 1px solid #e5e7eb;
+  padding: 2.5rem 0 1.5rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 991px) {
+  .footer-logo-col { border-right: none; min-height: unset; }
+  footer .row.align-items-start {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-logo-col,
+  .footer-links-col,
+  .footer-contact-col-main {
+    border: none;
+    padding: 0;
+    min-width: 0;
+  }
+  .footer-links,
+  .footer-contact-row {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-contact-btn { margin: auto; }
+  .footer-links { margin-bottom: 2rem; }
+}
+
+@media (max-width: 768px) {
+ main
   .footer-contact-row {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
   }
+ Improvement-UI-Challenges
   .footer-contact-col {
     gap: 0.2rem;
     margin-bottom: 0.5rem;
@@ -754,7 +1206,15 @@ footer .row.align-items-start {
   font-weight: bold;
 }
 
-/* Brand name span (the 'Clip' part in CodeClip) */
-.custom-navbar .navbar-brand span {
-  color: #ffffff;
+  .footer-contact-btn {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+ main
+
+  .contact-icons a{
+    margin-top: 10%;
+  }
 }
+/* ================== Footer Styles End Here ================== */
