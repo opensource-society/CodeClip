@@ -40,30 +40,46 @@
     />
 
     <!-- ================ Vendor CSS ================  -->
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/owl.carousel.min.css" />
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="styles/fontawesome.css" />
 
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="styles/main.css" />
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+ <main>
+<link rel="stylesheet" href="styles/bootstrap.min.css" />
+<link rel="stylesheet" href="styles/owl.carousel.min.css" />
+<link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+<link rel="stylesheet" href="styles/fontawesome.css" />
 
-    <style>
-      .icon-container {
-        display: flex;
-        gap: 6px;
-        margin: 8px 0;
-        font-size: 24px;
-      }
-      .icon-container i {
-        transition: transform 0.2s ease;
-      }
-      .icon-container i:hover {
-        transform: scale(1.2);
-      }
-    </style>
+  <!-- ================ Custom CSS & Libraries ================ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <!-- Global / Main Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  
+  <!-- Optional: Challenge-specific styles -->
+  <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+  
+  <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+  <link rel="stylesheet" href="./styles/progress-dashboard.css" />
+  <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+  
+  <!-- Inline custom tweaks -->
+  <style>
+    .icon-container {
+      display: flex;
+      gap: 6px;
+      margin: 8px 0;
+      font-size: 24px;
+    }
+  
+    .icon-container i {
+      transition: transform 0.2s ease;
+    }
+  
+    .icon-container i:hover {
+      transform: scale(1.2);
+    }
+  </style>
+
   </head>
 
   <body>
@@ -589,8 +605,31 @@
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/owl.carousel.min.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
-
+    
     <!-- ================ Custom JS ================  -->
     <script src="scripts/main.js"></script>
-  </body>
+    
+    <!-- ================ Typed JS ================  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Code", "Challenge", "Conquer"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+    
+    <!-- ================ Module Scripts ================  -->
+    <script type="module" src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/theme.js"></script>
+    
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <script type="module" src="./scripts/progress-dashboard.js"></script>
+    <script type="module" src="./scripts/demo-data.js"></script>
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+    
+    </body>
+
+
 </html>
