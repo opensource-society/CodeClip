@@ -149,6 +149,27 @@
 
             <!-- ==== Do Changes According to requirements === -->
             <div class="ctaBtn-Container">
+              <!-- Include CodeMirror CSS & JS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.css">
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/codemirror.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.65.5/mode/javascript/javascript.min.js"></script>
+
+<!-- Code Editor Container -->
+<div id="codeEditorContainer" style="display:none; margin-top: 20px;">
+  <textarea id="codeEditor">// Write your code here</textarea>
+</div>
+
+<!-- Toggle Editor on Button Click -->
+<script>
+  function showEditor() {
+    document.getElementById('codeEditorContainer').style.display = 'block';
+    CodeMirror.fromTextArea(document.getElementById('codeEditor'), {
+      lineNumbers: true,
+      mode: "javascript",
+      theme: "default"
+    });
+  }
+</script>
               <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn">
                 <i class="fa-solid fa-gear"></i> Code
               </button>
