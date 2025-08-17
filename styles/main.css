@@ -303,21 +303,18 @@ nav {
     padding: 2rem 0;
 }
 
-.challengeContainer .card {
-    box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+.challengeContainer .card{
+    box-shadow: rgba(19, 117, 216, 0.2) 0px 8px 24px;
     border: none;
     transition: all 0.2s ease-in-out;
     border-radius: 15px;
     margin: 15px 0;
+    transition: transform 0.2s ease-in-out;
 }
 
 .challengeContainer .card:hover {
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-}
-
-.challengeContainer .card:hover {
-    transform: translateY(-2px);
-
+    transform: translateY(-3px) scale(1);
+    box-shadow: 0 0 18px rgba(37,99,235,0.45);
 }
 
 .card-TopContainer {
@@ -389,8 +386,8 @@ nav {
 }
 
 .card-Btn:hover {
-    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
-    background-color: #0b5ed7;
+    box-shadow: #83aafe 0px 3px 8px;
+    background-color: #1d4ed8;
 }
 
 /* ================== Challenge Styles End Here ================== */
@@ -559,9 +556,6 @@ nav {
 .aboutCTA-Btn:hover::before {
   left: 0;
 }
-
-
-
 
 /* ================== About Styles End Here ================== */
 
