@@ -157,7 +157,8 @@ body {
 }
 
 .nav__link:hover,
-.nav__link:focus {
+.nav__link:focus,
+.nav__link.active {
   color: #2563eb;
 }
 
@@ -177,10 +178,6 @@ body {
 .nav__link:focus::after,
 .nav__link.active::after {
   width: 100%;
-}
-
-.nav__link.active {
-  color: #2563eb;
 }
 
 .header__toggle {
@@ -303,18 +300,20 @@ body {
   transition: all 0.3s ease;
 }
 
-.btn-primary {
-  background: #2563eb;
+.btn-primary,
+.btn-secondary {
   color: #fff;
 }
+.btn-primary {
+  background: #2563eb;
+}
+.btn-secondary {
+  background: #64748b;
+}
+
 
 .btn-primary:hover {
   background: #1e40af;
-}
-
-.btn-secondary {
-  background: #64748b;
-  color: #fff;
 }
 
 .btn-secondary:hover {
@@ -866,3 +865,18 @@ body {
 }
 
 
+
+
+/* Tech Stack Icon Container Styles */
+.icon-container {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+  font-size: 24px;
+}
+.icon-container i {
+  transition: transform 0.2s ease;
+}
+.icon-container i:hover {
+  transform: scale(1.2);
+}
