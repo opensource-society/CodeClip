@@ -10,11 +10,11 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
+| [@Mrunalisa](https://github.com/Mrunalisa) | 2 | 0 | 0 | 3 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
-| [@Mrunalisa](https://github.com/Mrunalisa) | 1 | 0 | 0 | 1 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
 | [@shreya-mishra325](https://github.com/shreya-mishra325) | 1 | 0 | 0 | 1 |
 | [@ananyaguptacodes](https://github.com/ananyaguptacodes) | 1 | 0 | 0 | 1 |
