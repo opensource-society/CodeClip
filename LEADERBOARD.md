@@ -2,13 +2,14 @@
 
 This leaderboard tracks contributors who have completed issues labeled as `level1`, `level2`, or `level3`, along with their merged pull requests.
 
-*Last updated: 2025-08-15*
+*Last updated: 2025-08-18*
 
 
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
+| [@Mrunalisa](https://github.com/Mrunalisa) | 3 | 0 | 0 | 4 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
@@ -16,6 +17,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
+| [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
 | [@shreya-mishra325](https://github.com/shreya-mishra325) | 1 | 0 | 0 | 1 |
 | [@ananyaguptacodes](https://github.com/ananyaguptacodes) | 1 | 0 | 0 | 1 |
 | [@Nikhil-coder390](https://github.com/Nikhil-coder390) | 1 | 0 | 0 | 1 |
@@ -25,6 +27,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@Shivin1016](https://github.com/Shivin1016) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
+| [@sanjanaaraii](https://github.com/sanjanaaraii) | 1 | 0 | 0 | 1 |
 | [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
 | [@Surabhi210](https://github.com/Surabhi210) | 1 | 0 | 0 | 1 |
 | [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
