@@ -42,45 +42,45 @@
     <!-- ================ Vendor CSS ================  -->
 
  <main>
-    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+<link rel="stylesheet" href="styles/bootstrap.min.css" />
+<link rel="stylesheet" href="styles/owl.carousel.min.css" />
+<link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+<link rel="stylesheet" href="styles/fontawesome.css" />
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/owl.carousel.min.css">
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css">
-    <link rel="stylesheet" href="styles/fontawesome.css">
+  <!-- ================ Custom CSS & Libraries ================ -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+  
+  <!-- Global / Main Styles -->
+  <link rel="stylesheet" href="styles/main.css" />
+  <link rel="stylesheet" href="./styles.css" />
+  
+  <!-- Optional: Challenge-specific styles -->
+  <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+  
+  <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+  <link rel="stylesheet" href="./styles/progress-dashboard.css" />
+  <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+  
+  <!-- Inline custom tweaks -->
+  <style>
+    .icon-container {
+      display: flex;
+      gap: 6px;
+      margin: 8px 0;
+      font-size: 24px;
+    }
+  
+    .icon-container i {
+      transition: transform 0.2s ease;
+    }
+  
+    .icon-container i:hover {
+      transform: scale(1.2);
+    }
+  </style>
 
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-
-
-    <style>
-      .icon-container {
-        display: flex;
-        gap: 6px;
-        margin: 8px 0;
-        font-size: 24px;
-      }
-      .icon-container i {
-        transition: transform 0.2s ease;
-      }
-      .icon-container i:hover {
-        transform: scale(1.2);
-      }
-    </style>
-
-</head>
-
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/owl.carousel.min.css" />
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="styles/fontawesome.css" />
-
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="styles/main.css" />
   </head>
-  </main>
 
   <body>
     <a id="top"></a>  <!--added for issue 260 -->
@@ -101,7 +101,7 @@
           >
             <span class="navbar-toggler-icon"></span>
           </button>
-           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
@@ -164,7 +164,7 @@
               <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn">
                 <i class="fa-solid fa-gear"></i> Code
               </button>
-              <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn">
+              <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn heroSectionBtnOutline ">
                 <i class="fa-solid fa-cloud"></i> Run
               </button>
             </div>
@@ -187,8 +187,8 @@
       <div class="container">
         <div class="row challengeContainer">
           <!-- ==== Card 1 ==== -->
-          <div class="col-12 col-md-4">
-            <div data-aos-duration="800" data-aos="fade-up" class="card">
+          <div data-aos-duration="800" data-aos="fade-up" class="col-12 col-md-4">
+            <div class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
                   <h5 class="card-Header">Frontend Challenges</h5>
@@ -219,8 +219,8 @@
           </div>
 
           <!-- ==== Card 2 ==== -->
-          <div class="col-12 col-md-4">
-            <div data-aos-duration="800" data-aos="fade-up" class="card">
+          <div data-aos-duration="800" data-aos="fade-up"  class="col-12 col-md-4">
+            <div class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
                   <h5 class="card-Header">JavaScript Logics</h5>
@@ -248,8 +248,8 @@
           </div>
 
           <!-- ==== Card 3 ==== -->
-          <div class="col-12 col-md-4">
-            <div data-aos-duration="800" data-aos="fade-up" class="card">
+          <div data-aos-duration="800" data-aos="fade-up" class="col-12 col-md-4">
+            <div class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
                   <h5 class="card-Header">Backend Basics</h5>
@@ -308,8 +308,8 @@
           </div>
 
           <!-- ==== Card 5 ==== -->
-          <div class="col-12 col-md-4">
-            <div data-aos-duration="800" data-aos="fade-up" class="card">
+          <div data-aos-duration="800" data-aos="fade-up" class="col-12 col-md-4">
+            <div class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
                   <h5 class="card-Header">Open Source Challenges</h5>
@@ -338,8 +338,8 @@
           </div>
           <!-- added card 6 -->
           <!-- === Card 6 === -->
-           <div class="col-12 col-md-4">
-            <div data-aos-duration="800" data-aos="fade-up" class="card">
+           <div data-aos-duration="800" data-aos="fade-up" class="col-12 col-md-4">
+            <div class="card">
               <div class="card-body">
                 <div class="card-TopContainer">
                   <h5 class="card-Header">JavaScript Mini Projects</h5>
@@ -552,84 +552,55 @@
     </section>
 
     <!-- ================================ Footer Section Start Here ================================ -->
-    <footer id="contactFooter">
-      <div class="container">
-        <div class="row align-items-start justify-content-between py-4">
-          <div data-aos-duration="650" data-aos="fade-up" class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
-            <a class="navbar-brand mb-2" href="#homeSection"
-              >Code<span>Clip</span></a
-            > 
-            <p class="footer-desc mb-0">
-              CodeClip is a open source project under GirlScript Summer of Code
-              (GSSoC) 2025 to open for contribution
-            </p> 
-          </div>
-          <div data-aos-duration="650" data-aos="fade-left" class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
-            <h5 class="footer-title">Important Links</h5>
-            <ul class="footer-links list-unstyled mb-0">
-              <li><a href="#homeSection">Home</a></li>
-              <li><a href="#challengeSection">Challenges</a></li>
-              <li><a href="#leaderboardSection">Leaderboard</a></li>
-              <li><a href="#aboutSection">About</a></li>
-            </ul>
-          </div>
-          <div class="col-12 col-md-6 footer-contact-col-main">
-            <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
-            <div class="footer-contact-row d-flex justify-content-center">
-              <div data-aos-duration="650" data-aos="fade-right"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-github me-2"></i> GitHub
-                </a>
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-discord me-2"></i> Discord
-                </a>
-              </div>
-              <div data-aos-duration="650" data-aos="fade-left"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-              <!-- margin added -->
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
-                </a>
-                <!-- Added linkdin social connection -->
-                <a
-                  href="https://www.linkedin.com/in/adityai0"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-linkedin-in me-2"></i> LinkedIn
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div> 
+    <footer id="contactFooter" style="background:#fff;">
+  <div class="container">
+    <div class="row align-items-start justify-content-between py-4">
+
+      <div class="col-12 col-md-3 mb-4 footer-logo-col">
+        <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
+        <p class="footer-desc mb-0">
+          CodeClip is an open-source project under GirlScript Summer of Code (GSSoC) 2025 open for contribution.
+        </p>
+      </div>
+
+      <!-- Resources -->
+      <div class="col-12 col-md-6 mb-4 footer-links-col">
+        <h5 class="footer-title w-100 imp-links">Resources</h5>
+        <ul class="footer-links list-unstyled mb-0">
+          <li><a href="#docsSection">Documentation</a></li>
+          <li><a href="#faqSection">FAQ</a></li>
+          <li><a href="https://github.com/opensource-society/CodeClip" target="_blank">Contribute</a></li>
+          <li><a href="#privacyPolicy">Privacy Policy</a></li>
+          <li><a href="#termsConditions">Terms & Conditions</a></li>
+        </ul>
+      </div>
+
+      <div class="col-12 col-md-6 footer-contact-col-main .footer-line">
+  <h5 class="footer-title w-100">Contact Us</h5>
+  
+  <div class="footer-contact-row">
+
+    <!-- Row 1: Open Issue Button -->
+    <div class="open-issue">
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
+        <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
+      </a>
     </div>
-    <hr />
-    <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
-      &copy; CodeClip | Open Source Project 2025
-    </p>
+
+    <!-- Row 2: Social Icons -->
+    <div class="contact-icons">
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-github"></i></a>
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-discord"></i></a>
+      <a href="https://www.linkedin.com/in/adityai0" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+    </div>
+</div>
+  </div>
+</div>
+    <div class="footer-line"></div>
+    <p class="footerNote text-center mb-0">&copy; CodeClip | Open Source Project 2025</p>
   </div>
 </footer>
+
     <!--AOS Animations-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
@@ -646,8 +617,31 @@
     <script src="scripts/jquery.min.js"></script>
     <script src="scripts/owl.carousel.min.js"></script>
     <script src="scripts/bootstrap.bundle.min.js"></script>
-
+    
     <!-- ================ Custom JS ================  -->
     <script src="scripts/main.js"></script>
-  </body>
+    
+    <!-- ================ Typed JS ================  -->
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script>
+      var typed = new Typed("#element", {
+        strings: ["Code", "Challenge", "Conquer"],
+        typeSpeed: 50,
+        loop: true,
+      });
+    </script>
+    
+    <!-- ================ Module Scripts ================  -->
+    <script type="module" src="./scripts/data.js"></script>
+    <script type="module" src="./scripts/app.js"></script>
+    <script type="module" src="./scripts/theme.js"></script>
+    
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <script type="module" src="./scripts/progress-dashboard.js"></script>
+    <script type="module" src="./scripts/demo-data.js"></script>
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+    
+    </body>
+
+
 </html>
