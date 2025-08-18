@@ -4,6 +4,8 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 
 *Last updated: 2025-08-18*
 
+
+
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
