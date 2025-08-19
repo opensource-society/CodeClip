@@ -519,24 +519,26 @@ nav {
 }
 
 .aboutCTA-Btn {
+  box-shadow: 0 0 18px 0 rgba(19, 117, 216, 0.25);
   position: relative;
   display: inline-block;
   padding: 0.75rem 1.75rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
-  background: #0000ff;
+  color: #1d4ed8;
+  background-color: #fff;
   border-radius: 25px;
-  border: none;
+  border: 1px solid #0000ff;
   cursor: pointer;
   text-decoration: none;
   overflow: hidden;
   z-index: 1;
   transition: color 0.3s ease, transform 0.3s ease;
+
 }
 
 .aboutCTA-Btn:hover {
-  color: #0000ff;
+  color: #fff;
   transform: translateY(-2px);
   border: 1px solid #0000ff;
 }
@@ -548,7 +550,7 @@ nav {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #0000ff;
   transition: left 0.4s ease;
   z-index: -1;
 }
