@@ -410,7 +410,7 @@ nav {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
-    color: #000;
+    color: #131212b1;
 }
 .lead-description{
     display: flex;
@@ -425,7 +425,7 @@ nav {
 .leaderboard-Para {
     text-align: center;
     opacity: 0.8;
-    color: #000; 
+    color: #131212b1;
     width: 50%;
     font-size: 1.2rem;
 }
