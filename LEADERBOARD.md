@@ -2,6 +2,12 @@
 
 This leaderboard tracks contributors who have completed issues labeled as `level1`, `level2`, or `level3`, along with their merged pull requests.
 
+toggle-button-added
+*Last updated: 2025-08-12*
+
+| Username | Level 1 | Level 2 | Level 3 | PRs Merged |
+|----------|---------|---------|---------|-------------|
+| *No contributors yet* | - | - | - | - |
 *Last updated: 2025-08-19*
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
@@ -58,6 +64,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
 | [@faisal07777](https://github.com/faisal07777) | 1 | 0 | 0 | 0 |
 | [@AmritRaj29](https://github.com/AmritRaj29) | 1 | 0 | 0 | 0 |
+ main
 
 ---
 

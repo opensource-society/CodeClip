@@ -48,8 +48,161 @@
     <div class="challenge">
       <div class="challenge-title">Dark Mode Toggle</div>
       <div class="challenge-desc">Add a dark mode toggle switch with a smooth transition effect.</div>
+       <!-- Toggle button -->
+  <button class="theme-toggle" aria-pressed="false" aria-label="Toggle dark mode">
+    <span class="toggle-track">
+      <span class="toggle-thumb"></span>
+    </span>
+  </button>
+  <style>
+    :root {
+  --bg: #ffffff;
+  --card: #f7f7fb;
+  --text: #0b1220;
+  --accent: #2563eb;
+  --track: #e6e9ef;
+  --thumb: #ffffff;
+  transition: background-color .35s ease, color .35s ease;
+}
+
+/* Dark theme variables */
+[data-theme="dark"] {
+  --bg: #081226;
+  --card: #0e1b2b;
+  --text: #e6eef8;
+  --accent: #60a5fa;
+  --track: #15303f;
+  --thumb: #0b1116;
+}
+
+/* Page / container styling */
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  margin: 0;
+  padding: 24px;
+}
+
+/* Challenge card */
+.challenge {
+  background: var(--card);
+  padding: 18px;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(2,6,23,0.06);
+  max-width: 560px;
+}
+
+/* Toggle button base */
+.theme-toggle {
+  appearance: none;
+  border: none;
+  background: transparent;
+  padding: 0;
+  margin-top: 12px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+}
+
+/* Track */
+.theme-toggle .toggle-track {
+  width: 56px;
+  height: 30px;
+  background: var(--track);
+  border-radius: 999px;
+  display: inline-block;
+  position: relative;
+  transition: background-color .28s cubic-bezier(.2,.9,.2,1);
+  box-shadow: inset 0 1px 0 rgba(255,255,255,0.04);
+}
+
+/* Thumb */
+.theme-toggle .toggle-thumb {
+  width: 24px;
+  height: 24px;
+  background: var(--thumb);
+  border-radius: 50%;
+  position: absolute;
+  top: 3px;
+  left: 3px;
+  transform: translateX(0);
+  transition: transform .28s cubic-bezier(.2,.9,.2,1), background-color .28s;
+  box-shadow: 0 4px 10px rgba(2,6,23,0.12);
+}
+
+/* When dark, push thumb to right and tint track */
+.theme-toggle.is-dark .toggle-track {
+  background: linear-gradient(90deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02));
+}
+
+.theme-toggle.is-dark .toggle-thumb {
+  transform: translateX(26px);
+}
+
+/* Small accessible focus ring */
+.theme-toggle:focus-visible .toggle-track {
+  outline: 3px solid rgba(37,99,235,0.15);
+  outline-offset: 3px;
+  border-radius: 999px;
+}
+
+/* Reduce motion respect */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle .toggle-thumb,
+  :root {
+    transition: none !important;
+  }
+}
+  </style>
+  <script>
+    // Toggle logic with persistence and prefers-color-scheme fallback
+(function () {
+  const toggle = document.querySelector('.theme-toggle');
+  if (!toggle) return;
+
+  function setTheme(theme) {
+    document.documentElement.setAttribute('data-theme', theme);
+    localStorage.setItem('theme', theme);
+    updateUI(theme);
+  }
+
+  function updateUI(theme) {
+    const isDark = theme === 'dark';
+    toggle.classList.toggle('is-dark', isDark);
+    toggle.setAttribute('aria-pressed', String(isDark));
+  }
+
+  // Initialize: saved preference -> system preference -> default light
+  const saved = localStorage.getItem('theme');
+  if (saved === 'dark' || saved === 'light') {
+    setTheme(saved);
+  } else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
+    setTheme('dark');
+  } else {
+    setTheme('light');
+  }
+
+  // Click to toggle
+  toggle.addEventListener('click', () => {
+    const current = document.documentElement.getAttribute('data-theme') || 'light';
+    const next = current === 'light' ? 'dark' : 'light';
+    setTheme(next);
+  });
+
+  // Optional: update on OS theme change if user hasn't explicitly chosen
+  window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+    const savedPref = localStorage.getItem('theme');
+    if (savedPref === null) {
+      setTheme(e.matches ? 'dark' : 'light');
+    }
+  });
+})();
+  </script>
+
     </div>
   </div>
+
 
 </body>
 </html>
