@@ -11,6 +11,14 @@
       href="assets/favicon/codeClip-favicon.png"
       type="image/png"
     />
+    <!-- Swiper CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
     <!-- ================ Meta Tags ================  -->
     <meta
@@ -60,7 +68,7 @@
   
   <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
   <link rel="stylesheet" href="./styles/progress-dashboard.css" />
-  <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+  <!-- === SMART PROGRESS DASHBOARD FEATURE END === --> 
   
   <!-- Inline custom tweaks -->
   <style>
@@ -372,146 +380,150 @@
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
     <section id="leaderboardSection">
       <div class="container">
-        <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span class="">Top Coder</span> of the Week</h3>
-        <p data-aos-duration="650" data-aos="fade-up" class="leaderboard-Para">
-          Meet our top coders who accepted challenges, wrote great code,
-          contributed to open source, and stood out as the best performers of
-          the week.
-        </p>
-        <div class="row">
+        <!-- to make it center wrap inside div -->
+        <div class="lead-description">
+          <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span class="">Top Coder</span> of the Week</h3>
+          <p data-aos-duration="650" data-aos="fade-up" class="leaderboard-Para">
+            Meet our top coders who accepted challenges, wrote great code,
+            contributed to open source, and stood out as the best performers of
+            the week.
+          </p>
+        </div> 
           <!-- ======= owl cousel =========== -->
-          <div data-aos-duration="650" data-aos="fade-up" class="owl-carousel owl-theme">
-            <!-- === top coder 1 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 1"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Rahul</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 1st Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1080 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- === top coder 2 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 2"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Manisha</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 2nd Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1060 Points
-                    </p>
+           <div class="row justify-content-center">
+             <div class="swiper mySwiper">
+              <div class="swiper-wrapper">
+                <!-- === top coder 1 === -->
+                <div class="item swiper-slide">
+                  <div class="card leaderboard-Card">
+                    <div class="card-body leaderBoard-Container">
+                      <div class="leaderBoard-userContainer">
+                        <img
+                          src="assets/images/leaderboard-section/user-1.png"
+                          class="img-fluid leaderboard-Img"
+                          alt="user 1"
+                        />
+                      </div>
+    
+                      <h5 class="card-title userName">Rahul</h5>
+    
+                      <div class="leaderboradUser-RankContainer">
+                        <p class="rankPosition">
+                          <i class="fa-solid fa-award"></i> 1st Rank
+                        </p>
+                        <p class="rankPoints">
+                          <i class="fa-solid fa-medal"></i> 1080 Points
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- === top coder 3 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 3"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Pankaj</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 3rd Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1055 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- === top coder 4 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 4"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Simarn</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 4th Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1030 Points
-                    </p>
+                <!-- === top coder 2 === -->
+                <div class="item swiper-slide">
+                  <div class="card leaderboard-Card">
+                    <div class="card-body leaderBoard-Container">
+                      <div class="leaderBoard-userContainer">
+                        <img
+                          src="assets/images/leaderboard-section/user-2.png"
+                          class="img-fluid leaderboard-Img"
+                          alt="user 2"
+                        />
+                      </div>
+    
+                      <h5 class="card-title userName">Manisha</h5>
+    
+                      <div class="leaderboradUser-RankContainer">
+                        <p class="rankPosition">
+                          <i class="fa-solid fa-award"></i> 2nd Rank
+                        </p>
+                        <p class="rankPoints">
+                          <i class="fa-solid fa-medal"></i> 1060 Points
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-
-            <!-- === top coder 5 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 5"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Rahul</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 5th Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1020 Points
-                    </p>
+                <!-- === top coder 3 === -->
+                <div class="item swiper-slide">
+                  <div class="card leaderboard-Card">
+                    <div class="card-body leaderBoard-Container">
+                      <div class="leaderBoard-userContainer">
+                        <img
+                          src="assets/images/leaderboard-section/user-1.png"
+                          class="img-fluid leaderboard-Img"
+                          alt="user 3"
+                        />
+                      </div>
+    
+                      <h5 class="card-title userName">Pankaj</h5>
+    
+                      <div class="leaderboradUser-RankContainer">
+                        <p class="rankPosition">
+                          <i class="fa-solid fa-award"></i> 3rd Rank
+                        </p>
+                        <p class="rankPoints">
+                          <i class="fa-solid fa-medal"></i> 1055 Points
+                        </p>
+                      </div>
+                    </div>
                   </div>
                 </div>
-              </div>
-            </div>
-          </div>
-        </div>
+    
+                <!-- === top coder 4 === -->
+                <div class="item swiper-slide">
+                  <div class="card leaderboard-Card">
+                    <div class="card-body leaderBoard-Container">
+                      <div class="leaderBoard-userContainer">
+                        <img
+                          src="assets/images/leaderboard-section/user-2.png"
+                          class="img-fluid leaderboard-Img"
+                          alt="user 4"
+                        />
+                      </div>
+    
+                      <h5 class="card-title userName">Simarn</h5>
+    
+                      <div class="leaderboradUser-RankContainer">
+                        <p class="rankPosition">
+                          <i class="fa-solid fa-award"></i> 4th Rank
+                        </p>
+                        <p class="rankPoints">
+                          <i class="fa-solid fa-medal"></i> 1030 Points
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- === top coder 5 === -->
+                <div class="item swiper-slide">
+                  <div class="card leaderboard-Card">
+                    <div class="card-body leaderBoard-Container">
+                      <div class="leaderBoard-userContainer">
+                        <img
+                          src="assets/images/leaderboard-section/user-1.png"
+                          class="img-fluid leaderboard-Img"
+                          alt="user 5"
+                        />
+                      </div>
+    
+                      <h5 class="card-title userName">Dinesh</h5>
+    
+                      <div class="leaderboradUser-RankContainer">
+                        <p class="rankPosition">
+                          <i class="fa-solid fa-award"></i> 5th Rank
+                        </p>
+                        <p class="rankPoints">
+                          <i class="fa-solid fa-medal"></i> 1020 Points
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div> 
+   
+             </div> 
+           </div>
       </div>
     </section>
     <!-- ================================ Leaderboard Section End Here ================================ -->
@@ -622,13 +634,37 @@
     <script src="scripts/main.js"></script>
     
     <!-- ================ Typed JS ================  -->
-    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script>
+    <script src="https://unpkg.com/typed.js@2.1.0/dist/typed.umd.js"></script> 
+
+     <script>
+          var swiper = new Swiper(".mySwiper", {
+        loop: true,                 // infinite loop
+        spaceBetween: 20,           // gap between slides
+        slidesPerView: 3,           // show 3 cards
+        autoplay: {
+          delay: 2500,              // 2.5s between slides
+          disableOnInteraction: false, // keep autoplay after user interaction
+        },
+        navigation: {
+          nextEl: ".swiper-button-next",
+          prevEl: ".swiper-button-prev",
+        },
+        pagination: {
+          el: ".swiper-pagination",
+          clickable: true,
+        },
+      });
+
+    </script>
+
     <script>
       var typed = new Typed("#element", {
         strings: ["Code", "Challenge", "Conquer"],
         typeSpeed: 50,
         loop: true,
-      });
+      }); 
+
+
     </script>
     
     <!-- ================ Module Scripts ================  -->
