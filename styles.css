@@ -549,7 +549,7 @@ body {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
-  border: 2px solid rgba(249, 15, 15, 0.12);
+  /* border: 2px solid rgba(249, 15, 15, 0.12); */
   font-size: 16px;
   transition: all 0.3s ease;
   position: relative;
@@ -865,3 +865,18 @@ body {
 }
 
 
+
+
+/* Tech Stack Icon Container Styles */
+.icon-container {
+  display: flex;
+  gap: 6px;
+  margin: 8px 0;
+  font-size: 24px;
+}
+.icon-container i {
+  transition: transform 0.2s ease;
+}
+.icon-container i:hover {
+  transform: scale(1.2);
+}
