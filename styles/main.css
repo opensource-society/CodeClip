@@ -410,8 +410,14 @@ nav {
     text-align: center;
     font-size: 2rem;
     font-weight: 600;
+    color: #000;
 }
-
+.lead-description{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .secHeader span {
     color: #2563eb;
 }
@@ -419,9 +425,16 @@ nav {
 .leaderboard-Para {
     text-align: center;
     opacity: 0.8;
+    color: #000; 
+    width: 50%;
+    font-size: 1.2rem;
 }
+ 
 
-
+/* Make cards evenly spaced */
+.owl-stage-outer{  
+    margin-left: 9rem;
+}  
 .leaderboard-Img {
     width: 100px !important;
     border: 5px solid #e0ecfa;
