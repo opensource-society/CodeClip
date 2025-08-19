@@ -552,7 +552,7 @@
     </section>
 
     <!-- ================================ Footer Section Start Here ================================ -->
-    <footer id="contactFooter" style="background:#fff;">
+    <footer id="contactFooter">" style="background:#fff;">
   <div class="container">
     <div class="row align-items-start justify-content-between py-4">
 
@@ -641,6 +641,15 @@
     <script type="module" src="./scripts/demo-data.js"></script>
     <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
     
+
+   <script>
+document.querySelector('a[href="#contactFooter"]').addEventListener('click', function(e){
+    e.preventDefault();
+    document.getElementById('contactFooter').scrollIntoView({ behavior: 'smooth', block: 'start' });
+});
+</script>
+
+
     </body>
 
 
