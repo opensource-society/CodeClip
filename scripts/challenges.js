@@ -128,31 +128,49 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Initial render of all challenges
   applyFilters();
-});
 
-//Copy button
-const copyBtns = document.querySelectorAll('.copy-button');
+  // === SMART PROGRESS DASHBOARD FEATURE START === 
+  // Add progress tracking for challenge interactions
+  function trackChallengeInteraction(challengeTitle, difficulty, category) {
+    // Check if progress dashboard is available
+    if (window.progressDashboard) {
+      window.progressDashboard.trackChallengeCompletion({
+        title: challengeTitle,
+        difficulty: difficulty,
+        category: category,
+        timestamp: new Date().toISOString()
+      });
+    }
+  }
 
-copyBtns.forEach(btn => {
-  btn.setAttribute('tabindex', '0'); // Make it keyboard-focusable
+  // Add click event listeners to all "Solve Challenge" buttons
+  document.addEventListener('click', (e) => {
+    if (e.target.matches('.btn[aria-label*="Solve challenge"]') ||
+      e.target.matches('.btn[aria-label*="Solve Challenge"]')) {
 
-  btn.addEventListener('keydown', (e) => {
-    if (e.key === 'Enter' || e.key === ' ') {
-      e.preventDefault();
-      btn.click(); // Trigger the action
+      // Find the challenge card
+      const challengeCard = e.target.closest('.challenge-card');
+      if (challengeCard) {
+        const title = challengeCard.querySelector('.challenge-card__title')?.textContent || 'Unknown';
+        const difficulty = challengeCard.getAttribute('data-difficulty') || 'unknown';
+        const category = challengeCard.getAttribute('data-category') || 'unknown';
+
+        // Track the challenge interaction
+        trackChallengeInteraction(title, difficulty, category);
+      }
     }
   });
+  // === SMART PROGRESS DASHBOARD FEATURE END ===
 });
 
+// Copy button accessibility - consolidated implementation
 document.querySelectorAll('.copy-button').forEach(button => {
-  button.setAttribute('tabindex', '0'); // Now can be focused with Tab
-});
+  button.setAttribute('tabindex', '0'); // Make it keyboard-focusable
 
-document.querySelectorAll('.copy-button').forEach(button => {
   button.addEventListener('keydown', (e) => {
     if (e.key === 'Enter' || e.key === ' ') {
       e.preventDefault();
-      button.click(); // Simulates mouse click
+      button.click(); // Trigger the action
     }
   });
 });
