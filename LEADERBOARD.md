@@ -11,13 +11,14 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
+| [@Kashish-010](https://github.com/Kashish-010) | 3 | 0 | 0 | 2 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
-| [@Kashish-010](https://github.com/Kashish-010) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
+| [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
