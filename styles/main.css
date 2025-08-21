@@ -824,6 +824,57 @@ footer .row.align-items-start {
   border-top: 1px solid #e5e7eb;
   padding: 2.5rem 0 1.5rem;
 }
+/*========= Snippets Section ========== */
+
+#snippetsSection {
+  margin-top: 2rem;
+}
+
+#snippetsSection .secHeader {
+  margin-bottom: .25rem;
+}
+
+#snippetsSection .sec-subtitle {
+  margin-bottom: 1rem;
+  color: #6b7280; 
+  font-size: 0.95rem;
+}
+
+.snippet-card {
+  box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+  transition: transform .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+.snippet-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(0,0,0,0.10);
+}
+
+.snippet-pre {
+  background: #f8f9fa;
+  border-radius: 6px;
+  padding: .75rem;
+  overflow-x: auto;
+  font-family: ui-monospace, "SFMono-Regular", Menlo, Consolas, "Liberation Mono", monospace;
+  font-size: 0.92rem;
+  line-height: 1.4;
+  color: #111827; 
+}
+
+.snippet-actions .btn-copy {
+  display: inline-flex;
+  align-items: center;
+  gap: .25rem;
+}
+
+.snippet-actions .btn-copy:focus {
+  outline: 2px solid #5b9dd9;
+  outline-offset: 2px;
+}
+
+.copy-toast {
+  margin-left: .25rem;
+}
+
 
 /* ===== Responsive ===== */
 @media (max-width: 991px) {
