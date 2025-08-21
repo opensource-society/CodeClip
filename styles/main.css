@@ -421,6 +421,13 @@ nav {
   font-weight: 700;
 }
 
+.secHeader {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: 600;
+  color: #131212b1;
+}
+
 #leaderboardSection p {
   font-size: 1rem;
   color: #374151;
@@ -448,6 +455,14 @@ nav {
 .leaderboard-list:hover {
   transform: scale(1.01);
   box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+}
+
+.leaderboard-Para {
+  text-align: center;
+  opacity: 0.8;
+  color: #131212b1;
+  width: 50%;
+  font-size: 1.2rem;
 }
 
 /* ===== Rows ===== */
