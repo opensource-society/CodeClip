@@ -9,9 +9,9 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
+| [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
-| [@Kashish-010](https://github.com/Kashish-010) | 3 | 0 | 0 | 2 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
