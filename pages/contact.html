@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact Us - CodeClip</title>
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="../styles/bootstrap.min.css">
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="../styles/main.css">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="../styles/fontawesome.css">
+    <!-- Custom Contact Page CSS -->
+    <link rel="stylesheet" href="../styles/contact.css">
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="../assets/favicon/codeClip-favicon.png">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-light fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="../index.html">
+                <img src="../assets/favicon/codeClip-favicon.png" alt="CodeClip Logo" width="30" height="30" class="d-inline-block align-text-top">
+                CodeClip
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="about.html">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="challenges.html">Challenges</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="contact.html">Contact</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="profile.html">Profile</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="contact-hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h1 class="display-4 mb-4">Get in Touch</h1>
+                    <p class="lead mb-4">Have questions about CodeClip? We're here to help! Fill out the form below and we'll get back to you as soon as possible.</p>
+                    <div class="contact-stats d-flex gap-4 mb-4">
+                        <div class="stat-item">
+                            <i class="fas fa-clock fa-2x mb-2"></i>
+                            <h4>24/7</h4>
+                            <p>Support</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-users fa-2x mb-2"></i>
+                            <h4>1000+</h4>
+                            <p>Community Members</p>
+                        </div>
+                        <div class="stat-item">
+                            <i class="fas fa-code-branch fa-2x mb-2"></i>
+                            <h4>Open Source</h4>
+                            <p>Project</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <img src="../assets/images/hero-section/hero-Img.png" alt="Contact Hero Image" class="img-fluid rounded-3 shadow-lg">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="contact-section">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-md-8">
+                    <div class="contact-form-container">
+                        <h2 class="text-center mb-4">Send us a Message</h2>
+                        <form id="contactForm">
+                            <div class="row">
+                                <div class="col-md-6 mb-3">
+                                    <label for="name" class="form-label">Name</label>
+                                    <input type="text" class="form-control" id="name" placeholder="Your Name" required>
+                                </div>
+                                <div class="col-md-6 mb-3">
+                                    <label for="email" class="form-label">Email</label>
+                                    <input type="email" class="form-control" id="email" placeholder="your@email.com" required>
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="subject" class="form-label">Subject</label>
+                                <input type="text" class="form-control" id="subject" placeholder="How can we help?" required>
+                            </div>
+                            <div class="mb-4">
+                                <label for="message" class="form-label">Message</label>
+                                <textarea class="form-control" id="message" rows="5" placeholder="Tell us more about your inquiry..." required></textarea>
+                            </div>
+                            <div class="text-center">
+                                <button type="submit" class="btn btn-primary btn-lg px-5">Send Message</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+
+            <div class="row mt-5">
+                <div class="col-md-3 text-center">
+                    <div class="contact-info-box">
+                        <i class="fas fa-envelope fa-2x mb-3"></i>
+                        <h3>Email</h3>
+                        <p>contact@codeclip.com</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="contact-info-box">
+                        <i class="fab fa-github fa-2x mb-3"></i>
+                        <h3>GitHub</h3>
+                        <p><a href="https://github.com/opensource-society/CodeClip" target="_blank">CodeClip Repository</a></p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="contact-info-box">
+                        <i class="fas fa-comments fa-2x mb-3"></i>
+                        <h3>Discord</h3>
+                        <p>Join our community</p>
+                    </div>
+                </div>
+                <div class="col-md-3 text-center">
+                    <div class="contact-info-box">
+                        <i class="fab fa-linkedin fa-2x mb-3"></i>
+                        <h3>LinkedIn</h3>
+                        <p><a href="https://www.linkedin.com/in/gunnkrrish" target="_blank">Connect with us</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12 text-center">
+                    <p>&copy; 2025 CodeClip. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="../scripts/jquery.min.js"></script>
+    <script src="../scripts/bootstrap.bundle.min.js"></script>
+    <script src="../scripts/main.js"></script>
+</body>
+</html>

@@ -7,6 +7,33 @@
     font-family: "Lato", sans-serif;
 }
 
+/* Navigation underline effect */
+.nav-link.nav-underline {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link.nav-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.nav-underline:hover::after {
+    width: 100%;
+}
+
+.nav-link.nav-underline:hover {
+    color: #007bff !important;
+}
+
 html {
     scroll-padding-top: 56px;
     overflow-x: hidden;
@@ -473,23 +500,30 @@ nav {
 .leaderboradUser-RankContainer {
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
 }
 
 .leaderboradUser-RankContainer p {
     margin-bottom: 0;
-    padding: 10px 30px;
+    padding: 10px 20px;
     border-radius: 10px;
     background: #0000ff;
     color: white;
     font-weight: 700;
     border: none;
     font-size: 13px;
-
+    min-width: 140px;
+    text-align: center;
 }
 
 .rankPosition {
-    padding: 10px 40px !important;
+    padding: 10px 20px !important;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 }
 
 .rankPoints {
