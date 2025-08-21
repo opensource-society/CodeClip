@@ -2,7 +2,7 @@
 
 This leaderboard tracks contributors who have completed issues labeled as `level1`, `level2`, or `level3`, along with their merged pull requests.
 
-*Last updated: 2025-08-20*
+*Last updated: 2025-08-21*
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
@@ -13,6 +13,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
+| [@Kashish-010](https://github.com/Kashish-010) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |

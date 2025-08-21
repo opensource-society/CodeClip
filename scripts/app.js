@@ -1,12 +1,19 @@
-import { saveUserProgress, loadUserProgress, saveCompletedChallenges, loadCompletedChallenges } from './data.js';
+import { 
+  saveUserProgress, 
+  loadUserProgress, 
+  saveCompletedChallenges, 
+  loadCompletedChallenges 
+} from './data.js';
 
 console.log('app script loaded');
 
+// ------------------- Challenge Form + Preview ------------------- //
 const form = document.getElementById('challengeForm');
 const preview = document.getElementById('preview');
 
 if (form && preview) {
   const descriptionField = document.getElementById('description');
+
   descriptionField.addEventListener('input', () => {
     const raw = descriptionField.value;
     const formatted = raw
@@ -54,7 +61,8 @@ class Router {
       '/challenges': 'pages/challenges.html',
       '/editor': 'editor.html',
       '/profile': 'pages/profile.html',
-      '/coding': 'editor.html'
+      '/coding': 'editor.html',
+      '/leaderboard': 'pages/leaderboard.html'  // ✅ added leaderboard
     };
     this.init();
   }
@@ -66,6 +74,7 @@ class Router {
 
     document.querySelectorAll('[data-route]').forEach(el => {
       el.setAttribute('tabindex', '0');
+
       el.addEventListener('click', (e) => {
         e.preventDefault();
         const route = el.getAttribute('data-route');
@@ -111,6 +120,8 @@ class Router {
         return 'editor.html';
       case 'profile.html':
         return 'pages/profile.html';
+      case 'leaderboard.html':
+        return 'pages/leaderboard.html';
       default:
         return 'index.html';
     }
@@ -172,7 +183,8 @@ if (navToggle && navMenu) {
     line3.style.transform = isOpen ? 'rotate(-45deg) translate(6px, -6px)' : 'rotate(0deg)';
   });
 }
-// --- Profile Page Logic ---
+
+// ------------------- Profile Page Logic ------------------- //
 document.addEventListener("DOMContentLoaded", () => {
   const avatarInput = document.getElementById('upload-avatar');
   const avatarPreview = document.getElementById('avatarPreview');
@@ -211,4 +223,55 @@ document.addEventListener("DOMContentLoaded", () => {
       reader.readAsDataURL(file);
     });
   }
+});
+// ------------------- Leaderboard Logic ------------------- //
+document.addEventListener("DOMContentLoaded", () => {
+  const leaderboardContainer = document.getElementById("leaderboardContainer");
+
+  if (!leaderboardContainer) return; // ✅ Only run on leaderboard section
+
+  // Dummy leaderboard data (replace later with API/DB)
+ let leaderboardData = [
+  { name: "Alice", points: 1250, img: "assets/leaderboard-section/user-1.png" },
+  { name: "Bob", points: 1100, img: "assets/leaderboard-section/user-2.png" },
+  { name: "Charlie", points: 980, img: "assets/leaderboard-section/user-3.png" },
+  { name: "David", points: 900, img: "assets/leaderboard-section/user-4.png" },
+  { name: "Eva", points: 870, img: "assets/leaderboard-section/user-5.png" }
+];
+
+
+  function renderLeaderboard() {
+    leaderboardContainer.innerHTML = "";
+
+    // Sort users by points (descending)
+    leaderboardData.sort((a, b) => b.points - a.points);
+
+    leaderboardData.forEach((user, index) => {
+      const card = document.createElement("div");
+      card.classList.add("leaderBoard-Container");
+
+      card.innerHTML = `
+        <img src="${user.img}" alt="${user.name}" class="leaderboard-Img">
+        <h5 class="userName">${user.name}</h5>
+        <div class="leaderboradUser-RankContainer">
+          <p class="rankPosition ${index === 0 ? 'rank-1' : index === 1 ? 'rank-2' : index === 2 ? 'rank-3' : ''}">
+            #${index + 1}
+          </p>
+          <p class="rankPoints">${user.points} pts</p>
+        </div>
+      `;
+      leaderboardContainer.appendChild(card);
+    });
+  }
+
+  // Initial render
+  renderLeaderboard();
+
+  // Simulate live updates every 5s
+  setInterval(() => {
+    leaderboardData.forEach(user => {
+      user.points += Math.floor(Math.random() * 15); // simulate score changes
+    });
+    renderLeaderboard();
+  }, 5000);
 });
