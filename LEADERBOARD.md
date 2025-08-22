@@ -2,13 +2,14 @@
 
 This leaderboard tracks contributors who have completed issues labeled as `level1`, `level2`, or `level3`, along with their merged pull requests.
 
-*Last updated: 2025-08-21*
+*Last updated: 2025-08-22*
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
+| [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
@@ -17,6 +18,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
+| [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |

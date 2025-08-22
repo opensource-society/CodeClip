@@ -41,44 +41,45 @@
 
     <!-- ================ Vendor CSS ================  -->
 
- <main>
-    <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+<!-- ================ Vendor CSS ================ -->
+<link rel="stylesheet" href="styles/bootstrap.min.css" />
+<link rel="stylesheet" href="styles/owl.carousel.min.css" />
+<link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+<link rel="stylesheet" href="styles/fontawesome.css" />
+<!-- Custom CSS & External Libraries -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+<!-- Global / Main Styles -->
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="./styles.css" />
 
-    <link rel="stylesheet" href="styles/bootstrap.min.css">
-    <link rel="stylesheet" href="styles/owl.carousel.min.css">
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css">
-    <link rel="stylesheet" href="styles/fontawesome.css">
+<!-- External Libraries -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css">
-    <link rel="stylesheet" href="styles/main.css">
-    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+<!-- Optional: Challenge-specific styles -->
+<!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 
+<!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+<link rel="stylesheet" href="./styles/progress-dashboard.css" />
+<!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 
-    <style>
-      .icon-container {
-        display: flex;
-        gap: 6px;
-        margin: 8px 0;
-        font-size: 24px;
-      }
-      .icon-container i {
-        transition: transform 0.2s ease;
-      }
-      .icon-container i:hover {
-        transform: scale(1.2);
-      }
-    </style>
-
-</head>
-
-    <link rel="stylesheet" href="styles/bootstrap.min.css" />
-    <link rel="stylesheet" href="styles/owl.carousel.min.css" />
-    <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
-    <link rel="stylesheet" href="styles/fontawesome.css" />
-
-    <!-- ================ Custom CSS ================  -->
-    <link rel="stylesheet" href="styles/main.css" />
+<!-- Inline custom tweaks -->
+<style>
+  .icon-container {
+    display: flex;
+    gap: 6px;
+    margin: 8px 0;
+    font-size: 24px;
+  }
+.icon-container i {
+  transition: transform 0.2s ease;
+}
+  .icon-container i:hover {
+    transform: scale(1.2);
+  }
+</style>
   </head>
   </main>
 
@@ -86,10 +87,9 @@
     <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
-<main>
       <nav class="navbar navbar-expand-lg fixed-top">
         <div class="container">
-          <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
+          <a class="navbar-brand" href="#top">Code<span>Clip</span></a>
           <button
             class="navbar-toggler"
             type="button"
@@ -104,7 +104,7 @@
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
+                    <a class="nav-link active" aria-current="page" href="#top">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#challengeSection">Challenges</a>
@@ -122,12 +122,11 @@
           </div>
         </div>
       </nav>
-      </main>
     </header>
     <!-- ================================ Header Section Start Here ================================ -->
-
+ <main>
     <!-- ================================ Hero Section Start Here ================================ -->
-    <section id="homeSection top" class="heroSection">
+    <section id="top" class="heroSection">
       <div class="container">
         <div class="row heroSection-Container">
           <div class="col-12 col-md-6 heroSection-Left">
@@ -370,150 +369,46 @@
     <!-- ================================ Challenge Section End Here ================================ -->
 
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
-    <section id="leaderboardSection">
-      <div class="container">
-        <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span class="">Top Coder</span> of the Week</h3>
-        <p data-aos-duration="650" data-aos="fade-up" class="leaderboard-Para">
-          Meet our top coders who accepted challenges, wrote great code,
-          contributed to open source, and stood out as the best performers of
-          the week.
-        </p>
-        <div class="row">
-          <!-- ======= owl cousel =========== -->
-          <div data-aos-duration="650" data-aos="fade-up" class="owl-carousel owl-theme">
-            <!-- === top coder 1 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 1"
-                    />
-                  </div>
+  <section id="leaderboardSection" class="leaderboard-wrapper">
+  <div class="leaderboard-list">
+    <h2>
+      <span class="highlight">Top Coder</span> of the Week
+    </h2>
+    <p>
+      Meet our top coders who accepted challenges, wrote great code,
+      contributed to open source, and stood out as the best performers of the week.
+    </p>
 
-                  <h5 class="card-title userName">Rahul</h5>
+    <div class="leaderboard-row rank-1">
+      <span class="rank">#1</span>
+      <img src="assets/images/leaderboard-section/user-1.png" alt="User 1" class="leaderboard-Img">
+      <span class="userName">Rahul <span class="badge gold">🏆</span></span>
+      <span class="points">1250 pts</span>
+    </div>
 
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 1st Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1080 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
+    <div class="leaderboard-row rank-2">
+      <span class="rank">#2</span>
+      <img src="assets/images/leaderboard-section/user-2.png" alt="User 2" class="leaderboard-Img">
+      <span class="userName">Manisha <span class="badge silver">🥈</span></span>
+      <span class="points">1180 pts</span>
+    </div>
 
-            <!-- === top coder 2 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 2"
-                    />
-                  </div>
+    <div class="leaderboard-row rank-3">
+      <span class="rank">#3</span>
+      <img src="assets/images/leaderboard-section/user-1.png" alt="User 3" class="leaderboard-Img">
+      <span class="userName">Pankaj <span class="badge bronze">🥉</span></span>
+      <span class="points">1100 pts</span>
+    </div>
 
-                  <h5 class="card-title userName">Manisha</h5>
+    <div class="leaderboard-row">
+      <span class="rank">#4</span>
+      <img src="assets/images/leaderboard-section/user-2.png" alt="User 4" class="leaderboard-Img">
+      <span class="userName">Simran</span>
+      <span class="points">980 pts</span>
+    </div>
+  </div>
+</section>
 
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 2nd Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1060 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- === top coder 3 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 3"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Pankaj</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 3rd Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1055 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- === top coder 4 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-2.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 4"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Simarn</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 4th Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1030 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-
-            <!-- === top coder 5 === -->
-            <div class="item">
-              <div class="card leaderboard-Card">
-                <div class="card-body leaderBoard-Container">
-                  <div class="leaderBoard-userContainer">
-                    <img
-                      src="assets/images/leaderboard-section/user-1.png"
-                      class="img-fluid leaderboard-Img"
-                      alt="user 5"
-                    />
-                  </div>
-
-                  <h5 class="card-title userName">Rahul</h5>
-
-                  <div class="leaderboradUser-RankContainer">
-                    <p class="rankPosition">
-                      <i class="fa-solid fa-award"></i> 5th Rank
-                    </p>
-                    <p class="rankPoints">
-                      <i class="fa-solid fa-medal"></i> 1020 Points
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
     <!-- ================================ Leaderboard Section End Here ================================ -->
 
     <!-- ================================ About Section Start Here ================================ -->
@@ -550,6 +445,7 @@
         </div>
       </div>
     </section>
+    </main>
 
     <!-- ================================ Footer Section Start Here ================================ -->
     <footer id="contactFooter" style="background:#fff;">
