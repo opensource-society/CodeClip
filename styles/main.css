@@ -460,6 +460,7 @@ nav {
 /* ================== Challenge Styles End Here ================== */
 
 /* ================== Leaderboard Styles Starts Here ================== */
+ Improvement-UI-Challenges
 #leaderboardSection {
   padding: 2rem 0;
   background-color: #f8fafc;
@@ -470,19 +471,82 @@ nav {
   background: transparent;
 }
 
+
+
+.leaderboard-wrapper {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;        
+  background: linear-gradient(135deg, #e0f0ff, #f9f9ff);
+  padding: 2rem;
+  text-align: center;
+  font-family: 'Poppins', sans-serif;
+}
+
+/* ===== Heading Section ===== */
+#leaderboardSection h2 {
+  font-size: 2.4rem;
+  font-weight: normal;
+  text-align: center;
+  margin-bottom: 0.5rem;
+  color: #111827;
+}
+
+#leaderboardSection h2 span {
+  color: #2563eb;
+  font-weight: 700;
+}
+
+ main
 .secHeader {
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
+ Improvement-UI-Challenges
 }
 
 .secHeader span {
   color: #2563eb;
+
+  color: #131212b1;
+}
+
+#leaderboardSection p {
+  font-size: 1rem;
+  color: #374151;
+  max-width: 600px;
+  margin: 0 auto 2rem auto;
+  line-height: 1.6;
+}
+
+/* ===== Leaderboard Container ===== */
+.leaderboard-list {
+  max-width: 650px;
+  width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(14px);
+  padding: 2rem;
+  border-radius: 22px;
+  box-shadow: 0 8px 24px rgba(0,0,0,0.12);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard-list:hover {
+  transform: scale(1.01);
+  box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+ main
 }
 
 .leaderboard-Para {
   text-align: center;
   opacity: 0.8;
+Improvement-UI-Challenges
 }
 
 .leaderboard-Img {
@@ -559,15 +623,200 @@ nav {
     mask-position: left;
     -webkit-mask-position: left;
   }
+
+  color: #131212b1;
+  width: 50%;
+  font-size: 1.2rem;
 }
+
+/* ===== Rows ===== */
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.leaderboard-row:hover {
+  transform: translateY(-4px) scale(1.02);
+  box-shadow: 0 10px 22px rgba(0,0,0,0.14);
+}
+
+/* Gradient glow border effect */
+.leaderboard-row::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: 15px;
+  padding: 2px;
+  background: linear-gradient(90deg, #6a11cb, #2575fc, #6a11cb);
+  background-size: 300% 300%;
+  -webkit-mask: 
+    linear-gradient(#fff 0 0) content-box, 
+    linear-gradient(#fff 0 0);
+  -webkit-mask-composite: destination-out;
+          mask-composite: exclude;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  animation: gradientMove 5s linear infinite;
+  z-index: 0;
+}
+
+.leaderboard-row:hover::before {
+  opacity: 1;
+}
+
+/* Keep content always above */
+.leaderboard-row > * {
+  position: relative;
+  z-index: 1;
+}
+
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* ===== Rank Badges ===== */
+.leaderboard-row .rank {
+  font-size: 1.4rem;
+  font-weight: bold;
+  width: 60px;
+  text-align: center;
+  color: #111827;
+  transition: transform 0.3s ease;
+}
+
+.leaderboard-row:hover .rank {
+  transform: scale(1.2);
+}
+
+/* ===== Top 3 Special Honors ===== */
+.leaderboard-row.rank-1 {
+  background: linear-gradient(135deg, #fff8dc, #fff);
+  border: 2px solid #FFD700;
+  box-shadow: 0 0 20px rgba(255,215,0,0.5);
+}
+.leaderboard-row.rank-1 .rank {
+  color: #FFD700;
+  text-shadow: 0 0 10px rgba(255, 215, 0, 0.9);
+}
+.leaderboard-row.rank-1 .leaderboard-Img {
+  border: 3px solid #FFD700;
+}
+
+.leaderboard-row.rank-2 {
+  background: linear-gradient(135deg, #f0f0f0, #fff);
+  border: 2px solid #C0C0C0;
+  box-shadow: 0 0 20px rgba(192,192,192,0.5);
+}
+.leaderboard-row.rank-2 .rank {
+  color: #C0C0C0;
+  text-shadow: 0 0 10px rgba(192, 192, 192, 0.9);
+}
+.leaderboard-row.rank-2 .leaderboard-Img {
+  border: 3px solid #C0C0C0;
+}
+
+.leaderboard-row.rank-3 {
+  background: linear-gradient(135deg, #fff5f0, #fff);
+  border: 2px solid #CD7F32;
+  box-shadow: 0 0 20px rgba(205,127,50,0.5);
+}
+.leaderboard-row.rank-3 .rank {
+  color: #CD7F32;
+  text-shadow: 0 0 10px rgba(205, 127, 50, 0.9);
+}
+.leaderboard-row.rank-3 .leaderboard-Img {
+  border: 3px solid #CD7F32;
+}
+
+/* ===== Avatar ===== */
+.leaderboard-row .leaderboard-Img {
+  width: 65px;
+  height: 65px;
+  margin: 0 15px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid transparent;
+  background: linear-gradient(white, white) padding-box,
+              linear-gradient(45deg, #6a11cb, #2575fc) border-box;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.leaderboard-row:hover .leaderboard-Img {
+  transform: rotate(5deg) scale(1.12);
+  box-shadow: 0 0 12px rgba(37,117,252,0.4);
+}
+
+/* ===== Username ===== */
+.leaderboard-row .userName {
+  flex: 1;
+  font-size: 1.15rem;
+  font-weight: 600;
+  color: #1f2937;
+  transition: color 0.3s ease;
+}
+
+.leaderboard-row:hover .userName {
+  color: #2563eb;
+}
+
+/* ===== Points ===== */
+.leaderboard-row .points {
+  font-weight: bold;
+  font-size: 1.1rem;
+  color: #2563eb;
+  transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
+}
+
+.leaderboard-row:hover .points {
+  transform: scale(1.12);
+  color: #1d4ed8;
+  text-shadow: 0 0 6px rgba(29,78,216,0.4);
+ main
+}
+
+
 
 /* ================== Leaderboard Styles End Here ================== */
 
 /* ================== About Styles Start Here ================== */
 #aboutSection {
+ Improvement-UI-Challenges
   padding: 2rem 0;
+
+  padding: 4rem 1rem;
+  background: linear-gradient(135deg, #f9fafb, #f3f4f6);
 }
 
+/* Heading */
+#aboutSection .secHeader {
+  font-size: 2.2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  text-align: center;
+  line-height: 1.3;
+ main
+}
+
+#aboutSection .secHeader span {
+  color: #2563eb;   /* Blue for "About" */
+  font-weight: 700; /* Bold */
+}
+
+#aboutSection .secHeader {
+  color: #111827;   /* Black for "CodeClip" */
+}
+
+/* Container */
 .aboutContainer {
   display: flex;
   justify-content: center;
@@ -575,26 +824,57 @@ nav {
 }
 
 .aboutContainer .col-10 {
+ Improvement-UI-Challenges
   opacity: 0.8;
   text-align: center;
+
+  opacity: 0.9;
+  text-align: center;
+  max-width: 850px;
+  line-height: 1.7;
+  font-size: 1.05rem;
+  color: #374151;
+  margin: 0 auto;
 }
 
+/* Paragraphs */
+.aboutContainer .col-10 p {
+  margin-bottom: 1.8rem;
+ main
+}
+
+.aboutContainer .col-10 strong {
+  color: #111827;
+  font-weight: 700;
+}
+
+/* CTA Container */
+.ctaBtn {
+  text-align: center;
+  margin-top: 1.5rem;
+}
+
+/* CTA Button */
 .aboutCTA-Btn {
+ Improvement-UI-Challenges
  Improvement-UI-Challenges
   text-decoration: none;
   font-weight: 700;
   margin-top: 1.5rem;
 
+
+  box-shadow: 0 0 18px 0 rgba(19, 117, 216, 0.25);
+  main
   position: relative;
  main
   display: inline-block;
-  padding: 0.75rem 1.75rem;
+  padding: 0.85rem 2rem;
   font-size: 1rem;
   font-weight: 600;
-  color: #fff;
-  background: #0000ff;
-  border-radius: 25px;
-  border: none;
+  color: #1d4ed8;
+  background-color: #fff;
+  border-radius: 30px;
+  border: 1px solid #2563eb;
   cursor: pointer;
   text-decoration: none;
  Improvement-UI-Challenges
@@ -603,14 +883,19 @@ nav {
 
   overflow: hidden;
   z-index: 1;
+ Improvement-UI-Challenges
   transition: color 0.3s ease, transform 0.3s ease;
+ main
+
+  transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
  main
 }
 
+/* Hover Effect */
 .aboutCTA-Btn:hover {
-  color: #0000ff;
-  transform: translateY(-2px);
-  border: 1px solid #0000ff;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.35);
 }
 
 .aboutCTA-Btn::before {
@@ -620,9 +905,10 @@ nav {
   left: -100%;
   width: 100%;
   height: 100%;
-  background: #fff;
+  background: #2563eb;
   transition: left 0.4s ease;
   z-index: -1;
+  border-radius: inherit;
 }
 
 .aboutCTA-Btn:hover::before {
@@ -644,6 +930,26 @@ nav {
 /* --- Footer Redesign --- */
 
 
+/* Responsive */
+@media (max-width: 768px) {
+  #aboutSection {
+    padding: 3rem 1rem;
+  }
+
+  #aboutSection .secHeader {
+    font-size: 1.8rem;
+  }
+
+  .aboutContainer .col-10 {
+    font-size: 1rem;
+    line-height: 1.6;
+  }
+
+  .aboutCTA-Btn {
+    padding: 0.7rem 1.5rem;
+    font-size: 0.95rem;
+  }
+}
 /* ================== About Styles End Here ================== */
 
 /* ================== Footer Styles Start Here ================== */
