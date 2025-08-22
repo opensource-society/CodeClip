@@ -1,18 +1,30 @@
 /* ================== Google Fonts Family ================== */
-@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
 
 /* ================== Universal Selector ================== */
 * {
-    font-family: "Lato", sans-serif;
+  font-family: "Lato", sans-serif;
 }
 
 html {
-    scroll-padding-top: 56px;
-    overflow-x: hidden;
+  scroll-padding-top: 56px;
+  overflow-x: hidden;
 }
 
 /* =================== Navbar Styles Start Here ================== */
+Improvement-UI-Challenges
+.navbar {
+  background-color: #ffffff;
+}
+
+.navbar-brand {
+  font-size: 2.1rem;
+  font-weight: 900;
+  color: #2563eb;
+}
+
+.navbar-brand:hover {
+  color: #2563eb;
 nav {
     position: fixed;
     top: 0;
@@ -64,12 +76,39 @@ nav {
     to {
         transform: scale(1);
     }
+ main
 }
 
 
 .navbar-brand span {
-    color: #1e2c44;
+  color: #1e2c44;
 }
+
+ Improvement-UI-Challenges
+/* added gap in nav links */
+.navbar-nav {
+  display: flex;
+  gap: 1rem;
+}
+/* added shadow box and hover effact in nav-links */
+.nav-item a {
+  color: #1e2c44;
+  /* adding box hover effact */
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 1rem;
+  padding: 0.75rem 0.75rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
+  transition: all 0.3s ease-in-out;
+}
+.nav-item a:hover {
+  background: linear-gradient(90deg, #1e2c44 40%, #2563eb 100%);
+  border-color: #2563eb;
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+  color: white;
+  font-size: 1.1rem;
 
 .nav-item a {
     color: #1e2c44;
@@ -95,6 +134,7 @@ nav {
     background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
     border-radius: 2px;
     animation: underline-slide 0.4s cubic-bezier(0.4,0,0.2,1) forwards;
+ main
 }
 
 @keyframes underline-slide {
@@ -164,86 +204,81 @@ nav {
 }
 /* ================== Navbar Styles End Here ================== */
 
-
 /* ================== Hero Styles Start Here ================== */
 .heroSection {
-    margin-top: 56px;
-    background-color: #f8fafc;
-    padding: 2rem 0;
+  margin-top: 56px;
+  background-color: #f8fafc;
+  padding: 2rem 0;
 }
-
 
 .heroSection-Container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
-
 .gssoc-logo {
-    height: 14px;
-    width: 17px;
+  height: 14px;
+  width: 17px;
 }
 
 .gssocContainer {
-    display: flex;
-    align-items: center;
-    max-width: 150px;
-    justify-content: center;
-    border-radius: 36px;
-    padding: 3px 0;
-    color: white;
-    background: #e0ecfa;
-    margin: 1rem 0;
+  display: flex;
+  align-items: center;
+  max-width: 150px;
+  justify-content: center;
+  border-radius: 36px;
+  padding: 3px 0;
+  color: white;
+  background: #e0ecfa;
+  margin: 1rem 0;
 }
 
 .gssocContainer p {
-    margin-bottom: 0;
-    display: inline-block;
-    font-size: 12px;
-    color: #81a6d3;
+  margin-bottom: 0;
+  display: inline-block;
+  font-size: 12px;
+  color: #81a6d3;
 }
 
 .shinning-effect {
-    mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/450% 100%;
-    animation: shiningEff 2.5s infinite;
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right/450% 100%;
+  animation: shiningEff 2.5s infinite;
 }
 
 @keyframes shiningEff {
-    100% {
-        mask-position: left;
-    }
+  100% {
+    mask-position: left;
+  }
 }
 
-
 .heroDescription {
-    margin-bottom: 1.2rem;
+  margin-bottom: 1.2rem;
 }
 
 .heroSection-Left h1 {
-    color: black;
-    font-size: 58px;
-    font-weight: 900;
-    margin: 1rem 0;
+  color: black;
+  font-size: 58px;
+  font-weight: 900;
+  margin: 1rem 0;
 }
 
 .blueCol {
-    color: #2563eb;
-
+  color: #2563eb;
 }
 
 .heroSection-Left p {
-    color: #7e7f88;
-    text-align: justify;
-    font-size: 14px;
-    hyphens: auto;
+  color: #7e7f88;
+  text-align: justify;
+  font-size: 14px;
+  hyphens: auto;
 }
 
 .ctaBtn-Container {
-    display: flex;
-    align-items: center;
-    justify-content: start;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: start;
+  gap: 10px;
 }
 
 .heroSectionBtn {
@@ -252,6 +287,19 @@ nav {
   border-radius: 40px !important;
   background: #2563eb !important;
   color: white !important;
+ Improvement-UI-Challenges
+  transition: all 0.2s ease-in-out;
+}
+
+.heroSectionBtn:hover {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #0b5ed7;
+}
+
+.heroSectionBtn i {
+  font-size: 14px;
+  margin-right: 5px;
+
   border: 1px solid #2563eb !important;
   transition: all 0.3s ease-in-out;
   font-weight: 600;
@@ -293,15 +341,31 @@ nav {
 .heroSectionBtn:hover i,
 .heroSectionBtnOutline:hover i {
   transform: translateX(3px);
+ main
 }
 
 /* ================== Hero Styles End Here ================== */
 
-
 /* ================== Challenge Styles Start Here ================== */
 #challengeSection {
-    padding: 2rem 0;
+  padding: 2rem 0;
 }
+
+ Improvement-UI-Challenges
+.challengeContainer .card {
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  border-radius: 15px;
+  margin: 15px 0;
+}
+
+.challengeContainer .card:hover {
+  box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+}
+
+.challengeContainer .card:hover {
+  transform: translateY(-2px);
 
 .challengeContainer .card{
     box-shadow: rgba(19, 117, 216, 0.2) 0px 8px 24px;
@@ -315,85 +379,99 @@ nav {
 .challengeContainer .card:hover {
     transform: translateY(-3px) scale(1);
     box-shadow: 0 0 18px rgba(37,99,235,0.45);
+ main
 }
 
 .card-TopContainer {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .card-Header {
-    font-size: 20px;
-    font-weight: 600;
-    margin-bottom: 0;
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
 }
 
 .card-Level {
-    margin-bottom: 0;
-    font-size: 12px;
-    padding: 4px 25px;
-    border-radius: 17px;
-    background: #d5edda;
-    color: #1a7071;
-    font-weight: 700;
+  margin-bottom: 0;
+  font-size: 12px;
+  padding: 4px 25px;
+  border-radius: 17px;
+  background: #d5edda;
+  color: #1a7071;
+  font-weight: 700;
 }
 
 .medium-Col {
-    background-color: #fff3cd;
-    color: #a88825;
+  background-color: #fff3cd;
+  color: #a88825;
 }
 
 .hard-Col {
-    background-color: #f8d7da;
-    color: #7d1c1c;
+  background-color: #f8d7da;
+  color: #7d1c1c;
 }
 
 .card-Participate {
-    font-size: 13px;
-    color: #8b8b8b;
-    margin-bottom: 8px;
-    margin-top: 1px;
-    opacity: 0.9;
+  font-size: 13px;
+  color: #8b8b8b;
+  margin-bottom: 8px;
+  margin-top: 1px;
+  opacity: 0.9;
 }
 
 .card-Text {
-    font-size: 14px;
-    opacity: 0.8;
-    text-align: justify;
-    hyphens: auto;
+  font-size: 14px;
+  opacity: 0.8;
+  text-align: justify;
+  hyphens: auto;
 }
 
-
-
 .card-CTAButton {
-    display: flex;
-    align-items: center;
-    justify-content: end;
-
+  display: flex;
+  align-items: center;
+  justify-content: end;
 }
 
 .card-Btn {
-    text-decoration: none;
-    font-size: 13px;
-    padding: 8px 36px;
-    border-radius: 5px;
-    background-color: #2563eb;
-    color: white;
-    border: none;
-    transition: all 0.2s ease-in-out;
-    font-weight: 700;
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 36px;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  border: none;
+  transition: all 0.2s ease-in-out;
+  font-weight: 700;
 }
 
 .card-Btn:hover {
+ Improvement-UI-Challenges
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  background-color: #0b5ed7;
+
     box-shadow: #83aafe 0px 3px 8px;
     background-color: #1d4ed8;
+ main
 }
 
 /* ================== Challenge Styles End Here ================== */
 
-
 /* ================== Leaderboard Styles Starts Here ================== */
+ Improvement-UI-Challenges
+#leaderboardSection {
+  padding: 2rem 0;
+  background-color: #f8fafc;
+}
+
+.owl-carousel .card {
+  border: none;
+  background: transparent;
+}
+
+
 
 .leaderboard-wrapper {
   display: flex;
@@ -421,10 +499,17 @@ nav {
   font-weight: 700;
 }
 
+ main
 .secHeader {
   text-align: center;
   font-size: 2rem;
   font-weight: 600;
+ Improvement-UI-Challenges
+}
+
+.secHeader span {
+  color: #2563eb;
+
   color: #131212b1;
 }
 
@@ -455,11 +540,90 @@ nav {
 .leaderboard-list:hover {
   transform: scale(1.01);
   box-shadow: 0 14px 32px rgba(0,0,0,0.18);
+ main
 }
 
 .leaderboard-Para {
   text-align: center;
   opacity: 0.8;
+Improvement-UI-Challenges
+}
+
+.leaderboard-Img {
+  width: 100px !important;
+  border: 5px solid #e0ecfa;
+  border-radius: 100%;
+}
+
+.userName {
+  opacity: 0.9;
+  font-weight: 700;
+}
+
+.leaderBoard-userContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.leaderBoard-Container {
+  text-align: center;
+}
+
+.leaderBoard-Container h5 {
+  font-size: 24px;
+  margin: 1rem 0;
+}
+
+.leaderboradUser-RankContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.leaderboradUser-RankContainer p {
+  margin-bottom: 0;
+  padding: 10px 30px;
+  border-radius: 10px;
+  background: #0000ff;
+  color: white;
+  font-weight: 700;
+  border: none;
+  font-size: 13px;
+}
+
+.rankPosition {
+  padding: 10px 40px !important;
+}
+
+.rankPoints {
+  background-color: skyblue !important;
+  color: darkblue !important;
+  transition: all 0.3s ease-in-out;
+  cursor: pointer;
+}
+
+.rankPoints:hover {
+  background-color: #0000ff !important;
+  color: white !important;
+}
+
+.leaderBoard-Container:hover .leaderboard-Img,
+.leaderBoard-Container:hover .rankPoints,
+.leaderBoard-Container:hover .rankPosition {
+  mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right / 450% 100%;
+  -webkit-mask: linear-gradient(-60deg, #000 30%, #0005, #000 70%) right / 450%
+    100%;
+  animation: rankList 2.5s infinite;
+  -webkit-animation: rankList 2.5s infinite;
+}
+
+@keyframes rankList {
+  100% {
+    mask-position: left;
+    -webkit-mask-position: left;
+  }
+
   color: #131212b1;
   width: 50%;
   font-size: 1.2rem;
@@ -617,15 +781,18 @@ nav {
   transform: scale(1.12);
   color: #1d4ed8;
   text-shadow: 0 0 6px rgba(29,78,216,0.4);
+ main
 }
 
 
 
 /* ================== Leaderboard Styles End Here ================== */
 
-
 /* ================== About Styles Start Here ================== */
 #aboutSection {
+ Improvement-UI-Challenges
+  padding: 2rem 0;
+
   padding: 4rem 1rem;
   background: linear-gradient(135deg, #f9fafb, #f3f4f6);
 }
@@ -637,6 +804,7 @@ nav {
   font-weight: 700;
   text-align: center;
   line-height: 1.3;
+ main
 }
 
 #aboutSection .secHeader span {
@@ -656,6 +824,10 @@ nav {
 }
 
 .aboutContainer .col-10 {
+ Improvement-UI-Challenges
+  opacity: 0.8;
+  text-align: center;
+
   opacity: 0.9;
   text-align: center;
   max-width: 850px;
@@ -668,6 +840,7 @@ nav {
 /* Paragraphs */
 .aboutContainer .col-10 p {
   margin-bottom: 1.8rem;
+ main
 }
 
 .aboutContainer .col-10 strong {
@@ -683,8 +856,17 @@ nav {
 
 /* CTA Button */
 .aboutCTA-Btn {
+ Improvement-UI-Challenges
+ Improvement-UI-Challenges
+  text-decoration: none;
+  font-weight: 700;
+  margin-top: 1.5rem;
+
+
   box-shadow: 0 0 18px 0 rgba(19, 117, 216, 0.25);
+  main
   position: relative;
+ main
   display: inline-block;
   padding: 0.85rem 2rem;
   font-size: 1rem;
@@ -695,9 +877,18 @@ nav {
   border: 1px solid #2563eb;
   cursor: pointer;
   text-decoration: none;
+ Improvement-UI-Challenges
+  box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
+  transition: all 0.3s ease;
+
   overflow: hidden;
   z-index: 1;
+ Improvement-UI-Challenges
+  transition: color 0.3s ease, transform 0.3s ease;
+ main
+
   transition: color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+ main
 }
 
 /* Hover Effect */
@@ -723,6 +914,21 @@ nav {
 .aboutCTA-Btn:hover::before {
   left: 0;
 }
+ Improvement-UI-Challenges
+@keyframes pulse {
+  0%,
+  100% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+}
+
+/* ================== About Styles End Here ================== */
+
+/* --- Footer Redesign --- */
+
 
 /* Responsive */
 @media (max-width: 768px) {
@@ -748,11 +954,23 @@ nav {
 
 /* ================== Footer Styles Start Here ================== */
 
+ main
 .footer-contact-btn {
   width: 150px;
   min-width: 100px;
   max-width: 170px;
   font-size: 0.97rem;
+ Improvement-UI-Challenges
+  padding: 0.45em 0;
+  border-radius: 8px;
+  gap: 0.4em;
+}
+.footer-contact-btn:hover {
+  background: linear-gradient(90deg, #1e2c44 60%, #2563eb 100%);
+  color: #fff;
+  box-shadow: 0 4px 20px rgba(30, 44, 68, 0.15);
+  transform: translateY(-2px) scale(1.03);
+
   padding: 0.5em 1.2em;
   border-radius: 9999px;
   background: #fff;
@@ -768,6 +986,7 @@ nav {
   color: #fff;
   box-shadow: 0 0 12px rgba(37,99,235,0.45);
   transform: translateY(-2px) scale(1.04);
+ main
 }
 .footer-contact-btn i {
   font-size: 1em;
@@ -776,10 +995,18 @@ nav {
 
 /* Footer Container */
 footer {
+ Improvement-UI-Challenges
+  padding-top: 2.5rem;
+  padding-bottom: 1.5rem;
+  background: linear-gradient(90deg, #f8fafc 60%, #e0ecfa 100%);
+  border-top: 1.5px solid #e5e7eb;
+  box-shadow: 0 -2px 16px rgba(30, 44, 68, 0.06);
+
   padding: 2.5rem 0 1.5rem;
   background: linear-gradient(90deg, #f8fafc 60%, #e0ecfa 100%);
   border-top: 1.5px solid #e5e7eb;
   box-shadow: 0 -2px 16px rgba(30,44,68,0.06);
+ main
 }
 footer .container {
   max-width: 1200px;
@@ -789,9 +1016,15 @@ footer .row.align-items-start {
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-between;
+ Improvement-UI-Challenges
+  gap: 0;
   row-gap: 2.5rem;
 }
 
+  row-gap: 2.5rem;
+}
+
+ main
 .footer-logo-col,
 .footer-links-col,
 .footer-contact-col-main {
@@ -810,6 +1043,24 @@ footer .row.align-items-start {
 .footer-logo-col {
   border-right: 2px solid #e5e7eb;
   min-height: 140px;
+ Improvement-UI-Challenges
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+@media (max-width: 991px) {
+  .footer-logo-col {
+    border-right: none;
+    min-height: unset;
+  }
+}
+.footer-logo,
+.footer-desc {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  main
 }
 
 .footer-logo {
@@ -818,17 +1069,25 @@ footer .row.align-items-start {
   color: #2563eb;
   margin-bottom: 0.3rem;
   letter-spacing: 1px;
+ Improvement-UI-Challenges
+
   text-align: center;
+ main
 }
 .footer-desc {
   font-size: 1rem;
   color: #4a5568;
   opacity: 0.85;
   margin-top: 0.3rem;
+ Improvement-UI-Challenges
+  max-width: 320px;
+  padding-right: 1.5rem;
+
   line-height: 1.6;
   max-width: 380px;
   text-align: center;
   padding: 0 1.5rem;
+ main
 }
 
 .footer-title {
@@ -836,6 +1095,13 @@ footer .row.align-items-start {
   font-weight: 600;
   margin-bottom: 0.7rem;
   color: #1e2c44;
+ Improvement-UI-Challenges
+  letter-spacing: 0.5px;
+  text-align: center;
+}
+.footer-contact-links {
+  margin-top: 0;
+
   text-align: center;
   letter-spacing: 0.5px;
 }
@@ -854,6 +1120,7 @@ footer .row.align-items-start {
   background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
   border-radius: 2px;
   margin: 0.4rem auto 0 auto;
+ main
 }
 
 .footer-links {
@@ -865,6 +1132,11 @@ footer .row.align-items-start {
   padding: 0;
 }
 .footer-links li {
+ Improvement-UI-Challenges
+  margin: 0;
+  padding: 0;
+
+ main
   list-style: none;
 }
 .footer-links a {
@@ -872,6 +1144,8 @@ footer .row.align-items-start {
   text-decoration: none;
   font-size: 1rem;
   opacity: 0.85;
+ Improvement-UI-Challenges
+  transition: color 0.2s, opacity 0.2s;
   position: relative;
   transition: color 0.3s ease, opacity 0.3s ease;
 }
@@ -884,10 +1158,14 @@ footer .row.align-items-start {
   height: 2px;
   background: #2563eb;
   transition: width 0.3s ease;
+ main
 }
 .footer-links a:hover {
   color: #2563eb;
   opacity: 1;
+ Improvement-UI-Challenges
+}
+
 }
 .footer-links a:hover::after {
   width: 100%;
@@ -955,6 +1233,7 @@ footer .row.align-items-start {
 }
 
 /* Scroll to top button */
+ main
 .scroll_to_top {
   position: fixed;
   bottom: 15px;
@@ -969,6 +1248,167 @@ footer .row.align-items-start {
   color: #fff;
   border-radius: 50%;
   transition: all 0.3s ease;
+ Improvement-UI-Challenges
+  border-radius: 50%;
+  text-decoration: none;
+}
+.scroll_to_top:hover {
+  background: linear-gradient(45deg, #2563eb, #0000ff);
+  transform: translateY(-3px) scale(1.05);
+}
+
+@media (min-width: 992px) {
+  .footer-logo,
+  .footer-desc {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-title {
+    font-size: 1.2rem;
+  }
+}
+@media (max-width: 991px) {
+  footer .row.align-items-start {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.5rem;
+  }
+  .footer-logo-col,
+  .footer-links-col,
+  .footer-contact-col-main {
+    border: none;
+    padding: 0;
+    min-width: 0;
+  }
+  .footer-logo,
+  .footer-desc,
+  .footer-title {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    padding-right: 0;
+  }
+  .footer-links,
+  .footer-contact-links {
+    align-items: center;
+    text-align: center;
+  }
+  .footer-contact-btn {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .footer-links {
+    margin-bottom: 2rem;
+    margin-right: 0;
+  }
+  .footer-title {
+    margin-bottom: 0.8rem;
+  }
+}
+@media (max-width: 768px) {
+  footer .row {
+    flex-direction: column;
+    align-items: center;
+  }
+  .footer-links,
+  .footer-contact-links {
+    margin-bottom: 1.5rem;
+    margin-right: 0;
+  }
+  .footer-contact-btn {
+    width: 100%;
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+/* ================== Media queries start here for home screen and carousel buttons ================== */
+
+@media (max-width: 992px) {
+  .heroSectionBtn {
+    padding: 4px 40px !important;
+  }
+}
+
+@media (max-width: 576px) {
+  .rankPosition,
+  .rankPoints {
+    padding: 4px 30px !important;
+  }
+}
+
+/* ================== Media queries end here for home screen and carousel buttons ================== */
+
+.footer-logo,
+.footer-desc,
+.navbar-brand {
+  display: block;
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+.footer-desc {
+  font-size: 1rem;
+  color: #4a5568;
+  opacity: 0.85;
+  margin-top: 0.3rem;
+  max-width: 380px;
+  padding: 0 1.5rem;
+  line-height: 1.6;
+}
+@media (min-width: 992px) {
+  .footer-logo,
+  .footer-desc,
+  .navbar-brand {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 420px;
+  }
+  .footer-desc {
+    max-width: 420px;
+    padding: 0 2rem;
+  }
+}
+
+.footer-links-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.footer-links-row .footer-links {
+  margin: 0;
+  padding: 0;
+  min-width: 110px;
+}
+@media (max-width: 768px) {
+  .footer-links-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+  .footer-links-row .footer-links {
+    min-width: 0;
+    margin-bottom: 0.5rem;
+  }
+}
+
+.footer-contact-row {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 2.5rem;
+}
+.footer-contact-col {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.2rem;
+}
+@media (max-width: 768px) {
+
   text-decoration: none;
 }
 .scroll_to_top:hover {
@@ -1014,16 +1454,70 @@ footer .row.align-items-start {
 }
 
 @media (max-width: 768px) {
+ main
   .footer-contact-row {
     flex-direction: column;
     align-items: center;
     gap: 0.5rem;
   }
+ Improvement-UI-Challenges
+  .footer-contact-col {
+    gap: 0.2rem;
+    margin-bottom: 0.5rem;
+  }
+}
+.footer-contact-col-main .footer-title {
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #2563eb;
+  letter-spacing: 1px;
+  margin-bottom: 1.1rem;
+  position: relative;
+}
+.footer-contact-col-main .footer-title::after {
+  content: "";
+  display: block;
+  width: 38px;
+  height: 3px;
+  background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
+  border-radius: 2px;
+  margin: 0.4rem auto 0 auto;
+}
+
+/* Custom Navbar Styling */
+.custom-navbar {
+  background-color: #0d1b2a; /* Dark blue/navy background */
+  transition: background-color 0.3s ease;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+}
+
+/* Base link color */
+.custom-navbar .nav-link,
+.custom-navbar .nav-link:visited,
+.custom-navbar .nav-link.active {
+  color: #ffffff !important;
+  transition: color 0.3s ease;
+}
+
+/* Hover and active-hover effect */
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active:hover {
+  color: #fca311 !important; /* Gold */
+  text-decoration: underline;
+}
+
+/* Brand name styling */
+.custom-navbar .navbar-brand {
+  color: #fca311;
+  font-weight: bold;
+}
+
   .footer-contact-btn {
     width: 100%;
     min-width: 0;
     max-width: 100%;
   }
+ main
 
   .contact-icons a{
     margin-top: 10%;
