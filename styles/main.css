@@ -7,6 +7,33 @@
     font-family: "Lato", sans-serif;
 }
 
+/* Navigation underline effect */
+.nav-link.nav-underline {
+    text-decoration: none;
+    position: relative;
+    transition: color 0.3s ease;
+}
+
+.nav-link.nav-underline::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    bottom: 0;
+    left: 50%;
+    background-color: #007bff;
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+}
+
+.nav-link.nav-underline:hover::after {
+    width: 100%;
+}
+
+.nav-link.nav-underline:hover {
+    color: #007bff !important;
+}
+
 html {
     scroll-padding-top: 56px;
     overflow-x: hidden;
@@ -520,6 +547,32 @@ nav {
   100% { background-position: 0% 50%; }
 }
 
+/* ===== User Rank Container ===== */
+.leaderboradUser-RankContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.leaderboradUser-RankContainer p {
+    margin-bottom: 0;
+    padding: 10px 20px;
+    border-radius: 10px;
+    background: #0000ff;
+    color: white;
+    font-weight: 700;
+    border: none;
+    font-size: 13px;
+    min-width: 140px;
+    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
+}
+
 /* ===== Rank Badges ===== */
 .leaderboard-row .rank {
   font-size: 1.4rem;
@@ -532,6 +585,7 @@ nav {
 
 .leaderboard-row:hover .rank {
   transform: scale(1.2);
+}
 }
 
 /* ===== Top 3 Special Honors ===== */
@@ -802,9 +856,9 @@ footer .row.align-items-start {
   min-width: 220px;
   flex: 1 1 0;
   padding: 0 1rem;
+  border-left: 1.5px solid #e5e7eb;
 }
-.footer-links-col,
-.footer-contact-col-main {
+.footer-links-col {
   border-left: 1.5px solid #e5e7eb;
 }
 .footer-logo-col {
