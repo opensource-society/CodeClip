@@ -516,10 +516,6 @@ nav {
     font-size: 13px;
     min-width: 140px;
     text-align: center;
-}
-
-.rankPosition {
-    padding: 10px 20px !important;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -672,9 +668,9 @@ footer .row.align-items-start {
   min-width: 220px;
   flex: 1 1 0;
   padding: 0 1rem;
+  border-left: 1.5px solid #e5e7eb;
 }
-.footer-links-col,
-.footer-contact-col-main {
+.footer-links-col {
   border-left: 1.5px solid #e5e7eb;
 }
 .footer-logo-col {
