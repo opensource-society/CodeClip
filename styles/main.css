@@ -331,12 +331,15 @@ nav {
 
 .card-Level {
     margin-bottom: 0;
-    font-size: 12px;
-    padding: 4px 25px;
+    font-size: 10px;
+    padding: 4px 20px;
     border-radius: 17px;
     background: #d5edda;
     color: #1a7071;
     font-weight: 700;
+    /*Added margin to improve UI layout*/
+    margin-right:7px;
+
 }
 
 .medium-Col {
