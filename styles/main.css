@@ -395,6 +395,18 @@ nav {
 }
 
 .card-Level {
+<<<<<<< HEAD
+    margin-bottom: 0;
+    font-size: 10px;
+    padding: 4px 20px;
+    border-radius: 17px;
+    background: #d5edda;
+    color: #1a7071;
+    font-weight: 700;
+    /*Added margin to improve UI layout*/
+    margin-right:7px;
+
+=======
   margin-bottom: 0;
   font-size: 12px;
   padding: 4px 25px;
@@ -402,6 +414,7 @@ nav {
   background: #d5edda;
   color: #1a7071;
   font-weight: 700;
+>>>>>>> d904e21b9c29665707b13f66d6d579d726cf4d51
 }
 
 .medium-Col {
