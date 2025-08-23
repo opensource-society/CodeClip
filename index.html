@@ -1,561 +1,550 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>CodeClip</title>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>CodeClip</title>
+    <!-- ================ Favicon ================  -->
+    <link
+      rel="shortcut icon"
+      href="assets/favicon/codeClip-favicon.png"
+      type="image/png"
+    />
 
-  <!-- ================ Favicon ================  -->
-  <link rel="shortcut icon" href="assets/favicon/codeClip-favicon.png" type="image/png" />
+    <!-- ================ Meta Tags ================  -->
+    <meta
+      name="keywords"
+      content="CodeClip, Coding Challenges, Open Source, GSSoC, Frontend Practice, JavaScript Logics, GitHub Contributions, Web Development Tasks"
+    />
+    <meta
+      name="description"
+      content="CodeClip is a browser-based platform where developers solve real-world coding challenges, practice frontend and logic tasks, and contribute to open source. Proudly built for GSSoC 2025."
+    />
+    <meta name="robots" content="index, follow" />
 
-  <!-- ================ Meta Tags ================  -->
-  <meta name="keywords"
-    content="CodeClip, Coding Challenges, Open Source, GSSoC, Frontend Practice, JavaScript Logics, GitHub Contributions, Web Development Tasks" />
-  <meta name="description"
-    content="CodeClip is a browser-based platform where developers solve real-world coding challenges, practice frontend and logic tasks, and contribute to open source. Proudly built for GSSoC 2025." />
-  <meta name="robots" content="index, follow" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="CodeClip - Code, Run & Contribute" />
+    <meta
+      property="og:description"
+      content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers."
+    />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="CodeClip - Code, Run & Contribute" />
-  <meta property="og:description"
-    content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers." />
+    <meta
+      property="twitter:title"
+      content="CodeClip - Code, Run & Contribute"
+    />
+    <meta
+      property="twitter:description"
+      content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers."
+    />
 
-  <meta property="twitter:title" content="CodeClip - Code, Run & Contribute" />
-  <meta property="twitter:description"
-    content="Solve coding challenges, contribute to open source, and climb the leaderboard on CodeClip. A GSSoC 2025 project for developers." />
+    <!-- ================ Vendor CSS ================  -->
 
-  <!-- ================ Vendor CSS ================  -->
+<!-- ================ Vendor CSS ================ -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="styles/owl.carousel.min.css" />
+<link rel="stylesheet" href="styles/owl.theme.default.min.css" />
+<link rel="stylesheet" href="styles/fontawesome.css" />
+<!-- Custom CSS & External Libraries -->
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/gh/devicons/devicon@latest/devicon.min.css"
+/>
+<!-- Global / Main Styles -->
+<link rel="stylesheet" href="styles/main.css" />
+<link rel="stylesheet" href="./styles.css" />
 
-  <!-- <link rel="stylesheet" href="styles/styles.css"> -->
+<!-- External Libraries -->
+<link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
-  <link rel="stylesheet" href="styles/bootstrap.min.css">
-  <link rel="stylesheet" href="styles/owl.carousel.min.css">
-  <link rel="stylesheet" href="styles/owl.theme.default.min.css">
-  <link rel="stylesheet" href="styles/fontawesome.css">
+<!-- Optional: Challenge-specific styles -->
+<!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 
-  <!-- ================ Custom CSS ================  -->
-  <link rel="stylesheet" href="styles/main.css">
-  <link rel="stylesheet" href="styles/bootstrap.min.css" />
-  <link rel="stylesheet" href="styles/owl.carousel.min.css" />
-  <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
-  <link rel="stylesheet" href="styles/fontawesome.css" />
+<!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+<link rel="stylesheet" href="./styles/progress-dashboard.css" />
+<!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 
-  <!-- ================ Custom CSS ================  -->
-  <link rel="stylesheet" href="styles/main.css" />
-</head>
+<!-- Inline custom tweaks -->
+<style>
+  .icon-container {
+    display: flex;
+    gap: 6px;
+    margin: 8px 0;
+    font-size: 24px;
+  }
+.icon-container i {
+  transition: transform 0.2s ease;
+}
+  .icon-container i:hover {
+    transform: scale(1.2);
+  }
+  .navbar-light .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+</style>
+  </head>
 
-<body>
-  <a id="top"></a> <!--added for issue 260 -->
-  <!-- ================================ Header Section Start Here ================================ -->
-  <header>
-    <main>
-      <nav class="navbar navbar-expand-lg fixed-top custom-navbar">
+  <body>
+    <a id="top"></a>  <!--added for issue 260 -->
+    <!-- ================================ Header Section Start Here ================================ -->
+    <header>
+      <nav class="navbar navbar-expand-lg fixed-top navbar-light bg-light">
         <div class="container">
-          <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
+          <a class="navbar-brand" href="#top">Code<span>Clip</span></a>
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent"
+            aria-expanded="false"
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="#homeSection">Home</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#challengeSection">Challenges</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#aboutSection">About</a>
-              </li>
-              <li class="nav-item">
-                <a class="nav-link" href="#contactFooter">Contact</a>
-              </li>
-            </ul>
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#top">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#challengeSection">Challenges</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#leaderboardSection">Leaderboard</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#aboutSection">About</a>
+                        </li>
+                        <li class="nav-item">
+                    <a class="nav-link" href="#contactFooter">Contact</a>
+                  </li>
+                </ul>
           </div>
         </div>
       </nav>
+    </header>
+    <!-- ================================ Header Section Start Here ================================ -->
+ <main>
+    <!-- ================================ Hero Section Start Here ================================ -->
+    <section id="top" class="heroSection">
+      <div class="container">
+        <div class="row heroSection-Container">
+          <div class="col-12 col-md-6 heroSection-Left">
+            <div  data-aos="fade-right" data-aos-duration="650" class="gssocContainer shinning-effect">
+              <img 
+                src="assets/images/hero-section/gssoc-log.png"
+                class="img-fluid gssoc-logo"
+                alt="gssoc logo"
+              />
+              <p>GSSOC 2025</p>
+            </div>
 
-      <nav class="navbar navbar-expand-lg fixed-top">
-        <div class="container">
-          <a class="navbar-brand" href="#homeSection">Code<span>Clip</span></a>
-          <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false"
-            aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
-              <li class="nav-item ">
-                <a class="active" aria-current="page" href="#top">Home</a>
-              </li>
-              <li class="nav-item">
-                <a href="./pages/challenges.html">Challenges</a>
-              </li>
-              <li class="nav-item">
-                <a href="#leaderboardSection">Leaderboard</a>
-              </li>
-              <li class="nav-item">
-                <a href="#aboutSection">About</a>
-              </li>
-              <li class="nav-item">
-                <a href="#contactFooter">Contact</a>
-              </li>
-            </ul>
+            <h1 data-aos="fade-right" data-aos-duration="650">
+              Code Run <br />
+              <span class="blueCol">Contribute</span>
+            </h1>
+            <p data-aos="fade-right" data-aos-duration="650" class="heroDescription text-muted">
+              CodeClip is a lightweight, browser-based platform designed to make
+              coding practice simple, accessible, and collaborative. Whether
+              you're a beginner looking to sharpen your skills or an aspiring
+              contributor to open source, CodeClip offers a clean interface
+              where you can solve real-world coding challenges, run your code
+              live, and share your solutions — all without any setup, Built
+              entirely with HTML, CSS, and JavaScript, CodeClip is not just a
+              tool but a learning experience itself. It’s an open-source project
+              proudly developed as part of
+              <strong>GirlScript Summer of Code (GSSoC)</strong>, aimed at
+              empowering developers through hands-on practice and meaningful
+              contributions.
+            </p>
+
+            <!-- ==== Do Changes According to requirements === -->
+            <div class="ctaBtn-Container">
+              <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn">
+                <i class="fa-solid fa-gear"></i> Code
+              </button>
+              <button data-aos-duration="650" data-aos="fade-right" class="btn heroSectionBtn">
+                <i class="fa-solid fa-cloud"></i> Run
+              </button>
+            </div>
+          </div>
+
+          <div class="col-12 col-md-6 heroSection-Right d-none d-md-block">
+            <img  data-aos="zoom-in-left"
+              src="assets/images/hero-section/hero-Img.png"
+              class="img-fluid"
+              alt="hero section image"
+            />
           </div>
         </div>
-      </nav>
+      </div>
+    </section>
+    <!-- ================================ Hero Section End Here ================================ -->
+
+    <!-- ================================ Challenge Section Start Here ================================ -->
+    <section id="challengeSection">
+      <div class="container">
+        <div class="row challengeContainer">
+          <!-- ==== Card 1 ==== -->
+          <div class="col-12 col-md-4">
+            <div data-aos-duration="800" data-aos="fade-up" class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">Frontend Challenges</h5>
+                  <p class="card-Level medium-Col">EASY</p>
+                  <div class="icon-container">
+                    <i class="devicon-html5-plain colored" title="HTML5"></i>
+                    <i class="devicon-css3-plain colored" title="CSS3"></i>
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 135 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Build real UI components using HTML, CSS, and JavaScript.
+                  These tasks help you improve your layout, styling,
+                  responsiveness, and interactivity,no frameworks, just clean
+                  frontend skills.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpage of frontend challenge and add link here === -->
+                  <a href="frontendChallenges.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==== Card 2 ==== -->
+          <div class="col-12 col-md-4">
+            <div data-aos-duration="800" data-aos="fade-up" class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">JavaScript Logics</h5>
+                  <p class="card-Level medium-Col">MEDIUM</p>
+                  <div class="icon-container">
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 189 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Master the core of JavaScript by solving logic-based problems
+                  that boost your thinking and problem-solving skills. Perfect
+                  for beginners and intermediates.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpage of javascript logics and add link here === -->
+                  <a href="jslogics.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==== Card 3 ==== -->
+          <div class="col-12 col-md-4">
+            <div data-aos-duration="800" data-aos="fade-up" class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">Backend Basics</h5>
+                  <p class="card-Level hard-Col">HARD</p>
+                  <div class="icon-container">
+                    <i class="devicon-nodejs-plain colored" title="Node.js"></i>
+                    <i class="devicon-express-original colored" title="Express.js"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 150 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Learn the fundamentals of backend development through simple
+                  tasks using APIs, data handling, and server-side logic. A
+                  great start for aspiring full-stack developers.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpage of backend bbasic and add link here === -->
+                  <a href="backendChallenges.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==== Card 4 ==== -->
+          <div data-aos-duration="800" data-aos="fade-up" class="col-12 col-md-4">
+            <div class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">UI Design Tasks</h5>
+                  <p class="card-Level">EASY</p>
+                  <div class="icon-container">
+                    <i class="devicon-html5-plain colored" title="HTML5"></i>
+                    <i class="devicon-css3-plain colored" title="CSS3"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 120 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Practice building beautiful and functional UI components using
+                  HTML and CSS. Perfect for improving your design sense and
+                  layout skills.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpage of ui design challenge and add link here === -->
+                  <a href="uiChallenges.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- ==== Card 5 ==== -->
+          <div class="col-12 col-md-4">
+            <div data-aos-duration="800" data-aos="fade-up" class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">Open Source Challenges</h5>
+                  <p class="card-Level medium-Col">MEDIUM</p>
+                  <div class="icon-container">
+                    <i class="devicon-git-plain colored" title="Git"></i>
+                    <i class="devicon-github-original colored" title="GitHub"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 200 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Practice real world contribution workflows using Git and
+                  GitHub. You'll learn how to contribute to projects, manage
+                  pull requests.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpages of open source challenge and add link here === -->
+                  <a href="gitChallenges.html" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- added card 6 -->
+          <!-- === Card 6 === -->
+           <div class="col-12 col-md-4">
+            <div data-aos-duration="800" data-aos="fade-up" class="card">
+              <div class="card-body">
+                <div class="card-TopContainer">
+                  <h5 class="card-Header">JavaScript Mini Projects</h5>
+                  <p class="card-Level medium-Col">Easy</p>
+                  <div class="icon-container">
+                    <i class="devicon-javascript-plain colored" title="JavaScript"></i>
+                    <i class="devicon-css3-plain colored" title="CSS3"></i>
+                  </div>
+                </div>
+
+                <p class="card-Participate">
+                  <i class="fa-solid fa-people-group"></i> 300 coders joined
+                </p>
+                <p data-aos-duration="800" data-aos="fade-up" class="card-Text">
+                  Created an interactive form/input area,Applied CSS styles for visual consistency .Added features like auto-focus, clear input after add, and animation.
+                </p>
+
+                <div class="card-CTAButton">
+                  <!-- === Create webpages of open source challenge and add link here === -->
+                  <a href="#" class="card-Btn">Join Now</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- ================================ Challenge Section End Here ================================ -->
+
+    <!-- ================================ Leaderboard Section Starts Here ================================ -->
+  <section id="leaderboardSection" class="leaderboard-wrapper">
+  <div class="leaderboard-list">
+    <h2>
+      <span class="highlight">Top Coder</span> of the Week
+    </h2>
+    <p>
+      Meet our top coders who accepted challenges, wrote great code,
+      contributed to open source, and stood out as the best performers of the week.
+    </p>
+
+    <div class="leaderboard-row rank-1">
+      <span class="rank">#1</span>
+      <img src="assets/images/leaderboard-section/user-1.png" alt="User 1" class="leaderboard-Img">
+      <span class="userName">Rahul <span class="badge gold">🏆</span></span>
+      <span class="points">1250 pts</span>
+    </div>
+
+    <div class="leaderboard-row rank-2">
+      <span class="rank">#2</span>
+      <img src="assets/images/leaderboard-section/user-2.png" alt="User 2" class="leaderboard-Img">
+      <span class="userName">Manisha <span class="badge silver">🥈</span></span>
+      <span class="points">1180 pts</span>
+    </div>
+
+    <div class="leaderboard-row rank-3">
+      <span class="rank">#3</span>
+      <img src="assets/images/leaderboard-section/user-1.png" alt="User 3" class="leaderboard-Img">
+      <span class="userName">Pankaj <span class="badge bronze">🥉</span></span>
+      <span class="points">1100 pts</span>
+    </div>
+
+    <div class="leaderboard-row">
+      <span class="rank">#4</span>
+      <img src="assets/images/leaderboard-section/user-2.png" alt="User 4" class="leaderboard-Img">
+      <span class="userName">Simran</span>
+      <span class="points">980 pts</span>
+    </div>
+  </div>
+</section>
+
+    <!-- ================================ Leaderboard Section End Here ================================ -->
+
+    <!-- ================================ About Section Start Here ================================ -->
+    <section id="aboutSection">
+      <div class="container">
+        <h3 data-aos-duration="650" data-aos="fade-up" class="secHeader"><span>About</span> CodeClip</h3>
+        <div class="row aboutContainer">
+          <div class="col-10">
+            <p data-aos-duration="650" data-aos="fade-up text-muted">
+              CodeClip is a lightweight, browser-based platform designed to make
+              coding practice simple, accessible, and collaborative. Whether
+              you're a beginner looking to sharpen your skills or an aspiring
+              contributor to open source, CodeClip offers a clean interface
+              where you can solve real-world coding challenges, run your code
+              live, and share your solutions — all without any setup, Built
+              entirely with HTML, CSS, and JavaScript, CodeClip is not just a
+              tool but a learning experience itself. It’s an open-source project
+              proudly developed as part of
+              <strong>GirlScript Summer of Code (GSSoC)</strong>, aimed at
+              empowering developers through hands-on practice and meaningful
+              contributions.
+            </p>
+
+            <p data-aos-duration="650" data-aos="fade-up" class="ctaBtn">
+              <a
+                href="https://github.com/opensource-society/CodeClip"
+                target="_blank"
+                title="click here to start contributing in CodeClip Project under GSSoC'25"
+                class="aboutCTA-Btn"
+                >Contribute to CodeClip</a
+              >
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
     </main>
-  </header>
-  <!-- ================================ Header Section Start Here ================================ -->
 
-  <!-- ================================ Hero Section Start Here ================================ -->
-  <section id="homeSection top" class="heroSection">
-    <div class="container">
-      <div class="row heroSection-Container">
-        <div class="col-12 col-md-6 heroSection-Left">
-          <div class="gssocContainer shinning-effect">
-            <img src="assets/images/hero-section/gssoc-log.png" class="img-fluid gssoc-logo" alt="gssoc logo" />
-            <p>GSSOC 2025</p>
+    <!-- ================================ Footer Section Start Here ================================ -->
+    <footer id="contactFooter">
+      <div class="container">
+        <div class="row align-items-start justify-content-between py-4">
+          <div data-aos-duration="650" data-aos="fade-up" class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
+            <a class="navbar-brand mb-2" id="homeSection"
+              >Code<span>Clip</span></a
+            > 
+            <p class="footer-desc mb-0 text-dark">
+              CodeClip is a open source project under GirlScript Summer of Code
+              (GSSoC) 2025 to open for contribution
+            </p> 
           </div>
-
-          <h1>
-            Code Run <br />
-            <span class="blueCol">Contribute</span>
-          </h1>
-          <p class="heroDescription">
-            CodeClip is a lightweight, browser-based platform designed to make
-            coding practice simple, accessible, and collaborative. Whether
-            you're a beginner looking to sharpen your skills or an aspiring
-            contributor to open source, CodeClip offers a clean interface
-            where you can solve real-world coding challenges, run your code
-            live, and share your solutions — all without any setup, Built
-            entirely with HTML, CSS, and JavaScript, CodeClip is not just a
-            tool but a learning experience itself. It’s an open-source project
-            proudly developed as part of
-            <strong>GirlScript Summer of Code (GSSoC)</strong>, aimed at
-            empowering developers through hands-on practice and meaningful
-            contributions.
-          </p>
-
-          <!-- ==== Do Changes According to requirements === -->
-          <div class="ctaBtn-Container">
-            <button class="btn heroSectionBtn">
-              <i class="fa-solid fa-gear"></i> Code
-            </button>
-            <button class="btn heroSectionBtn">
-              <i class="fa-solid fa-cloud"></i> Run
-            </button>
+          <div data-aos-duration="650" data-aos="fade-left" class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
+            <h5 class="footer-title">Important Links</h5>
+            <ul class="footer-links list-unstyled mb-0">
+              <li><a href="#top">Home</a></li>
+              <li><a href="#challengeSection">Challenges</a></li>
+              <li><a href="#leaderboardSection">Leaderboard</a></li>
+              <li><a href="#aboutSection">About</a></li>
+            </ul>
           </div>
-        </div>
-
-        <div class="col-12 col-md-6 heroSection-Right d-none d-md-block">
-          <img src="assets/images/hero-section/hero-Img.png" class="img-fluid" alt="hero section image" />
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ================================ Hero Section End Here ================================ -->
-
-  <!-- ================================ Challenge Section Start Here ================================ -->
-  <section id="challengeSection">
-    <div class="container">
-      <div class="row challengeContainer">
-        <!-- ==== Card 1 ==== -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">Frontend Challenges</h5>
-                <p class="card-Level">EASY</p>
+          <div class="col-12 col-md-6 footer-contact-col-main">
+            <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
+            <div class="footer-contact-row d-flex justify-content-center">
+              <div data-aos-duration="650" data-aos="fade-right"
+                class="footer-contact-col d-flex flex-column gap-3 w-100"
+              >
+                <a
+                  href="https://github.com/opensource-society/CodeClip"
+                  target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn"
+                  style="max-width: 250px"
+                >
+                  <i class="fab fa-github me-2"></i> GitHub
+                </a>
+                <a
+                  href="https://github.com/opensource-society/CodeClip"
+                  target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn"
+                  style="max-width: 250px"
+                >
+                  <i class="fab fa-discord me-2"></i> Discord
+                </a>
               </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 135 coders joined
-              </p>
-              <p class="card-Text">
-                Build real UI components using HTML, CSS, and JavaScript.
-                These tasks help you improve your layout, styling,
-                responsiveness, and interactivity,no frameworks, just clean
-                frontend skills.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpage of frontend challenge and add link here === -->
-                <a href="frontendChallenges.html" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==== Card 2 ==== -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">JavaScript Logics</h5>
-                <p class="card-Level medium-Col">MEDIUM</p>
-              </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 189 coders joined
-              </p>
-              <p class="card-Text">
-                Master the core of JavaScript by solving logic-based problems
-                that boost your thinking and problem-solving skills. Perfect
-                for beginners and intermediates.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpage of javascript logics and add link here === -->
-                <a href="jslogics.html" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==== Card 3 ==== -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">Backend Basics</h5>
-                <p class="card-Level hard-Col">HARD</p>
-              </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 150 coders joined
-              </p>
-              <p class="card-Text">
-                Learn the fundamentals of backend development through simple
-                tasks using APIs, data handling, and server-side logic. A
-                great start for aspiring full-stack developers.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpage of backend bbasic and add link here === -->
-                <a href="backendChallenges.html" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==== Card 4 ==== -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">UI Design Tasks</h5>
-                <p class="card-Level">EASY</p>
-              </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 120 coders joined
-              </p>
-              <p class="card-Text">
-                Practice building beautiful and functional UI components using
-                HTML and CSS. Perfect for improving your design sense and
-                layout skills.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpage of ui design challenge and add link here === -->
-                <a href="uiChallenges.html" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <!-- ==== Card 5 ==== -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">Open Source Challenges</h5>
-                <p class="card-Level medium-Col">MEDIUM</p>
-              </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 200 coders joined
-              </p>
-              <p class="card-Text">
-                Practice real world contribution workflows using Git and
-                GitHub. You'll learn how to contribute to projects, manage
-                pull requests.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpages of open source challenge and add link here === -->
-                <a href="gitChallenges.html" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-        <!-- added card 6 -->
-        <!-- === Card 6 === -->
-        <div class="col-12 col-md-4">
-          <div class="card">
-            <div class="card-body">
-              <div class="card-TopContainer">
-                <h5 class="card-Header">JavaScript Mini Projects</h5>
-                <p class="card-Level medium-Col">Easy</p>
-              </div>
-
-              <p class="card-Participate">
-                <i class="fa-solid fa-people-group"></i> 300 coders joined
-              </p>
-              <p class="card-Text">
-                Created an interactive form/input area,Applied CSS styles for visual consistency .Added features like
-                auto-focus, clear input after add, and animation.
-              </p>
-
-              <div class="card-CTAButton">
-                <!-- === Create webpages of open source challenge and add link here === -->
-                <a href="#" class="card-Btn">Join Now</a>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ================================ Challenge Section End Here ================================ -->
-
-  <!-- ================================ Leaderboard Section Starts Here ================================ -->
-  <section id="leaderboardSection">
-    <div class="container">
-      <h3 class="secHeader"><span class="">Top Coder</span> of the Week</h3>
-      <p class="leaderboard-Para">
-        Meet our top coders who accepted challenges, wrote great code,
-        contributed to open source, and stood out as the best performers of
-        the week.
-      </p>
-      <div class="row">
-        <!-- ======= owl cousel =========== -->
-        <div class="owl-carousel owl-theme">
-          <!-- === top coder 1 === -->
-          <div class="item">
-            <div class="card leaderboard-Card">
-              <div class="card-body leaderBoard-Container">
-                <div class="leaderBoard-userContainer">
-                  <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
-                    alt="user 1" />
-                </div>
-
-                <h5 class="card-title userName">Rahul</h5>
-
-                <div class="leaderboradUser-RankContainer">
-                  <p class="rankPosition">
-                    <i class="fa-solid fa-award"></i> 1st Rank
-                  </p>
-                  <p class="rankPoints">
-                    <i class="fa-solid fa-medal"></i> 1080 Points
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- === top coder 2 === -->
-          <div class="item">
-            <div class="card leaderboard-Card">
-              <div class="card-body leaderBoard-Container">
-                <div class="leaderBoard-userContainer">
-                  <img src="assets/images/leaderboard-section/user-2.png" class="img-fluid leaderboard-Img"
-                    alt="user 2" />
-                </div>
-
-                <h5 class="card-title userName">Manisha</h5>
-
-                <div class="leaderboradUser-RankContainer">
-                  <p class="rankPosition">
-                    <i class="fa-solid fa-award"></i> 2nd Rank
-                  </p>
-                  <p class="rankPoints">
-                    <i class="fa-solid fa-medal"></i> 1060 Points
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- === top coder 3 === -->
-          <div class="item">
-            <div class="card leaderboard-Card">
-              <div class="card-body leaderBoard-Container">
-                <div class="leaderBoard-userContainer">
-                  <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
-                    alt="user 3" />
-                </div>
-
-                <h5 class="card-title userName">Pankaj</h5>
-
-                <div class="leaderboradUser-RankContainer">
-                  <p class="rankPosition">
-                    <i class="fa-solid fa-award"></i> 3rd Rank
-                  </p>
-                  <p class="rankPoints">
-                    <i class="fa-solid fa-medal"></i> 1055 Points
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- === top coder 4 === -->
-          <div class="item">
-            <div class="card leaderboard-Card">
-              <div class="card-body leaderBoard-Container">
-                <div class="leaderBoard-userContainer">
-                  <img src="assets/images/leaderboard-section/user-2.png" class="img-fluid leaderboard-Img"
-                    alt="user 4" />
-                </div>
-
-                <h5 class="card-title userName">Simarn</h5>
-
-                <div class="leaderboradUser-RankContainer">
-                  <p class="rankPosition">
-                    <i class="fa-solid fa-award"></i> 4th Rank
-                  </p>
-                  <p class="rankPoints">
-                    <i class="fa-solid fa-medal"></i> 1030 Points
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- === top coder 5 === -->
-          <div class="item">
-            <div class="card leaderboard-Card">
-              <div class="card-body leaderBoard-Container">
-                <div class="leaderBoard-userContainer">
-                  <img src="assets/images/leaderboard-section/user-1.png" class="img-fluid leaderboard-Img"
-                    alt="user 5" />
-                </div>
-
-                <h5 class="card-title userName">Rahul</h5>
-
-                <div class="leaderboradUser-RankContainer">
-                  <p class="rankPosition">
-                    <i class="fa-solid fa-award"></i> 5th Rank
-                  </p>
-                  <p class="rankPoints">
-                    <i class="fa-solid fa-medal"></i> 1020 Points
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ================================ Leaderboard Section End Here ================================ -->
-
-  <!-- ================================ About Section Start Here ================================ -->
-  <section id="aboutSection">
-    <div class="container">
-      <h3 class="secHeader"><span>About</span> CodeClip</h3>
-      <div class="row aboutContainer">
-        <div class="col-10">
-          <p>
-            CodeClip is a lightweight, browser-based platform designed to make
-            coding practice simple, accessible, and collaborative. Whether
-            you're a beginner looking to sharpen your skills or an aspiring
-            contributor to open source, CodeClip offers a clean interface
-            where you can solve real-world coding challenges, run your code
-            live, and share your solutions — all without any setup, Built
-            entirely with HTML, CSS, and JavaScript, CodeClip is not just a
-            tool but a learning experience itself. It’s an open-source project
-            proudly developed as part of
-            <strong>GirlScript Summer of Code (GSSoC)</strong>, aimed at
-            empowering developers through hands-on practice and meaningful
-            contributions.
-          </p>
-
-          <p class="ctaBtn">
-            <a href="https://github.com/opensource-society/CodeClip" target="_blank"
-              title="click here to start contributing in CodeClip Project under GSSoC'25"
-              class="aboutCTA-Btn">Contribute to CodeClip</a>
-          </p>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ================================ Footer Section Start Here ================================ -->
-  <footer id="contactFooter">
-    <div class="container">
-      <div class="row align-items-start justify-content-between py-4">
-        <div class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
-          <a class="navbar-brand mb-2" href="#homeSection">Code<span>Clip</span></a>
-          <p class="footer-desc mb-0">
-            CodeClip is a open source project under GirlScript Summer of Code
-            (GSSoC) 2025 to open for contribution
-          </p>
-        </div>
-        <div class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
-          <h5 class="footer-title">Important Links</h5>
-          <ul class="footer-links list-unstyled mb-0">
-            <li><a href="#homeSection">Home</a></li>
-            <li><a href="#challengeSection">Challenges</a></li>
-            <li><a href="#leaderboardSection">Leaderboard</a></li>
-            <li><a href="#aboutSection">About</a></li>
-          </ul>
-        </div>
-        <div class="col-12 col-md-6 footer-contact-col-main">
-          <h5 class="footer-title">Contact Us</h5>
-          <div class="footer-contact-row d-flex justify-content-center">
-            <div class="footer-contact-col d-flex flex-column align-items-center">
-              <a href="https://github.com/opensource-society/CodeClip" target="_blank"
-                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
-                <i class="fab fa-github me-2"></i> GitHub
-              </a>
-              <a href="https://github.com/opensource-society/CodeClip" target="_blank"
-                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
-                <i class="fab fa-discord me-2"></i> Discord
-              </a>
-            </div>
-            <div class="footer-contact-col d-flex flex-column align-items-center">
+              <div data-aos-duration="650" data-aos="fade-left"
+                class="footer-contact-col d-flex flex-column align-items-center"
+              >
               <!-- margin added -->
-              <a href="https://github.com/opensource-society/CodeClip" target="_blank"
-                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
-                <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
-              </a>
-              <!-- Added linkdin social connection -->
-              <a href="https://www.linkedin.com/in/adityai0" target="_blank"
-                class="btn btn-primary mb-2 footer-contact-btn" style="max-width: 250px">
-                <i class="fab fa-linkedin-in me-2"></i> LinkedIn
-              </a>
-
+                <a
+                  href="https://github.com/opensource-society/CodeClip"
+                  target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn"
+                  style="max-width: 250px"
+                >
+                  <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
+                </a>
+                <!-- Added linkdin social connection -->
+                <a
+                  href="https://www.linkedin.com/in/adityai0"
+                  target="_blank"
+                  class="btn btn-primary mb-2 footer-contact-btn mt-3 "
+                  style="max-width: 250px"
+                >
+                  <i class="fab fa-linkedin-in me-2"></i> LinkedIn
+                </a>
+                
+              </div>
             </div>
           </div>
-        </div>
-      </div>
-    </div>
+        </div> 
+      </div> 
     </div>
     <hr />
     <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
       &copy; CodeClip | Open Source Project 2025
     </p>
-    </div>
-  </footer>
+  </div>
+</footer>
+    <!--AOS Animations-->
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init({
+        duration: 650,
+        once: true
+      });
+    </script>
 
-  <!-- ================================ Footer Section End Here ================================ -->
-  <!--add scroll to top button -->
-  <a href="#top" class="scroll_to_top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
-  <!-- ================ Vendor JS ================  -->
-  <script src="scripts/jquery.min.js"></script>
-  <script src="scripts/owl.carousel.min.js"></script>
-  <script src="scripts/bootstrap.bundle.min.js"></script>
+    <!-- ================================ Footer Section End Here ================================ -->
+   <!--add scroll to top button -->
+    <a href="#top" class="scroll_to_top" aria-label="Scroll to top"><i class="fas fa-arrow-up"></i></a>
+    <!-- ================ Vendor JS ================  -->
+    <script src="scripts/jquery.min.js"></script>
+    <script src="scripts/owl.carousel.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 
-  <!-- ================ Custom JS ================  -->
-  <script src="scripts/main.js"></script>
-</body>
-
+    <!-- ================ Custom JS ================  -->
+    <script src="scripts/main.js"></script>
+  </body>
 </html>

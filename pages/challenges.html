@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -10,30 +9,280 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Community logos -->
+     <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
-  <link rel="stylesheet" href="../styles/challenges.css" />
+<!-- Link your separate CSS file here -->
+<link rel="stylesheet" href="../styles/challenges.css" /> <!-- changed the link -->
 
-  <!-- ================ Favicon ================  -->
-    <link
-      rel="shortcut icon"
-      href="assets/favicon/codeClip-favicon.png"
-      type="image/png"
-    />
+<!-- ============== Favicon ============== -->
+<link
+    rel="shortcut icon"
+    href="assets/favicon/codeClip-favicon.png"
+    type="image/png"
+/>
+
 </head>
 <body>
+  <style>
+    /* ================= Root & Theme ================= */
+:root {
+  --bg: #f8f9fc;
+  --text: #1f2937;
+  --card-bg: #fff;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --border: #e5e7eb;
 
-  <!-- Header -->
+  --easy-bg: #dcfce7;
+  --easy-text: #166534;
+  --medium-bg: #fef9c3;
+  --medium-text: #854d0e;
+  --hard-bg: #fee2e2;
+  --hard-text: #991b1b;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #f9fafb;
+  --card-bg: #1e293b;
+  --border: #334155;
+}
+
+/* ================= Global ================= */
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ================= Hero ================= */
+.challenges-hero {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.challenges-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.challenges-hero__description {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ================= Filter Bar ================= */
+.challenges-filter {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  margin: -2rem auto 2rem;
+  width: 95%;
+  max-width: 1100px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] .challenges-filter {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+.filter-controls {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1rem;
+  align-items: center;
+}
+
+.filter-select,
+.search-input {
+  padding: 0.7rem 1rem;
+  border-radius: 8px;
+  border: 1px solid var(--border);
+  background: var(--card-bg);
+  font-size: 1rem;
+  color: var(--text);
+  transition: 0.2s;
+}
+
+.filter-select:focus,
+.search-input:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(79,70,229,0.3);
+}
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+/* ================= Challenges Grid ================= */
+.challenges-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.challenge-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.75s, box-shadow 0.75s, opacity 0.25s;
+  opacity: 1;
+}
+
+.challenge-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.challenge-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challenge-card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.challenge-card__description {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+[data-theme="dark"] .challenge-card__description {
+  color: #94a3b8;
+}
+
+.challenge-card__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  background: var(--border);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.difficulty-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.difficulty-easy { background: var(--easy-bg); color: var(--easy-text); }
+.difficulty-medium { background: var(--medium-bg); color: var(--medium-text); }
+.difficulty-hard { background: var(--hard-bg); color: var(--hard-text); }
+
+.challenge-card__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ================= Theme Toggle ================= */
+#theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* ================= Empty State ================= */
+.no-results-message {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.8;
+}
+.no-results-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+  </style>
+
+  <Header>
   <header class="header" role="banner">
     <div class="container header__container">
       <div class="header__logo">
-        <span class="logo-text">Code</span><span class="logo-clip">Clip</span>
+
+        <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+
+        <a href="../index.html" class="logo-text">CodeClip</a>
+
       </div>
       <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
         <ul class="nav__list">
           <li><a href="/CodeClip" class="nav__link" aria-label="Home">Home</a></li>
           <li><a href="/challenges" class="nav__link active" aria-current="page" aria-label="Challenges">Challenges</a></li>
           <li><a href="/CodeClip/pages/editor.html" class="nav__link" aria-label="Editor">Editor</a></li>
-          <li><a href="./profile.html" class="nav__link" aria-label="Profile">Profile</a></li>
+          <li><a href="/CodeClip/pages/profile.html" class="nav__link" aria-label="Profile">Profile</a></li>
         </ul>
       </nav>
       <button
@@ -50,6 +299,10 @@
     </div>
   </header>
 
+
+
+  
+
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
@@ -57,11 +310,12 @@
       <div class="container">
         <div class="challenges-hero__content">
           <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
+            Coding <span class="highlight">Challenges &lt/&gt </span>
           </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
+      <p class="challenges-hero__description">
+  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, 
+  <span class="typing-loop">for every developer.</span>
+</p>
         </div>
       </div>
     </section>
@@ -86,7 +340,7 @@
         </div>
 
         <div class="filter-group">
-          <label for="category-filter">Category:</label>
+          <label for="category-filter"><h3>Category:</h3></label>
           <select id="category-filter" class="filter-select" aria-label="Filter challenges by category">
             <option value="">All Categories</option>
             <option value="arrays">Arrays</option>
@@ -205,12 +459,15 @@
     <div class="container">
       <div class="footer__content">
         <section class="footer__section">
-          <h4>CodeClip</h4>
+          <h2 class="header__logo">
+  <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+</h2>
+
           <p>Master coding challenges in your browser</p>
         </section>
 
         <section class="footer__section">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="challenges.html">Challenges</a></li>
@@ -218,14 +475,15 @@
           </ul>
         </section>
 
-        <section class="footer__section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#" aria-label="GitHub link">GitHub</a></li>
-            <li><a href="#" aria-label="Discord link">Discord</a></li>
-            <li><a href="#" aria-label="Twitter link">Twitter</a></li>
-          </ul>
-        </section>
+  <section class="footer__section">
+  <h2>Community</h2>
+  <ul>
+    <li><a href="#" aria-label="GitHub link">GitHub <i class="fab fa-github"></i></a></li>
+    <li><a href="#" aria-label="Discord link">Discord <i class="fab fa-discord"></i></a></li>
+    <li><a href="#" aria-label="Twitter link">Twitter <i class="fab fa-twitter"></i></a></li>
+  </ul>
+</section>
+
       </div>
       <div class="footer__bottom">
         <p>&copy; 2024 CodeClip. All rights reserved.</p>

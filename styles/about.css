@@ -10,7 +10,7 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   margin: 0;
   padding: 0;
   background: var(--bg-primary);
@@ -67,7 +67,7 @@ body {
   padding: 0 1rem;
 }
 
-/* Footer Styles */
+/* Footer Styles 
 .footer {
   background: var(--bg-secondary);
   padding: 2rem 0;
@@ -108,11 +108,100 @@ body {
   margin-top: 2rem;
   font-size: 0.875rem;
   color: var(--text-muted);
+}*/
+.footer {
+  background: linear-gradient(135deg, #6366f1, #6366f1);
+  color: #f1f1f1;
+  padding: 3rem 1rem 1rem;
+  font-family: "Segoe UI", sans-serif;
+}
+
+.footer__content {
+  max-width: 1200px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 2rem;
+}
+
+.footer__section h4 {
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  color: black;
+}
+
+.footer__section p {
+  font-size: 0.9rem;
+  color: black;
+  line-height: 1.6;
+}
+
+.footer__section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__section ul li {
+  margin: 0.5rem 0;
+}
+
+.footer__section ul li a {
+  text-decoration: none;
+  color: black;
+  transition: all 0.3s ease;
+}
+
+.footer__section ul li a:hover {
+  color: #4dabf7;
+  text-decoration: underline;
+}
+
+/* Social Links */
+.social-links {
+  display: flex;
+  gap: 1rem;
+}
+
+.social-links a {
+  font-size: 1.2rem;
+  color: black;
+  transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.social-links a:hover {
+  color: #4dabf7;
+  transform: scale(1.1);
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 2rem;
+  border-top: 1px solid #444;
+  padding-top: 1rem;
+  font-size: 0.85rem;
+  color: black;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    text-align: center;
+  }
+  .social-links {
+    justify-content: center;
+  }
 }
 
 /* Challenges Page Specific */
 .challenges-hero {
-  background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+  background: linear-gradient(
+    135deg,
+    var(--primary-color) 0%,
+    var(--secondary-color) 100%
+  );
   padding: 6rem 0 4rem;
   text-align: center;
 }
@@ -150,7 +239,8 @@ body {
   gap: 0.5rem;
 }
 
-.filter-select, .search-input {
+.filter-select,
+.search-input {
   padding: 0.5rem 1rem;
   border: 1px solid var(--border-color);
   border-radius: 0.5rem;
@@ -266,7 +356,7 @@ body {
   border: none;
   border-radius: 50%;
   padding: 0.75rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
   cursor: pointer;
   z-index: 1000;
   transition: background 0.2s;

@@ -19,3 +19,18 @@ $(document).ready(function () {
         console.error('Owl Carousel initialization failed:', error);
     }
 });
+
+// Select all mobile nav links
+  const navLinks = document.querySelectorAll('.navbar-nav .nav-item a');
+  const navToggle = document.getElementById('nav-toggle');
+
+  navLinks.forEach(link => {
+    link.addEventListener('click', () => {
+      // Uncheck the checkbox when any link is clicked
+      if (navToggle.checked) {
+        navToggle.checked = false;
+      }
+    });
+});
+
+
