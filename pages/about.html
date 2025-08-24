@@ -12,7 +12,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
     <!-- Styles -->
     <!-- If you want to keep all challenge styles in one file, use: -->
@@ -293,22 +292,13 @@ body {
 
           </ul>
         </div>
-        <!--div class="footer__section">
+        <div class="footer__section">
           <h4>Community</h4>
           <ul class="social-links">
             <li><a href="https://github.com/opensource-society/CodeClip" target="_blank">GitHub</a></li>
             <li><a href="#">Discord</a></li>
             <li><a href="#">Twitter</a></li>
             <li><a href="#">LinkedIn</a></li>
-          </ul>
-        </div-->
-         <div class="footer__section">
-          <h4>Community</h4>
-          <ul class="social-links">
-            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="#"><i class="fab fa-discord"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
           </ul>
         </div>
       </div>
@@ -341,181 +331,155 @@ body {
       margin-bottom: 1.5rem;
       color: white;
     }
-
-    .challenges-hero__description {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
+    .about-main {
+      max-width: 850px;
+      margin: 3rem auto 2rem auto;
+      background: #fff;         /* White card */
+      color: #222;              /* Dark text */
+      border-radius: 12px;
+      box-shadow: 0 0 18px rgba(0,0,0,0.08);
+      padding: 2.5rem 2rem;
+      animation: fadeIn 1s;
     }
-
-    .challenges-filter {
-      background: var(--bg-secondary);
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border-color);
+    .about-main h1 {
+      color: #87cefa;
+      font-size: 2.5rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
     }
-
-    .filter-controls {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
+    .about-main h2 {
+      color: #4fc3f7;
+      margin-top: 2rem;
+      font-size: 1.5rem;
+      font-weight: 600;
     }
-
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .filter-select, .search-input {
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 0.5rem;
-      background: white;
-      font-size: 0.9rem;
-    }
-
-    .search-group {
-      margin-left: auto;
-    }
-
-    .search-input {
-      width: 300px;
-    }
-
-    .challenges-grid {
-      padding: 3rem 0;
-    }
-
-    .challenges-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .challenge-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .challenge-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .challenge-card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
+    .about-main p, .about-main li {
+      font-size: 1.1rem;
+      line-height: 1.7;
       margin-bottom: 1rem;
     }
-
-    .challenge-card__title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin: 0;
+    .about-main ul {
+      padding-left: 1.2rem;
     }
-
-    .difficulty-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
+    .about-main a {
+      color: #4fc3f7;
+      text-decoration: none;
+      transition: text-decoration 0.2s;
     }
-
-    .difficulty-easy {
-      background: #d4edda;
-      color: #155724;
+    .about-main a:hover {
+      text-decoration: underline;
     }
-
-    .difficulty-medium {
-      background: #fff3cd;
-      color: #856404;
-    }
-
-    .difficulty-hard {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
-    .challenge-card__description {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .challenge-card__meta {
+    .about-main .about-cta {
+      margin-top: 2rem;
       display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
+      gap: 1rem;
       flex-wrap: wrap;
     }
-
-    .category-tag {
-      background: var(--bg-light);
-      color: var(--primary-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
+    .about-main .btn {
+      background: #4fc3f7;
+      color: #121212;
+      border: none;
+      border-radius: 6px;
+      padding: 0.7rem 1.5rem;
+      font-weight: 600;
+      font-size: 1.1rem;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+    }
+    .about-main .btn:hover {
+      background: #87cefa;
+      color: #1a1a1a;
+    }
+    .about-main .about-badge {
+      display: inline-block;
+      background: #23272f;
+      color: #87cefa;
+      border-radius: 5px;
+      padding: 0.2rem 0.7rem;
+      font-size: 0.95rem;
+      margin-right: 0.5rem;
+      margin-bottom: 0.5rem;
       font-weight: 500;
     }
-
-    .challenge-card__actions {
-      text-align: right;
+    @media (max-width: 600px) {
+      .about-main {
+        padding: 1.2rem 0.7rem;
+        margin: 1.2rem 0.3rem;
+      }
+      .about-header {
+        padding: 1rem 0;
+      }
     }
-
-    .btn-sm {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-    }
-
-    #theme-toggle {
-      position: fixed;
-      right: 2rem;
-      bottom: 2rem;
-      background: var(--bg-primary, #fff);
-      border: none;
-      border-radius: 50%;
-      padding: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.2s;
-    }
-
-    #theme-toggle svg {
-      vertical-align: middle;
-    }
-
-    @media (max-width: 768px) {
-      .challenges-hero__title {
-        font-size: 2.5rem;
-      }
-
-      .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .search-group {
-        margin-left: 0;
-      }
-
-      .search-input {
-        width: 100%;
-      }
-
-      .challenges-list {
-        grid-template-columns: 1fr;
-      }
-
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(30px);}
+      to { opacity: 1; transform: translateY(0);}
     }
   </style>
+</head>
+<body>
+  <!-- Header -->
+  <header class="about-header">
+    <nav class="navbar navbar-expand-lg">
+      <div class="container">
+        <a class="navbar-brand" href="../index.html">Code<span>Clip</span></a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#aboutNav" aria-controls="aboutNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse about-nav" id="aboutNav">
+          <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link" href="../index.html#homeSection">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#challengeSection">Challenges</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#leaderboardSection">Leaderboard</a></li>
+            <li class="nav-item"><a class="nav-link active" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="../index.html#contactFooter">Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main About Content -->
+  <main class="about-main" data-aos="fade-up">
+    <h1>About CodeClip</h1>
+    <p>
+      <span class="about-badge">Open Source</span>
+      <span class="about-badge">GSSoC 2025</span>
+      <span class="about-badge">Frontend & Logic Practice</span>
+    </p>
+    <p>
+      <strong>CodeClip</strong> is a lightweight, browser-based platform designed to make coding practice simple, accessible, and collaborative. Whether you're a beginner looking to sharpen your skills or an aspiring open-source contributor, CodeClip offers a clean interface where you can solve real-world coding challenges, run your code live, and share your solutions — all without any setup.
+    </p>
+    <ul>
+      <li><strong>Frontend Challenges:</strong> Build real UI components using HTML, CSS, and JavaScript.</li>
+      <li><strong>JavaScript Logics:</strong> Solve logic-based problems to boost your problem-solving skills.</li>
+      <li><strong>Backend Basics:</strong> Learn APIs, data handling, and server-side logic.</li>
+      <li><strong>UI Design Tasks:</strong> Practice building beautiful and functional UI components.</li>
+      <li><strong>Open Source Challenges:</strong> Learn real-world contribution workflows using Git and GitHub.</li>
+    </ul>
+    <h2>Why CodeClip?</h2>
+    <ul>
+      <li>Completely <strong>client-side</strong> — your code and progress are stored securely in your browser.</li>
+      <li>No backend, no sign-up required — just code, run, and learn.</li>
+      <li>Perfect for <strong>GSSoC</strong> contributors and anyone looking to practice or contribute to open source.</li>
+      <li>Modern, distraction-free interface with instant feedback.</li>
+    </ul>
+    <div class="about-cta">
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="btn">Contribute on GitHub</a>
+      <a href="../index.html#challengeSection" class="btn">Start a Challenge</a>
+    </div>
+    <hr style="background:#444; margin:2.5rem 0 1.5rem 0;">
+    <p style="font-size:1rem; color:#b0c4de;">
+      Proudly built for <strong>GirlScript Summer of Code (GSSoC) 2025</strong> by passionate contributors. <br>
+      Have questions or want to join us? <a href="https://github.com/opensource-society/CodeClip" target="_blank">Open an issue on GitHub</a> or connect via our <a href="https://www.linkedin.com/in/adityai0" target="_blank">LinkedIn</a>.
+    </p>
+  </main>
+
+  <!-- Footer (optional: you can include your main site footer here if desired) -->
+
+  <script src="../scripts/bootstrap.bundle.min.js"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 650, once: true });
+  </script>
 </body>
 </html>
