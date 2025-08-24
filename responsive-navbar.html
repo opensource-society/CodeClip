@@ -1,0 +1,897 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Navbar - CodeClip</title>
+    
+    <!-- ================ Favicon ================  -->
+    <link rel="shortcut icon" href="assets/favicon/codeClip-favicon.png" type="image/png">
+    
+    <!-- ================ Google Fonts ================  -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ================ Font Awesome ================  -->
+    <link rel="stylesheet" href="styles/fontawesome.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: #f8fafc;
+        }
+
+        /* ================ Navbar Styles ================  */
+        .navbar {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            transition: all 0.3s ease;
+        }
+
+        .navbar.scrolled {
+            background: rgba(255, 255, 255, 0.98);
+            box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .navbar-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            height: 70px;
+        }
+
+        /* ================ Logo Styles ================  */
+        .navbar-logo {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1.8rem;
+            font-weight: 700;
+            color: #667eea;
+            transition: all 0.3s ease;
+        }
+
+        .navbar-logo:hover {
+            color: #5a6fd8;
+            text-decoration: none;
+        }
+
+        .navbar-logo span {
+            color: #2d3748;
+        }
+
+        .logo-icon {
+            width: 35px;
+            height: 35px;
+            margin-right: 0.5rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+        }
+
+        /* ================ Navigation Menu Styles ================  */
+        .navbar-menu {
+            display: flex;
+            align-items: center;
+            list-style: none;
+            gap: 0.5rem;
+        }
+
+        .navbar-item {
+            position: relative;
+        }
+
+        .navbar-link {
+            display: flex;
+            align-items: center;
+            padding: 0.75rem 1rem;
+            text-decoration: none;
+            color: #4a5568;
+            font-weight: 500;
+            border-radius: 8px;
+            transition: all 0.3s ease;
+            position: relative;
+        }
+
+        .navbar-link:hover {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            text-decoration: none;
+            transform: translateY(-1px);
+        }
+
+        .navbar-link.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.15);
+        }
+
+        .navbar-link i {
+            margin-right: 0.5rem;
+            font-size: 1rem;
+        }
+
+        /* ================ Dropdown Styles ================  */
+        .dropdown {
+            position: relative;
+        }
+
+        .dropdown-content {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            background: white;
+            min-width: 200px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(0, 0, 0, 0.1);
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+            z-index: 1001;
+        }
+
+        .dropdown:hover .dropdown-content {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        .dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #4a5568;
+            text-decoration: none;
+            transition: all 0.2s ease;
+            border-radius: 8px;
+            margin: 0.25rem;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(102, 126, 234, 0.1);
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .dropdown-item i {
+            margin-right: 0.5rem;
+            width: 16px;
+            text-align: center;
+        }
+
+        /* ================ CTA Button Styles ================  */
+        .navbar-cta {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 0.6rem 1.5rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 600;
+            margin-left: 1rem;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+
+        .navbar-cta:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(102, 126, 234, 0.4);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ================ Mobile Menu Toggle ================  */
+        .mobile-menu-toggle {
+            display: none;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 0.5rem;
+            border: none;
+            background: transparent;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-menu-toggle:hover {
+            background: rgba(102, 126, 234, 0.1);
+        }
+
+        .hamburger {
+            width: 25px;
+            height: 3px;
+            background: #4a5568;
+            margin: 3px 0;
+            transition: all 0.3s ease;
+            border-radius: 2px;
+        }
+
+        .mobile-menu-toggle.active .hamburger:nth-child(1) {
+            transform: rotate(45deg) translate(5px, 5px);
+            background: #667eea;
+        }
+
+        .mobile-menu-toggle.active .hamburger:nth-child(2) {
+            opacity: 0;
+        }
+
+        .mobile-menu-toggle.active .hamburger:nth-child(3) {
+            transform: rotate(-45deg) translate(7px, -6px);
+            background: #667eea;
+        }
+
+        /* ================ Mobile Menu Styles ================  */
+        .mobile-menu {
+            position: fixed;
+            top: 70px;
+            left: 0;
+            right: 0;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+            transform: translateY(-100%);
+            opacity: 0;
+            transition: all 0.4s ease;
+            z-index: 999;
+            max-height: calc(100vh - 70px);
+            overflow-y: auto;
+        }
+
+        .mobile-menu.active {
+            transform: translateY(0);
+            opacity: 1;
+        }
+
+        .mobile-menu-list {
+            list-style: none;
+            padding: 1rem 0;
+        }
+
+        .mobile-menu-item {
+            margin: 0;
+        }
+
+        .mobile-menu-link {
+            display: flex;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            border-left: 3px solid transparent;
+        }
+
+        .mobile-menu-link:hover,
+        .mobile-menu-link.active {
+            color: #667eea;
+            background: rgba(102, 126, 234, 0.1);
+            border-left-color: #667eea;
+            text-decoration: none;
+        }
+
+        .mobile-menu-link i {
+            margin-right: 1rem;
+            font-size: 1.1rem;
+            width: 20px;
+        }
+
+        /* Mobile Dropdown */
+        .mobile-dropdown-content {
+            background: rgba(102, 126, 234, 0.05);
+            padding-left: 2rem;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+
+        .mobile-dropdown-content.active {
+            max-height: 300px;
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+        }
+
+        .mobile-dropdown-item {
+            display: block;
+            padding: 0.75rem 1rem;
+            color: #718096;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.2s ease;
+        }
+
+        .mobile-dropdown-item:hover {
+            color: #667eea;
+            text-decoration: none;
+        }
+
+        .mobile-dropdown-toggle {
+            margin-left: auto;
+            transition: transform 0.3s ease;
+        }
+
+        .mobile-dropdown-toggle.active {
+            transform: rotate(180deg);
+        }
+
+        /* ================ Back Button ================  */
+        .back-button {
+            position: fixed;
+            bottom: 2rem;
+            right: 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-decoration: none;
+            font-size: 1.2rem;
+            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 35px rgba(102, 126, 234, 0.5);
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ================ Demo Content ================  */
+        .demo-content {
+            margin-top: 70px;
+            padding: 2rem 1rem;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-radius: 20px;
+            margin: 2rem 0;
+        }
+
+        .hero-title {
+            font-size: 3rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        .hero-subtitle {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .demo-section {
+            background: white;
+            padding: 3rem 2rem;
+            border-radius: 15px;
+            margin: 2rem 0;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 600;
+            color: #2d3748;
+            margin-bottom: 1rem;
+        }
+
+        .section-content {
+            color: #718096;
+            line-height: 1.8;
+        }
+
+        /* ================ Responsive Styles ================  */
+        @media (max-width: 768px) {
+            .navbar-menu {
+                display: none;
+            }
+
+            .mobile-menu-toggle {
+                display: flex;
+            }
+
+            .navbar-cta {
+                display: none;
+            }
+
+            .hero-title {
+                font-size: 2rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1rem;
+            }
+
+            .demo-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .back-button {
+                bottom: 1rem;
+                right: 1rem;
+                width: 50px;
+                height: 50px;
+                font-size: 1rem;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .navbar-container {
+                padding: 0 0.75rem;
+            }
+
+            .navbar-logo {
+                font-size: 1.5rem;
+            }
+
+            .logo-icon {
+                width: 30px;
+                height: 30px;
+                font-size: 1rem;
+            }
+
+            .hero-section {
+                padding: 3rem 1.5rem;
+            }
+
+            .demo-section {
+                padding: 1.5rem 1rem;
+            }
+        }
+
+        /* ================ Accessibility ================  */
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        /* ================ Scroll Animations ================  */
+        .demo-section {
+            opacity: 0;
+            transform: translateY(30px);
+            transition: all 0.6s ease;
+        }
+
+        .demo-section.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar" id="navbar">
+        <div class="navbar-container">
+            <!-- Logo -->
+            <a href="#" class="navbar-logo">
+                <div class="logo-icon">
+                    <i class="fas fa-code"></i>
+                </div>
+                Code<span>Clip</span>
+            </a>
+
+            <!-- Desktop Menu -->
+            <ul class="navbar-menu" id="navbarMenu">
+                <li class="navbar-item">
+                    <a href="#home" class="navbar-link active">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#about" class="navbar-link">
+                        <i class="fas fa-info-circle"></i>
+                        About
+                    </a>
+                </li>
+                <li class="navbar-item dropdown">
+                    <a href="#services" class="navbar-link">
+                        <i class="fas fa-cog"></i>
+                        Services
+                        <i class="fas fa-chevron-down" style="margin-left: 0.5rem; font-size: 0.8rem;"></i>
+                    </a>
+                    <div class="dropdown-content">
+                        <a href="#web-dev" class="dropdown-item">
+                            <i class="fas fa-globe"></i>
+                            Web Development
+                        </a>
+                        <a href="#mobile-dev" class="dropdown-item">
+                            <i class="fas fa-mobile-alt"></i>
+                            Mobile Development
+                        </a>
+                        <a href="#ui-design" class="dropdown-item">
+                            <i class="fas fa-paint-brush"></i>
+                            UI/UX Design
+                        </a>
+                        <a href="#consulting" class="dropdown-item">
+                            <i class="fas fa-lightbulb"></i>
+                            Consulting
+                        </a>
+                    </div>
+                </li>
+                <li class="navbar-item">
+                    <a href="#portfolio" class="navbar-link">
+                        <i class="fas fa-briefcase"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li class="navbar-item">
+                    <a href="#contact" class="navbar-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </li>
+            </ul>
+
+            <!-- CTA Button -->
+            <a href="#get-started" class="navbar-cta">Get Started</a>
+
+            <!-- Mobile Menu Toggle -->
+            <button class="mobile-menu-toggle" id="mobileMenuToggle" aria-label="Toggle mobile menu">
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+                <span class="hamburger"></span>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobileMenu">
+            <ul class="mobile-menu-list">
+                <li class="mobile-menu-item">
+                    <a href="#home" class="mobile-menu-link active">
+                        <i class="fas fa-home"></i>
+                        Home
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#about" class="mobile-menu-link">
+                        <i class="fas fa-info-circle"></i>
+                        About
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#services" class="mobile-menu-link" id="mobileServicesToggle">
+                        <i class="fas fa-cog"></i>
+                        Services
+                        <i class="fas fa-chevron-down mobile-dropdown-toggle"></i>
+                    </a>
+                    <div class="mobile-dropdown-content" id="mobileServicesDropdown">
+                        <a href="#web-dev" class="mobile-dropdown-item">
+                            <i class="fas fa-globe"></i> Web Development
+                        </a>
+                        <a href="#mobile-dev" class="mobile-dropdown-item">
+                            <i class="fas fa-mobile-alt"></i> Mobile Development
+                        </a>
+                        <a href="#ui-design" class="mobile-dropdown-item">
+                            <i class="fas fa-paint-brush"></i> UI/UX Design
+                        </a>
+                        <a href="#consulting" class="mobile-dropdown-item">
+                            <i class="fas fa-lightbulb"></i> Consulting
+                        </a>
+                    </div>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#portfolio" class="mobile-menu-link">
+                        <i class="fas fa-briefcase"></i>
+                        Portfolio
+                    </a>
+                </li>
+                <li class="mobile-menu-item">
+                    <a href="#contact" class="mobile-menu-link">
+                        <i class="fas fa-envelope"></i>
+                        Contact
+                    </a>
+                </li>
+                <li class="mobile-menu-item" style="padding: 1rem 1.5rem;">
+                    <a href="#get-started" class="navbar-cta" style="display: inline-block; margin-left: 0;">
+                        Get Started
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Demo Content -->
+    <div class="demo-content">
+        <div class="hero-section">
+            <h1 class="hero-title">Responsive Navbar</h1>
+            <p class="hero-subtitle">A modern navigation bar with dropdown menus and mobile hamburger menu</p>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="section-title">Features</h2>
+            <div class="section-content">
+                <ul style="list-style-type: none; padding: 0;">
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Responsive design that adapts to all screen sizes</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Smooth hamburger menu animation for mobile</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Dropdown menus with hover effects</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Glassmorphism effect with backdrop blur</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Active link highlighting</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Scroll-based navbar styling changes</li>
+                    <li style="margin-bottom: 0.5rem;"><i class="fas fa-check" style="color: #38a169; margin-right: 0.5rem;"></i> Accessibility features with keyboard navigation</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="section-title">How It Works</h2>
+            <div class="section-content">
+                <p><strong>Desktop View:</strong> The navbar displays all menu items horizontally with dropdown functionality on hover.</p>
+                <br>
+                <p><strong>Mobile View:</strong> The hamburger menu appears, and clicking it reveals a full-screen mobile menu with collapsible dropdowns.</p>
+                <br>
+                <p><strong>Responsive Breakpoints:</strong> The navbar automatically switches to mobile mode at 768px viewport width.</p>
+            </div>
+        </div>
+
+        <div class="demo-section">
+            <h2 class="section-title">Technical Implementation</h2>
+            <div class="section-content">
+                <p><strong>CSS Features:</strong></p>
+                <ul style="margin: 1rem 0 1rem 2rem;">
+                    <li>Flexbox layout for perfect alignment</li>
+                    <li>CSS transitions for smooth animations</li>
+                    <li>Media queries for responsive behavior</li>
+                    <li>Transform effects for hamburger animation</li>
+                </ul>
+                <br>
+                <p><strong>JavaScript Features:</strong></p>
+                <ul style="margin: 1rem 0 1rem 2rem;">
+                    <li>Event listeners for menu interactions</li>
+                    <li>Scroll detection for navbar styling</li>
+                    <li>Mobile dropdown toggle functionality</li>
+                    <li>Active link management</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <!-- Back Button -->
+    <a href="uiChallenges.html" class="back-button" title="Back to UI Challenges">
+        <i class="fas fa-arrow-left"></i>
+    </a>
+
+    <script>
+        // DOM Elements
+        const navbar = document.getElementById('navbar');
+        const mobileMenuToggle = document.getElementById('mobileMenuToggle');
+        const mobileMenu = document.getElementById('mobileMenu');
+        const mobileServicesToggle = document.getElementById('mobileServicesToggle');
+        const mobileServicesDropdown = document.getElementById('mobileServicesDropdown');
+        const navLinks = document.querySelectorAll('.navbar-link, .mobile-menu-link');
+        const demoSections = document.querySelectorAll('.demo-section');
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            setupScrollAnimations();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            // Mobile menu toggle
+            mobileMenuToggle.addEventListener('click', toggleMobileMenu);
+
+            // Mobile dropdown toggle
+            mobileServicesToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                toggleMobileDropdown();
+            });
+
+            // Close mobile menu when clicking on links
+            document.querySelectorAll('.mobile-menu-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        closeMobileMenu();
+                        updateActiveLink(this);
+                    }
+                });
+            });
+
+            // Update active links for desktop menu
+            document.querySelectorAll('.navbar-link').forEach(link => {
+                link.addEventListener('click', function(e) {
+                    if (this.getAttribute('href').startsWith('#')) {
+                        updateActiveLink(this);
+                    }
+                });
+            });
+
+            // Scroll event for navbar styling
+            window.addEventListener('scroll', handleScroll);
+
+            // Close mobile menu when clicking outside
+            document.addEventListener('click', function(e) {
+                if (!navbar.contains(e.target)) {
+                    closeMobileMenu();
+                }
+            });
+
+            // Keyboard navigation
+            setupKeyboardNavigation();
+        }
+
+        // Toggle mobile menu
+        function toggleMobileMenu() {
+            const isActive = mobileMenuToggle.classList.contains('active');
+            
+            if (isActive) {
+                closeMobileMenu();
+            } else {
+                openMobileMenu();
+            }
+        }
+
+        // Open mobile menu
+        function openMobileMenu() {
+            mobileMenuToggle.classList.add('active');
+            mobileMenu.classList.add('active');
+            document.body.style.overflow = 'hidden';
+        }
+
+        // Close mobile menu
+        function closeMobileMenu() {
+            mobileMenuToggle.classList.remove('active');
+            mobileMenu.classList.remove('active');
+            document.body.style.overflow = '';
+            
+            // Close any open dropdowns
+            mobileServicesDropdown.classList.remove('active');
+            document.querySelector('.mobile-dropdown-toggle').classList.remove('active');
+        }
+
+        // Toggle mobile dropdown
+        function toggleMobileDropdown() {
+            const dropdown = mobileServicesDropdown;
+            const toggle = document.querySelector('.mobile-dropdown-toggle');
+            
+            dropdown.classList.toggle('active');
+            toggle.classList.toggle('active');
+        }
+
+        // Handle scroll events
+        function handleScroll() {
+            const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+            
+            if (scrollTop > 50) {
+                navbar.classList.add('scrolled');
+            } else {
+                navbar.classList.remove('scrolled');
+            }
+        }
+
+        // Update active link
+        function updateActiveLink(activeLink) {
+            // Remove active class from all links
+            navLinks.forEach(link => link.classList.remove('active'));
+            
+            // Add active class to clicked link
+            activeLink.classList.add('active');
+            
+            // Also update corresponding link in other menu
+            const href = activeLink.getAttribute('href');
+            const correspondingLink = document.querySelector(
+                activeLink.classList.contains('navbar-link') ? 
+                `.mobile-menu-link[href="${href}"]` : 
+                `.navbar-link[href="${href}"]`
+            );
+            
+            if (correspondingLink) {
+                correspondingLink.classList.add('active');
+            }
+        }
+
+        // Setup scroll animations for demo sections
+        function setupScrollAnimations() {
+            const observerOptions = {
+                threshold: 0.1,
+                rootMargin: '0px 0px -50px 0px'
+            };
+
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                    }
+                });
+            }, observerOptions);
+
+            demoSections.forEach(section => {
+                observer.observe(section);
+            });
+        }
+
+        // Setup keyboard navigation
+        function setupKeyboardNavigation() {
+            // Mobile menu toggle keyboard support
+            mobileMenuToggle.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleMobileMenu();
+                }
+            });
+
+            // Escape key to close mobile menu
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeMobileMenu();
+                }
+            });
+
+            // Arrow key navigation for menu items
+            const menuItems = document.querySelectorAll('.navbar-link, .mobile-menu-link');
+            menuItems.forEach((item, index) => {
+                item.addEventListener('keydown', function(e) {
+                    let targetIndex;
+                    
+                    switch(e.key) {
+                        case 'ArrowDown':
+                            targetIndex = (index + 1) % menuItems.length;
+                            menuItems[targetIndex].focus();
+                            e.preventDefault();
+                            break;
+                        case 'ArrowUp':
+                            targetIndex = (index - 1 + menuItems.length) % menuItems.length;
+                            menuItems[targetIndex].focus();
+                            e.preventDefault();
+                            break;
+                    }
+                });
+            });
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Handle window resize
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 768) {
+                closeMobileMenu();
+            }
+        });
+    </script>
+</body>
+</html>

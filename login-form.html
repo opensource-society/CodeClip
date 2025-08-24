@@ -1,0 +1,716 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Modern Login Form - CodeClip</title>
+    
+    <!-- ================ Favicon ================  -->
+    <link rel="shortcut icon" href="assets/favicon/codeClip-favicon.png" type="image/png">
+    
+    <!-- ================ Google Fonts ================  -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <!-- ================ Font Awesome ================  -->
+    <link rel="stylesheet" href="styles/fontawesome.css">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 2rem 1rem;
+        }
+
+        .form-container {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+            width: 100%;
+            max-width: 450px;
+            padding: 3rem 2.5rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .form-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #667eea, #764ba2);
+        }
+
+        .form-header {
+            text-align: center;
+            margin-bottom: 2.5rem;
+        }
+
+        .form-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: #2d3748;
+            margin-bottom: 0.5rem;
+            transition: all 0.3s ease;
+        }
+
+        .form-subtitle {
+            color: #718096;
+            font-size: 1rem;
+            font-weight: 400;
+        }
+
+        .form-toggle {
+            display: flex;
+            background: #f7fafc;
+            border-radius: 12px;
+            padding: 0.25rem;
+            margin-bottom: 2rem;
+            position: relative;
+        }
+
+        .toggle-option {
+            flex: 1;
+            padding: 0.75rem 1rem;
+            text-align: center;
+            border-radius: 10px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 2;
+        }
+
+        .toggle-option.active {
+            color: white;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+
+        .form-group {
+            margin-bottom: 1.5rem;
+            position: relative;
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #4a5568;
+            font-size: 0.9rem;
+        }
+
+        .form-input {
+            width: 100%;
+            padding: 1rem 1.25rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 12px;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            background: white;
+            font-family: inherit;
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: #667eea;
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            transform: translateY(-2px);
+        }
+
+        .form-input.error {
+            border-color: #e53e3e;
+            box-shadow: 0 0 0 3px rgba(229, 62, 62, 0.1);
+        }
+
+        .form-input.success {
+            border-color: #38a169;
+            box-shadow: 0 0 0 3px rgba(56, 161, 105, 0.1);
+        }
+
+        .input-icon {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            color: #a0aec0;
+            transition: all 0.3s ease;
+        }
+
+        .form-input:focus + .input-icon {
+            color: #667eea;
+        }
+
+        .error-message {
+            color: #e53e3e;
+            font-size: 0.85rem;
+            margin-top: 0.5rem;
+            opacity: 0;
+            transform: translateY(-10px);
+            transition: all 0.3s ease;
+        }
+
+        .error-message.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: 1rem;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: #a0aec0;
+            transition: all 0.3s ease;
+        }
+
+        .password-toggle:hover {
+            color: #667eea;
+        }
+
+        .forgot-password {
+            text-align: right;
+            margin-bottom: 2rem;
+        }
+
+        .forgot-password a {
+            color: #667eea;
+            text-decoration: none;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .forgot-password a:hover {
+            color: #5a6fd8;
+            text-decoration: underline;
+        }
+
+        .submit-btn {
+            width: 100%;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            border: none;
+            border-radius: 12px;
+            font-size: 1.1rem;
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .submit-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.4);
+        }
+
+        .submit-btn:active {
+            transform: translateY(0);
+        }
+
+        .submit-btn.loading {
+            pointer-events: none;
+        }
+
+        .btn-text {
+            transition: all 0.3s ease;
+        }
+
+        .loading-spinner {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: white;
+            animation: spin 1s ease-in-out infinite;
+            opacity: 0;
+        }
+
+        .submit-btn.loading .btn-text {
+            opacity: 0;
+        }
+
+        .submit-btn.loading .loading-spinner {
+            opacity: 1;
+        }
+
+        @keyframes spin {
+            to { transform: translate(-50%, -50%) rotate(360deg); }
+        }
+
+        .social-login {
+            margin-top: 2rem;
+            text-align: center;
+        }
+
+        .social-divider {
+            position: relative;
+            margin: 2rem 0;
+            text-align: center;
+        }
+
+        .social-divider::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 0;
+            right: 0;
+            height: 1px;
+            background: #e2e8f0;
+        }
+
+        .social-divider span {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 0 1rem;
+            color: #a0aec0;
+            font-size: 0.9rem;
+        }
+
+        .social-buttons {
+            display: flex;
+            gap: 1rem;
+        }
+
+        .social-btn {
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e2e8f0;
+            border-radius: 10px;
+            background: white;
+            color: #4a5568;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .social-btn:hover {
+            border-color: #667eea;
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .back-button {
+            position: fixed;
+            top: 2rem;
+            left: 2rem;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            padding: 0.5rem 1rem;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            z-index: 1000;
+        }
+
+        .back-button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            color: white;
+            text-decoration: none;
+            transform: translateX(-5px);
+        }
+
+        /* Additional fields for signup */
+        .signup-fields {
+            opacity: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: all 0.4s ease;
+        }
+
+        .signup-fields.show {
+            opacity: 1;
+            max-height: 200px;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 480px) {
+            .form-container {
+                padding: 2rem 1.5rem;
+                margin: 1rem;
+            }
+            
+            .form-title {
+                font-size: 1.8rem;
+            }
+            
+            .social-buttons {
+                flex-direction: column;
+            }
+            
+            .back-button {
+                position: static;
+                margin-bottom: 1rem;
+                display: inline-block;
+            }
+        }
+
+        /* Animation for form entrance */
+        .form-container {
+            animation: slideUp 0.6s ease-out;
+        }
+
+        @keyframes slideUp {
+            from {
+                opacity: 0;
+                transform: translateY(50px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Success animation */
+        .success-checkmark {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #38a169;
+            margin: 0 auto 1rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            opacity: 0;
+            transform: scale(0);
+            transition: all 0.3s ease;
+        }
+
+        .success-checkmark.show {
+            opacity: 1;
+            transform: scale(1);
+        }
+    </style>
+</head>
+<body>
+    <a href="uiChallenges.html" class="back-button">← Back to Challenges</a>
+    
+    <div class="form-container">
+        <div class="form-header">
+            <h1 class="form-title">Welcome Back</h1>
+            <p class="form-subtitle">Sign in to your account to continue</p>
+        </div>
+
+        <div class="form-toggle">
+            <div class="toggle-option active" data-mode="login">Login</div>
+            <div class="toggle-option" data-mode="signup">Sign Up</div>
+        </div>
+
+        <form id="authForm" novalidate>
+            <div class="signup-fields" id="signupFields">
+                <div class="form-group">
+                    <label class="form-label" for="fullName">Full Name</label>
+                    <input type="text" id="fullName" name="fullName" class="form-input" placeholder="Enter your full name">
+                    <i class="fas fa-user input-icon"></i>
+                    <div class="error-message" id="fullNameError">Please enter your full name</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="email">Email Address</label>
+                <input type="email" id="email" name="email" class="form-input" placeholder="Enter your email" required>
+                <i class="fas fa-envelope input-icon"></i>
+                <div class="error-message" id="emailError">Please enter a valid email address</div>
+            </div>
+
+            <div class="form-group">
+                <label class="form-label" for="password">Password</label>
+                <input type="password" id="password" name="password" class="form-input" placeholder="Enter your password" required>
+                <i class="fas fa-eye password-toggle" id="passwordToggle"></i>
+                <div class="error-message" id="passwordError">Password must be at least 8 characters long</div>
+            </div>
+
+            <div class="signup-fields" id="signupFields2">
+                <div class="form-group">
+                    <label class="form-label" for="confirmPassword">Confirm Password</label>
+                    <input type="password" id="confirmPassword" name="confirmPassword" class="form-input" placeholder="Confirm your password">
+                    <i class="fas fa-eye password-toggle" id="confirmPasswordToggle"></i>
+                    <div class="error-message" id="confirmPasswordError">Passwords do not match</div>
+                </div>
+            </div>
+
+            <div class="forgot-password" id="forgotPassword">
+                <a href="#" id="forgotLink">Forgot your password?</a>
+            </div>
+
+            <button type="submit" class="submit-btn" id="submitBtn">
+                <span class="btn-text">Sign In</span>
+                <div class="loading-spinner"></div>
+            </button>
+        </form>
+
+        <div class="social-divider">
+            <span>or continue with</span>
+        </div>
+
+        <div class="social-buttons">
+            <a href="#" class="social-btn" id="googleBtn">
+                <i class="fab fa-google"></i>
+                Google
+            </a>
+            <a href="#" class="social-btn" id="githubBtn">
+                <i class="fab fa-github"></i>
+                GitHub
+            </a>
+        </div>
+    </div>
+
+    <script>
+        // DOM Elements
+        const toggleOptions = document.querySelectorAll('.toggle-option');
+        const formTitle = document.querySelector('.form-title');
+        const formSubtitle = document.querySelector('.form-subtitle');
+        const signupFields = document.querySelectorAll('.signup-fields');
+        const forgotPassword = document.getElementById('forgotPassword');
+        const submitBtn = document.getElementById('submitBtn');
+        const btnText = document.querySelector('.btn-text');
+        const authForm = document.getElementById('authForm');
+        const passwordToggles = document.querySelectorAll('.password-toggle');
+        
+        let currentMode = 'login';
+
+        // Initialize
+        document.addEventListener('DOMContentLoaded', function() {
+            setupEventListeners();
+            setupPasswordToggles();
+            setupFormValidation();
+        });
+
+        // Setup event listeners
+        function setupEventListeners() {
+            toggleOptions.forEach(option => {
+                option.addEventListener('click', handleModeToggle);
+            });
+
+            authForm.addEventListener('submit', handleFormSubmit);
+
+            // Social login buttons
+            document.getElementById('googleBtn').addEventListener('click', handleSocialLogin);
+            document.getElementById('githubBtn').addEventListener('click', handleSocialLogin);
+
+            // Forgot password link
+            document.getElementById('forgotLink').addEventListener('click', handleForgotPassword);
+        }
+
+        // Handle mode toggle between login/signup
+        function handleModeToggle(e) {
+            const mode = e.target.dataset.mode;
+            if (mode === currentMode) return;
+
+            currentMode = mode;
+
+            // Update active toggle
+            toggleOptions.forEach(opt => opt.classList.remove('active'));
+            e.target.classList.add('active');
+
+            if (mode === 'signup') {
+                formTitle.textContent = 'Create Account';
+                formSubtitle.textContent = 'Sign up to get started with CodeClip';
+                btnText.textContent = 'Create Account';
+                signupFields.forEach(field => field.classList.add('show'));
+                forgotPassword.style.display = 'none';
+            } else {
+                formTitle.textContent = 'Welcome Back';
+                formSubtitle.textContent = 'Sign in to your account to continue';
+                btnText.textContent = 'Sign In';
+                signupFields.forEach(field => field.classList.remove('show'));
+                forgotPassword.style.display = 'block';
+            }
+        }
+
+        // Setup password toggle functionality
+        function setupPasswordToggles() {
+            passwordToggles.forEach(toggle => {
+                toggle.addEventListener('click', function() {
+                    const input = this.parentElement.querySelector('.form-input');
+                    const type = input.type === 'password' ? 'text' : 'password';
+                    input.type = type;
+                    
+                    this.classList.toggle('fa-eye');
+                    this.classList.toggle('fa-eye-slash');
+                });
+            });
+        }
+
+        // Form validation
+        function setupFormValidation() {
+            const inputs = document.querySelectorAll('.form-input');
+            
+            inputs.forEach(input => {
+                input.addEventListener('blur', validateField);
+                input.addEventListener('input', clearFieldError);
+            });
+        }
+
+        function validateField(e) {
+            const field = e.target;
+            const value = field.value.trim();
+            const fieldName = field.name;
+            let isValid = true;
+
+            // Clear previous states
+            field.classList.remove('error', 'success');
+
+            switch(fieldName) {
+                case 'fullName':
+                    if (currentMode === 'signup' && value.length < 2) {
+                        showFieldError(field, 'Please enter your full name');
+                        isValid = false;
+                    }
+                    break;
+                    
+                case 'email':
+                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                    if (!emailRegex.test(value)) {
+                        showFieldError(field, 'Please enter a valid email address');
+                        isValid = false;
+                    }
+                    break;
+                    
+                case 'password':
+                    if (value.length < 8) {
+                        showFieldError(field, 'Password must be at least 8 characters long');
+                        isValid = false;
+                    }
+                    break;
+                    
+                case 'confirmPassword':
+                    if (currentMode === 'signup' && value !== document.getElementById('password').value) {
+                        showFieldError(field, 'Passwords do not match');
+                        isValid = false;
+                    }
+                    break;
+            }
+
+            if (isValid && value) {
+                field.classList.add('success');
+            }
+
+            return isValid;
+        }
+
+        function showFieldError(field, message) {
+            field.classList.add('error');
+            const errorElement = field.parentElement.querySelector('.error-message');
+            errorElement.textContent = message;
+            errorElement.classList.add('show');
+        }
+
+        function clearFieldError(e) {
+            const field = e.target;
+            field.classList.remove('error');
+            const errorElement = field.parentElement.querySelector('.error-message');
+            errorElement.classList.remove('show');
+        }
+
+        // Handle form submission
+        function handleFormSubmit(e) {
+            e.preventDefault();
+            
+            // Validate all fields
+            const inputs = document.querySelectorAll('.form-input');
+            let isFormValid = true;
+            
+            inputs.forEach(input => {
+                if (input.offsetParent !== null) { // Only validate visible fields
+                    if (!validateField({ target: input })) {
+                        isFormValid = false;
+                    }
+                }
+            });
+
+            if (!isFormValid) return;
+
+            // Show loading state
+            submitBtn.classList.add('loading');
+
+            // Simulate API call
+            setTimeout(() => {
+                submitBtn.classList.remove('loading');
+                showSuccessMessage();
+            }, 2000);
+        }
+
+        function showSuccessMessage() {
+            const successMessage = currentMode === 'login' ? 'Successfully signed in!' : 'Account created successfully!';
+            
+            // Create success indicator
+            const checkmark = document.createElement('div');
+            checkmark.className = 'success-checkmark';
+            checkmark.innerHTML = '<i class="fas fa-check"></i>';
+            
+            const container = document.querySelector('.form-container');
+            container.insertBefore(checkmark, container.firstChild);
+            
+            setTimeout(() => {
+                checkmark.classList.add('show');
+            }, 100);
+
+            // Show success alert
+            setTimeout(() => {
+                alert(`🎉 ${successMessage}\n\nThis would normally redirect you to the dashboard.`);
+                checkmark.remove();
+            }, 1500);
+        }
+
+        // Handle social login
+        function handleSocialLogin(e) {
+            e.preventDefault();
+            const provider = e.currentTarget.id === 'googleBtn' ? 'Google' : 'GitHub';
+            
+            e.currentTarget.style.pointerEvents = 'none';
+            e.currentTarget.style.opacity = '0.7';
+            
+            setTimeout(() => {
+                alert(`Redirecting to ${provider} authentication...\n\nThis would normally open ${provider}'s OAuth flow.`);
+                e.currentTarget.style.pointerEvents = 'auto';
+                e.currentTarget.style.opacity = '1';
+            }, 1000);
+        }
+
+        // Handle forgot password
+        function handleForgotPassword(e) {
+            e.preventDefault();
+            const email = document.getElementById('email').value;
+            
+            if (!email) {
+                alert('Please enter your email address first.');
+                document.getElementById('email').focus();
+                return;
+            }
+            
+            alert(`Password reset link sent to ${email}!\n\nThis would normally send a real email.`);
+        }
+
+        // Add smooth scroll behavior
+        document.documentElement.style.scrollBehavior = 'smooth';
+    </script>
+</body>
+</html>
