@@ -1,0 +1,160 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f7f9fc;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+header {
+  text-align: center;
+  padding: 2rem 1rem;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+}
+
+header h1 {
+  font-size: 2rem;
+  color: #1a73e8;
+}
+
+header p {
+  font-size: 1rem;
+  color: #666;
+  margin-top: 0.5rem;
+}
+
+/* Main Container */
+.container {
+  max-width: 1200px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+}
+
+/* API Section */
+.api-section {
+  background: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+  margin-bottom: 1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px;
+}
+
+.api-section input {
+  flex: 1;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+}
+
+.api-section button {
+  background: #1a73e8;
+  color: white;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.api-section button:hover {
+  background: #155fc0;
+}
+
+.status-dot {
+  font-size: 0.9rem;
+  color: #d00;
+}
+
+/* Editor and Console Layout */
+.editor-console-wrapper {
+  display: flex;
+  gap: 20px;
+  margin-top: 2rem;
+}
+
+.editor-section, .console-section {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.05);
+}
+
+/* Editor */
+.editor-section h2, .console-section h2 {
+  font-size: 1.2rem;
+  color: #1a73e8;
+  margin-bottom: 0.5rem;
+}
+
+textarea, select {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  font-family: Consolas, monospace;
+  font-size: 0.9rem;
+  background: #f9f9f9;
+  color: #333;
+}
+
+/* Buttons */
+.button-group button,
+.quick-examples button,
+.console-section button {
+  background: #1a73e8;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  margin: 5px 5px 0 0;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.button-group button:hover,
+.quick-examples button:hover,
+.console-section button:hover {
+  background: #155fc0;
+}
+
+/* Output Console */
+pre#outputConsole {
+  background: #f9f9f9;
+  color: #333;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #ddd;
+  min-height: 200px;
+  white-space: pre-wrap;
+  font-size: 0.9rem;
+  overflow-x: auto;
+}
+
+/* Footer */
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  color: #888;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .editor-console-wrapper {
+    flex-direction: column;
+  }
+}
