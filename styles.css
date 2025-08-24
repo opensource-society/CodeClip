@@ -880,3 +880,44 @@ body {
 .icon-container i:hover {
   transform: scale(1.2);
 }
+/* Make hamburger icon visible (white lines) */
+.navbar-toggler {
+  border: none;
+}
+.navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3E%3Cpath stroke='white' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+
+
+
+
+
+/* Mobile navbar (<= 991px) */
+@media (max-width: 991px) {
+  .navbar-collapse {
+    background-color: #212529; /* dark dropdown background */
+    padding: 1rem;
+    border-radius: 8px;
+  }
+
+  .navbar-nav .nav-link {
+    color: #fff;
+    margin: 5px 0;
+    padding: 10px 15px;
+    border-radius: 6px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* Hover effect */
+  .navbar-nav .nav-link:hover {
+    color: #2a74ff;   /* highlight blue */
+    background-color: transparent; /* no blue box */
+  }
+
+  /* Active link */
+  .navbar-nav .nav-item .nav-link.active {
+    background-color: transparent !important; /* force remove bg */
+    color: #2a74ff !important; /* highlight blue */
+    font-weight: bold;
+  }
+}
