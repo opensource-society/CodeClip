@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: rgb(214, 240, 240);
+        }
+
+        h1 {
+            display: flex;
+            justify-content: center;
+        }
+
+        .register {
+            background-color: rgb(180, 233, 233);
+            width: 500px;
+            padding: 10px 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 2rem;
+            font-weight: bold;
+            border: 2px solid black;
+            border-radius: 30px;
+            margin: 0 auto;
+        }
+
+        form {
+            width: 100%;
+            max-width: 300px;
+        }
+
+        input,
+        button {
+            padding: 8px;
+            width: 100%;
+            margin: 5px 0 15px 0;
+            max-width: 300px;
+            font-size: 1rem;
+            box-sizing: border-box;
+        }
+
+        button {
+            padding: 8px;
+            cursor: pointer;
+            color: rgb(111, 5, 100);
+            font-size: 1.5rem;
+            font-weight: 550;
+            background-color: burlywood;
+            border: 1px solid black;
+        }
+
+        .divider {
+            display: flex;
+            align-items: center;
+            text-align: center;
+            margin: 20px 0;
+            justify-content: center;
+            margin: 15px auto;
+            max-width: 500px;
+            /* spacing above and below */
+        }
+
+        .divider::before,
+        .divider::after {
+            content: '';
+            flex: 1;
+            border-bottom: 1px solid #000000;
+
+        }
+
+        .divider::before {
+            margin-right: 10px;
+            /* spacing between line and text */
+        }
+
+        .divider::after {
+            margin-left: 10px;
+            /* spacing between text and line */
+        }
+
+        .divider span {
+            color: #000000;
+
+            font-weight: bold;
+            font-size: 0.9rem;
+            /* slightly smaller than body text */
+        }
+
+        .have {
+            display: flex;
+            justify-content: center;
+            font-size: 1rem;
+        }
+
+        .required::after {
+            content: " *";
+            color: red;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Registration form</h1>
+    <div class="register">
+        <form>
+            <label for="fname" class="required">Name</label>
+            <input type="text" id="fname" name="fname" required><br>
+            <label for="email" class="required">Email address</label>
+           <input type="email" id="email" name="email" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" required placeholder="example@gmail.com"><br>
+            <label for="phone" class="required">Phone No.</label><br>
+            <input type="tel" id="phone" name="phone" pattern="[0-9]{10}" required><br>
+            <button type="submit">Register</button>
+        </form>
+    </div>
+    <div class="divider">
+        <span>OR</span>
+    </div>
+    <div class="have">
+        Already have an account ? 
+        <a href="#login" id="loginLink"> Log in</a>
+    </div>
+    <div class="login">
+        <form>
+            <label for="login-email" class="required">Email address</label><br>
+       <input type="email" id="login-email" name="email" pattern="^[a-zA-Z0-9._%+-]+@gmail\.com$" required placeholder="example@gmail.com"><br>
+            <label for="password" class="required">Password</label><br>
+            <input type="password" id="password" name="password" required><br>
+            <button type="submit">Log in</button>
+        </form>
+    </div>
+
+</body>
+<script>
+    let login = document.querySelector(".login");
+    let register = document.querySelector(".register");
+    let loginLink = document.getElementById("loginLink");
+    let have = document.querySelector(".have");
+    let divider = document.querySelector(".divider");
+    // Initially hide login form
+    login.style.display = "none";
+
+    // Show login and hide register when link is clicked
+    loginLink.addEventListener("click", function () {
+
+        register.innerHTML = login.innerHTML;
+
+        have.style.display = "none";
+        divider.style.display = "none";
+    });
+</script>
+
+
+</html>
