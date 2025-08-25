@@ -674,6 +674,7 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: center;
   color: white;
   transition: all 0.8s ease;
   background-position: 0;
@@ -684,15 +685,10 @@ body {
   font-size: 36px;
 }
 
-.card .title {
-  margin-top: 30px;
-  font-weight: 600;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  font-size: 1rem;
-}
 
-.card .text {
+
+
+/* .card {
   width: 80%;
   margin: 20px auto 0;
   font-size: 13px;
@@ -702,15 +698,30 @@ body {
   max-height: 0;
   transition: all 0.3s ease;
 }
+*/
+
+.card1{
+  height: 70%;
+}
+
+.card{
+  height: 350px;
+  transition: transform;
+}
+
 
 .card:hover {
-  height: 270px;
+  height: 350px;
+  transform: scale(1.07);
 }
 
-.card:hover .text {
-  opacity: 1;
-  max-height: 40px;
+
+
+.card-Header{
+  margin-top: 30px;
 }
+
+
 
 .card:hover .icon {
   background-position: -120px;
@@ -879,4 +890,68 @@ body {
 }
 .icon-container i:hover {
   transform: scale(1.2);
+}
+
+.img-fluid{
+  width: 450px;
+  height: 450px;
+  position:relative;
+  top: 60px;
+  margin-bottom: 40px;
+}
+.herosectionimage{
+  width: 800px;
+  height: 900px;
+  position: absolute;
+  top: 50px;
+}
+
+.ctaBtn-Container{
+  margin-bottom: 20px;
+}
+
+.highlight{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bolder;
+  font-size: 70px;
+  color: #3730a3;
+}
+
+#leaderboardSection{
+  margin-left: 180px;
+  margin-top: 40px;
+}
+
+.leaderboard-Img{
+  width: 70px;
+  height: 70px;
+}
+
+.userName{
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-weight: bold;
+  padding-left: 30px;
+}
+
+.rank{
+  font-family: 'Times New Roman', Times, serif;
+  font-weight: bold;
+  font-size: 40px;
+  color: green;
+}
+
+#aboutSection{
+  margin-top: 30px;
+}
+
+.secHeader{
+  font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  font-weight: bolder;
+}
+
+.card-Btn{
+  background-color: green;
+  color: white;
+  padding: 5px 5px;
+  border-radius: 5px;
 }
