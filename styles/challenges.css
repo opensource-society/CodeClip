@@ -16,33 +16,16 @@
   --hard-bg: #f8d7da;
   --hard-text: #721c24;
 }
-/* correction acc to github bot */
+
 [data-theme="dark"] {
   --bg-color: #1a202c;
-  --text-color:white;
+  --text-color: #e2e8f0;
   --card-bg: #2d3748;
   --border-color: #4a5568;
   --input-bg: #2d3748;
   --accent-color: #63b3ed;
   --accent-color-hover: #90cdf4;
-[data-theme="dark"] {
-  --bg-color: #1a202c;
-  --text-color:white;
-  --card-bg: #2d3748;
-  --border-color: #4a5568;
-  --input-bg: #2d3748;
-  --accent-color: #63b3ed;
-  --accent-color-hover: #90cdf4;
-  --easy-bg: #1c4532;
-  --easy-text: #68d391;
-  --medium-bg: #4a3a19;
-  --medium-text: #f6e05e;
-  --hard-bg: #521b22;
-  --hard-text: #f56565;
-}
-[data-theme="dark"] .nav__link {
-  color: white;
-}
+
   --easy-bg: #1c4532;
   --easy-text: #68d391;
   --medium-bg: #4a3a19;
@@ -83,9 +66,9 @@ body {
 
 /* === HEADER === */
 .header {
-  background: var(--card-bg, #fff);
-  border-bottom: 1px solid var(--border-color, #e0e0e0);
-  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.05);
+  background: var(--card-bg);
+  border-bottom: 1px solid var(--border-color);
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
   position: sticky;
   top: 0;
   z-index: 100;
@@ -101,20 +84,10 @@ body {
 }
 
 .header__logo .logo-text {
+  color: var(--accent-color);
   font-size: 1.8rem;
   font-weight: 700;
   letter-spacing: 0.5px;
-  color: #3366ff;
-}
-.header__logo .logo-text2 {
-  font-size: 1.8rem;
-  font-weight: 700;
-  letter-spacing: 0.5px;
-  color: #000;
-}
-
-.header__logo .logo-text span {
-  color: #000; /* optional for 'Clip' */
 }
 
 .header__nav {
@@ -124,44 +97,54 @@ body {
 .nav__list {
   list-style: none;
   display: flex;
-  gap: 1.2rem;
+  gap: 1.5rem;
   margin: 0;
   padding: 0;
+  transition: all 0.3s ease;
+}
+
+/* Mobile nav (hidden by default) */
+.nav__list.open {
+  display: flex !important;
 }
 
 .nav__link {
-  display: inline-block;
+  color: var(--text-color);
   text-decoration: none;
-  color: #1e293b;
-  font-size: 1.1rem;
   font-weight: 500;
+  font-size: 1rem;
   position: relative;
-  transition: all 0.3s ease;
-  padding: 0.6rem 1.2rem;
-  border-radius: 16px;
-  box-shadow: 0 6px 10px rgba(0, 128, 0, 0.3); 
-
+  padding: 10px;
+  transition: color 0.3s ease;
+  border-radius: 10px;
+  box-shadow: 1px 4px 12px rgba(180, 244, 202, 0.7);
+ 
 }
 
-.nav__link:hover,
-.nav__link:focus {
+.nav__link:hover {
   color: white;
-  background: linear-gradient(to right, #0f172a, #2563eb); /* Dark to blue */
-  transform: scale(1.05);
-  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+  background: #0a0101;
+  background: linear-gradient(90deg, rgba(10, 1, 1, 1) 0%, rgba(4, 4, 105, 1) 50%, rgba(7, 101, 184, 1) 100%);
+  box-shadow: 1px 4px 12px rgba(180, 244, 202, 0.7);
 }
 
-nav__link.active {
-  color: #3366ff;
+.nav__link.active::after{
+  content: '';
+  display: block;
+  border:2px solid rgb(164, 248, 188);
+  width: 100%;
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  border-radius: 2px;
 }
 
-.nav__link.active::after,
-.nav__link:hover::after,
-.nav__link:focus::after {
-  display: none; /* remove underline effect */
-} 
+.nav__link.active:hover::after{
+  content: '';
+  display: none;
+}
 
-/* Hamburger toggle (unchanged) */
+/* Hamburger toggle */
 .header__toggle {
   display: none;
   flex-direction: column;
@@ -176,7 +159,7 @@ nav__link.active {
 .hamburger {
   width: 100%;
   height: 3px;
-  background-color: var(--text-color, #111);
+  background-color: var(--text-color);
   border-radius: 2px;
   transition: background-color 0.3s;
 }
@@ -193,52 +176,13 @@ nav__link.active {
   font-size: 3.5rem;
   font-weight: 700;
   margin-bottom: 1rem;
-  color: #3366ff;
 }
-
-.challenges-hero__title .highlight {
-  color: black; /* Overrides the blue from parent */
-}
-
 
 .challenges-hero__description {
   font-size: 1.25rem;
   max-width: 660px;
   margin: 0 auto;
   opacity: 0.9;
-  text-align: center;
-  font-family: monospace;
-}
-
-/* Typing and deleting animation */
-.typing-loop {
-  display: inline-block;
-  white-space: nowrap;
-  overflow: hidden;
-  vertical-align: middle; /* Align it to middle */
-  line-height: 1.5;        /* Adjust line height */
-  border-right: 2px solid black;
-  animation: typing 3s steps(22, end) alternate infinite,
-             blink 0.7s step-end infinite;
-}
-
-
-@keyframes typing {
-  0% {
-    width: 0;
-  }
-  50% {
-    width: 22ch; /* Length of 'for every developer.' */
-  }
-  100% {
-    width: 0;
-  }
-}
-
-@keyframes blink {
-  50% {
-    border-color: transparent;
-  }
 }
 
 /* === FILTER CONTROLS === */
@@ -312,7 +256,7 @@ nav__link.active {
 
 .challenge-card:hover,
 .challenge-card:focus-within {
-  box-shadow: 0 8px 24px  rgba(0, 128, 0, 0.3);
+  box-shadow: 0 8px 24px rgba(37, 99, 235, 0.3);
   transform: translateY(-3px);
   outline: none;
 }
@@ -446,7 +390,7 @@ nav__link.active {
   margin-bottom: 1.5rem;
 }
 
-.footer__section h2 {
+.footer__section h4 {
   font-weight: 700;
   margin-bottom: 0.8rem;
   color: var(--accent-color);
@@ -462,15 +406,8 @@ nav__link.active {
   color: var(--text-color);
   text-decoration: none;
   font-weight: 500;
-  font-size: 1.1rem; /* 👈 Increased font size */
   transition: color 0.3s;
 }
-.footer__section p {
-  font-size: 1.1rem; /* Increase this value as needed */
-  line-height: 1.6;
-  margin-top: 0.5rem;
-}
-
 
 .footer__section a:hover,
 .footer__section a:focus {
