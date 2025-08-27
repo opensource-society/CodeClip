@@ -86,6 +86,13 @@
   </head>
 
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <i class="fa-solid fa-spinner"></i>
+            <h2>Loading<span class="dots"></span></h2>
+        </div>
+    </div>
     <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
@@ -546,5 +553,40 @@
 
     <!-- ================ Custom JS ================  -->
     <script src="scripts/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const loadingScreen = document.getElementById("loading-screen");
+    const loadingHeading = loadingScreen.querySelector("h2");
+
+    const sentences = [
+        "Loading your experience...",
+        "Almost ready, please wait..."
+    ];
+
+    let index = 0;
+    loadingHeading.innerHTML = sentences[index]; // show first sentence
+
+    // Change sentence every 4 seconds
+    const textInterval = setInterval(() => {
+        index = (index + 1) % sentences.length;
+        loadingHeading.innerHTML = sentences[index];
+        // inside setInterval
+        loadingHeading.classList.add("fade-out");
+setTimeout(() => {
+    loadingHeading.innerHTML = sentences[index];
+    loadingHeading.classList.remove("fade-out");
+}, 500);
+
+    }, 4000);
+
+    // Hide loading screen after 8 seconds
+    setTimeout(() => {
+        clearInterval(textInterval);
+        loadingScreen.classList.add("hidden");
+    }, 8000);
+});
+
+    </script>
   </body>
 </html>
