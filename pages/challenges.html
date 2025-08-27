@@ -101,29 +101,7 @@ body {
   background: rgba(30, 41, 59, 0.8);
 }
 
-.filter-controls {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 1rem;
-  align-items: center;
-}
 
-.filter-select,
-.search-input {
-  padding: 0.7rem 1rem;
-  border-radius: 8px;
-  border: 1px solid var(--border);
-  background: var(--card-bg);
-  font-size: 1rem;
-  color: var(--text);
-  transition: 0.2s;
-}
-
-.filter-select:focus,
-.search-input:focus {
-  border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(79,70,229,0.3);
-}
 
 .btn {
   padding: 0.6rem 1rem;
@@ -265,6 +243,64 @@ body {
   margin-bottom: 0.5rem;
 }
 
+
+/* ================= Controls Section  ================= */
+ .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* background: #fff; */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(105, 80, 80, 0.1);
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-group label {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: dodgerblue;
+  }
+
+  .filter-select,
+  .search-input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .search-input {
+  width: 400px;   
+  max-width: 100%; 
+  padding: 10px 15px; 
+  font-size: 16px;  
+  border-radius: 8px; 
+  border: 1px solid #ccc; 
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4f46e5; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
+}
+
+  .search-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left:auto; /* pushes search bar to the right */
+  }
+
+  
+
   </style>
 
   <Header>
@@ -313,58 +349,70 @@ body {
             Coding <span class="highlight">Challenges &lt/&gt </span>
           </h1>
       <p class="challenges-hero__description">
-  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, 
-  <span class="typing-loop">for every developer.</span>
+  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, for every developer.
+  <!-- <span class="typing-loop"></span> -->
 </p>
         </div>
       </div>
     </section>
 
-    <!-- Filter Controls -->
-    <section class="challenges-filter" aria-labelledby="filters-heading">
-      <div class="container filter-controls">
-        <div class="filter-group">
   
-</div>
+     <!-- Update Filter Controls Section-->
+    <section class="challenges-filter" aria-labelledby="filters-heading">
+  <div class="container filter-controls">
+    <h2 id="filters-heading" class="visually-hidden">
+      Find Challenges That Match Your Skills
+    </h2>
 
-        <h2 id="filters-heading" class="visually-hidden">Filter Challenges</h2>
+    <!-- Difficulty -->
+    <div class="filter-group">
+      <label for="difficulty-filter">Difficulty:</label>
+      <select
+        id="difficulty-filter"
+        class="filter-select"
+        aria-label="Filter challenges by difficulty"
+      >
+        <option value="">All Levels</option>
+         <option value="easy">Easy 🟢</option>
+        <option value="medium">Medium 🟡</option>
+        <option value="hard">Hard 🔴</option>
+      </select>
+    </div>
 
-        <div class="filter-group">
-          <label for="difficulty-filter">Difficulty:</label>
-          <select id="difficulty-filter" class="filter-select" aria-label="Filter challenges by difficulty">
-            <option value="">All Levels</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
+    <!-- Category -->
+    <div class="filter-group">
+      <label for="category-filter">Category:</label>
+      <select
+        id="category-filter"
+        class="filter-select"
+        aria-label="Filter challenges by category"
+      >
+        <option value="">All Categories</option>
+        <option value="arrays">Arrays</option>
+        <option value="strings">Strings</option>
+        <option value="algorithms">Algorithms</option>
+        <option value="data-structures">Data Structures</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+      </select>
+    </div>
 
-        <div class="filter-group">
-          <label for="category-filter"><h3>Category:</h3></label>
-          <select id="category-filter" class="filter-select" aria-label="Filter challenges by category">
-            <option value="">All Categories</option>
-            <option value="arrays">Arrays</option>
-            <option value="strings">Strings</option>
-            <option value="algorithms">Algorithms</option>
-            <option value="data-structures">Data Structures</option>
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="fullstack">Fullstack</option>
-          </select>
-        </div>
+    <!-- Search -->
+    <div class="search-group">
+      <input
+        type="search"
+        id="search-challenges"
+        class="search-input"
+        placeholder="Search challenges..."
+        aria-label="Search coding challenges by title or tag"
+      />
+      <button id="clearFilters" class="btn btn-secondary">Clear</button>
+    </div>
 
-        <div class="search-group" style="display: flex; gap: 0.5rem; margin-left: auto;">
-          <input
-            type="search"
-            id="search-challenges"
-            class="search-input"
-            placeholder="Search challenges..."
-            aria-label="Search coding challenges by title or tag"
-          />
-          <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
+
 
     <!-- Challenges Grid -->
     <section class="challenges-grid" aria-labelledby="challenge-heading">
@@ -444,6 +492,103 @@ body {
               <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
+
+       <!-- Graph -->
+  <article class="challenge-card" data-difficulty="medium" data-category="graph" tabindex="0" aria-label="Challenge Number of Islands, difficulty medium, category graph">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Number of Islands</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given a 2D grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and formed by connecting adjacent lands.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Graph</span>
+      <span class="category-tag">DFS</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Number of Islands">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+   <!-- Dynamic Programming -->
+  <article class="challenge-card" data-difficulty="medium" data-category="dp" tabindex="0" aria-label="Challenge Coin Change, difficulty medium, category dp">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Coin Change</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      You are given coins of different denominations and a total amount. Find the fewest number of coins needed to make up that amount.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Dynamic Programming</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Coin Change">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+ <!-- Two Pointers -->
+  <article class="challenge-card" data-difficulty="medium" data-category="two-pointers" tabindex="0" aria-label="Challenge Container With Most Water, difficulty medium, category two-pointers">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Container With Most Water</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given n non-negative integers representing vertical lines, find two lines that together form a container with the most water.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Two Pointers</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Container With Most Water">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+
+    <!-- Prefix Sum -->
+  <article class="challenge-card" data-difficulty="medium" data-category="prefix-sum" tabindex="0" aria-label="Challenge Subarray Sum Equals K, difficulty medium, category prefix-sum">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Subarray Sum Equals K</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given an array of integers and an integer k, return the total number of continuous subarrays whose sum equals to k.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Prefix Sum</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Subarray Sum Equals K">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+    <!-- Sliding Window -->
+  <article class="challenge-card" data-difficulty="hard" data-category="sliding-window" tabindex="0" aria-label="Challenge Minimum Window Substring, difficulty hard, category sliding-window">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Minimum Window Substring</h3>
+      <span class="difficulty-badge difficulty-hard">Hard</span>
+    </header>
+    <p class="challenge-card__description">
+      Given two strings s and t, return the minimum window in s which contains all the characters in t.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Sliding Window</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Minimum Window Substring">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
         </div>
 
         <div id="no-results" class="no-results-message" style="display:none;">
@@ -478,9 +623,9 @@ body {
   <section class="footer__section">
   <h2>Community</h2>
   <ul>
-    <li><a href="#" aria-label="GitHub link">GitHub <i class="fab fa-github"></i></a></li>
-    <li><a href="#" aria-label="Discord link">Discord <i class="fab fa-discord"></i></a></li>
-    <li><a href="#" aria-label="Twitter link">Twitter <i class="fab fa-twitter"></i></a></li>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="GitHub link" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="Discord link" target="_blank" >Discord <i class="fab fa-discord"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/adityai0/" aria-label="Linkedn  link" target="_blank">Linkedin<i class="fab fa-linkedin"></i></a></li>
   </ul>
 </section>
 
