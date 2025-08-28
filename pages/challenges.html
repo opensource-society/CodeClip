@@ -605,7 +605,43 @@ clearBtn.addEventListener("click", () => {
 });
 
 </script>
+  <script>
+    // Typing loop effect
+    const typingLoop = document.querySelector('.typing-loop');
+    const phrases = ['for every developer.', 'to level up.', 'to sharpen your skills.', 'to master coding.'];
+    let phraseIndex = 0;
+    let letterIndex = 0;
+    let currentPhrase = '';
+    let isDeleting = false;
+    const typingSpeed = 100;
+    const deletingSpeed = 50;
+    const delayBetweenPhrases = 2000;
 
+    function type() {
+      if (phraseIndex >= phrases.length) {
+        phraseIndex = 0;
+      }
+      currentPhrase = phrases[phraseIndex];
 
+      if (!isDeleting && letterIndex <= currentPhrase.length) {
+        typingLoop.textContent = currentPhrase.substring(0, letterIndex);
+        letterIndex++;
+        setTimeout(type, typingSpeed);
+      } else if (isDeleting && letterIndex >= 0) {
+        typingLoop.textContent = currentPhrase.substring(0, letterIndex);
+        letterIndex--;
+        setTimeout(type, deletingSpeed);
+      } else if (!isDeleting && letterIndex > currentPhrase.length) {
+        isDeleting = true;
+        setTimeout(type, delayBetweenPhrases);
+      } else if (isDeleting && letterIndex < 0) {
+        isDeleting = false;
+        phraseIndex++;
+        setTimeout(type, typingSpeed);
+      }
+    }
+
+    type();
+  </script>
 </body>
 </html>
