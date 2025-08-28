@@ -15,12 +15,12 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 3 |
+| [@hiitarun1](https://github.com/hiitarun1) | 2 | 0 | 0 | 1 |
+| [@Anmol-Mittal30](https://github.com/Anmol-Mittal30) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
-| [@hiitarun1](https://github.com/hiitarun1) | 1 | 0 | 0 | 1 |
-| [@Anmol-Mittal30](https://github.com/Anmol-Mittal30) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
