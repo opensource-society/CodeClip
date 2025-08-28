@@ -695,95 +695,43 @@
         .footer p {
             opacity: 0.8;
         }
-
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0;
-      padding: 0;
-    }
-
-    .section {
-      display: flex;              /* makes text and image side by side */
-      align-items: center;        /* vertically centers them */
-      justify-content: space-between;
-      padding: 50px;
-    }
-    .text {
-      flex: 1;                    /* text takes equal space */
-      padding-right: 30px;
-    }
-
-    .text h2 {
-      font-size: 28px;
-      margin-bottom: 15px;
-    }
-
-    .text p {
-      font-size: 16px;
-      line-height: 1.5;
-    }
-
-    .image {
-      flex: 1;                    /* image also takes equal space */
-      text-align: center;
-    }
-
-    .image img { max-width: 100%;            /* makes image responsive */
-      height: auto;
-    }
-
-    /* Responsive for small screens */
-    @media (max-width: 768px) {
-      .section {
-        flex-direction: column;
-        text-align: center;
-      }
-      .text {
-        padding-right: 0;
-        margin-bottom: 20px;
-      }
-    }
     </style>
 </head>
 <body>
-
     <!-- Header -->
     <header class="header">
         <div class="nav-container">
             <a href="#home" class="logo">CodeClip</a>
             <nav>
                 <div class="nav-menu">
-                    <a href="#home" class="nav-item active">Home</a>
+                    <a href="index.html" class="nav-item active">Home</a>
                     <a href="#challenges" class="nav-item">Challenges</a>
                     <a href="#editor" class="nav-item">Editor</a>
                     <a href="#leaderboard" class="nav-item">Leaderboard</a>
                     <a href="#contact" class="nav-item">Contact</a>
-                    <a href="login.html" class="nav-item">Login</a>
+                    <a href="login.html" class="nav-item">login</a>
                 </div>
             </nav>
         </div>
     </header>
 
     <!-- Hero Section -->
-
-
-  <div class="section">
-    <div class="text">
+   
      <section id="top" class="heroSection">
       <div class="container">
         <div class="row heroSection-Container">
           <div class="col-12 col-md-6 heroSection-Left">
             <div class="col-12 col-md-6 heroSection-Left">
-           <div data-aos="fade-right" data-aos-duration="650" class="gssocContainer shinning-effect aos-init aos-animate">
+            <div data-aos="fade-right" data-aos-duration="650" class="gssocContainer shinning-effect aos-init aos-animate">
               <img src="assets/images/hero-section/gssoc-log.png" class="img-fluid gssoc-logo" alt="gssoc logo">
               <p>GSSOC 2025</p>
             </div>
-<br/>
-            <h1 data-aos="fade-right" data-aos-duration="650" class="aos-int-aos-animate">
-              Code Run <br />
+
+            <h1 data-aos="fade-right" data-aos-duration="650" class="aos-init aos-animate">
+              Code Run <br>
               <span class="blueCol">Contribute</span>
             </h1>
-            <p data-aos="fade-right" data-aos-duration="650" class="heroDescription text-muted">
+            <p data-aos="fade-right" data-aos-duration="650" class="heroDescription text-muted aos-init aos-animate">
               CodeClip is a lightweight, browser-based platform designed to make
               coding practice simple, accessible, and collaborative. Whether
               you're a beginner looking to sharpen your skills or an aspiring
@@ -797,20 +745,14 @@
               empowering developers through hands-on practice and meaningful
               contributions.
             </p>
+      
+
+           
 
             <!-- ==== Do Changes According to requirements === -->
            
           </div>
-            <br/>
-          
-            <div class="col-12 col-md-6 heroSection-Right d-none d-md-block">
-              <p>
-            <img data-aos="zoom-in-left" src="assets/images/hero-section/hero-Img.png" class="img-fluid aos-init aos-animate" alt="hero section image">
-          </p>
-          
-          </div>
-          </div>
-          </div>
+
     </section>
     <!-- Filter Section -->
     <section class="filter-section">
@@ -862,7 +804,6 @@
     </section>
   
   <style>
-    /* Added missing closing brace for previous CSS block if needed */
     body {
       font-family: Arial, sans-serif;
       background: #f9f9f9;
@@ -935,6 +876,75 @@
       background: #453AB7;
     }
   </style>
+</head>
+<body>
+
+  <header>🚀 CodeClip Challenges</header>
+
+  <div class="container">
+
+    <!-- Challenge Card 1 -->
+    <div class="card">
+      <h3>Frontend Challenges</h3>
+      <span class="difficulty">Easy</span>
+      
+      <p>Build real UI components using HTML, CSS, and JavaScript. Improve your layout, styling, and interactivity skills.</p>
+      <div class="coders">👥 135 coders joined</div>
+      <a href="frontendChallenges.html" class="join-btn">Join Now</a>
+    </div>
+    
+
+ 
+     
+    <!-- Challenge Card 2 -->
+    <div class="card">
+      <h3>JavaScript Logics</h3>
+      <span class="difficulty">Medium</span>
+      <p>Master JavaScript by solving logic-based problems that boost your problem-solving and coding skills.</p>
+      <div class="coders">👥 189 coders joined</div>
+      <a href="jslogics.html" class="join-btn">Join Now</a>
+    </div>
+
+    <!-- Challenge Card 3 -->
+    <div class="card">
+      <h3>Backend Basics</h3>
+      <span class="difficulty">Hard</span>
+      <p>Learn backend fundamentals with APIs, data handling, and server-side logic. Great start for full-stack devs.</p>
+      <div class="coders">👥 150 coders joined</div>
+      <a href="backendChallenges.html" class="join-btn">Join Now</a>
+    </div>
+
+    <!-- Challenge Card 4 -->
+    <div class="card">
+      <h3>Open Source Challenges</h3>
+      <span class="difficulty">Medium</span>
+      <p>Contribute to real-world projects using Git & GitHub. Learn PRs, collaboration, and project workflows.</p>
+      <div class="coders">👥 200 coders joined</div>
+      <a href="gitChallenges.html" class="join-btn">Join Now</a>
+    </div>
+     
+
+    <!-- Challenge Card 5 -->
+    <div class="card">
+      <h3>UI Design Tasks</h3>
+      <span class="difficulty">Easy</span>
+      <p>Practice designing beautiful UI components using only HTML & CSS. Improve design sense and layout skills.</p>
+      <div class="coders">👥 120 coders joined</div>
+      <a href="uiChallenges.html" class="join-btn">Join Now</a>
+    </div>
+
+    <!-- Challenge Card 6 -->
+    <div class="card">
+      <h3>JavaScript Mini Projects</h3>
+      <span class="difficulty">Easy</span>
+      <p>Create small interactive projects with JS. Includes features like autofocus, clear input, and animations.</p>
+      <div class="coders">👥 300 coders joined</div>
+      <a href="#" class="join-btn">Join Now</a>
+    </div>
+
+  </div>
+
+</body>
 
     
     <!-- Code Editor Section -->
@@ -1160,7 +1170,7 @@
     <div style="flex: 1; min-width: 100px;">
       <h3 style="color:#333;">Important Links</h3>
       <ul style="list-style:none; padding:0; margin-top: 15px;">
-        <li><a href="#home" style="color:#5A4FCF; text-decoration:none;">Home</a></li>
+        <li><a href="index.html" style="color:#5A4FCF; text-decoration:none;">Home</a></li>
         <li><a href="#challenges" style="color:#5A4FCF; text-decoration:none;">Challenges</a></li>
         <li><a href="#leaderboard" style="color:#5A4FCF; text-decoration:none;">Leaderboard</a></li>
         <li><a href="#editor" style="color:#5A4FCF; text-decoration:none;">Code Editor</a></li>
