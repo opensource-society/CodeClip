@@ -22,6 +22,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
+| [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
