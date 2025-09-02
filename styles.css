@@ -546,7 +546,7 @@ body {
   min-width: 200px;
   height: 250px;
   background-color: #fff;
-  margin: 10px;
+  margin: 16px 0;
   border-radius: 10px;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.24);
   /* border: 2px solid rgba(249, 15, 15, 0.12); */
@@ -663,6 +663,12 @@ body {
   .vault-card-content {
     align-items: center;
   }
+  .card {
+    margin: 16px 0;
+  }
+  .content {
+    gap: 16px;
+  }
 }
 
 .icon {
@@ -682,6 +688,15 @@ body {
 
 .material-icons.md-36 {
   font-size: 36px;
+}
+
+.card {
+  height: 360px;
+  /* width: 300px; */
+  margin: 24px; /* Increase margin to separate cards */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.12); /* Subtle shadow for separation */
+  border: 1px solid #e5e7eb; /* Light border for distinction */
+  background-color: #fff; /* Ensure background is solid */
 }
 
 .card .title {
@@ -704,7 +719,10 @@ body {
 }
 
 .card:hover {
-  height: 270px;
+  box-shadow: 0 8px 32px rgba(37,99,235,0.18), 0 2px 10px rgba(37,99,235,0.09);
+  border-color: #2563eb;
+  transform: translateY(-10px) translateX(8px) scale(1.04);
+  background-color: #f0f6ff;
 }
 
 .card:hover .text {
@@ -826,6 +844,7 @@ body {
   }
   .content {
     padding-top: 300px;
+    gap: 24px;
   }
 }
 
