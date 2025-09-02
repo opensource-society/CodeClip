@@ -1,11 +1,26 @@
-import { 
-  saveUserProgress, 
-  loadUserProgress, 
-  saveCompletedChallenges, 
-  loadCompletedChallenges 
+import {
+  saveUserProgress,
+  loadUserProgress,
+  saveCompletedChallenges,
+  loadCompletedChallenges
 } from './data.js';
 
 console.log('app script loaded');
+
+// ------------------- Theme Toggle ------------------- //
+document.addEventListener("DOMContentLoaded", function () {
+  const btn = document.getElementById("themeToggleBtn");
+  btn.addEventListener("click", function () {
+    const currentTheme = document.documentElement.getAttribute("data-theme");
+    if (currentTheme === "dark") {
+      document.documentElement.setAttribute("data-theme", "light");
+      btn.innerHTML = '<i class="fa fa-moon"></i>';
+    } else {
+      document.documentElement.setAttribute("data-theme", "dark");
+      btn.innerHTML = '<i class="fa fa-sun"></i>';
+    }
+  });
+});
 
 // ------------------- Challenge Form + Preview ------------------- //
 const form = document.getElementById('challengeForm');
@@ -231,13 +246,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (!leaderboardContainer) return; // ✅ Only run on leaderboard section
 
   // Dummy leaderboard data (replace later with API/DB)
- let leaderboardData = [
-  { name: "Alice", points: 1250, img: "assets/leaderboard-section/user-1.png" },
-  { name: "Bob", points: 1100, img: "assets/leaderboard-section/user-2.png" },
-  { name: "Charlie", points: 980, img: "assets/leaderboard-section/user-3.png" },
-  { name: "David", points: 900, img: "assets/leaderboard-section/user-4.png" },
-  { name: "Eva", points: 870, img: "assets/leaderboard-section/user-5.png" }
-];
+  let leaderboardData = [
+    { name: "Alice", points: 1250, img: "assets/leaderboard-section/user-1.png" },
+    { name: "Bob", points: 1100, img: "assets/leaderboard-section/user-2.png" },
+    { name: "Charlie", points: 980, img: "assets/leaderboard-section/user-3.png" },
+    { name: "David", points: 900, img: "assets/leaderboard-section/user-4.png" },
+    { name: "Eva", points: 870, img: "assets/leaderboard-section/user-5.png" }
+  ];
 
 
   function renderLeaderboard() {
