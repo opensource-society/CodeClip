@@ -374,6 +374,109 @@
         </div>
       </div>
     </section>
+    <style>
+      /* Section spacing */
+#challengeSection {
+  padding: 2rem 0;
+}
+
+/* Bootstrap row gap fix */
+.challengeContainer {
+  row-gap: 1.5rem; /* vertical spacing between rows */
+}
+
+/* Card styles */
+.challengeContainer .card {
+  box-shadow: rgba(19, 117, 216, 0.2) 0px 8px 24px;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%;
+  word-wrap: break-word;   /* prevent long words from breaking layout */
+  overflow-wrap: break-word;
+}
+
+/* Card hover */
+.challengeContainer .card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+}
+
+/* Card top container */
+.card-TopContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;   /* makes sure text + icons don’t overlap */
+  gap: 8px;
+}
+
+/* Header */
+.card-Header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+/* Difficulty badge */
+.card-Level {
+  font-size: 12px;
+  padding: 4px 20px;
+  border-radius: 17px;
+  font-weight: 700;
+  margin: 0 7px 0 0;
+  white-space: nowrap; /* keeps badge text on one line */
+}
+.medium-Col {
+  background-color: #fff3cd;
+  color: #a88825;
+}
+.hard-Col {
+  background-color: #f8d7da;
+  color: #7d1c1c;
+}
+
+/* Participation info */
+.card-Participate {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Description text */
+.card-Text {
+  font-size: 14px;
+  opacity: 0.85;
+  text-align: justify;
+  line-height: 1.6;
+  hyphens: auto;  /* breaks long words cleanly */
+}
+
+/* Button */
+.card-CTAButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.card-Btn {
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 28px;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.card-Btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+}
+
+    </style>
     <!-- ================================ Challenge Section End Here ================================ -->
 
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
