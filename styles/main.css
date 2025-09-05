@@ -23,7 +23,7 @@ html {
   color: #2563eb;
 }
 
-.navbar-brand:hover {
+.navbar-brand,.nav-link:hover {   /*========added for issue #605========*/
   color: #2563eb;
   nav {
     position: fixed;
