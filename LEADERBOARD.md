@@ -15,6 +15,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 4 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
+| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 2 | 0 | 0 | 1 |
 | [@hiitarun1](https://github.com/hiitarun1) | 2 | 0 | 0 | 1 |
 | [@Anmol-Mittal30](https://github.com/Anmol-Mittal30) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
@@ -22,7 +23,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
-| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 1 | 0 | 0 | 1 |
 | [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
