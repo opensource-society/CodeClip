@@ -482,7 +482,7 @@
                   class="btn btn-primary mb-2 footer-contact-btn"
                   style="max-width: 250px"
                 >
-                  <i class="fab fa-github me-2"></i> GitHub
+                  <i id="coo" class="fab fa-github me-2"></i> GitHub
                 </a>
                 <a
                   href="https://github.com/opensource-society/CodeClip"
@@ -490,7 +490,7 @@
                   class="btn btn-primary mb-2 footer-contact-btn"
                   style="max-width: 250px"
                 >
-                  <i class="fab fa-discord me-2"></i> Discord
+                  <i id ="coo"class="fab fa-discord me-2"></i> Discord
                 </a>
               </div>
               <div data-aos-duration="650" data-aos="fade-left"
@@ -503,7 +503,7 @@
                   class="btn btn-primary mb-2 footer-contact-btn"
                   style="max-width: 250px"
                 >
-                  <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
+                  <i id ="coo" class="fas fa-exclamation-circle me-2"></i> Open an Issue
                 </a>
                 <!-- Added linkdin social connection -->
                 <a
@@ -512,7 +512,7 @@
                   class="btn btn-primary mb-2 footer-contact-btn mt-3 "
                   style="max-width: 250px"
                 >
-                  <i class="fab fa-linkedin-in me-2"></i> LinkedIn
+                  <i  id ="coo"class="fab fa-linkedin-in me-2"></i> LinkedIn
                 </a>
                 
               </div>
@@ -526,8 +526,149 @@
       &copy; CodeClip | Open Source Project 2025
     </p>
   </div>
+  <style>
+    /* Footer Base */
+#contactFooter {
+  background: linear-gradient(135deg, #1a1a2e, #16213e, #0f3460);
+  color: #fff;
+  padding: 40px 0 20px;
+  font-family: "Poppins", sans-serif;
+  position: relative;
+  overflow: hidden;
+}
+#coo{
+  text-align: end;
+  
+}
+/* Decorative background effect */
+#contactFooter::before {
+  content: "";
+  position: absolute;
+  top: -100px;
+  right: -100px;
+  width: 250px;
+  height: 250px;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 50%;
+  z-index: 0;
+}
+#contactFooter::after {
+  content: "";
+  position: absolute;
+  bottom: -120px;
+  left: -120px;
+  width: 300px;
+  height: 300px;
+  background: rgba(255, 255, 255, 0.07);
+  border-radius: 50%;
+  z-index: 0;
+}
+
+#contactFooter .container {
+  position: relative;
+  z-index: 2;
+}
+
+/* Footer Titles */
+.footer-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #00adb5;
+  margin-bottom: 15px;
+}
+
+/* Footer Links */
+.footer-links li {
+  margin-bottom: 10px;
+}
+.footer-links a {
+  text-decoration: none;
+  color: #d1d1d1;
+  transition: all 0.3s ease-in-out;
+}
+.footer-links a:hover {
+  color: #00adb5;
+  padding-left: 5px;
+}
+
+/* Contact Buttons */
+.footer-contact-btn {
+  background: #00adb5;
+  border: none;
+  transition: transform 0.3s ease, background 0.3s ease;
+  font-weight: 500;
+  border-radius: 10px;
+}
+.footer-contact-btn:hover {
+  background: #08d9d6;
+  transform: translateY(-4px);
+  box-shadow: 0px 5px 15px rgba(8, 217, 214, 0.4);
+}
+.footer-contact-btn i {
+  font-size: 1.2rem;
+}
+
+/* Footer Desc */
+.footer-desc {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: #d1d1d1;
+}
+
+/* Footer Note */
+.footerNote {
+  font-size: 0.85rem;
+  color: #aaa;
+  margin-top: 20px;
+}
+.footerNote span {
+  color: #00adb5;
+  font-weight: bold;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer-links-col,
+  .footer-contact-col-main {
+    text-align: center;
+  }
+  .footer-contact-row {
+    flex-direction: column;
+    gap: 20px;
+  }
+}
+
+    </style>
+    <script>
+      // Smooth scroll for links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener("click", function (e) {
+    e.preventDefault();
+    document.querySelector(this.getAttribute("href")).scrollIntoView({
+      behavior: "smooth",
+    });
+  });
+});
+
+// Scroll reveal animation
+const revealElements = document.querySelectorAll("[data-aos]");
+const revealOnScroll = () => {
+  revealElements.forEach(el => {
+    const rect = el.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 50) {
+      el.classList.add("aos-animate");
+    }
+  });
+};
+window.addEventListener("scroll", revealOnScroll);
+revealOnScroll();
+
+      </script>
+  
 </footer>
+
     <!--AOS Animations-->
+    
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
       AOS.init({
