@@ -726,19 +726,16 @@ body {
 
 /* Footer */
 .footer {
-  background: #ffffff;
+  background-color: #0d1117;
   padding: 2rem 0;
   border-top: 1px solid #e2e8f0;
   text-align: center;
-  color: #64748b;
+  color: #adb5bd;
+  font-size: 0.95rem;
 }
 
-.footer__content {
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-bottom: 1rem;
+.footer .navbar-brand span {
+  color: #0d6efd; /* Primary brand highlight */
 }
 
 .footer__section h4 {
@@ -765,6 +762,27 @@ body {
 .footer__bottom p {
   font-size: 0.9rem;
   color: #94a3b8;
+}
+
+.social-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #adb5bd;
+  font-size: 0.95rem;
+  text-decoration: none;
+  padding: 6px 0;
+  transition: color 0.2s ease;  
+  font-size: 1rem;
+  white-space: nowrap;  
+  margin-right: 1.5rem;
+}
+
+.social-link:hover {
+  color: #0d6efd;
+}
+.footer-contact-col-main .social-link {
+  margin-right: 1rem; /* spacing between each link */
 }
 
 /* Responsive Styles */
