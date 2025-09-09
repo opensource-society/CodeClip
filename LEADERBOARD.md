@@ -8,8 +8,8 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 |----------|---------|---------|---------|-------------|
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
+| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 4 | 0 | 0 | 3 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
-| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 4 | 0 | 0 | 2 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
