@@ -86,6 +86,13 @@
   </head>
 
   <body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <div class="loader">
+            <i class="fa-solid fa-spinner"></i>
+            <h2>Loading<span class="dots"></span></h2>
+        </div>
+    </div>
     <a id="top"></a>  <!--added for issue 260 -->
     <!-- ================================ Header Section Start Here ================================ -->
     <header>
@@ -103,9 +110,12 @@
             <span class="navbar-toggler-icon"></span>
           </button>
            <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <!-- ================================ issue #605 Starts Here ================================ -->
+           <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#top">Home</a>
+                    <a class="nav-link" aria-current="page" href="#top">Home</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#challengeSection">Challenges</a>
@@ -119,6 +129,7 @@
                         <li class="nav-item">
                     <a class="nav-link" href="#contactFooter">Contact</a>
                   </li>
+
                 </ul> 
           </div>-->
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
@@ -162,6 +173,11 @@
 
             
           </style>
+
+                </ul>
+          </div>
+          <!-- ================================ issue #605 Ends Here ================================ -->
+
         </div>
       </nav>
     </header>
@@ -408,6 +424,109 @@
         </div>
       </div>
     </section>
+    <style>
+      /* Section spacing */
+#challengeSection {
+  padding: 2rem 0;
+}
+
+/* Bootstrap row gap fix */
+.challengeContainer {
+  row-gap: 1.5rem; /* vertical spacing between rows */
+}
+
+/* Card styles */
+.challengeContainer .card {
+  box-shadow: rgba(19, 117, 216, 0.2) 0px 8px 24px;
+  border: none;
+  border-radius: 15px;
+  transition: transform 0.2s ease-in-out, box-shadow 0.2s ease-in-out;
+  height: 100%;
+  word-wrap: break-word;   /* prevent long words from breaking layout */
+  overflow-wrap: break-word;
+}
+
+/* Card hover */
+.challengeContainer .card:hover {
+  transform: translateY(-3px) scale(1.01);
+  box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
+}
+
+/* Card top container */
+.card-TopContainer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;   /* makes sure text + icons don’t overlap */
+  gap: 8px;
+}
+
+/* Header */
+.card-Header {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 0;
+  flex: 1 1 auto;
+  min-width: 120px;
+}
+
+/* Difficulty badge */
+.card-Level {
+  font-size: 12px;
+  padding: 4px 20px;
+  border-radius: 17px;
+  font-weight: 700;
+  margin: 0 7px 0 0;
+  white-space: nowrap; /* keeps badge text on one line */
+}
+.medium-Col {
+  background-color: #fff3cd;
+  color: #a88825;
+}
+.hard-Col {
+  background-color: #f8d7da;
+  color: #7d1c1c;
+}
+
+/* Participation info */
+.card-Participate {
+  font-size: 13px;
+  color: #666;
+  margin: 6px 0;
+  opacity: 0.9;
+  line-height: 1.4;
+}
+
+/* Description text */
+.card-Text {
+  font-size: 14px;
+  opacity: 0.85;
+  text-align: justify;
+  line-height: 1.6;
+  hyphens: auto;  /* breaks long words cleanly */
+}
+
+/* Button */
+.card-CTAButton {
+  display: flex;
+  justify-content: flex-end;
+}
+.card-Btn {
+  text-decoration: none;
+  font-size: 13px;
+  padding: 8px 28px;
+  border-radius: 5px;
+  background-color: #2563eb;
+  color: white;
+  font-weight: 700;
+  transition: all 0.2s ease-in-out;
+}
+.card-Btn:hover {
+  background-color: #1d4ed8;
+  box-shadow: 0px 3px 8px rgba(0,0,0,0.25);
+}
+
+    </style>
     <!-- ================================ Challenge Section End Here ================================ -->
 
     <!-- ================================ Leaderboard Section Starts Here ================================ -->
@@ -502,15 +621,7 @@
               (GSSoC) 2025 to open for contribution
             </p> 
           </div>
-          <div data-aos-duration="650" data-aos="fade-left" class="col-12 col-md-6 mb-4 mb-md-0 footer-links-col">
-            <h5 class="footer-title">Important Links</h5>
-            <ul class="footer-links list-unstyled mb-0">
-              <li><a href="#top">Home</a></li>
-              <li><a href="#challengeSection">Challenges</a></li>
-              <li><a href="#leaderboardSection">Leaderboard</a></li>
-              <li><a href="#aboutSection">About</a></li>
-            </ul>
-          </div>
+          <!-- Removed footer nav links when navbar is sticky issue #610 -->
           <div class="col-12 col-md-6 footer-contact-col-main">
             <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
             <div class="footer-contact-row d-flex justify-content-center">
@@ -587,5 +698,40 @@
 
     <!-- ================ Custom JS ================  -->
     <script src="scripts/main.js"></script>
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+    const loadingScreen = document.getElementById("loading-screen");
+    const loadingHeading = loadingScreen.querySelector("h2");
+
+    const sentences = [
+        "Loading your experience...",
+        "Almost ready, please wait..."
+    ];
+
+    let index = 0;
+    loadingHeading.innerHTML = sentences[index]; // show first sentence
+
+    // Change sentence every 4 seconds
+    const textInterval = setInterval(() => {
+        index = (index + 1) % sentences.length;
+        loadingHeading.innerHTML = sentences[index];
+        // inside setInterval
+        loadingHeading.classList.add("fade-out");
+setTimeout(() => {
+    loadingHeading.innerHTML = sentences[index];
+    loadingHeading.classList.remove("fade-out");
+}, 500);
+
+    }, 4000);
+
+    // Hide loading screen after 8 seconds
+    setTimeout(() => {
+        clearInterval(textInterval);
+        loadingScreen.classList.add("hidden");
+    }, 8000);
+});
+
+    </script>
   </body>
 </html>
