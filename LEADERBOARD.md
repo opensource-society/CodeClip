@@ -23,6 +23,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
+| [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
 | [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
@@ -65,7 +66,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
 | [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
 | [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
-| [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 0 |
 | [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
 | [@faisal07777](https://github.com/faisal07777) | 1 | 0 | 0 | 0 |
 | [@AmritRaj29](https://github.com/AmritRaj29) | 1 | 0 | 0 | 0 |
