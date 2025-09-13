@@ -51,7 +51,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
 | [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
-| [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 1 | 0 | 1 |
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
 | [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
 | [@MohdAnas007](https://github.com/MohdAnas007) | 1 | 0 | 0 | 0 |
@@ -66,6 +65,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
 | [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
 | [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
+| [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 1 | 0 | 0 |
 | [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
 | [@faisal07777](https://github.com/faisal07777) | 1 | 0 | 0 | 0 |
 | [@AmritRaj29](https://github.com/AmritRaj29) | 1 | 0 | 0 | 0 |
