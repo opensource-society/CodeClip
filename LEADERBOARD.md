@@ -6,7 +6,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
-| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 6 | 1 | 0 | 4 |
+| [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 7 | 1 | 0 | 4 |
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
