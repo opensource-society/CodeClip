@@ -36,9 +36,9 @@
             font-family: "Inter", sans-serif;
             overflow: hidden; /* Prevent body scroll due to resizing */
         }
-        a{
-          text-decoration: none;
-          color:white
+        a {
+            text-decoration: none;
+            color:white
         }
         .grid-container { /* Updated: Grid layout to adjust the alignment of the buttons */
             display: grid;
@@ -135,7 +135,6 @@
     </header>
 
     <div id="grid-container" class="grid-container">
-      
         <!-- Left Panel: Challenge Description -->
         <div id="left-panel" class="panel m-2">  <!-- Changed margins to fix allignment -->
             <h2 class="h4 mb-3 text-challenge-heading">Challenge Description</h2>
@@ -181,34 +180,34 @@ return str.split('').reverse().join('');
 <div id="output" class="mt-4"></div>
             <style>
                 .btn {
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 8px;
+position: relative;
+display: flex;
+align-items: center;
+justify-content: center;
+gap: 8px;
 }
 
 /* Spinner Style  <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
                 Run Code
             </button> */
 .spinner {
-  width: 18px;
-  height: 18px;
-  border: 3px solid #ffffff;
-  border-top: 3px solid transparent;
-  border-radius: 50%;
-  animation: spin 0.7s linear infinite;
+width: 18px;
+height: 18px;
+border: 3px solid #ffffff;
+border-top: 3px solid transparent;
+border-radius: 50%;
+animation: spin 0.7s linear infinite;
 }
 
 /* Hide by default */
 .hidden {
-  display: none;
+display: none;
 }
 
 @keyframes spin {
-  to {
+to {
     transform: rotate(360deg);
-  }
+}
 }
 
             </style>
@@ -220,18 +219,18 @@ const output = document.getElementById("output");
 
 runBtn.addEventListener("click", async () => {
   // Show spinner
-  spinner.classList.remove("hidden");
-  btnText.textContent = "Running...";
+spinner.classList.remove("hidden");
+btnText.textContent = "Running...";
 
   // Simulate code execution delay (replace with your real code execution logic)
-  await new Promise((res) => setTimeout(res, 2000));
+await new Promise((res) => setTimeout(res, 2000));
 
   // Hide spinner and reset text
-  spinner.classList.add("hidden");
-  btnText.textContent = "Run Code";
+spinner.classList.add("hidden");
+btnText.textContent = "Run Code";
 
   // Show result
-  output.innerHTML = "<p>✅ Code executed successfully!</p>";
+output.innerHTML = "<p>✅ Code executed successfully!</p>";
 });
 
             </script>
