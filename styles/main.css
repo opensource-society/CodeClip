@@ -1073,6 +1073,7 @@ html {
     letter-spacing: 0.5px;
     text-align: center;
   }
+
   .footer-contact-links {
     margin-top: 0;
 
@@ -1095,7 +1096,7 @@ html {
     height: 3px;
     background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
     border-radius: 2px;
-    margin: 0.4rem auto 0 auto;
+    margin: 0.4rem  0 auto;
   }
 
   .footer-links {
