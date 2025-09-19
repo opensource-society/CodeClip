@@ -1,118 +1,140 @@
-# 🪄 CodeClip &nbsp;– Coding Challenge Vault
+# 🪄 CodeClip – Coding Challenge Vault
 
-**CodeClip** is a lightweight, fully client-side web app that lets developers **store, solve, run, and share coding challenges** directly in the browser. Built with vanilla **HTML, CSS, and JavaScript**, it is ideal for first-time open-source contributors and is being developed under **GirlScript Summer of Code (GSSoC)**.
+[![GitHub stars](https://img.shields.io/github/stars/adikulkarni006/CodeClip?style=social)](https://github.com/adikulkarni006/CodeClip/stargazers)
+[![GitHub forks](https://img.shields.io/github/forks/adikulkarni006/CodeClip?style=social)](https://github.com/adikulkarni006/CodeClip/network/members)
+[![GitHub issues](https://img.shields.io/github/issues/adikulkarni006/CodeClip)](https://github.com/adikulkarni006/CodeClip/issues)
+[![License](https://img.shields.io/github/license/adikulkarni006/CodeClip)](./LICENSE)
+
+**CodeClip** is a lightweight, fully client-side web app that lets developers **store, solve, run, and share coding challenges directly in the browser**.  
+Built with **vanilla HTML, CSS, and JavaScript**, it is ideal for first-time open-source contributors and is being developed under **GirlScript Summer of Code (GSSoC)**.
+
+---
 
 ## ✨ Key Features (Planned & Implemented)
 
-| Category | Feature | Status |
-|----------|---------|--------|
-| Core Vault | Challenge repository with tags, difficulty, and search | 🛠 Planned |
-| Playback | In-browser code runner (JS sandbox) with console output | 🛠 Planned |
-| Editor | CodeMirror-based editor with themes, linting, and autosave | 🛠 Planned |
-| Sharing | Public solution links, up-votes, and comments | 🛠 Planned |
-| AI Assist | Challenge recommendations based on user history | 🛠 Planned |
-| Accounts | Local profile, progress tracking, badges | 🛠 Planned |
-| UI / UX | Dark-light theme switcher, mobile-first layout | 🛠 Planned |
-| Accessibility | WCAG-compliant color palette & keyboard nav | 🛠 Planned |
-| DevOps | GitHub Pages deploy, CI linting, unit tests | 🛠 Planned |
+| Category      | Feature                                                   | Status   |
+|---------------|-----------------------------------------------------------|----------|
+| Core Vault    | Challenge repository with tags, difficulty, and search    | 🛠 Planned |
+| Playback      | In-browser code runner (JS sandbox) with console output   | 🛠 Planned |
+| Editor        | CodeMirror-based editor with themes, linting, and autosave | 🛠 Planned |
+| Sharing       | Public solution links, up-votes, and comments             | 🛠 Planned |
+| AI Assist     | Challenge recommendations based on user history           | 🛠 Planned |
+| Accounts      | Local profile, progress tracking, badges                  | 🛠 Planned |
+| UI / UX       | Dark-light theme switcher, mobile-first layout            | 🛠 Planned |
+| Accessibility | WCAG-compliant color palette & keyboard nav               | 🛠 Planned |
+| DevOps        | GitHub Pages deploy, CI linting, unit tests               | 🛠 Planned |
+
+---
 
 ## 🏗️ System Architecture
 
-```
-Client (Browser) ────────────────────────────────────────────┐
-│                                                           │
-│ 1. UI Layer (HTML + CSS)                                  │
-│    • index.html  – Landing / dashboard                    │
-│    • pages/        challenges.html, editor.html, …        │
-│    • styles/       main.css, components.css, themes.css   │
-│                                                           │
-│ 2. Logic Layer (ES6 Modules)                              │
-│    • app.js       – App bootstrap & router                │
-│    • storage.js   – LocalStorage API wrapper              │
-│    • challenges.js – Challenge CRUD & filters             │
-│    • editor.js    – CodeMirror integration                │
-│    • ai.js        – Recommendation engine (future)        │
-│    • utils.js     – Helpers                               │
-│                                                           │
-│ 3. Persistence Layer                                      │
-│    • LocalStorage (JSON)                                  │
-│    • IndexedDB (future large data)                        │
-│                                                           │
-└─────────────────────────────────────────────────────────────
+Client (Browser)
+│
+├── UI Layer (HTML + CSS)
+│ • index.html – Landing / dashboard
+│ • pages/ – challenges.html, editor.html, …
+│ • styles/ – main.css, components.css, themes.css
+│
+├── Logic Layer (ES6 Modules)
+│ • app.js – App bootstrap & router
+│ • storage.js – LocalStorage API wrapper
+│ • challenges.js – Challenge CRUD & filters
+│ • editor.js – CodeMirror integration
+│ • ai.js – Recommendation engine (future)
+│ • utils.js – Helpers
+│
+└── Persistence Layer
+• LocalStorage (JSON)
+• IndexedDB (future large data)
 
-Offline-first: All data lives in the browser; no backend required.  
+yaml
+Copy code
+
+**Offline-first:** All data lives in the browser; no backend required.  
 Optional cloud sync can be added later via GitHub OAuth + Gists.
-```
+
+---
 
 ## 📂 Repository Structure
 
-```text
 codeclip/
 ├─ index.html
 ├─ pages/
-│  ├─ challenges.html
-│  ├─ editor.html
-│  └─ profile.html
+│ ├─ challenges.html
+│ ├─ editor.html
+│ └─ profile.html
 ├─ styles/
-│  ├─ variables.css
-│  ├─ main.css
-│  ├─ components.css
-│  └─ themes.css
+│ ├─ variables.css
+│ ├─ main.css
+│ ├─ components.css
+│ └─ themes.css
 ├─ scripts/
-│  ├─ app.js
-│  ├─ storage.js
-│  ├─ challenges.js
-│  ├─ editor.js
-│  ├─ ai.js
-│  └─ utils.js
+│ ├─ app.js
+│ ├─ storage.js
+│ ├─ challenges.js
+│ ├─ editor.js
+│ ├─ ai.js
+│ └─ utils.js
 ├─ assets/
-│  └─ logo.svg
+│ └─ logo.svg
 ├─ docs/
-│  └─ architecture.png
-└─ README.md  ← you are here
-```
+│ └─ architecture.png
+└─ README.md
+
+yaml
+Copy code
+
+---
 
 ## 🚀 Getting Started
 
-1. **Clone**  
-   ```bash
-   git clone https://github.com/opensource-society/CodeClip.git
-   cd CodeClip
-   ```
+### Clone Repository
 
-2. **Run Locally**  
-   Any static server works; with VS Code:  
-   1. Install the *Live Server* extension  
-   2. Right-click `index.html` → “Open with Live Server”
+```bash
+git clone https://github.com/adikulkarni006/CodeClip.git
+cd CodeClip
+Run Locally
+Any static server works. With VS Code:
 
-3. **Contribute**  
-   - Pick an issue labelled **Level 1**, **Level 2**, or **Level 3**.  
-   - Create a **feature branch**: `git checkout -b feat/`  
-   - Follow the style guide; submit a pull request; respond to reviews.
+Install the Live Server extension
 
-## 🛣️ Roadmap (Quarter 3 2025)
+Right-click index.html → “Open with Live Server”
 
-1. **Landing & Vault MVP** – basic challenge listing 🛠  
-2. **Code Editor Integration** – CodeMirror + autosave 🛠  
-3. **JS Runtime** – iframe sandbox, execution timers 🛠  
-4. **Profile & Stats** – badges, streak calendar 🛠  
-5. **AI Recommendations** – local ML or hosted API 🛠  
-6. **PWA Support** – installable, offline cache 🛠  
-7. **Unit & E2E Tests** – Vitest + Playwright 🛠  
+🤝 Contributing
+We welcome contributions of all levels!
 
-*Issues are filed chronologically in the `/docs/issues.docx` for reference.*
+Pick an issue labelled Level 1, Level 2, or Level 3
 
-## 👥 Community & Support
+Create a feature branch:
 
-| Channel | Purpose |
-|---------|---------|
-| GitHub Issues | Bug reports, feature requests |
-| GitHub Discussions | Q&A, ideas, polls |
-| Discord | Real-time chat, pair programming |
-| GSSoC Mentors | Onboarding & code reviews |
+bash
+Copy code
+git checkout -b feat/your-feature
+Follow the style guide & open a Pull Request
 
-## 🔖 License
+Be responsive to code reviews
 
-CodeClip is released under the **MIT License** – free for personal & commercial use with attribution.
+🛣️ Roadmap (Q3 2025)
+✅ Landing & Vault MVP – basic challenge listing
 
-### ⭐ Give the repo a star and join us in building the most accessible coding-challenge vault on the web!
+🛠 Code Editor Integration – CodeMirror + autosave
+
+🛠 JS Runtime – iframe sandbox, execution timers
+
+🛠 Profile & Stats – badges, streak calendar
+
+🛠 AI Recommendations – local ML or hosted API
+
+🛠 PWA Support – installable, offline cache
+
+🛠 Unit & E2E Tests – Vitest + Playwright
+
+👥 Community & Support
+Channel	Purpose
+GitHub Issues	Bug reports, feature requests
+Discussions	Q&A, ideas, polls
+Discord	Real-time chat, pair programming
+GSSoC Mentors	Onboarding & code reviews
+
+🔖 License
+Released under the MIT License – free for personal & commercial use with attribution.
