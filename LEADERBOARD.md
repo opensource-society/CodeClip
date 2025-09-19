@@ -9,7 +9,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 7 | 1 | 0 | 4 |
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
-| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 2 | 2 | 5 |
+| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
@@ -22,10 +22,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@shreya-mishra325](https://github.com/shreya-mishra325) | 2 | 0 | 0 | 1 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
-| [@shobanCodebase](https://github.com/shobanCodebase) | 2 | 0 | 0 | 1 |
-| [@Prachiikhar25](https://github.com/Prachiikhar25) | 2 | 0 | 0 | 1 |
-| [@supriya46788](https://github.com/supriya46788) | 2 | 0 | 0 | 1 |
-| [@nicksboson](https://github.com/nicksboson) | 2 | 0 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 2 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
@@ -39,6 +35,8 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Abhay-aps001](https://github.com/Abhay-aps001) | 1 | 0 | 0 | 1 |
 | [@Nikhil-coder390](https://github.com/Nikhil-coder390) | 1 | 0 | 0 | 1 |
 | [@ankita-mohantyy](https://github.com/ankita-mohantyy) | 1 | 0 | 0 | 1 |
+| [@Iqra-hussain235](https://github.com/Iqra-hussain235) | 1 | 0 | 0 | 1 |
+| [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
 | [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
@@ -48,11 +46,16 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Sanyam2511](https://github.com/Sanyam2511) | 1 | 0 | 0 | 1 |
 | [@Srivarshan-T](https://github.com/Srivarshan-T) | 1 | 0 | 0 | 1 |
 | [@pbln](https://github.com/pbln) | 1 | 0 | 0 | 1 |
+| [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 1 |
+| [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
+| [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
+| [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
 | [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
 | [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
 | [@anisha4890](https://github.com/anisha4890) | 1 | 0 | 0 | 0 |
+| [@MohdAnas007](https://github.com/MohdAnas007) | 1 | 0 | 0 | 0 |
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@Rupali-gituser](https://github.com/Rupali-gituser) | 1 | 0 | 0 | 0 |
 | [@shreyas1103](https://github.com/shreyas1103) | 1 | 0 | 0 | 0 |
