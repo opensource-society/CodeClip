@@ -9,10 +9,10 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 7 | 1 | 0 | 4 |
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
+| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
-| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 0 | 1 | 5 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 4 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
@@ -23,6 +23,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 2 | 0 | 1 |
+| [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
 | [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
@@ -48,7 +49,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 1 |
 | [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
 | [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
-| [@Sanskriti10247](https://github.com/Sanskriti10247) | 0 | 1 | 0 | 1 |
+| [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
 | [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
