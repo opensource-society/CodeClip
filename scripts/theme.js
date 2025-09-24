@@ -1,10 +1,17 @@
 import { saveUserSettings, loadUserSettings } from "./data.js";
 
+console.log("theme script loaded");
+
+// ------------------- Theme Toggle ------------------- //  
+
 document.addEventListener("DOMContentLoaded", () => {
   const toggleBtn = document.getElementById("theme-toggle");
 
   const setTheme = (theme) => {
     document.documentElement.setAttribute("data-theme", theme);
+  
+    console.log("Theme set to:", theme);  
+    // -------------- console log for checking the theme --------------// 
 
     // Toggle icon based on theme
     if (theme === "dark") {

@@ -666,41 +666,7 @@ body {
   </button>
 
   <!-- JavaScript -->
-  <script>
-    // Mobile Navigation Toggle
-    const navToggle = document.getElementById('navToggle');
-    const navMenu = document.getElementById('navMenu');
-
-    navToggle.addEventListener('click', () => {
-      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
-      navToggle.setAttribute('aria-expanded', !isExpanded);
-      navMenu.classList.toggle('open');
-    });
-
-    // Theme Toggle (simple example)
-    const themeToggle = document.getElementById('theme-toggle');
-    const rootElement = document.documentElement;
-
-    // Initialize theme based on prefers-color-scheme or localStorage
-    function initTheme() {
-      const savedTheme = localStorage.getItem('theme');
-      if (savedTheme) {
-        rootElement.setAttribute('data-theme', savedTheme);
-      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-        rootElement.setAttribute('data-theme', 'dark');
-      } else {
-        rootElement.setAttribute('data-theme', 'light');
-      }
-    }
-    initTheme();
-
-    themeToggle.addEventListener('click', () => {
-      const currentTheme = rootElement.getAttribute('data-theme');
-      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-      rootElement.setAttribute('data-theme', newTheme);
-      localStorage.setItem('theme', newTheme);
-    });
-  </script>
+  <script src="../scripts/challenges.js"></script>
   <script>
   const searchInput = document.getElementById("search-challenges");
   const difficultyFilter = document.getElementById("difficulty-filter");
