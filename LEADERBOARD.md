@@ -46,6 +46,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Sanyam2511](https://github.com/Sanyam2511) | 1 | 0 | 0 | 1 |
 | [@Srivarshan-T](https://github.com/Srivarshan-T) | 1 | 0 | 0 | 1 |
 | [@pbln](https://github.com/pbln) | 1 | 0 | 0 | 1 |
+| [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 1 |
 | [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
 | [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
 | [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
@@ -63,7 +64,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@unnati-joshi](https://github.com/unnati-joshi) | 1 | 0 | 0 | 0 |
 | [@Prakashray-dev](https://github.com/Prakashray-dev) | 0 | 0 | 1 | 0 |
 | [@yashp386](https://github.com/yashp386) | 1 | 0 | 0 | 0 |
-| [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 0 |
 | [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
 | [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
 | [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
