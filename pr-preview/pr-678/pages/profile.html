@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile - CodeClip</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+    
+    <!-- Styles -->
+    <!-- General Styles -->
+    <link rel="stylesheet" href="../styles.css">
+    <link rel="stylesheet" href="../styles/profile.css">
+    <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+    <link rel="stylesheet" href="../styles/progress-dashboard.css">
+    <link rel="stylesheet" href="../styles/profile-enhanced.css">
+    <link rel="stylesheet" href="../styles/streak-calendar.css">
+    <link rel="stylesheet" href="../styles/goal-setting.css">
+    <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+  <!-- Header Component -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <span class="logo-text">CodeClip</span>
+      </div>
+      <nav class="header__nav" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="/CodeClip/index.html"   class="nav__link">Home</a></li>
+          <li><a href="/CodeClip/pages/challenges.html"   class="nav__link">Challenges</a></li>
+          <li><a href="/CodeClip/pages/editor.html"   class="nav__link">Editor</a></li>
+          <li><a href="/CodeClip/pages/profile.html"   class="nav__link active">Profile</a></li>
+        </ul>
+      </nav>
+      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <!-- Main Content -->
+  <main>
+    <!-- Profile Hero Section -->
+    <section class="profile-hero">
+      <div class="container">
+        <div class="profile-hero__content">
+          <div class="profile-info">
+            <div class="profile-avatar">
+              <label for="upload-avatar" class="avatar-circle" id="avatarCircle">
+                <img id="avatarPreview" src="" alt="Profile Avatar" hidden />
+                <span id="avatarInitial" class="avatar-initial">U</span>
+                <input type="file" id="upload-avatar" accept="image/*" hidden />
+              </label>
+            </div>
+            <h1 class="profile-hero__title">User Profile</h1>
+            <p class="profile-hero__subtitle" id="profileSubtitle">
+              <span id="subtitleText">Track your coding journey</span>
+            </p>
+            <section class="profile-stats">
+              <!-- <div class="container"> -->
+                <div class="stat-card heatmap-card">
+                    <div class="heatmap-month">
+                       <div class="stat-label">January</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day active"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day active"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day active"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day active"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                       <div class="stat-label">February</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                       <div class="stat-label">March</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">April</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">May</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">June</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">July</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                       <div class="stat-label">August</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                      <div class="stat-label">September</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">October</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">November</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                    <div class="heatmap-month">
+                        <div class="stat-label">December</div>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                        <span class="heatmap-day"></span>
+                    </div>
+                </div>
+                <div class="stats-grid">
+                  <div class="stat-card">
+                    <div class="stat-icon">🎯</div>
+                    <div class="stat-number">15</div>
+                    <div class="stat-label">Challenges Solved</div>
+                  </div>
+                
+                  <div class="stat-card">
+                    <div class="stat-icon">⭐</div>
+                    <div class="stat-number">1,250</div>
+                    <div class="stat-label">Points Earned</div>
+                  </div>
+                  <div class="stat-card">
+                    <div class="stat-icon">🏆</div>
+                    <div class="stat-number">3</div>
+                    <div class="stat-label">Achievements</div>
+                  </div>
+                </div>
+              <!-- </div> -->
+            </section>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- Profile Stats -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <section class="profile-stats">
+      <div class="profile-header">
+        <div class="icon-box">
+          <i class="fas fa-tachometer-alt"></i>
+        </div>
+        <div class="text-container">
+          <div class="profile-header-title">Dashboard</div>
+          <div class="profile-header-subtitle">Check your latest updates and stats</div>
+        </div>
+      </div>
+      <div class="dashboard-cards">
+        <!-- Card 1: Streak -->
+        <div class="card">
+          <div class="card-icon-box">
+            <i class="fas fa-fire"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Current Streak</div>
+            <div id="streak-value" class="card-value">5 Days</div>
+          </div>
+        </div>
+
+        <!-- Card 2: Coding Time -->
+        <div class="card">
+          <div class="card-icon-box">
+            <i class="fas fa-clock"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Total Coding Time</div>
+            <div id="coding-time" class="card-value">12 hrs</div>
+          </div>
+        </div>
+
+        <!-- Card 3: Rank -->
+        <div class="card">
+          <div class="card-icon-box">
+            <i class="fas fa-trophy"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Rank</div>
+            <div id="rank-value" class="card-value">#24</div>
+          </div>
+        </div>
+
+        <!-- Card 4: Points Earned -->
+        <div class="card">
+          <div class="card-icon-box">
+            <i class="fas fa-star"></i>
+          </div>
+          <div class="card-content">
+            <div class="card-title">Points Earned</div>
+            <div id="points-value" class="card-value">1280 pts</div>
+          </div>
+        </div>
+      </div>
+      <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+      <!-- Enhanced Progress Dashboard Container -->
+      <div id="progress-dashboard-container" class="enhanced-dashboard-wrapper">
+        <!-- Dashboard will be populated by JavaScript with enhanced styling -->
+        <div class="dashboard-loading">
+          <div class="loading-spinner">
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+            <div class="spinner-ring"></div>
+          </div>
+          <p class="loading-text">Loading your progress dashboard...</p>
+        </div>
+      </div>
+      
+      <!-- Professional Dashboard Layout -->
+      <div class="dashboard-extras">
+        <div class="dashboard-main-grid">
+          <!-- Unified Skills & Actions Panel -->
+          <div class="unified-skills-actions-panel">
+            <div class="panel-header">
+              <h3 class="panel-main-title">
+                <i class="fas fa-dashboard"></i>
+                Skills & Quick Actions
+              </h3>
+              <p class="panel-subtitle">Monitor your progress and take action</p>
+            </div>
+        
+            <div class="unified-content">
+              <!-- Skills Section -->
+              <div class="skills-section-unified">
+                <div class="section-header">
+                  <h4 class="section-title">
+                    <i class="fas fa-chart-line"></i>
+                    Your Skills Progress
+                  </h4>
+                </div>
+                <div class="skills-grid-compact">
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-js-square"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">JavaScript</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 85%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">85%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-python"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">Python</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 78%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">78%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fab fa-react"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">React</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 92%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">92%</span>
+                      </div>
+                    </div>
+                  </div>
+        
+                  <div class="skill-item-compact">
+                    <div class="skill-icon-compact">
+                      <i class="fas fa-database"></i>
+                    </div>
+                    <div class="skill-info-compact">
+                      <span class="skill-name-compact">Algorithms</span>
+                      <div class="skill-progress-compact">
+                        <div class="skill-bar-compact">
+                          <div class="skill-fill-compact" style="width: 67%;"></div>
+                        </div>
+                        <span class="skill-percentage-compact">67%</span>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              <!-- Quick Actions Section -->
+              <div class="actions-section-unified">
+                <div class="section-header">
+                  <h4 class="section-title">
+                    <i class="fas fa-bolt"></i>
+                    Quick Actions
+                  </h4>
+                </div>
+                <div class="action-buttons-compact">
+                  <button class="action-btn-compact action-btn-compact--primary">
+                    <i class="fas fa-play"></i>
+                    <span>Start Challenge</span>
+                  </button>
+                  <button class="action-btn-compact action-btn-compact--secondary">
+                    <i class="fas fa-chart-bar"></i>
+                    <span>View Analytics</span>
+                  </button>
+                  <button class="action-btn-compact action-btn-compact--accent">
+                    <i class="fas fa-share-alt"></i>
+                    <span>Share Progress</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Recent Activity Timeline -->
+          <div class="activity-timeline-panel">
+            <div class="panel-header">
+              <h3 class="panel-main-title">
+                <i class="fas fa-history"></i>
+                Recent Activity
+              </h3>
+              <p class="panel-subtitle">Track your latest achievements</p>
+            </div>
+            <div class="timeline">
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--success">
+                  <i class="fas fa-check"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Completed "Two Sum" Challenge</h4>
+                  <p>Solved in 12 minutes with optimal solution</p>
+                  <span class="timeline-time">2 hours ago</span>
+                </div>
+              </div>
+        
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--warning">
+                  <i class="fas fa-trophy"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Achievement Unlocked: Problem Solver</h4>
+                  <p>Completed 10 challenges milestone</p>
+                  <span class="timeline-time">1 day ago</span>
+                </div>
+              </div>
+        
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--info">
+                  <i class="fas fa-fire"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Streak Extended to 15 Days</h4>
+                  <p>Keep up the consistent practice!</p>
+                  <span class="timeline-time">1 day ago</span>
+                </div>
+              </div>
+
+              <div class="timeline-item">
+                <div class="timeline-marker timeline-marker--primary">
+                  <i class="fas fa-code"></i>
+                </div>
+                <div class="timeline-content">
+                  <h4>Started "Binary Tree" Challenge</h4>
+                  <p>Medium difficulty algorithm problem</p>
+                  <span class="timeline-time">3 days ago</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+      <!-- === GOALS & CALENDAR SIDE BY SIDE LAYOUT START === -->
+      <div class="goals-calendar-grid">
+        <!-- === GITHUB-STYLE LEARNING STREAK CALENDAR START === -->
+        <div class="streak-calendar-section">
+          <div class="calendar-header">
+            <div class="calendar-title-section">
+              <div class="calendar-icon">
+                <i class="fab fa-github"></i>
+              </div>
+              <div class="calendar-title-content">
+                <h3 class="calendar-main-title">Learning Streak Calendar</h3>
+                <p class="calendar-subtitle">Your coding activity over the past year</p>
+              </div>
+            </div>
+            <div class="calendar-metric">
+              <span class="calendar-metric-value" id="current-streak-display">5</span>
+              <span class="calendar-metric-label">Current Streak</span>
+            </div>
+          </div>
+      
+          <div class="calendar-container">
+            <div class="calendar-months">
+              <div class="month-labels">
+                <span class="month-label">Jan</span>
+                <span class="month-label">Feb</span>
+                <span class="month-label">Mar</span>
+                <span class="month-label">Apr</span>
+                <span class="month-label">May</span>
+                <span class="month-label">Jun</span>
+                <span class="month-label">Jul</span>
+                <span class="month-label">Aug</span>
+                <span class="month-label">Sep</span>
+                <span class="month-label">Oct</span>
+                <span class="month-label">Nov</span>
+                <span class="month-label">Dec</span>
+              </div>
+            </div>
+      
+            <div class="calendar-grid-wrapper">
+              <div class="weekday-labels">
+                <span class="weekday-label">Mon</span>
+                <span class="weekday-label">Wed</span>
+                <span class="weekday-label">Fri</span>
+              </div>
+              <div class="calendar-grid" id="streak-calendar-grid">
+                <!-- Calendar cells will be generated by JavaScript -->
+              </div>
+            </div>
+      
+            <div class="calendar-legend">
+              <span class="legend-text">Less</span>
+              <div class="legend-squares">
+                <div class="legend-square level-0" data-level="0"></div>
+                <div class="legend-square level-1" data-level="1"></div>
+                <div class="legend-square level-2" data-level="2"></div>
+                <div class="legend-square level-3" data-level="3"></div>
+                <div class="legend-square level-4" data-level="4"></div>
+              </div>
+              <span class="legend-text">More</span>
+            </div>
+          </div>
+      
+        </div>
+        <!-- === GITHUB-STYLE LEARNING STREAK CALENDAR END === -->
+      </div>
+      <!-- === GOALS AND CALENDAR GRID END === -->
+      
+      <!-- Completed Challenges -->
+    <!-- Completed Challenges -->
+      <div class="challenges-section">
+        <div class="challenges-section-header">
+          <div class="challenges-icon-box">
+            <i class="fas fa-check-circle"></i>
+          </div>
+          <div id="completed-challenges" class="section-title"> Completed Challenges</div>
+        </div>
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="challenge-title">Two Sum Problem</div>
+            <div class="challenge-meta">Algorithms • July 20, 2025</div>
+            <div class="difficulty easy">Easy</div>
+            <div class="challenge-status completed">Completed</div>
+          </div>
+          <div  class="challenge-card">
+            <div class="challenge-title">Responsive Navbar</div>
+            <div class="challenge-meta">Web Dev • July 18, 2025</div>
+            <div class="difficulty medium">Medium</div>
+            <div class="challenge-status completed">Completed</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Two Sum Problem</div>
+            <div class="challenge-meta">Algorithms • July 20, 2025</div>
+            <div class="difficulty easy">Easy</div>
+            <div class="challenge-status completed">Completed</div>
+          </div>
+          <div id="challenge" class="challenge-card">
+            <div class="challenge-title">Responsive Navbar</div>
+            <div class="challenge-meta">Web Dev • July 18, 2025</div>
+            <div class="difficulty medium">Medium</div>
+            <div class="challenge-status completed">Completed</div>
+          </div>
+        </div>
+      </div>
+    </section> 
+
+      <!--  In Progress Challenges -->
+      <div id="in-progress-challenges" class="challenges-section">
+        <div class="challenges-section-header">
+          <div class="challenges-icon-box">
+            <i class="fas fa-spinner"></i>
+          </div>
+          <div class="section-title"> In progress Challenges</div>
+        </div>
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="challenge-title">Weather API App</div>
+            <div class="challenge-meta">JavaScript • Due July 25</div>
+            <div class="difficulty medium">Medium</div>
+            <div class="challenge-status in-progress">In Progress</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Sorting Visualizer</div>
+            <div class="challenge-meta">DSA • Due July 24</div>
+            <div class="difficulty hard">Hard</div>
+            <div class="challenge-status in-progress">In Progress</div>
+            </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Weather API App</div>
+            <div class="challenge-meta">JavaScript • Due July 25</div>
+            <div class="difficulty medium">Medium</div>
+            <div class="challenge-status in-progress">In Progress</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Sorting Visualizer</div>
+            <div class="challenge-meta">DSA • Due July 24</div>
+            <div class="difficulty hard">Hard</div>
+            <div class="challenge-status in-progress">In Progress</div>
+          </div>
+        </div>
+
+
+      <!--  To-Do Challenges -->
+      <div id="to-do-challenges" class="challenges-section">
+        <div class="challenges-section-header">
+          <div class="challenges-icon-box">
+            <i class="fas fa-list-ul"></i>
+          </div>
+          <div class="section-title"> To-do Challenges</div>
+        </div>
+        <div class="challenges-grid">
+          <div class="challenge-card">
+            <div class="challenge-title">Build To-Do App</div>
+            <div class="challenge-meta">Frontend • No due date</div>
+            <div class="difficulty easy">Easy</div>
+            <div class="challenge-status todo">To Do</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Binary Search Practice</div>
+            <div class="challenge-meta">Algorithms • No due date</div>
+            <div class="difficulty hard">Hard</div>
+            <div class="challenge-status todo">To Do</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Build To-Do App</div>
+            <div class="challenge-meta">Frontend • No due date</div>
+            <div class="difficulty easy">Easy</div>
+            <div class="challenge-status todo">To Do</div>
+          </div>
+          <div class="challenge-card">
+            <div class="challenge-title">Binary Search Practice</div>
+            <div class="challenge-meta">Algorithms • No due date</div>
+            <div class="difficulty hard">Hard</div>
+            <div class="challenge-status todo">To Do</div>
+          </div>
+        </div>
+      </div>
+        <div class="dashboard-row">
+        <!-- Leaderboard Section -->
+        <div class="leaderboard-section">
+          <div class="leaderboard-section-header">
+            <div class="leaderboard-section-icon"><i class="fas fa-trophy"></i></div>
+            <h2>Leaderboard</h2>
+          </div>
+          <table class="leaderboard-table">
+            <thead>
+            <tr>
+              <th><div class="rank-icon-box"><i class="fas fa-medal"></i></div></th>
+              <th>User</th>
+              <th>Points</th>
+              <th>Badges</th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr>
+              <td><div class="rank-icon-box"><i class="fas fa-crown"></i></div></td>
+              <td id="username-master">Alice</td>
+              <td id="points-master">1540 XP</td>
+              <td><span class="badge"><i class="fas fa-star"></i> Master</span></td>
+            </tr>
+            <tr>
+              <td><div class="rank-icon-box"><i class="fas fa-certificate"></i></div></td>
+              <td id="username-streak">Bob</td>
+              <td id="points-streak">1320 XP</td>
+              <td><span class="badge"><i class="fas fa-fire"></i> Streaker</span></td>
+            </tr>
+            <tr>
+              <td><div class="rank-icon-box"><i class="fas fa-rocket"></i></div></td>
+              <td id="username-fast-starter">Charlie</td>
+              <td id="points-fast-starter">1210 XP</td>
+              <td><span class="badge"><i class="fas fa-bolt"></i> Fast Starter</span></td>
+            </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Goals Section -->
+        <div class="goals-section">
+          <div class="goals-section-header">
+            <div class="goals-section-icon"><i class="fas fa-bullseye"></i></div>
+            <h2>Upcoming Goals & Reminders</h2>
+          </div>
+          <ul id="goals-list" class="goal-list">
+            <li>
+              <div class="goal-icon-box"><i class="fas fa-check-circle"></i></div>
+              <div class="goal-text">
+                <strong>Finish 5 Easy Challenges</strong>
+                <p>Complete by Sunday to maintain your streak.</p>
+              </div>
+            </li>
+            <li>
+              <div class="goal-icon-box"><i class="fas fa-road"></i></div>
+              <div class="goal-text">
+                <strong>Reach 2000 XP</strong>
+                <p>You're only 460 XP away from the next badge!</p>
+              </div>
+            </li>
+            <li>
+              <div class="goal-icon-box"><i class="fas fa-lightbulb"></i></div>
+              <div class="goal-text">
+                <strong>Try the “Array Rotation” Challenge</strong>
+                <p>Level: Intermediate • Unlocks logic badge</p>
+              </div>
+            </li>
+          </ul>
+        </div>
+      </div>
+      </div>
+    </section>
+
+    <script src="/scripts/profile.js"></script>
+  </main>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>CodeClip</h4>
+          <p>Master coding challenges in your browser</p>
+        </div>
+        <div class="footer__section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="/CodeClip/index.html">Home</a></li>
+            <li><a href="/CodeClip/pages/challenges.html">Challenges</a></li>
+            <li><a href="/CodeClip/pages/editor.html"></a>Editor</a></li>
+          </ul>
+        </div>
+        <div class="footer__section">
+          <h4>Community</h4>
+          <ul>
+            <li><a href="https://github.com/opensource-society/CodeClip">GitHub</a></li>
+            <li><a href="https://discord.gg/NmGyBWAE3b">Discord</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 CodeClip. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts -->
+  <script type="module" src="../scripts/app.js"></script>
+  <script type="module" src="../scripts/theme.js"></script>
+  
+  <!-- === SMART PROGRESS DASHBOARD FEATURE START === -->
+  <script type="module" src="../scripts/progress-dashboard.js"></script>
+  <script type="module" src="../scripts/demo-data.js"></script>
+  <script type="module" src="../scripts/streak-goal-manager.js"></script>
+  <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
+</body>
+</html>

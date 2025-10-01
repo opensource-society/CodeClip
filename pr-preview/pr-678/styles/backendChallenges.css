@@ -1,0 +1,51 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #fefefe;
+  padding: 2rem;
+}
+h1 {
+  color: #2d3748;
+}
+p.description {
+  color: #4a5568;
+  margin-bottom: 2rem;
+}
+.challenge-list {
+  display: grid;
+  gap: 1.2rem;
+}
+.challenge {
+  background: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: 0.3s ease;
+}
+.challenge:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+}
+.challenge-title {
+  font-weight: 600;
+  color: #e53e3e;
+}
+.challenge-desc {
+  color: #718096;
+  font-size: 0.95rem;
+}
+
+.explorebtn {
+  margin-top: 0.5rem;
+  padding: 0.3rem 0.8rem;
+  background-color: #0778f1;
+  color: white;
+  border-radius: 8px;
+  text-align: right;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  font-size: 0.92rem;
+  float: right;
+}
+.explorebtn:hover {
+  background-color: #034081;
+}

@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Challenges - CodeClip</title>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <!-- Merge both font options for flexibility -->
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Styles -->
+    <!-- If you want to keep all challenge styles in one file, use: -->
+    <link rel="stylesheet" href="/CodeClip/styles/about.css">
+    <!-- Or, if you want to scope styles to just challenges, use: -->
+    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+</head>
+<style>
+    
+.logo-text {
+  font-family: 'Poppins', sans-serif;
+  font-size: 2.2rem;
+  font-weight: 700;
+  letter-spacing: 1px;
+  display: inline-block;
+}
+
+
+.logo-code {
+  color: #add8e6;
+  font-weight: 700;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.logo-clip {
+  color: #4fc3f7;
+  font-style: italic;
+  font-weight: 600;
+  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+}
+
+.header {
+  background-color: #1a1a1a; /* Darker background */
+  color: #add8e6;
+  padding: 15px 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.6);
+  animation: slideInLeft 1s ease-out;
+  position: sticky;
+  top: 0;
+  z-index: 999;
+}
+
+
+.header__container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo-text {
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #87cefa;
+}
+
+
+.header__nav .nav__list {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  margin: 0;
+  padding: 0;
+}
+
+.nav__link {
+  color: #add8e6;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+  position: relative;
+}
+
+
+.nav__link::after {
+  content: '';
+  display: block;
+  width: 0%;
+  height: 2px;
+  background: #87cefa;
+  transition: width 0.3s ease;
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+}
+.nav__link:hover::after {
+  width: 100%;
+}
+
+
+.nav__link.active {
+  font-weight: bold;
+  color: #4fc3f7;
+}
+
+
+.header__toggle {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+.hamburger {
+  width: 25px;
+  height: 3px;
+  background-color: #add8e6;
+  border-radius: 2px;
+}
+
+/* Mobile styles */
+@media (max-width: 768px) {
+  .header__nav {
+    display: none;
+    position: absolute;
+    top: 60px;
+    right: 20px;
+    background-color: #1a1a1a;
+    border: 1px solid #333;
+    padding: 15px;
+    border-radius: 8px;
+  }
+
+  .header__nav.open {
+    display: block;
+  }
+
+  .nav__list {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .header__toggle {
+    display: flex;
+  }
+}
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #f1f4f5; /* Light blue text */
+}
+
+/* Container styling */
+.about-container {
+  max-width: 800px;
+  margin: 50px auto;
+  padding: 30px;
+  background-color: #1e1e1e;
+  border-radius: 10px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.5);
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Headings */
+.about-container h1,
+.about-container h2 {
+  color: #87cefa;
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Paragraph and list */
+.about-container p,
+.about-container ul,
+.about-container li {
+  line-height: 1.6;
+  animation: slideInLeft 1s ease-out;
+}
+
+/* Link styling */
+.about-container a {
+  color: #4fc3f7;
+  text-decoration: none;
+}
+.about-container a:hover {
+  text-decoration: underline;
+}
+
+/* Horizontal rule */
+.about-container hr {
+  border: none;
+  height: 1px;
+  background-color: #444;
+  margin: 20px 0;
+}
+
+/* Animation keyframes */
+@keyframes slideInLeft {
+  from {
+    opacity: 0;
+    transform: translateX(-50px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .about-container {
+    margin: 20px;
+    padding: 20px;
+  }
+}
+
+  </style>
+
+<body>
+  <!-- Header Component -->
+  <header class="header">
+    <div class="container header__container">
+      <div class="header__logo">
+        <span class="logo-text">CodeClip</span>
+      </div>
+      <nav class="header__nav" id="navMenu">
+        <ul class="nav__list">
+          <li><a href="index.html" data-route="/" class="nav__link">Home</a></li>
+<li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
+<li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
+<li><a href="form.html" data-route= "/form" class="nav__link" >User Details</a></li>
+<li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
+<li><a href="about.html" class="nav__link">About</a></li>
+
+        </ul>
+      </nav>
+      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+        <span class="hamburger"></span>
+      </button>
+    </div>
+  </header>
+
+  <div class="about-container">
+    <h1>About CodeClip</h1>
+    <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
+
+    <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
+ <hr>
+    <h2> Features</h2>
+    <ul>
+      <li> Light/Dark mode support</li>
+      <li> Save and manage code snippets effortlessly</li>
+      <li> Search functionality (in progress)</li>
+      <li> Responsive design for mobile and desktop</li>
+      <li> 100% privacy – nothing leaves your browser</li>
+    </ul>
+
+    
+    <p>View the source code or contribute here:  
+      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
+        github.com/opensource-society/CodeClip
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer__content">
+        <div class="footer__section">
+          <h4>CodeClip</h4>
+          <p>Master coding challenges in your browser</p>
+        </div>
+        <div class="footer__section">
+          <h4>Quick Links</h4>
+          <ul>
+            <li><a href="index.html" data-route="/">Home</a></li>
+<li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
+<li><a href="form.html" data-route= "/form">User Details</a></li>
+<li><a href="editor.html" data-route="/editor">Editor</a></li>
+
+          </ul>
+        </div>
+        <!--div class="footer__section">
+          <h4>Community</h4>
+          <ul class="social-links">
+            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank">GitHub</a></li>
+            <li><a href="#">Discord</a></li>
+            <li><a href="#">Twitter</a></li>
+            <li><a href="#">LinkedIn</a></li>
+          </ul>
+        </div-->
+         <div class="footer__section">
+          <h4>Community</h4>
+          <ul class="social-links">
+            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-github"></i></a></li>
+            <li><a href="#"><i class="fab fa-discord"></i></a></li>
+            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p>&copy; 2024 CodeClip. All rights reserved.</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Theme Toggle Button (from main branch version) -->
+  <button id="theme-toggle" title="Toggle theme">
+    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  </button>
+
+  <!-- Scripts -->
+ <script type="module" src="app.js"></script>
+<script type="module" src="theme.js"></script>
+<script src="challenges.js"></script>
+  <style>
+    /* Additional styles for challenges page */
+    .challenges-hero {
+      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
+      padding: 6rem 0 4rem;
+      text-align: center;
+    }
+
+    .challenges-hero__title {
+      font-size: 3.5rem;
+      font-weight: 700;
+      margin-bottom: 1.5rem;
+      color: white;
+    }
+
+    .challenges-hero__description {
+      font-size: 1.2rem;
+      color: rgba(255, 255, 255, 0.9);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    .challenges-filter {
+      background: var(--bg-secondary);
+      padding: 2rem 0;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .filter-controls {
+      display: flex;
+      gap: 2rem;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .filter-group {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    .filter-select, .search-input {
+      padding: 0.5rem 1rem;
+      border: 1px solid var(--border-color);
+      border-radius: 0.5rem;
+      background: white;
+      font-size: 0.9rem;
+    }
+
+    .search-group {
+      margin-left: auto;
+    }
+
+    .search-input {
+      width: 300px;
+    }
+
+    .challenges-grid {
+      padding: 3rem 0;
+    }
+
+    .challenges-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+      gap: 2rem;
+    }
+
+    .challenge-card {
+      background: white;
+      border-radius: 1rem;
+      padding: 1.5rem;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+
+    .challenge-card:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .challenge-card__header {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      margin-bottom: 1rem;
+    }
+
+    .challenge-card__title {
+      font-size: 1.25rem;
+      font-weight: 600;
+      color: var(--text-dark);
+      margin: 0;
+    }
+
+    .difficulty-badge {
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 600;
+      text-transform: uppercase;
+    }
+
+    .difficulty-easy {
+      background: #d4edda;
+      color: #155724;
+    }
+
+    .difficulty-medium {
+      background: #fff3cd;
+      color: #856404;
+    }
+
+    .difficulty-hard {
+      background: #f8d7da;
+      color: #721c24;
+    }
+
+    .challenge-card__description {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      line-height: 1.5;
+    }
+
+    .challenge-card__meta {
+      display: flex;
+      gap: 0.5rem;
+      margin-bottom: 1.5rem;
+      flex-wrap: wrap;
+    }
+
+    .category-tag {
+      background: var(--bg-light);
+      color: var(--primary-color);
+      padding: 0.25rem 0.75rem;
+      border-radius: 1rem;
+      font-size: 0.75rem;
+      font-weight: 500;
+    }
+
+    .challenge-card__actions {
+      text-align: right;
+    }
+
+    .btn-sm {
+      padding: 0.5rem 1rem;
+      font-size: 0.875rem;
+    }
+
+    #theme-toggle {
+      position: fixed;
+      right: 2rem;
+      bottom: 2rem;
+      background: var(--bg-primary, #fff);
+      border: none;
+      border-radius: 50%;
+      padding: 0.75rem;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+      cursor: pointer;
+      z-index: 1000;
+      transition: background 0.2s;
+    }
+
+    #theme-toggle svg {
+      vertical-align: middle;
+    }
+
+    @media (max-width: 768px) {
+      .challenges-hero__title {
+        font-size: 2.5rem;
+      }
+
+      .filter-controls {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .search-group {
+        margin-left: 0;
+      }
+
+      .search-input {
+        width: 100%;
+      }
+
+      .challenges-list {
+        grid-template-columns: 1fr;
+      }
+
+    }
+  </style>
+</body>
+</html>
