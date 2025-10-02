@@ -2,7 +2,9 @@
 * {
   box-sizing: border-box;
   margin: 0;
-  padding: 0;
+  padding: 1px;
+  justify-content: center;
+  justify-items: center;
 }
 
 /* Enable smooth scrolling when clicking anchor links like #top */
@@ -298,6 +300,7 @@ body {
   font-weight: 600;
   font-size: 1rem;
   transition: all 0.3s ease;
+  justify-content: center;
 }
 
 .btn-primary,
