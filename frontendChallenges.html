@@ -4,6 +4,61 @@
     <meta charset="UTF-8" />
     <title>Frontend Challenges</title>
     <link rel="stylesheet" href="styles/frontendChallenges.css" />
+    <style>
+      /* Modal base */
+      .modal {
+        display: none; /* hidden by default */
+        position: fixed;
+        z-index: 1000;
+        top: 0; left: 0;
+        width: 100%; height: 100%;
+        background: rgba(0,0,0,0.6);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      .modal-content {
+        background: #fff;
+        padding: 20px;
+        border-radius: 12px;
+        width: 90%;
+        max-width: 600px;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        position: relative;
+        animation: fadeIn 0.3s ease-in-out;
+      }
+      .modal-content h2 {
+        margin-top: 0;
+      }
+      .close {
+        position: absolute;
+        top: 10px; right: 15px;
+        font-size: 22px;
+        font-weight: bold;
+        cursor: pointer;
+        color: #555;
+      }
+      .close:hover { color: #000; }
+      @keyframes fadeIn {
+        from { opacity: 0; transform: translateY(-20px); }
+        to   { opacity: 1; transform: translateY(0); }
+      }
+
+      /* Style Explore button */
+      .explorebtn {
+        background: #2563eb;
+        color: #fff;
+        padding: 8px 16px;
+        border-radius: 6px;
+        cursor: pointer;
+        margin-top: 10px;
+        display: inline-block;
+        transition: 0.2s;
+      }
+      .explorebtn:hover {
+        background: #1d4ed8;
+      }
+    </style>
   </head>
   <body>
     <h1>Frontend Challenges</h1>
@@ -13,48 +68,61 @@
     </p>
 
     <div class="challenge-list">
+      <!-- Challenge 1 -->
       <div class="challenge">
         <div class="challenge-title">Responsive Navbar</div>
         <div class="challenge-desc">
           Build a responsive navigation bar with a hamburger menu for mobile
           view.
         </div>
-        <div class="explorebtn">Explore more</div>
+        <div class="explorebtn" onclick="openModal('modal1')">Explore more</div>
       </div>
 
+      <!-- Modal for Challenge 1 -->
+      <div id="modal1" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal1')">&times;</span>
+          <h2>Responsive Navbar</h2>
+          <p>👉 Use Flexbox or CSS Grid for layout.</p>
+          <p>👉 Add a hamburger icon with JavaScript to toggle the menu on smaller screens.</p>
+          <a href="https://www.w3schools.com/howto/howto_js_topnav_responsive.asp" target="_blank">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Challenge 2 -->
       <div class="challenge">
         <div class="challenge-title">Pricing Card</div>
         <div class="challenge-desc">
           Design and code a modern pricing card layout using flexbox or grid.
         </div>
-        <div class="explorebtn">Explore more</div>
+        <div class="explorebtn" onclick="openModal('modal2')">Explore more</div>
       </div>
 
-      <div class="challenge">
-        <div class="challenge-title">Login Form UI</div>
-        <div class="challenge-desc">
-          Create a stylish login/signup form with smooth transitions.
+      <!-- Modal for Challenge 2 -->
+      <div id="modal2" class="modal">
+        <div class="modal-content">
+          <span class="close" onclick="closeModal('modal2')">&times;</span>
+          <h2>Pricing Card</h2>
+          <p>👉 Use CSS Grid/Flexbox to align pricing tiers.</p>
+          <p>👉 Include hover effects for better UI.</p>
         </div>
-        <div class="explorebtn">Explore more</div>
       </div>
 
-      <div class="challenge">
-        <div class="challenge-title">Landing Page</div>
-        <div class="challenge-desc">
-          Design a hero section with a call-to-action button and a background
-          image.
-        </div>
-        <div class="explorebtn">Explore more</div>
-      </div>
-
-      <div class="challenge">
-        <div class="challenge-title">Image Gallery</div>
-        <div class="challenge-desc">
-          Make a responsive image gallery that adjusts across devices using CSS
-          Grid.
-        </div>
-        <div class="explorebtn">Explore more</div>
-      </div>
+      <!-- You can repeat this structure for other challenges (Login Form, Landing Page, etc.) -->
     </div>
+
+    <script>
+      function openModal(id) {
+        document.getElementById(id).style.display = "flex";
+      }
+      function closeModal(id) {
+        document.getElementById(id).style.display = "none";
+      }
+      window.onclick = function(e) {
+        document.querySelectorAll('.modal').forEach(modal => {
+          if (e.target === modal) modal.style.display = "none";
+        });
+      }
+    </script>
   </body>
 </html>

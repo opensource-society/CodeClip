@@ -38,6 +38,42 @@
     .explorebtn:hover {
       background-color: #034081;
     }
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1000;
+  left: 0; top: 0;
+  width: 100%; height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.modal-content {
+  background: #fff;
+  padding: 20px;
+  border-radius: 12px;
+  width: 90%;
+  max-width: 600px;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+  position: relative;
+  animation: fadeIn 0.28s ease-in-out;
+  outline: none;
+}
+.close {
+  position: absolute;
+  top: 10px; right: 15px;
+  font-size: 22px;
+  font-weight: bold;
+  cursor: pointer;
+  color: #555;
+}
+.close:hover { color: #000; }
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-14px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
   </style>
 </head>
 <body>
@@ -49,29 +85,126 @@
     <div class="challenge">
       <div class="challenge-title">Profile Card UI</div>
       <div class="challenge-desc">Design and build a profile card with image, name, and social links.</div>
-      <div class="explorebtn"> Explore more </div>
+      <div class="explorebtn" onclick="openModal('modal1')"> Explore more </div>
+
     </div>
     <div class="challenge">
       <div class="challenge-title">Pricing Table</div>
       <div class="challenge-desc">Create a clean and responsive pricing component for a SaaS app.</div>
-      <div class="explorebtn"> Explore more </div>
+      <div class="explorebtn" onclick="openModal('modal2')"> Explore more </div>
+
     </div>
     <div class="challenge">
       <div class="challenge-title">Login Page UI</div>
       <div class="challenge-desc">Design a modern login form with input validation UI.</div>
-      <div class="explorebtn"> Explore more </div>
+      <div class="explorebtn" onclick="openModal('modal3')"> Explore more </div>
+
     </div>
     <div class="challenge">
       <div class="challenge-title">Navbar with Dropdown</div>
       <div class="challenge-desc">Build a responsive navigation bar with dropdown support.</div>
-      <div class="explorebtn"> Explore more </div>
+      <div class="explorebtn" onclick="openModal('modal4')"> Explore more </div>
+
     </div>
     <div class="challenge">
       <div class="challenge-title">Dark Mode Toggle</div>
       <div class="challenge-desc">Add a dark mode toggle switch with a smooth transition effect.</div>
-      <div class="explorebtn"> Explore more </div>
+      <div class="explorebtn" onclick="openModal('modal5')"> Explore more </div>
+
     </div>
   </div>
+  <!-- Modals (place before </body>) -->
+<div id="modal1" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal1-title">
+  <div class="modal-content" tabindex="0" aria-describedby="modal1-desc">
+    <span class="close" onclick="closeModal('modal1')" aria-label="Close modal">&times;</span>
+    <h2 id="modal1-title">Profile Card UI</h2>
+    <div id="modal1-desc">
+      <p>👉 Use Flexbox/Grid for layout. Include avatar, name and social icons.</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal2" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal2-title">
+  <div class="modal-content" tabindex="0" aria-describedby="modal2-desc">
+    <span class="close" onclick="closeModal('modal2')" aria-label="Close modal">&times;</span>
+    <h2 id="modal2-title">Pricing Table</h2>
+    <div id="modal2-desc">
+      <p>👉 Use CSS Grid for columns. Highlight recommended plan visually.</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal3" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal3-title">
+  <div class="modal-content" tabindex="0" aria-describedby="modal3-desc">
+    <span class="close" onclick="closeModal('modal3')" aria-label="Close modal">&times;</span>
+    <h2 id="modal3-title">Login Page UI</h2>
+    <div id="modal3-desc">
+      <p>👉 Add focus states and inline validation messages. Provide clear CTA.</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal4" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal4-title">
+  <div class="modal-content" tabindex="0" aria-describedby="modal4-desc">
+    <span class="close" onclick="closeModal('modal4')" aria-label="Close modal">&times;</span>
+    <h2 id="modal4-title">Navbar with Dropdown</h2>
+    <div id="modal4-desc">
+      <p>👉 Add dropdown hover/click states and mobile collapse behavior.</p>
+    </div>
+  </div>
+</div>
+
+<div id="modal5" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal5-title">
+  <div class="modal-content" tabindex="0" aria-describedby="modal5-desc">
+    <span class="close" onclick="closeModal('modal5')" aria-label="Close modal">&times;</span>
+    <h2 id="modal5-title">Dark Mode Toggle</h2>
+    <div id="modal5-desc">
+      <p>👉 Use CSS variables for theme colors. Transition smoothly between themes.</p>
+    </div>
+  </div>
+</div>
+<script>
+  // Keep track of last focused element to restore focus when modal closes
+  let lastFocused = null;
+
+  function openModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    lastFocused = document.activeElement;
+    modal.style.display = 'flex';
+    const content = modal.querySelector('.modal-content');
+    if (content) content.focus();
+    document.body.style.overflow = 'hidden'; // prevent background scroll
+  }
+
+  function closeModal(id) {
+    const modal = document.getElementById(id);
+    if (!modal) return;
+    modal.style.display = 'none';
+    document.body.style.overflow = '';
+    if (lastFocused) { try { lastFocused.focus(); } catch(e) {} lastFocused = null; }
+  }
+
+  // Click outside modal-content to close
+  window.addEventListener('click', (e) => {
+    document.querySelectorAll('.modal').forEach(modal => {
+      if (e.target === modal) {
+        modal.style.display = 'none';
+        document.body.style.overflow = '';
+      }
+    });
+  });
+
+  // Close modals on Escape
+  window.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      document.querySelectorAll('.modal').forEach(m => m.style.display = 'none');
+      document.body.style.overflow = '';
+      if (lastFocused) { try { lastFocused.focus(); } catch(e) {} lastFocused = null; }
+    }
+  });
+</script>
+
 
 </body>
 </html>
