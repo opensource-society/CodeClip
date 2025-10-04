@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>Frontend Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Build a Responsive Image Gallery</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Create a responsive image gallery that rearranges itself across devices
+        using CSS Grid. Focus on visual balance, fast loading, and an intuitive
+        browsing experience.
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Grid Layout:</strong>
+          <ul>
+            <li>Use CSS Grid to create a flexible multi-column layout.</li>
+            <li>
+              Design breakpoints so the gallery shows e.g., 4 columns on
+              desktop, 2–3 on tablets, 1–2 on mobile.
+            </li>
+            <li>
+              Consider a masonry-like layout (CSS Grid or column approach) for
+              varied image heights.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Images & Performance:</strong>
+          <ul>
+            <li>
+              Use appropriately sized images and <code>srcset</code> for
+              responsive images.
+            </li>
+            <li>
+              Implement lazy loading (<code>loading="lazy"</code>) to improve
+              performance.
+            </li>
+            <li>Optimize file formats (WebP/AVIF where supported).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Interactions:</strong>
+          <ul>
+            <li>Add hover effects (zoom, overlay caption, subtle shadow).</li>
+            <li>
+              Provide a lightbox/modal to view images larger with next/prev
+              controls.
+            </li>
+            <li>
+              Allow keyboard navigation inside the lightbox (arrow keys + Esc).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Accessibility:</strong>
+          <ul>
+            <li>Use descriptive <code>alt</code> text for all images.</li>
+            <li>
+              Ensure focus states are visible and controls are reachable via
+              keyboard.
+            </li>
+            <li>
+              Use ARIA attributes for modal dialogs (e.g.,
+              <code>aria-modal</code>, <code>aria-label</code>).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Styling & Responsiveness:</strong>
+          <ul>
+            <li>
+              Maintain consistent spacing and a clean visual rhythm between
+              items.
+            </li>
+            <li>Use CSS transitions for smooth hover and modal animations.</li>
+            <li>
+              Ensure the gallery adapts gracefully to very wide and very narrow
+              viewports.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>HTML: Semantic markup for images, figures, and captions.</li>
+        <li>
+          CSS: Grid for layout, media queries for breakpoints, transitions for
+          effects.
+        </li>
+        <li>
+          JavaScript (Optional): Lightbox, keyboard controls, lazy-loading
+          polyfills, and filtering.
+        </li>
+      </ul>
+
+      <h2>Optional Enhancements</h2>
+      <ul>
+        <li>Filter or category tabs to view subsets of images.</li>
+        <li>
+          Drag-to-reorder in a gallery admin mode (requires JS + accessibility
+          considerations).
+        </li>
+        <li>
+          Animated filtering and layout transitions (e.g., FLIP technique).
+        </li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Learn how CSS Grid adapts content across screen sizes.</li>
+        <li>Balance visual design with performance and accessibility.</li>
+        <li>Build a reusable gallery component you can drop into projects.</li>
+      </ul>
+    </div>
+  </body>
+</html>

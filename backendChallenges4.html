@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>Backend Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Build a CRUD API with SQLite</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Create a REST API for a simple Todo application using SQLite as the
+        database. The API should support full Create, Read, Update, and Delete
+        (CRUD) operations.
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Database Setup:</strong>
+          <ul>
+            <li>Use SQLite to store todo items.</li>
+            <li>
+              Each todo should have at least: <code>id</code>,
+              <code>title</code>, <code>description</code>,
+              <code>status</code> (e.g., pending/completed).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>API Endpoints:</strong>
+          <ul>
+            <li><code>POST /todos</code> → Create a new todo item.</li>
+            <li><code>GET /todos</code> → Retrieve all todos.</li>
+            <li>
+              <code>GET /todos/:id</code> → Retrieve a specific todo by ID.
+            </li>
+            <li><code>PUT /todos/:id</code> → Update an existing todo.</li>
+            <li><code>DELETE /todos/:id</code> → Delete a todo item.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Validation & Error Handling:</strong>
+          <ul>
+            <li>Validate required fields (title, description).</li>
+            <li>
+              Return proper status codes (201 for create, 404 if not found,
+              etc.).
+            </li>
+            <li>Handle database errors gracefully.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Optional Enhancements:</strong>
+          <ul>
+            <li>Add filtering (e.g., <code>/todos?status=completed</code>).</li>
+            <li>Implement pagination for large todo lists.</li>
+            <li>Add due dates and sorting (e.g., by date or priority).</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>
+          Express (Node.js) with <code>sqlite3</code> package OR Flask (Python)
+          with <code>sqlite3</code> module.
+        </li>
+        <li>CRUD operations with SQL queries.</li>
+        <li>
+          RESTful API design principles (endpoints, status codes, JSON
+          responses).
+        </li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Learn how to connect a backend to a database.</li>
+        <li>Practice building a fully functional CRUD API.</li>
+        <li>Understand how to design scalable and reusable REST endpoints.</li>
+      </ul>
+    </div>
+  </body>
+</html>
