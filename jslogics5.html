@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>JavaScript Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Array Flattener</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Write a function that takes a deeply nested array and returns a new
+        array with all elements flattened into a single level. You can use
+        recursion or iterative logic to achieve this.
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Function Definition:</strong>
+          <ul>
+            <li>Create a function that accepts a nested array as input.</li>
+            <li>Return a new array with all nested elements flattened.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Flattening Logic:</strong>
+          <ul>
+            <li>
+              Recursively check each element: if it’s an array, flatten it, else
+              push it to the result.
+            </li>
+            <li>
+              Optionally, implement iterative flattening using a stack or loop.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Examples:</strong>
+          <ul>
+            <li>
+              <code>flattenArray([1, [2, [3, 4], 5]]) → [1, 2, 3, 4, 5]</code>
+            </li>
+            <li><code>flattenArray([[[1], 2], 3]) → [1, 2, 3]</code></li>
+            <li>
+              <code>flattenArray([1, 2, 3]) → [1, 2, 3]</code> (already flat)
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>Recursive and iterative approaches to problem solving.</li>
+        <li>
+          Array manipulation using <code>concat()</code>, <code>push()</code>,
+          or spread syntax.
+        </li>
+        <li>Handling deeply nested data structures efficiently.</li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Understand recursion and its application in array manipulation.</li>
+        <li>Learn iterative approaches to flatten arrays without recursion.</li>
+        <li>Improve problem-solving skills for nested data structures.</li>
+      </ul>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>Backend Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Implement User Authentication Basics</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Build a simple authentication system that allows users to sign up, log
+        in, and remain authenticated using sessions or JSON Web Tokens (JWT).
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Signup:</strong>
+          <ul>
+            <li>
+              Create a <code>/signup</code> endpoint to register new users.
+            </li>
+            <li>
+              Accept fields like <code>username</code>, <code>email</code>, and
+              <code>password</code>.
+            </li>
+            <li>Hash passwords before storing (use libraries like bcrypt).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Login:</strong>
+          <ul>
+            <li>
+              Create a <code>/login</code> endpoint that checks credentials.
+            </li>
+            <li>
+              On success, issue a session (cookie-based) or JWT (token-based).
+            </li>
+            <li>
+              On failure, return an error response with proper status codes.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Protected Routes:</strong>
+          <ul>
+            <li>
+              Create a <code>/profile</code> or <code>/dashboard</code> endpoint
+              that requires authentication.
+            </li>
+            <li>
+              Verify session cookies or validate JWT before allowing access.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Logout:</strong>
+          <ul>
+            <li>Clear session or invalidate JWT on logout request.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Optional Enhancements:</strong>
+          <ul>
+            <li>Add token expiration and refresh logic.</li>
+            <li>Include role-based access control (admin vs. user).</li>
+            <li>
+              Connect with a database (MongoDB, PostgreSQL, etc.) for persistent
+              storage.
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>
+          Express (Node.js) with <code>express-session</code> or JWT libraries
+          (<code>jsonwebtoken</code>).
+        </li>
+        <li>Flask (Python) with Flask-Login, Flask-JWT, or Flask-Sessions.</li>
+        <li>Password hashing with bcrypt or similar libraries.</li>
+        <li>Authentication middleware for route protection.</li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Understand the basics of user authentication.</li>
+        <li>Learn how to handle login, signup, and session management.</li>
+        <li>
+          Build a foundation for secure and scalable authentication systems.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>

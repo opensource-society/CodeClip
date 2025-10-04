@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>JavaScript Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Anagram Validator</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Write a function that checks whether two given strings are anagrams of
+        each other. Two strings are anagrams if they contain the same characters
+        in a different order, ignoring spaces and capitalization.
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Function Definition:</strong>
+          <ul>
+            <li>Create a function that accepts two string inputs.</li>
+            <li>
+              Return <code>true</code> if they are anagrams,
+              <code>false</code> otherwise.
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Case & Whitespace Handling:</strong>
+          <ul>
+            <li>
+              Ignore capitalization (treat <code>"Listen"</code> as
+              <code>"listen"</code>).
+            </li>
+            <li>Optionally, ignore spaces and punctuation for phrases.</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Examples:</strong>
+          <ul>
+            <li><code>anagramValidator("listen", "silent") → true</code></li>
+            <li><code>anagramValidator("hello", "bello") → false</code></li>
+            <li>
+              <code>anagramValidator("Dormitory", "Dirty room") → true</code>
+              (case-insensitive, ignores spaces)
+            </li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>String manipulation in JavaScript.</li>
+        <li>Sorting characters or using frequency maps.</li>
+        <li>
+          Handling edge cases like capitalization, spaces, and punctuation.
+        </li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Learn techniques for comparing and analyzing strings.</li>
+        <li>Practice writing clean, reusable functions.</li>
+        <li>
+          Understand how to handle real-world formatting and edge cases in
+          string problems.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
