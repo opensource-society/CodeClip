@@ -2,74 +2,286 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>UI Design Tasks</title>
   <style>
-    body { font-family: 'Segoe UI', sans-serif; background: #f9fafb; padding: 2rem; }
-    h1 { color: #2d3748; }
-    p.description { color: #4a5568; margin-bottom: 2rem; }
-    .challenge-list { display: grid; gap: 1.2rem; }
-    .challenge {
-      background: white;
-      padding: 1rem 1.5rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-      transition: 0.3s ease;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    .challenge:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.1);
-    }
-    .challenge-title { font-weight: 600; color: #38a169; }
-    .challenge-desc { color: #718096; font-size: 0.95rem; }
 
-    
-    .explorebtn {
-      margin-top: 0.5rem;
-      padding: 0.3rem 0.8rem;
-      background-color: #0778f1;
-      color: white;
-      border-radius: 8px;
-      text-align: right;
-      cursor: pointer;
-      transition: background-color 0.3s ease;
-      font-size: 0.92rem;
-      float: right;
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      min-height: 100vh;
+      background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+      padding: 3rem 2rem;
+      position: relative;
+      overflow-x: hidden;
     }
+
+    body::before {
+      content: '';
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: 
+        radial-gradient(circle at 20% 30%, rgba(255, 255, 255, 0.1), transparent 40%),
+        radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.08), transparent 40%);
+      pointer-events: none;
+      z-index: 0;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      color: #ffffff;
+      font-size: 3rem;
+      font-weight: 800;
+      margin-bottom: 1rem;
+      text-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+      animation: fadeInDown 0.8s ease-out;
+      letter-spacing: -0.5px;
+    }
+
+    @keyframes fadeInDown {
+      from {
+        opacity: 0;
+        transform: translateY(-30px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    p.description {
+      color: rgba(255, 255, 255, 0.9);
+      margin-bottom: 3rem;
+      font-size: 1.2rem;
+      line-height: 1.6;
+      animation: fadeIn 1s ease-out 0.2s both;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(20px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    .challenge-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+      gap: 2rem;
+    }
+
+    .challenge {
+      background: rgba(255, 255, 255, 0.95);
+      backdrop-filter: blur(10px);
+      padding: 2rem;
+      border-radius: 20px;
+      box-shadow: 0 10px 40px rgba(0, 0, 0, 0.15);
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      position: relative;
+      overflow: hidden;
+      animation: slideUp 0.6s ease-out both;
+      animation-delay: calc(var(--index) * 0.1s);
+    }
+
+    @keyframes slideUp {
+      from {
+        opacity: 0;
+        transform: translateY(40px) scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
+    }
+
+    .challenge::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 4px;
+      background: linear-gradient(90deg, #667eea, #764ba2);
+      transform: scaleX(0);
+      transform-origin: left;
+      transition: transform 0.4s ease;
+    }
+
+    .challenge:hover::before {
+      transform: scaleX(1);
+    }
+
+    .challenge::after {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(102, 126, 234, 0.1), transparent 70%);
+      opacity: 0;
+      transition: opacity 0.5s;
+    }
+
+    .challenge:hover::after {
+      opacity: 1;
+    }
+
+    .challenge:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 60px rgba(0, 0, 0, 0.25);
+      background: rgba(255, 255, 255, 1);
+    }
+
+    .challenge-title {
+      font-weight: 700;
+      color: #667eea;
+      font-size: 1.4rem;
+      margin-bottom: 0.8rem;
+      transition: color 0.3s ease;
+      position: relative;
+      z-index: 1;
+    }
+
+    .challenge:hover .challenge-title {
+      color: #764ba2;
+    }
+
+    .challenge-desc {
+      color: #4a5568;
+      font-size: 1rem;
+      line-height: 1.6;
+      margin-bottom: 1.5rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .explorebtn {
+      display: inline-block;
+      padding: 0.7rem 1.5rem;
+      background: linear-gradient(135deg, #667eea, #764ba2);
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      font-size: 0.95rem;
+      font-weight: 600;
+      float: right;
+      border: none;
+      box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+
+    .explorebtn::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.3), transparent);
+      transition: 0.5s;
+    }
+
+    .explorebtn:hover::before {
+      left: 100%;
+    }
+
     .explorebtn:hover {
-      background-color: #034081;
+      transform: translateX(5px) scale(1.05);
+      box-shadow: 0 6px 25px rgba(102, 126, 234, 0.5);
+    }
+
+    .explorebtn:active {
+      transform: translateX(5px) scale(0.98);
+    }
+
+    /* Floating particles */
+    .particle {
+      position: fixed;
+      width: 4px;
+      height: 4px;
+      background: rgba(255, 255, 255, 0.5);
+      border-radius: 50%;
+      pointer-events: none;
+      animation: float 10s infinite ease-in-out;
+      z-index: 0;
+    }
+
+    .particle:nth-child(1) { left: 10%; top: 20%; animation-delay: 0s; }
+    .particle:nth-child(2) { left: 20%; top: 80%; animation-delay: 2s; }
+    .particle:nth-child(3) { left: 70%; top: 30%; animation-delay: 4s; }
+    .particle:nth-child(4) { left: 80%; top: 70%; animation-delay: 6s; }
+    .particle:nth-child(5) { left: 40%; top: 50%; animation-delay: 8s; }
+
+    @keyframes float {
+      0%, 100% { transform: translateY(0) translateX(0); }
+      50% { transform: translateY(-30px) translateX(20px); }
+    }
+
+    @media (max-width: 768px) {
+      body { padding: 2rem 1rem; }
+      h1 { font-size: 2rem; }
+      .challenge-list { grid-template-columns: 1fr; gap: 1.5rem; }
     }
   </style>
 </head>
 <body>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
+  <div class="particle"></div>
 
-  <h1>UI Design Tasks</h1>
-  <p class="description">Strengthen your UI/UX skills by building visually appealing components:</p>
+  <div class="container">
+    <h1>UI Design Tasks</h1>
+    <p class="description">Strengthen your UI/UX skills by building visually appealing components:</p>
 
-  <div class="challenge-list">
-    <div class="challenge">
-      <div class="challenge-title">Profile Card UI</div>
-      <div class="challenge-desc">Design and build a profile card with image, name, and social links.</div>
-      <div class="explorebtn"> Explore more </div>
-    </div>
-    <div class="challenge">
-      <div class="challenge-title">Pricing Table</div>
-      <div class="challenge-desc">Create a clean and responsive pricing component for a SaaS app.</div>
-      <div class="explorebtn"> Explore more </div>
-    </div>
-    <div class="challenge">
-      <div class="challenge-title">Login Page UI</div>
-      <div class="challenge-desc">Design a modern login form with input validation UI.</div>
-      <div class="explorebtn"> Explore more </div>
-    </div>
-    <div class="challenge">
-      <div class="challenge-title">Navbar with Dropdown</div>
-      <div class="challenge-desc">Build a responsive navigation bar with dropdown support.</div>
-      <div class="explorebtn"> Explore more </div>
-    </div>
-    <div class="challenge">
-      <div class="challenge-title">Dark Mode Toggle</div>
-      <div class="challenge-desc">Add a dark mode toggle switch with a smooth transition effect.</div>
-      <div class="explorebtn"> Explore more </div>
+    <div class="challenge-list">
+      <div class="challenge" style="--index: 0">
+        <div class="challenge-title">Profile Card UI</div>
+        <div class="challenge-desc">Design and build a profile card with image, name, and social links.</div>
+        <div class="explorebtn">Explore more</div>
+      </div>
+      <div class="challenge" style="--index: 1">
+        <div class="challenge-title">Pricing Table</div>
+        <div class="challenge-desc">Create a clean and responsive pricing component for a SaaS app.</div>
+        <div class="explorebtn">Explore more</div>
+      </div>
+      <div class="challenge" style="--index: 2">
+        <div class="challenge-title">Login Page UI</div>
+        <div class="challenge-desc">Design a modern login form with input validation UI.</div>
+        <div class="explorebtn">Explore more</div>
+      </div>
+      <div class="challenge" style="--index: 3">
+        <div class="challenge-title">Navbar with Dropdown</div>
+        <div class="challenge-desc">Build a responsive navigation bar with dropdown support.</div>
+        <div class="explorebtn">Explore more</div>
+      </div>
+      <div class="challenge" style="--index: 4">
+        <div class="challenge-title">Dark Mode Toggle</div>
+        <div class="challenge-desc">Add a dark mode toggle switch with a smooth transition effect.</div>
+        <div class="explorebtn">Explore more</div>
+      </div>
     </div>
   </div>
 
