@@ -11,6 +11,10 @@
       href="assets/favicon/codeClip-favicon.png"
       type="image/png"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+    />
 
     <!-- ================ Meta Tags ================  -->
     <meta
@@ -46,6 +50,7 @@
 <link rel="stylesheet" href="styles/owl.carousel.min.css" />
 <link rel="stylesheet" href="styles/owl.theme.default.min.css" />
 <link rel="stylesheet" href="styles/fontawesome.css" />
+<link rel="stylesheet" href="styles/components.css">
 <!-- Custom CSS & External Libraries -->
 <link
   rel="stylesheet"
@@ -561,76 +566,49 @@
     </main>
 
     <!-- ================================ Footer Section Start Here ================================ -->
-    <footer id="contactFooter">
-      <div class="container">
-        <div class="row align-items-start justify-content-between py-4">
-          <div data-aos-duration="650" data-aos="fade-up" class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
-            <a class="navbar-brand mb-2" id="homeSection"
-              >Code<span>Clip</span></a
-            > 
-            <p class="footer-desc mb-0 text-dark">
-              CodeClip is a open source project under GirlScript Summer of Code
-              (GSSoC) 2025 to open for contribution
-            </p> 
-          </div>
-          <!-- Removed footer nav links when navbar is sticky issue #610 -->
-          <div class="col-12 col-md-6 footer-contact-col-main">
-            <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
-            <div class="footer-contact-row d-flex justify-content-center">
-              <div data-aos-duration="650" data-aos="fade-right"
-                class="footer-contact-col d-flex flex-column gap-3 w-100"
-              >
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-github me-2"></i> GitHub
-                </a>
-                <a
-                  href="https://discord.gg/NmGyBWAE3b"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-discord me-2"></i> Discord
-                </a>
-              </div>
-              <div data-aos-duration="650" data-aos="fade-left"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-              <!-- margin added -->
-                <a
-                  href="https://github.com/opensource-society/CodeClip/issues"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
-                </a>
-                <!-- Added linkdin social connection -->
-                <a
-                  href="https://www.linkedin.com/in/adityai0"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn mt-3 "
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-linkedin-in me-2"></i> LinkedIn
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div> 
+  <footer id="contactFooter" class="footer-section">
+  <div class="footer-container">
+
+    <!-- Project Name & Description -->
+    <div class="footer-logo-col">
+      <a class="navbar-brand" id="homeSection">Code<span>Clip</span></a>
+      <p class="footer-desc">
+        An open-source project under GirlScript Summer of Code (GSSoC) 2025. Open for contribution!
+      </p>
     </div>
-    <hr />
-    <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
-      &copy; CodeClip | Open Source Project 2025
-    </p>
+
+    <!-- Contact Us Buttons -->
+    <h5 class="footer-title">Contact Us</h5>
+    <div class="footer-contact-row">
+  <a href="https://github.com/opensource-society/CodeClip" target="_blank" class="footer-contact-btn github">
+    <i class="fab fa-github"></i> GitHub
+  </a>
+
+  <a href="https://discord.gg/NmGyBWAE3b" target="_blank" class="footer-contact-btn discord">
+    <i class="fab fa-discord"></i> Discord
+  </a>
+
+  <a href="https://github.com/opensource-society/CodeClip/issues" target="_blank" class="footer-contact-btn issue">
+    <i class="fas fa-bug"></i> Open an Issue
+  </a>
+
+  <a href="https://www.linkedin.com/in/adityai0" target="_blank" class="footer-contact-btn linkedin">
+    <i class="fab fa-linkedin"></i> LinkedIn
+  </a>
+</div>
+
+
+    <!-- Divider -->
+    <hr class="footer-divider">
+
+    <!-- Footer Note -->
+    <p class="footer-note">&copy; 2025 CodeClip | Open Source Project</p>
+
   </div>
 </footer>
+
+
+
     <!--AOS Animations-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>

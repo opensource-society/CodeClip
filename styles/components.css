@@ -1,0 +1,123 @@
+/* ---------- Footer ---------- */
+.footer-section {
+  background-color: #ffffff;
+  color: #111111;
+  font-family: 'Segoe UI', sans-serif;
+  padding: 3rem 1rem;
+  text-align: center;
+}
+
+.footer-container {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* ---------- Logo & Description ---------- */
+.navbar-brand {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+.navbar-brand span {
+  color: #0b5ed7;
+}
+
+.footer-desc {
+  margin-top: 0.5rem;
+  font-size: 0.95rem;
+  color: #121212;
+}
+
+/* ---------- Contact Title ---------- */
+.footer-title {
+  margin: 1rem 0 1rem 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+  color: #111;
+}
+
+/* ---------- Contact Buttons Row ---------- */
+.footer-contact-row {
+  display: flex !important;
+  flex-direction: row !important; /* ensure horizontal layout */
+  justify-content: center;
+  align-items: center;
+  gap: 0.2rem;
+  flex-wrap: nowrap; /* prevents stacking on large screens */
+  margin-bottom: 1rem;
+}
+
+.footer-contact-btn {
+  display: inline-block;
+  padding: 0.6rem 1.5rem;
+  /* background-color: #0d6efd; */
+  color: #e4e0e0;
+  border: none;
+  border-radius: 8px;
+  font-weight: 500;
+  font-size: 15px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+  white-space: nowrap; /* keep text in one line */
+  text-decoration: none;
+}
+
+.footer-contact-btn:hover {
+  background-color: #0b5ed7;
+  color: white;
+  transform: translateY(-2px);
+}
+
+/* ---------- Divider ---------- */
+.footer-divider {
+  border: 0;
+  border-top: 1px solid #ccc;
+  margin: 1rem 0 1rem 0;
+}
+
+/* ---------- Footer Note ---------- */
+.footer-note {
+  font-size: 0.85rem;
+  color: #272626;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 768px) {
+  .footer-contact-row {
+    flex-wrap: wrap; /* stack neatly on small screens */
+  }
+
+  .footer-contact-btn {
+    width: 100%;
+    max-width: 250px;
+  }
+}
+/* Hover effect */
+.footer-contact-btn:hover {
+  transform: translateY(-2px);
+  opacity: 0.9;
+}
+
+/* Specific platform colors */
+.footer-contact-btn.github {
+  background-color: #24292e;
+}
+
+.footer-contact-btn.discord {
+  background-color: #5865f2;
+}
+
+.footer-contact-btn.issue {
+  background-color: #e74c3c;
+}
+
+.footer-contact-btn.linkedin {
+  background-color: #0a66c2;
+}
+
+/* Optional: slightly smaller icons */
+.footer-contact-btn i {
+  font-size: 16px;
+}
