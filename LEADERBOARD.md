@@ -57,6 +57,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@anisha4890](https://github.com/anisha4890) | 1 | 0 | 0 | 0 |
 | [@MohdAnas007](https://github.com/MohdAnas007) | 1 | 0 | 0 | 0 |
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
+| [@manishgithubri](https://github.com/manishgithubri) | 1 | 0 | 0 | 0 |
 | [@Rupali-gituser](https://github.com/Rupali-gituser) | 1 | 0 | 0 | 0 |
 | [@shreyas1103](https://github.com/shreyas1103) | 1 | 0 | 0 | 0 |
 | [@Sneha-Amballa](https://github.com/Sneha-Amballa) | 1 | 0 | 0 | 0 |
