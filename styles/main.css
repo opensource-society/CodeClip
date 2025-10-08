@@ -6,6 +6,262 @@
   font-family: "Lato", sans-serif;
 }
 
+/* Enhanced typography system */
+:root {
+  --font-size-xs: 0.75rem;
+  --font-size-sm: 0.875rem;
+  --font-size-base: 1rem;
+  --font-size-lg: 1.125rem;
+  --font-size-xl: 1.25rem;
+  --font-size-2xl: 1.5rem;
+  --font-size-3xl: 1.875rem;
+  --font-size-4xl: 2.25rem;
+  --font-size-5xl: 3rem;
+  
+  --font-weight-light: 300;
+  --font-weight-normal: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  --font-weight-extrabold: 800;
+  --font-weight-black: 900;
+  
+  --line-height-tight: 1.25;
+  --line-height-snug: 1.375;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.625;
+  --line-height-loose: 2;
+  
+  --color-primary: #2563eb;
+  --color-primary-dark: #1d4ed8;
+  --color-primary-light: #3b82f6;
+  --color-secondary: #64748b;
+  --color-text: #1e293b;
+  --color-text-light: #64748b;
+  --color-text-muted: #94a3b8;
+  --color-background: #ffffff;
+  --color-background-light: #f8fafc;
+  --color-background-muted: #f1f5f9;
+}
+
+/* Consistent heading styles */
+h1, h2, h3, h4, h5, h6 {
+  font-weight: var(--font-weight-bold);
+  line-height: var(--line-height-tight);
+  color: var(--color-text);
+  margin-bottom: 1rem;
+}
+
+h1 {
+  font-size: var(--font-size-4xl);
+  font-weight: var(--font-weight-black);
+}
+
+h2 {
+  font-size: var(--font-size-3xl);
+  font-weight: var(--font-weight-extrabold);
+}
+
+h3 {
+  font-size: var(--font-size-2xl);
+  font-weight: var(--font-weight-bold);
+}
+
+h4 {
+  font-size: var(--font-size-xl);
+  font-weight: var(--font-weight-semibold);
+}
+
+h5 {
+  font-size: var(--font-size-lg);
+  font-weight: var(--font-weight-semibold);
+}
+
+h6 {
+  font-size: var(--font-size-base);
+  font-weight: var(--font-weight-medium);
+}
+
+/* Consistent paragraph styles */
+p {
+  font-size: var(--font-size-base);
+  line-height: var(--line-height-relaxed);
+  color: var(--color-text-light);
+  margin-bottom: 1rem;
+}
+
+/* Enhanced text utilities */
+.text-primary {
+  color: var(--color-primary) !important;
+}
+
+.text-secondary {
+  color: var(--color-secondary) !important;
+}
+
+.text-muted {
+  color: var(--color-text-muted) !important;
+}
+
+.font-weight-light {
+  font-weight: var(--font-weight-light) !important;
+}
+
+.font-weight-normal {
+  font-weight: var(--font-weight-normal) !important;
+}
+
+.font-weight-medium {
+  font-weight: var(--font-weight-medium) !important;
+}
+
+.font-weight-semibold {
+  font-weight: var(--font-weight-semibold) !important;
+}
+
+.font-weight-bold {
+  font-weight: var(--font-weight-bold) !important;
+}
+
+/* Enhanced spacing and alignment utilities */
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 576px) {
+  .container {
+    padding: 0 1.5rem;
+  }
+}
+
+@media (min-width: 768px) {
+  .container {
+    padding: 0 2rem;
+  }
+}
+
+@media (min-width: 992px) {
+  .container {
+    padding: 0 2.5rem;
+  }
+}
+
+/* Consistent section spacing */
+section {
+  margin-bottom: 0;
+}
+
+/* Enhanced card spacing */
+.card {
+  margin-bottom: 2rem;
+  border-radius: 12px;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.card-body {
+  padding: 1.5rem;
+}
+
+/* Improved form spacing */
+.form-group {
+  margin-bottom: 1.5rem;
+}
+
+.form-control {
+  padding: 0.75rem 1rem;
+  border-radius: 8px;
+  border: 1px solid #e2e8f0;
+  transition: all 0.3s ease;
+}
+
+.form-control:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+/* Enhanced button spacing */
+.btn {
+  margin: 0.25rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: var(--font-weight-semibold);
+  transition: all 0.3s ease;
+}
+
+.btn-group .btn {
+  margin: 0;
+}
+
+/* Improved list spacing */
+ul, ol {
+  padding-left: 1.5rem;
+  margin-bottom: 1rem;
+}
+
+li {
+  margin-bottom: 0.5rem;
+  line-height: var(--line-height-relaxed);
+}
+
+/* Enhanced table spacing */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 1.5rem;
+}
+
+th, td {
+  padding: 0.75rem;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+th {
+  font-weight: var(--font-weight-semibold);
+  background-color: var(--color-background-light);
+}
+
+/* Improved image spacing */
+img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+/* Enhanced blockquote spacing */
+blockquote {
+  margin: 1.5rem 0;
+  padding: 1rem 1.5rem;
+  border-left: 4px solid var(--color-primary);
+  background-color: var(--color-background-light);
+  border-radius: 0 8px 8px 0;
+}
+
+/* Improved code spacing */
+code {
+  padding: 0.25rem 0.5rem;
+  background-color: var(--color-background-light);
+  border-radius: 4px;
+  font-family: 'Courier New', monospace;
+  font-size: 0.875rem;
+}
+
+pre {
+  padding: 1rem;
+  background-color: var(--color-background-light);
+  border-radius: 8px;
+  overflow-x: auto;
+  margin-bottom: 1.5rem;
+}
+
+pre code {
+  padding: 0;
+  background-color: transparent;
+}
+
 html {
   scroll-padding-top: 56px;
   overflow-x: hidden;
@@ -15,12 +271,21 @@ html {
 
 .navbar {
   background-color: #ffffff;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+  padding: 0.75rem 0;
 }
 
 .navbar-brand {
   font-size: 2.1rem;
   font-weight: 900;
   color: #2563eb;
+  transition: all 0.3s ease;
+}
+
+.navbar-brand:hover {
+  color: #1d4ed8;
+  transform: scale(1.05);
 }
 
 .navbar-brand,.nav-link:hover {   /*========added for issue #605========*/
@@ -80,56 +345,82 @@ html {
     color: #1e2c44;
   }
 
-  /* added gap in nav links */
+  /* Enhanced navbar navigation with better spacing and hover effects */
   .navbar-nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
+    align-items: center;
   }
-  /* added shadow box and hover effact in nav-links */
+  
+  /* Enhanced nav link styling with improved hover effects */
   .nav-item a {
     color: #1e2c44;
-    /* adding box hover effact */
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 600;
     font-size: 1rem;
-    padding: 0.75rem 0.75rem;
-    border-radius: 12px;
-    box-shadow: 0 4px 10px rgba(40, 167, 69, 0.25);
-    transition: all 0.3s ease-in-out;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    position: relative;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    background: transparent;
   }
+  
+  /* Active page highlighting */
+  .nav-item a.active {
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+    font-weight: 700;
+  }
+  
+  /* Enhanced hover effects */
   .nav-item a:hover {
-    background: linear-gradient(90deg, #1e2c44 40%, #2563eb 100%);
-    border-color: #2563eb;
-    transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
-    color: white;
-    font-size: 1.1rem;
+    color: #2563eb;
+    background: rgba(37, 99, 235, 0.1);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2);
+  }
+  
+  /* Underline animation on hover */
+  .nav-item a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    height: 2px;
+    background: linear-gradient(90deg, #2563eb, #1d4ed8);
+    transition: all 0.3s ease;
+    transform: translateX(-50%);
+  }
+  
+  .nav-item a:hover::after {
+    width: 80%;
+  }
 
+  /* Mobile responsiveness improvements */
+  @media (max-width: 991.98px) {
+    .navbar-nav {
+      gap: 0.5rem;
+      padding: 1rem 0;
+    }
+    
     .nav-item a {
-      color: #1e2c44;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 1rem;
-      padding: 0.75rem 0.75rem;
-      position: relative;
-    }
-
-    .nav-item a:hover {
-      color: #2563eb;
-      animation: underline-slide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
-    }
-
-    .nav-item a:hover::after {
-      content: "";
-      position: absolute;
-      left: 0;
-      bottom: 6px;
+      padding: 0.5rem 1rem;
+      font-size: 0.95rem;
+      text-align: center;
       width: 100%;
-      height: 2px;
-      background: linear-gradient(90deg, #2563eb 60%, #1e2c44 100%);
-      border-radius: 2px;
-      animation: underline-slide 0.4s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+      margin: 0.25rem 0;
     }
+    
+    .navbar-collapse {
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(10px);
+      border-radius: 12px;
+      margin-top: 1rem;
+      padding: 1rem;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    }
+  }
 
     @keyframes underline-slide {
       from {
@@ -148,37 +439,28 @@ html {
     }
 
     /* ================== Mobile Styles ================== */
-    @media (max-width: 768px) {
-      /* Navbar links hidden initially */
-      .navbar .container .navbar-nav {
-        display: none;
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100vh;
-        flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        background-color: #ffffff;
-        z-index: 999;
-      }
-      .navbar .container .navbar-brand {
-        margin-left: 1rem;
-      }
-
-      /* Show menu when checkbox is checked */
-      #nav-toggle:checked ~ .navbar-nav {
-        display: flex;
-      }
-
-      /* Hamburger toggle visible on mobile */
-      .nav-toggle-label {
-        display: block;
-        cursor: pointer;
-        font-size: 1.8rem;
-        color: #2563eb;
-        z-index: 1000;
+  /* Enhanced mobile navbar styles */
+  @media (max-width: 768px) {
+    .navbar {
+      padding: 0.5rem 0;
+    }
+    
+    .navbar-brand {
+      font-size: 1.8rem;
+    }
+    
+    .navbar-toggler {
+      border: none;
+      padding: 0.25rem 0.5rem;
+    }
+    
+    .navbar-toggler:focus {
+      box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+    }
+    
+    .navbar-toggler-icon {
+      background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(37, 99, 235, 0.8)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+    }
       }
 
       /* Close icon hidden initially */
@@ -199,8 +481,27 @@ html {
     /* ================== Hero Styles Start Here ================== */
     .heroSection {
       margin-top: 56px;
-      background-color: #f8fafc;
-      padding: 2rem 0;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      padding: 4rem 0;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .heroSection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grain" width="100" height="100" patternUnits="userSpaceOnUse"><circle cx="25" cy="25" r="1" fill="%23e2e8f0" opacity="0.1"/><circle cx="75" cy="75" r="1" fill="%23e2e8f0" opacity="0.1"/><circle cx="50" cy="10" r="0.5" fill="%23e2e8f0" opacity="0.1"/><circle cx="10" cy="60" r="0.5" fill="%23e2e8f0" opacity="0.1"/><circle cx="90" cy="40" r="0.5" fill="%23e2e8f0" opacity="0.1"/></pattern></defs><rect width="100" height="100" fill="url(%23grain)"/></svg>');
+      opacity: 0.3;
+      z-index: 0;
+    }
+    
+    .heroSection .container {
+      position: relative;
+      z-index: 1;
     }
 
     .heroSection-Container {
@@ -338,8 +639,74 @@ html {
     /* ================== Hero Styles End Here ================== */
 
     /* ================== Challenge Styles Start Here ================== */
-    /**#challengeSection {
-      padding: 2rem 0;
+    /* Enhanced section backgrounds and spacing */
+    #challengeSection {
+      padding: 4rem 0;
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      position: relative;
+    }
+
+    #challengeSection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="dots" width="20" height="20" patternUnits="userSpaceOnUse"><circle cx="10" cy="10" r="1" fill="%23e2e8f0" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23dots)"/></svg>');
+      opacity: 0.5;
+      z-index: 0;
+    }
+
+    #challengeSection .container {
+      position: relative;
+      z-index: 1;
+    }
+
+    #leaderboardSection {
+      background: linear-gradient(135deg, #f1f5f9 0%, #e2e8f0 100%);
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    #leaderboardSection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="25" height="25" patternUnits="userSpaceOnUse"><path d="M 25 0 L 0 0 0 25" fill="none" stroke="%23e2e8f0" stroke-width="0.5" opacity="0.3"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+      opacity: 0.4;
+      z-index: 0;
+    }
+
+    #leaderboardSection .leaderboard-list {
+      position: relative;
+      z-index: 1;
+    }
+
+    #aboutSection {
+      background: linear-gradient(135deg, #ffffff 0%, #f8fafc 100%);
+      padding: 4rem 0;
+      position: relative;
+    }
+
+    #aboutSection::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="waves" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M0,25 Q25,10 50,25 T100,25" fill="none" stroke="%23e2e8f0" stroke-width="1" opacity="0.2"/></pattern></defs><rect width="100" height="100" fill="url(%23waves)"/></svg>');
+      opacity: 0.3;
+      z-index: 0;
+    }
+
+    #aboutSection .container {
+      position: relative;
+      z-index: 1;
     }
 
     .challengeContainer .card {
