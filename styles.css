@@ -961,3 +961,11 @@ body {
         transform: rotate(360deg);
     }
 }
+.last-two-buttons{
+  margin-left:150px;
+}
+.footer-contact-btn {
+  width: 250px;   
+  max-width: 100%; 
+  text-align: left; 
+}
