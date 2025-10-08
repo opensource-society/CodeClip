@@ -53,6 +53,11 @@ codeclip/
 │  ├─ challenges.html
 │  ├─ editor.html
 │  └─ profile.html
+# <p align="center">
+#   <a href="https://gssoc.in" target="_blank">
+#     <img alt="GSSoC 2025" src="https://img.shields.io/badge/GSSoC-2025-blue?style=for-the-badge" />
+#   </a>
+# </p>
 ├─ styles/
 │  ├─ variables.css
 │  ├─ main.css
