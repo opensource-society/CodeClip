@@ -1,5 +1,21 @@
 # 🪄 CodeClip &nbsp;– Coding Challenge Vault
 
+<p align="center">
+   <a href="https://gssoc.in" target="_blank">
+     <img alt="GSSoC 2025" src="https://user-images.githubusercontent.com/92252895/257558544-590cfc18-b194-4940-8684-75d803fac85e.png" width="900" />
+   </a>
+</p>
+
+## 🚩 GSSoC 2025 — Participating Project
+
+We are proud to be participating in GirlScript Summer of Code (GSSoC) 2025. Want to contribute? Here's how to get started:
+
+- ⭐ Star the repo to show support: https://github.com/opensource-society/CodeClip
+- 🐛 Browse issues: https://github.com/opensource-society/CodeClip/issues
+- 📘 Read our contribution guide: `CONTRIBUTING.md`
+- 🚀 Create a branch and open a PR (use labels Level 1 / Level 2 / Level 3 for difficulty)
+
+
 **CodeClip** is a lightweight, fully client-side web app that lets developers **store, solve, run, and share coding challenges** directly in the browser. Built with vanilla **HTML, CSS, and JavaScript**, it is ideal for first-time open-source contributors and is being developed under **GirlScript Summer of Code (GSSoC)**.
 
 ## ✨ Key Features (Planned & Implemented)
@@ -53,6 +69,12 @@ codeclip/
 │  ├─ challenges.html
 │  ├─ editor.html
 │  └─ profile.html
+├─ styles/
+│  ├─ variables.css
+│  ├─ main.css
+│  ├─ components.css
+│  └─ themes.css
+
 ├─ styles/
 │  ├─ variables.css
 │  ├─ main.css
