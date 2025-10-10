@@ -10,9 +10,10 @@ jobs:
   deploy-preview:
     runs-on: ubuntu-latest
     permissions:
-      contents: read
+      contents: write
       pull-requests: write
       pages: write
+      id-token: write
 
     steps:
       - name: Checkout PR branch
@@ -56,18 +57,14 @@ jobs:
           user_name: "github-actions[bot]"
           user_email: "github-actions[bot]@users.noreply.github.com"
 
-      - name: Get GitHub Pages URL
-        id: pages
-        uses: actions/github-script@v7
-        with:
-          script: |
-            const response = await github.rest.repos.getPages({ owner: context.repo.owner, repo: context.repo.repo });
-            return response.data.html_url;
-
       - name: Comment PR with preview URL
         uses: marocchino/sticky-pull-request-comment@v2
         with:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           header: preview-url
           message: |
-            🚀 PR Preview: ${{ steps.pages.outputs.result }}/pr-preview/pr-${{ github.event.pull_request.number }}/
+            🚀 **PR Preview deployed!**
+            
+            📍 **Preview URL:** https://opensource-society.github.io/CodeClip/pr-preview/pr-${{ github.event.pull_request.number }}/
+            
+            The preview will be available in a few minutes after the deployment completes.

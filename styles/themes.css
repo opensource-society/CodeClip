@@ -2,12 +2,14 @@
     --bg-color: #ffffff;
     --text-color: #000000;
     --header-bg: #f0f0f0;
+    --card-bg: #ffffff;
   }
   
   [data-theme="dark"] {
     --bg-color: #121212;
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
+    --card-bg: #232323;
   } 
   
   body {
@@ -51,8 +53,9 @@
     --text-color: #f1f1f1;
     --header-bg: #1e1e1e;
   }
+}
 
-  /* --- NAVIGATION --- */
+  /* --- NAVIGATION ---
 
 /* Mobile-first: hide nav list */
 .nav__list {
@@ -89,5 +92,3 @@
   }
 
 }
-
-  

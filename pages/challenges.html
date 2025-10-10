@@ -24,23 +24,310 @@
     
 </head>
 <body>
-  <!-- Header Component -->
-  <header class="header">
+  <style>
+    /* ================= Root & Theme ================= */
+:root {
+  --bg: #f8f9fc;
+  --text: #1f2937;
+  --card-bg: #fff;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --border: #e5e7eb;
+
+  --easy-bg: #dcfce7;
+  --easy-text: #166534;
+  --medium-bg: #fef9c3;
+  --medium-text: #854d0e;
+  --hard-bg: #fee2e2;
+  --hard-text: #991b1b;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #f9fafb;
+  --card-bg: #1e293b;
+  --border: #334155;
+}
+
+/* ================= Global ================= */
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ================= Hero ================= */
+.challenges-hero {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.challenges-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.challenges-hero__description {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ================= Filter Bar ================= */
+.challenges-filter {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  margin: -2rem auto 2rem;
+  width: 95%;
+  max-width: 1100px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] .challenges-filter {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+/* ================= Challenges Grid ================= */
+.challenges-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.challenge-card__actions a{
+  text-align: center;
+
+}
+.challenge-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.75s, box-shadow 0.75s, opacity 0.25s;
+  opacity: 1;
+}
+
+.challenge-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.challenge-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challenge-card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.challenge-card__description {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+[data-theme="dark"] .challenge-card__description {
+  color: #94a3b8;
+}
+
+.challenge-card__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  background: var(--border);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.difficulty-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.difficulty-easy { background: var(--easy-bg); color: var(--easy-text); }
+.difficulty-medium { background: var(--medium-bg); color: var(--medium-text); }
+.difficulty-hard { background: var(--hard-bg); color: var(--hard-text); }
+
+.challenge-card__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ================= Theme Toggle ================= */
+#theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* ================= Empty State ================= */
+.no-results-message {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.8;
+}
+.no-results-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* ================= Controls Section  ================= */
+ .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* background: #fff; */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(105, 80, 80, 0.1);
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-group label {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: dodgerblue;
+  }
+
+  .filter-select,
+  .search-input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .search-input {
+  width: 400px;   
+  max-width: 100%; 
+  padding: 10px 15px; 
+  font-size: 16px;  
+  border-radius: 8px; 
+  border: 1px solid #ccc; 
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4f46e5; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
+}
+
+  .search-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left:auto; /* pushes search bar to the right */
+  }
+
+  
+
+  </style>
+
+  <Header>
+  <header class="header" role="banner">
     <div class="container header__container">
       <div class="header__logo">
-        <span class="logo-text">CodeClip</span>
+
+        <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+
+        <a href="../index.html" class="logo-text">CodeClip</a>
+
       </div>
-      <nav class="header__nav" id="navMenu">
+      <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
         <ul class="nav__list">
-
-          <li><a href="/" data-route="/" class="nav__link" aria-label="Main navigation">Home</a></li>
-          <li><a href="/challenges" data-route="/challenges" class="nav__link active" aria-label="Challenges">Challenges</a></li>
-          <li><a href="/editor" data-route="/editor" class="nav__link" aria-label="Editor">Editor</a></li>
-          <li><a href="/profile" data-route="/profile" class="nav__link" aria-label="Profile">Profile</a></li>
-
+          <li><a href="/CodeClip" class="nav__link" aria-label="Home">Home</a></li>
+          <li><a href="/challenges" class="nav__link active" aria-current="page" aria-label="Challenges">Challenges</a></li>
+          <li><a href="/CodeClip/pages/editor.html" class="nav__link" aria-label="Editor">Editor</a></li>
+          <li><a href="/CodeClip/pages/profile.html" class="nav__link" aria-label="Profile">Profile</a></li>
         </ul>
       </nav>
-      <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
+      <button
+        class="header__toggle"
+        id="navToggle"
+        aria-label="Toggle navigation menu"
+        aria-expanded="false"
+        aria-controls="navMenu"
+      >
         <span class="hamburger"></span>
         <span class="hamburger"></span>
         <span class="hamburger"></span>
@@ -48,65 +335,97 @@
     </div>
   </header>
 
+
+
+  
+
   <!-- Main Content -->
   <main>
-    <!-- Challenges Hero Section -->
+    <!-- Hero Section -->
     <section class="challenges-hero">
       <div class="container">
         <div class="challenges-hero__content">
           <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
+            Coding <span class="highlight">Challenges &lt/&gt </span>
           </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
+      <p class="challenges-hero__description">
+  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, for every developer.
+  <!-- <span class="typing-loop"></span> -->
+</p>
         </div>
       </div>
     </section>
 
-    <!-- Controls (merged from both versions) -->
-    <section class="challenges-filter">
-      <div class="container">
-        <div class="filter-controls">
-          <div class="filter-group">
-            <label for="difficulty-filter">Difficulty:</label>
-            <select id="difficulty-filter" class="filter-select">
-              <option value="">All Levels</option>
-              <option value="easy">Easy</option>
-              <option value="medium">Medium</option>
-              <option value="hard">Hard</option>
-            </select>
-          </div>
-          <div class="filter-group">
-            <label for="category-filter">Category:</label>
-            <select id="category-filter" class="filter-select">
-              <option value="">All Categories</option>
-              <option value="arrays">Arrays</option>
-              <option value="strings">Strings</option>
-              <option value="algorithms">Algorithms</option>
-              <option value="data-structures">Data Structures</option>
-              <option value="frontend">Frontend</option>
-              <option value="backend">Backend</option>
-              <option value="fullstack">Fullstack</option>
-            </select>
-          </div>
-          <div class="search-group">
-            <input type="text" id="search-challenges" placeholder="Search challenges..." class="search-input">
-          </div>
-        </div>
-      </div>
-    </section>
+  
+     <!-- Update Filter Controls Section-->
+    <section class="challenges-filter" aria-labelledby="filters-heading">
+  <div class="container filter-controls">
+    <h2 id="filters-heading" class="visually-hidden">
+      Find Challenges That Match Your Skills
+    </h2>
+
+    <!-- Difficulty -->
+    <div class="filter-group">
+      <label for="difficulty-filter">Difficulty:</label>
+      <select
+        id="difficulty-filter"
+        class="filter-select"
+        aria-label="Filter challenges by difficulty"
+      >
+        <option value="">All Levels</option>
+         <option value="easy">Easy 🟢</option>
+        <option value="medium">Medium 🟡</option>
+        <option value="hard">Hard 🔴</option>
+      </select>
+    </div>
+
+    <!-- Category -->
+    <div class="filter-group">
+      <label for="category-filter">Category:</label>
+      <select
+        id="category-filter"
+        class="filter-select"
+        aria-label="Filter challenges by category"
+      >
+        <option value="">All Categories</option>
+        <option value="arrays">Arrays</option>
+        <option value="strings">Strings</option>
+        <option value="algorithms">Algorithms</option>
+        <option value="data-structures">Data Structures</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+      </select>
+    </div>
+
+    <!-- Search -->
+    <div class="search-group">
+      <input
+        type="search"
+        id="search-challenges"
+        class="search-input"
+        placeholder="Search challenges..."
+        aria-label="Search coding challenges by title or tag"
+      />
+      <button id="clearFilters" class="btn btn-secondary">Clear</button>
+    </div>
+
+  </div>
+</section>
+
 
     <!-- Challenges Grid -->
-    <section class="challenges-grid">
+    <section class="challenges-grid" aria-labelledby="challenge-heading">
       <div class="container">
+        <h2 id="challenge-heading" class="visually-hidden">Available Coding Challenges</h2>
+
         <div class="challenges-list" id="challengesList">
-          <!-- Challenge cards can be rendered here dynamically via JS -->
-          <div class="challenge-card" data-difficulty="easy" data-category="arrays">
-            <div class="challenge-card__header">
+          <!-- Sample challenges -->
+          <article class="challenge-card" data-difficulty="easy" data-category="arrays" tabindex="0" aria-label="Challenge Two Sum, difficulty easy, category arrays">
+            <header class="challenge-card__header">
               <h3 class="challenge-card__title">Two Sum</h3>
               <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
+            </header>
             <p class="challenge-card__description">
               Given an array of integers and a target sum, return indices of two numbers that add up to the target.
             </p>
@@ -115,15 +434,16 @@
               <span class="category-tag">Hash Table</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Two Sum">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
-          </div>
+          </article>
 
-          <div class="challenge-card" data-difficulty="medium" data-category="strings">
-            <div class="challenge-card__header">
+          <article class="challenge-card" data-difficulty="medium" data-category="strings" tabindex="0" aria-label="Challenge Longest Palindromic Substring, difficulty medium, category strings">
+            <header class="challenge-card__header">
               <h3 class="challenge-card__title">Longest Palindromic Substring</h3>
               <span class="difficulty-badge difficulty-medium">Medium</span>
-            </div>
+            </header>
             <p class="challenge-card__description">
               Given a string, find the longest palindromic substring within it.
             </p>
@@ -132,15 +452,16 @@
               <span class="category-tag">Dynamic Programming</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Longest Palindromic Substring">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
-          </div>
+          </article>
 
-          <div class="challenge-card" data-difficulty="hard" data-category="algorithms">
-            <div class="challenge-card__header">
+          <article class="challenge-card" data-difficulty="hard" data-category="algorithms" tabindex="0" aria-label="Challenge Merge K Sorted Lists, difficulty hard, category algorithms">
+            <header class="challenge-card__header">
               <h3 class="challenge-card__title">Merge K Sorted Lists</h3>
               <span class="difficulty-badge difficulty-hard">Hard</span>
-            </div>
+            </header>
             <p class="challenge-card__description">
               Merge k sorted linked lists and return it as one sorted list.
             </p>
@@ -149,15 +470,16 @@
               <span class="category-tag">Divide and Conquer</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Merge K Sorted Lists">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
-          </div>
+          </article>
 
-          <div class="challenge-card" data-difficulty="easy" data-category="data-structures">
-            <div class="challenge-card__header">
+          <article class="challenge-card" data-difficulty="easy" data-category="data-structures" tabindex="0" aria-label="Challenge Valid Parentheses, difficulty easy, category data structures">
+            <header class="challenge-card__header">
               <h3 class="challenge-card__title">Valid Parentheses</h3>
               <span class="difficulty-badge difficulty-easy">Easy</span>
-            </div>
+            </header>
             <p class="challenge-card__description">
               Determine if the input string has valid parentheses.
             </p>
@@ -166,11 +488,110 @@
               <span class="category-tag">Strings</span>
             </div>
             <div class="challenge-card__actions">
-              <a href="editor.html" data-route="/editor" class="btn btn-primary btn-sm">Solve Challenge</a>
+              <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Valid Parentheses">Solve Challenge</a>
+              <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
-          </div>
+          </article>
+
+       <!-- Graph -->
+  <article class="challenge-card" data-difficulty="medium" data-category="graph" tabindex="0" aria-label="Challenge Number of Islands, difficulty medium, category graph">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Number of Islands</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given a 2D grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and formed by connecting adjacent lands.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Graph</span>
+      <span class="category-tag">DFS</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Number of Islands">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+   <!-- Dynamic Programming -->
+  <article class="challenge-card" data-difficulty="medium" data-category="dp" tabindex="0" aria-label="Challenge Coin Change, difficulty medium, category dp">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Coin Change</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      You are given coins of different denominations and a total amount. Find the fewest number of coins needed to make up that amount.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Dynamic Programming</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Coin Change">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+ <!-- Two Pointers -->
+  <article class="challenge-card" data-difficulty="medium" data-category="two-pointers" tabindex="0" aria-label="Challenge Container With Most Water, difficulty medium, category two-pointers">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Container With Most Water</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given n non-negative integers representing vertical lines, find two lines that together form a container with the most water.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Two Pointers</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Container With Most Water">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+
+    <!-- Prefix Sum -->
+  <article class="challenge-card" data-difficulty="medium" data-category="prefix-sum" tabindex="0" aria-label="Challenge Subarray Sum Equals K, difficulty medium, category prefix-sum">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Subarray Sum Equals K</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given an array of integers and an integer k, return the total number of continuous subarrays whose sum equals to k.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Prefix Sum</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Subarray Sum Equals K">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+    <!-- Sliding Window -->
+  <article class="challenge-card" data-difficulty="hard" data-category="sliding-window" tabindex="0" aria-label="Challenge Minimum Window Substring, difficulty hard, category sliding-window">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Minimum Window Substring</h3>
+      <span class="difficulty-badge difficulty-hard">Hard</span>
+    </header>
+    <p class="challenge-card__description">
+      Given two strings s and t, return the minimum window in s which contains all the characters in t.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Sliding Window</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Minimum Window Substring">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
         </div>
-        <div id="no-results" class="no-results-message" style="display: none;">
+
+        <div id="no-results" class="no-results-message" style="display:none;">
           <h2>🤔 No challenges found...</h2>
           <p>Try adjusting your search or filter criteria.</p>
         </div>
@@ -179,29 +600,35 @@
   </main>
 
   <!-- Footer -->
-  <footer class="footer">
+  <footer class="footer" role="contentinfo">
     <div class="container">
       <div class="footer__content">
-        <div class="footer__section">
-          <h4>CodeClip</h4>
+        <section class="footer__section">
+          <h2 class="header__logo">
+  <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+</h2>
+
           <p>Master coding challenges in your browser</p>
-        </div>
-        <div class="footer__section">
-          <h4>Quick Links</h4>
+        </section>
+
+        <section class="footer__section">
+          <h2>Quick Links</h2>
           <ul>
-            <li><a href="/" data-route="/">Home</a></li>
-            <li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
-            <li><a href="editor.html" data-route="/editor">Editor</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="challenges.html">Challenges</a></li>
+            <li><a href="editor.html">Editor</a></li>
           </ul>
-        </div>
-        <div class="footer__section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#">GitHub</a></li>
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Twitter</a></li>
-          </ul>
-        </div>
+        </section>
+
+  <section class="footer__section">
+  <h2>Community</h2>
+  <ul>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="GitHub link" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="Discord link" target="_blank" >Discord <i class="fab fa-discord"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/adityai0/" aria-label="Linkedn  link" target="_blank">Linkedin<i class="fab fa-linkedin"></i></a></li>
+  </ul>
+</section>
+
       </div>
       <div class="footer__bottom">
         <p>&copy; 2024 CodeClip. All rights reserved.</p>
@@ -209,204 +636,121 @@
     </div>
   </footer>
 
-  <!-- Theme Toggle Button (from main branch version) -->
-  <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light/dark theme">
-    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-sun"><circle cx="12" cy="12" r="5"></circle><line x1="12" y1="1" x2="12" y2="3"></line><line x1="12" y1="21" x2="12" y2="23"></line><line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line><line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line><line x1="1" y1="12" x2="3" y2="12"></line><line x1="21" y1="12" x2="23" y2="12"></line><line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line><line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line></svg>
+  <!-- Theme Toggle Button -->
+  <button id="theme-toggle" title="Toggle theme" aria-label="Toggle light or dark theme">
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      width="24"
+      height="24"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      stroke-width="2"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+      class="feather feather-sun"
+    >
+      <circle cx="12" cy="12" r="5" />
+      <line x1="12" y1="1" x2="12" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="23" />
+      <line x1="4.22" y1="4.22" x2="5.64" y2="5.64" />
+      <line x1="18.36" y1="18.36" x2="19.78" y2="19.78" />
+      <line x1="1" y1="12" x2="3" y2="12" />
+      <line x1="21" y1="12" x2="23" y2="12" />
+      <line x1="4.22" y1="19.78" x2="5.64" y2="18.36" />
+      <line x1="18.36" y1="5.64" x2="19.78" y2="4.22" />
+    </svg>
   </button>
 
-  <!-- Scripts -->
-  <script type="module" src="../scripts/app.js"></script>
-  <script type="module" src="../scripts/theme.js"></script>
-  <script src="../scripts/challenges.js"></script>
-  
-  <style>
-    /* Additional styles for challenges page */
-    .challenges-hero {
-      background: linear-gradient(135deg, var(--primary-color) 0%, var(--secondary-color) 100%);
-      padding: 6rem 0 4rem;
-      text-align: center;
-    }
+  <!-- JavaScript -->
+  <script>
+    // Mobile Navigation Toggle
+    const navToggle = document.getElementById('navToggle');
+    const navMenu = document.getElementById('navMenu');
 
-    .challenges-hero__title {
-      font-size: 3.5rem;
-      font-weight: 700;
-      margin-bottom: 1.5rem;
-      color: white;
-    }
+    navToggle.addEventListener('click', () => {
+      const isExpanded = navToggle.getAttribute('aria-expanded') === 'true';
+      navToggle.setAttribute('aria-expanded', !isExpanded);
+      navMenu.classList.toggle('open');
+    });
 
-    .challenges-hero__description {
-      font-size: 1.2rem;
-      color: rgba(255, 255, 255, 0.9);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    // Theme Toggle (simple example)
+    const themeToggle = document.getElementById('theme-toggle');
+    const rootElement = document.documentElement;
 
-    .challenges-filter {
-      background: var(--bg-secondary);
-      padding: 2rem 0;
-      border-bottom: 1px solid var(--border-color);
-    }
-
-    .filter-controls {
-      display: flex;
-      gap: 2rem;
-      align-items: center;
-      flex-wrap: wrap;
-    }
-
-    .filter-group {
-      display: flex;
-      align-items: center;
-      gap: 0.5rem;
-    }
-
-    .filter-select, .search-input {
-      padding: 0.5rem 1rem;
-      border: 1px solid var(--border-color);
-      border-radius: 0.5rem;
-      background: white;
-      font-size: 0.9rem;
-    }
-
-    .search-group {
-      margin-left: auto;
-    }
-
-    .search-input {
-      width: 300px;
-    }
-
-    .challenges-grid {
-      padding: 3rem 0;
-    }
-
-    .challenges-list {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
-      gap: 2rem;
-    }
-
-    .challenge-card {
-      background: white;
-      border-radius: 1rem;
-      padding: 1.5rem;
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-    }
-
-    .challenge-card:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
-    }
-
-    .challenge-card__header {
-      display: flex;
-      justify-content: space-between;
-      align-items: flex-start;
-      margin-bottom: 1rem;
-    }
-
-    .challenge-card__title {
-      font-size: 1.25rem;
-      font-weight: 600;
-      color: var(--text-dark);
-      margin: 0;
-    }
-
-    .difficulty-badge {
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 600;
-      text-transform: uppercase;
-    }
-
-    .difficulty-easy {
-      background: #d4edda;
-      color: #155724;
-    }
-
-    .difficulty-medium {
-      background: #fff3cd;
-      color: #856404;
-    }
-
-    .difficulty-hard {
-      background: #f8d7da;
-      color: #721c24;
-    }
-
-    .challenge-card__description {
-      color: var(--text-muted);
-      margin-bottom: 1rem;
-      line-height: 1.5;
-    }
-
-    .challenge-card__meta {
-      display: flex;
-      gap: 0.5rem;
-      margin-bottom: 1.5rem;
-      flex-wrap: wrap;
-    }
-
-    .category-tag {
-      background: var(--bg-light);
-      color: var(--primary-color);
-      padding: 0.25rem 0.75rem;
-      border-radius: 1rem;
-      font-size: 0.75rem;
-      font-weight: 500;
-    }
-
-    .challenge-card__actions {
-      text-align: right;
-    }
-
-    .btn-sm {
-      padding: 0.5rem 1rem;
-      font-size: 0.875rem;
-    }
-
-    #theme-toggle {
-      position: fixed;
-      right: 2rem;
-      bottom: 2rem;
-      background: var(--bg-primary, #fff);
-      border: none;
-      border-radius: 50%;
-      padding: 0.75rem;
-      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-      cursor: pointer;
-      z-index: 1000;
-      transition: background 0.2s;
-    }
-
-    #theme-toggle svg {
-      vertical-align: middle;
-    }
-
-    @media (max-width: 768px) {
-      .challenges-hero__title {
-        font-size: 2.5rem;
-      }
-
-      .filter-controls {
-        flex-direction: column;
-        align-items: stretch;
-      }
-
-      .search-group {
-        margin-left: 0;
-      }
-
-      .search-input {
-        width: 100%;
-      }
-
-      .challenges-list {
-        grid-template-columns: 1fr;
+    // Initialize theme based on prefers-color-scheme or localStorage
+    function initTheme() {
+      const savedTheme = localStorage.getItem('theme');
+      if (savedTheme) {
+        rootElement.setAttribute('data-theme', savedTheme);
+      } else if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
+        rootElement.setAttribute('data-theme', 'dark');
+      } else {
+        rootElement.setAttribute('data-theme', 'light');
       }
     }
-  </style>
+    initTheme();
+
+    themeToggle.addEventListener('click', () => {
+      const currentTheme = rootElement.getAttribute('data-theme');
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      rootElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+    });
+  </script>
+  <script>
+  const searchInput = document.getElementById("search-challenges");
+  const difficultyFilter = document.getElementById("difficulty-filter");
+  const categoryFilter = document.getElementById("category-filter");
+  const challengesList = document.getElementById("challengesList");
+  const noResults = document.getElementById("no-results");
+
+  const challengeCards = Array.from(challengesList.getElementsByClassName("challenge-card"));
+
+  function filterChallenges() {
+    const searchTerm = searchInput.value.toLowerCase();
+    const difficulty = difficultyFilter.value;
+    const category = categoryFilter.value;
+
+    let visibleCount = 0;
+
+    challengeCards.forEach(card => {
+      const title = card.querySelector(".challenge-card__title").textContent.toLowerCase();
+      const cardDifficulty = card.dataset.difficulty;
+      const cardCategory = card.dataset.category;
+
+      const matchesSearch = title.includes(searchTerm);
+      const matchesDifficulty = !difficulty || cardDifficulty === difficulty;
+      const matchesCategory = !category || cardCategory === category;
+
+      const isVisible = matchesSearch && matchesDifficulty && matchesCategory;
+
+      card.style.display = isVisible ? "block" : "none";
+
+      if (isVisible) visibleCount++;
+    });
+
+    noResults.style.display = visibleCount === 0 ? "block" : "none";
+  }
+
+  // Event listeners for real-time filtering
+  searchInput.addEventListener("input", filterChallenges);
+  difficultyFilter.addEventListener("change", filterChallenges);
+  categoryFilter.addEventListener("change", filterChallenges);
+  const clearBtn = document.getElementById("clearFilters");
+
+clearBtn.addEventListener("click", () => {
+  // Reset all filters
+  searchInput.value = "";
+  difficultyFilter.value = "";
+  categoryFilter.value = "";
+
+  // Re-run the filtering function to show all challenges again
+  filterChallenges();
+});
+
+</script>
+
+
 </body>
 </html>
