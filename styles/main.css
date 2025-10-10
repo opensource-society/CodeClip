@@ -14,7 +14,8 @@ html {
 /* =================== Navbar Styles Start Here ================== */
 
 .navbar {
-  background-color: #ffffff;
+    background-color: #1a0b0b;
+
 }
 
 .navbar-brand {
@@ -53,28 +54,12 @@ html {
   .container .navbar-brand {
     font-size: 2.1rem;
     font-weight: 900;
+    color: #798cb4;
+}
+
+.navbar-brand:hover {
     color: #2563eb;
-    text-shadow: 2px 2px 5px rgba(37, 99, 235, 0.5),
-      2px 2px 8px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(255, 255, 255, 0.6);
-    display: inline-block;
-    transform: scale(0.9);
-    animation: scaleUp 1s ease forwards;
-    transition: transform 0.3s ease, color 0.3s ease, text-shadow 0.3s ease;
-  }
-
-  /* Hover effect for desktop */
-  .container .navbar-brand:hover {
-    transform: scale(1.1);
-    color: #1d4ed8;
-    text-shadow: 3px 3px 6px rgba(37, 99, 235, 0.7),
-      3px 3px 10px rgba(0, 0, 0, 0.4), 1px 1px 4px rgba(255, 255, 255, 0.7);
-  }
-
-  @keyframes scaleUp {
-    to {
-      transform: scale(1);
-    }
-  }
+}
 
   .navbar-brand span {
     color: #1e2c44;
@@ -142,10 +127,12 @@ html {
       }
     }
 
-    /* Hamburger menu hidden by default */
-    .nav-toggle-label {
-      display: none;
-    }
+/* ================== Hero Styles Start Here ================== */
+.heroSection {
+    margin-top: 56px;
+    background-color: #abb6c0;
+    padding: 2rem 0;
+}
 
     /* ================== Mobile Styles ================== */
     @media (max-width: 768px) {
@@ -214,17 +201,17 @@ html {
       width: 17px;
     }
 
-    .gssocContainer {
-      display: flex;
-      align-items: center;
-      max-width: 150px;
-      justify-content: center;
-      border-radius: 36px;
-      padding: 3px 0;
-      color: white;
-      background: #e0ecfa;
-      margin: 1rem 0;
-    }
+.gssocContainer {
+    display: flex;
+    align-items: center;
+    max-width: 150px;
+    justify-content: center;
+    border-radius: 36px;
+    padding: 3px 0;
+    color: rgb(158, 145, 145);
+    background: #e0ecfa;
+    margin: 1rem 0;
+}
 
     .gssocContainer p {
       margin-bottom: 0;
@@ -1070,11 +1057,11 @@ html {
     margin-bottom: 0.7rem;
     color: #1e2c44;
 
-    letter-spacing: 0.5px;
-    text-align: center;
-  }
-  .footer-contact-links {
-    margin-top: 0;
+/* ================== Footer Styles Start Here ================== */
+footer {
+    padding-top: 2rem;
+    background-color: #6a6d70;
+}
 
     text-align: center;
     letter-spacing: 0.5px;
@@ -1110,185 +1097,10 @@ html {
     margin: 0;
     padding: 0;
 
-    list-style: none;
-  }
-  .footer-links a {
-    color: #1e2c44;
-    text-decoration: none;
-    font-size: 1rem;
-    opacity: 0.85;
-
-    transition: color 0.2s, opacity 0.2s;
-    position: relative;
-    transition: color 0.3s ease, opacity 0.3s ease;
-  }
-  .footer-links a::after {
-    content: "";
-    position: absolute;
-    left: 0;
-    bottom: -3px;
-    width: 0;
-    height: 2px;
-    background: #2563eb;
-    transition: width 0.3s ease;
-  }
-  .footer-links a:hover {
-    color: #2563eb;
-    opacity: 1;
-  }
-}
-.footer-links a:hover::after {
-  width: 100%;
-}
-
-.footer-contact-row {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.8rem;
-}
-.open-issue {
-  margin-top: 10%;
-}
-/* First Row: Open Issue Button */
-.open-issue a {
-  width: 180px;
-  font-size: 1rem;
-  padding: 0.7em 1.6em;
-  border-radius: 9999px;
-  background: #fff;
-  color: #2563eb;
-  border: 1px solid #2563eb;
-  font-weight: 600;
-  box-shadow: 0 0 0 transparent;
-  transition: all 0.3s ease;
-  text-decoration: none;
-}
-
-.open-issue a:hover {
-  background: #fff;
-  color: #2563eb;
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 15px rgba(37, 99, 235, 0.35);
-}
-
-/* Second Row: Social Icons */
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  gap: 1.2rem;
-}
-
-.contact-icons a {
-  width: 45px;
-  height: 45px;
-  border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  border: 1px solid #2563eb;
-  color: #2563eb;
-  font-size: 1.2rem;
-  background: #fff;
-  transition: all 0.3s ease;
-  box-shadow: 0 0 8px rgba(37, 99, 235, 0.18);
-}
-
-.contact-icons a:hover {
-  background: #4077ec;
-  color: #fff;
-  transform: translateY(-3px) scale(1.08);
-  box-shadow: 0 0 18px rgba(37, 99, 235, 0.45);
-}
-
-/* Scroll to top button */
-main .scroll_to_top {
-  position: fixed;
-  bottom: 15px;
-  right: 20px;
-  z-index: 999;
-  width: 40px;
-  height: 40px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: #2563eb;
-  color: #fff;
-  border-radius: 50%;
-  transition: all 0.3s ease;
-
-  border-radius: 50%;
-  text-decoration: none;
-}
-.scroll_to_top:hover {
-  background: linear-gradient(45deg, #2563eb, #0000ff);
-  transform: translateY(-3px) scale(1.05);
-}
-
-@media (min-width: 992px) {
-  .footer-logo,
-  .footer-desc {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-title {
-    font-size: 1.2rem;
-  }
-}
-@media (max-width: 991px) {
-  footer .row.align-items-start {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
-  }
-  .footer-logo-col,
-  .footer-links-col,
-  .footer-contact-col-main {
-    border: none;
-    padding: 0;
-    min-width: 0;
-  }
-  .footer-logo,
-  .footer-desc,
-  .footer-title {
-    text-align: center;
-    margin-left: auto;
-    margin-right: auto;
-    padding-right: 0;
-  }
-  .footer-links,
-  .footer-contact-links {
-    align-items: center;
-    text-align: center;
-  }
-  .footer-contact-btn {
-    margin-left: auto;
-    margin-right: auto;
-  }
-  .footer-links {
-    margin-bottom: 2rem;
-    margin-right: 0;
-  }
-  .footer-title {
-    margin-bottom: 0.8rem;
-  }
-}
-@media (max-width: 768px) {
-  footer .row {
-    flex-direction: column;
-    align-items: center;
-  }
-  .footer-links,
-  .footer-contact-links {
-    margin-bottom: 1.5rem;
-    margin-right: 0;
-  }
-  .footer-contact-btn {
-    width: 100%;
-    min-width: 0;
-    max-width: 100%;
-  }
+.footer-About h4 {
+    font-size: 2.1rem;
+    font-weight: bolder;
+    color: #353943;
 }
 
 /* ================== Media queries start here for home screen and carousel buttons ================== */
@@ -1494,4 +1306,4 @@ main .contact-icons a {
   margin-top: 10%;
 }
 
-/* ================== Footer Styles End Here ================== */
+/* ================== Media queries end here for home screen and carousel buttons ================== */
