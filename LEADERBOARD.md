@@ -39,7 +39,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
-| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
 | [@Surabhi210](https://github.com/Surabhi210) | 1 | 0 | 0 | 1 |
 | [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
 | [@Kalika-Jay](https://github.com/Kalika-Jay) | 1 | 0 | 0 | 1 |
@@ -59,6 +58,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@manishgithubri](https://github.com/manishgithubri) | 1 | 0 | 0 | 0 |
 | [@Rupali-gituser](https://github.com/Rupali-gituser) | 1 | 0 | 0 | 0 |
+| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 0 |
 | [@shreyas1103](https://github.com/shreyas1103) | 1 | 0 | 0 | 0 |
 | [@Sneha-Amballa](https://github.com/Sneha-Amballa) | 1 | 0 | 0 | 0 |
 | [@snehhhcodes](https://github.com/snehhhcodes) | 1 | 0 | 0 | 0 |
