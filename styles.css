@@ -112,7 +112,7 @@ body {
 
 /* Header Styles */
 .header {
-  background: #ffffff;
+  background: #000;
   border-bottom: 1px solid #e2e8f0;
   box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
   position: sticky;
@@ -137,7 +137,7 @@ body {
 }
 
 .header__nav {
-  display: flex;
+  display: flex;ss
 }
 
 .nav__list {
