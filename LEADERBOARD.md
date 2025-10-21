@@ -12,6 +12,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
+| [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 4 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
@@ -38,7 +39,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
-| [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 0 |
 | [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
 | [@Surabhi210](https://github.com/Surabhi210) | 1 | 0 | 0 | 1 |
 | [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
