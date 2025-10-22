@@ -1403,9 +1403,9 @@ main .scroll_to_top {
     min-height: unset;
   }
   footer .row.align-items-start {
-    flex-direction: column;
-    align-items: center;
-    gap: 1.5rem;
+    flex-direction: inherit;
+    align-items: auto;
+    gap: 1rem;
   }
   .footer-logo-col,
   .footer-links-col,
