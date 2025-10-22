@@ -39,7 +39,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
-| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
 | [@Surabhi210](https://github.com/Surabhi210) | 1 | 0 | 0 | 1 |
 | [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
 | [@Kalika-Jay](https://github.com/Kalika-Jay) | 1 | 0 | 0 | 1 |
@@ -50,7 +49,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
 | [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
 | [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
-| [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
 | [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
@@ -59,6 +57,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@manishgithubri](https://github.com/manishgithubri) | 1 | 0 | 0 | 0 |
 | [@Rupali-gituser](https://github.com/Rupali-gituser) | 1 | 0 | 0 | 0 |
+| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 0 |
 | [@shreyas1103](https://github.com/shreyas1103) | 1 | 0 | 0 | 0 |
 | [@Sneha-Amballa](https://github.com/Sneha-Amballa) | 1 | 0 | 0 | 0 |
 | [@snehhhcodes](https://github.com/snehhhcodes) | 1 | 0 | 0 | 0 |
@@ -66,6 +65,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Prakashray-dev](https://github.com/Prakashray-dev) | 0 | 0 | 1 | 0 |
 | [@yashp386](https://github.com/yashp386) | 1 | 0 | 0 | 0 |
 | [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
+| [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 0 |
 | [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
 | [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
 | [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
