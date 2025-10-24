@@ -491,44 +491,19 @@ body {
   background: #fbbf24; /* Yellow */
 }
 
-.difficulty-hard {
-  background: #ef4444; /* Red */
-}
-
-.challenge-card__description {
-  flex-grow: 1;
-  color: #64748b;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-  line-height: 1.4;
-}
-
-.challenge-card__meta {
-  margin-bottom: 1rem;
-}
-
-.category-tag {
-  display: inline-block;
-  background: #e0e7ff;
-  color: #3730a3;
-  padding: 0.25rem 0.6rem;
-  border-radius: 6px;
-  font-size: 0.85rem;
-  margin-right: 0.5rem;
-  text-transform: capitalize;
-}
-
-.challenge-card__actions {
-  text-align: right;
-}
-
-.btn-sm {
-  padding: 0.4rem 0.8rem;
-  font-size: 0.875rem;
-  border-radius: 6px;
-}
-
-/* Content Section: Challenge Vault */
+/* Responsive Styles */
+@media (max-width: 1024px) {
+  .hero__content {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+  .hero__cta {
+    justify-content: center;
+  }
+  .hero__visual {
+    margin: 0 auto;
+  }}
+/* Content Section - Fixed for proper centering */
 .content {
   max-width: 1024px;
   width: 100%;
@@ -864,100 +839,61 @@ body {
   white-space: nowrap !important;
 }
 
+.footer {
+  background-color: #0f0f0f;
+  color: #f0f0f0;
+  padding: 40px 0 20px;
+  font-family: 'Inter', sans-serif;
+}
 
-
-
-/* Tech Stack Icon Container Styles */
-.icon-container {
+.footer__content {
   display: flex;
-  gap: 6px;
-  margin: 8px 0;
-  font-size: 24px;
-}
-.icon-container i {
-  transition: transform 0.2s ease;
-}
-.icon-container i:hover {
-  transform: scale(1.2);
+  flex-wrap: wrap;
+  justify-content: space-between;
+  gap: 2rem;
+  margin-bottom: 1rem;
 }
 
-/*Loading page*/
-#loading-screen {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100vh;
-    background: white;
-    color: blue;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 9999;
-    transition: opacity 0.5s ease, visibility 0.5s ease;
+.footer__section {
+  flex: 1 1 200px;
 }
 
-#loading-screen.hidden {
-    opacity: 0;
-    visibility: hidden;
+.footer__title {
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+  color: #ffffff;
 }
 
-#loading-screen h2 {
-  transition: opacity 0.5s ease-in-out;
+.footer__text {
+  font-size: 0.95rem;
+  color: #ccc;
 }
 
-.fade-out {
-  opacity: 0;
+.footer__list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
 
-
-.loader {
-    text-align: center;
+.footer__list li {
+  margin-bottom: 0.4rem;
 }
 
-.loader i {
-    font-size: 4.5rem;
-    animation: spin 2s linear infinite;
+.footer__list a {
+  text-decoration: none;
+  color: #cccccc;
+  transition: color 0.3s ease;
 }
 
-.loader h2 {
-    margin-top: 1.5rem;
-    font-size: 2.1rem;
+.footer__list a:hover {
+  color: #ffffff;
 }
 
-.dots::after {
-    content: "";
-    display: inline-block;
-    animation: dots 1.5s steps(5, end) infinite;
+.footer__bottom {
+  text-align: center;
+  font-size: 0.85rem;
+  color: #999;
+  border-top: 1px solid #222;
+  padding-top: 10px;
 }
 
-@keyframes dots {
-    0% {
-        content: "";
-    }
-    20% {
-        content: ".";
-    }
-    40% {
-        content: "..";
-    }
-    60% {
-        content: "...";
-    }
-    80%{
-        content: "....";
-    }
-    100% {
-        content: "";
-    }
-}
-
-/* Spin Animation */
-@keyframes spin {
-    from {
-        transform: rotate(0deg);
-    }
-    to {
-        transform: rotate(360deg);
-    }
-}
