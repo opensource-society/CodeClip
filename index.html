@@ -109,8 +109,10 @@
             aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
+           <!-- <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <!-- ================================ issue #605 Starts Here ================================ -->
            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
               <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
                 <li class="nav-item">
                     <a class="nav-link" aria-current="page" href="#top">Home</a>
@@ -127,9 +129,55 @@
                         <li class="nav-item">
                     <a class="nav-link" href="#contactFooter">Contact</a>
                   </li>
+
+                </ul> 
+          </div>-->
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+  <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+    <li class="nav-item">
+      <a class="nav-link btn-nav" aria-current="page" href="#top">Home</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn-nav" href="#challengeSection">Challenges</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn-nav" href="#leaderboardSection">Leaderboard</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn-nav" href="#aboutSection">About</a>
+    </li>
+    <li class="nav-item">
+      <a class="nav-link btn-nav" href="#contactFooter">Contact</a>
+    </li>
+  </ul>
+</div>
+
+          <style>
+            
+
+              
+            .btn-nav {
+  padding: 8px 16px;
+  margin: 0 6px;
+  border-radius: 8px;
+  background-color: transparent;
+  transition: all 0.3s ease;
+}
+
+.btn-nav:hover {
+  background-color: #0d6efd; /* Bootstrap primary color */
+  color: white !important;
+  text-decoration: none;
+}
+
+
+            
+          </style>
+
                 </ul>
           </div>
           <!-- ================================ issue #605 Ends Here ================================ -->
+
         </div>
       </nav>
     </header>
