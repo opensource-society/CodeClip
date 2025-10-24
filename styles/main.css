@@ -20,18 +20,17 @@ html {
 .navbar-brand {
   font-size: 2.1rem;
   font-weight: 900;
-  color: #2563eb;
+  color: #2575fc;
 }
 
 .navbar-brand,.nav-link:hover {   /*========added for issue #605========*/
-  color: #2563eb;
+  color: #0000ff;
   nav {
     position: fixed;
     top: 0;
     width: 100%;
     z-index: 1000;
-    background-color: #ffffff;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 4px rgba(243, 238, 238, 0.1);
     transition: background-color 0.3s ease, box-shadow 0.3s ease;
   }
 
@@ -42,18 +41,20 @@ html {
     justify-content: flex-end;
     align-items: center;
     gap: 1rem;
+    background-color: #ffffff;
   }
   .nav .container,
   .navbar {
     display: flex;
     align-items: center;
     justify-content: space-between;
+    background-color: #ffff;
   }
 
   .container .navbar-brand {
     font-size: 2.1rem;
     font-weight: 900;
-    color: #2563eb;
+    color: blue;
     text-shadow: 2px 2px 5px rgba(37, 99, 235, 0.5),
       2px 2px 8px rgba(0, 0, 0, 0.3), 1px 1px 3px rgba(255, 255, 255, 0.6);
     display: inline-block;
@@ -83,11 +84,11 @@ html {
   /* added gap in nav links */
   .navbar-nav {
     display: flex;
-    gap: 1rem;
+    gap: 1.5rem;
   }
   /* added shadow box and hover effact in nav-links */
   .nav-item a {
-    color: #1e2c44;
+    color: black;
     /* adding box hover effact */
     text-decoration: none;
     font-weight: 700;
@@ -101,12 +102,12 @@ html {
     background: linear-gradient(90deg, #1e2c44 40%, #2563eb 100%);
     border-color: #2563eb;
     transform: translateY(-2px) scale(1.02);
-    box-shadow: 0 8px 20px rgba(33, 136, 56, 0.4);
+    box-shadow: 0 8px 20px rgba(15, 15, 15, 0.4);
     color: white;
     font-size: 1.1rem;
 
     .nav-item a {
-      color: #1e2c44;
+      color: black;
       text-decoration: none;
       font-weight: 700;
       font-size: 1rem;
@@ -199,7 +200,7 @@ html {
     /* ================== Hero Styles Start Here ================== */
     .heroSection {
       margin-top: 56px;
-      background-color: #f8fafc;
+      background-color: #ffffff;
       padding: 2rem 0;
     }
 
@@ -309,7 +310,7 @@ html {
       text-align: center;
       padding: 7px 60px !important;
       border-radius: 40px !important;
-      background: white !important;
+      background:white !important;
       color: #2563eb !important;
       border: 1px solid #2563eb !important;
       transition: all 0.3s ease-in-out;
