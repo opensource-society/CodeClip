@@ -19,6 +19,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@hiitarun1](https://github.com/hiitarun1) | 2 | 0 | 0 | 1 |
 | [@Anmol-Mittal30](https://github.com/Anmol-Mittal30) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
+| [@shreya-mishra325](https://github.com/shreya-mishra325) | 2 | 0 | 0 | 1 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 2 | 0 | 1 |
@@ -29,7 +30,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
-| [@shreya-mishra325](https://github.com/shreya-mishra325) | 2 | 0 | 0 | 0 |
 | [@Apo-orva17](https://github.com/Apo-orva17) | 1 | 0 | 0 | 1 |
 | [@ananyaguptacodes](https://github.com/ananyaguptacodes) | 1 | 0 | 0 | 1 |
 | [@Abhay-aps001](https://github.com/Abhay-aps001) | 1 | 0 | 0 | 1 |
