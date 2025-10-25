@@ -73,15 +73,67 @@
     margin: 8px 0;
     font-size: 24px;
   }
-.icon-container i {
-  transition: transform 0.2s ease;
-}
+  .icon-container i {
+    transition: transform 0.2s ease;
+  }
   .icon-container i:hover {
     transform: scale(1.2);
   }
   .navbar-light .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
-}
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(0,0,0,0.5)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+  }
+
+  /* Added: make the GSSOC logo responsive and centered */
+  .gssocContainer {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .gssoc-logo {
+    width: 140px;        /* base size for small screens */
+    max-width: 35%;      /* responsive cap */
+    height: auto;
+    display: block;
+    object-fit: contain;
+    margin: 0 auto;
+    border-radius: 8px;  /* subtle rounding if needed */
+  }
+
+  /* Slightly larger logo on medium+ screens */
+  @media (min-width: 768px) {
+    .gssoc-logo {
+      width: 180px;
+      max-width: 220px;
+    }
+  }
+
+  /* preserve existing animation hover behaviour (if any) */
+
+  /* ===== Navbar-safe spacing (prevents fixed-top overlap) =====
+     Uses a CSS variable that we set from JS to the real navbar height.
+  */
+  :root {
+    --navbar-height: 72px; /* fallback */
+  }
+
+  /* push page content below fixed navbar and make anchor scrolling correct */
+  body {
+    padding-top: var(--navbar-height);
+    scroll-padding-top: var(--navbar-height);
+  }
+
+  /* small-screen fallback */
+  @media (max-width: 576px) {
+    :root { --navbar-height: 56px; }
+  }
+
+  /* small visual spacing inside hero */
+  .heroSection {
+    padding-top: 0.5rem;
+  }
 </style>
   </head>
 
@@ -685,5 +737,19 @@ setTimeout(() => {
 });
 
     </script>
+    <script>
+  // filepath: c:\Users\manog\CodeClip-GSSOC\CodeClip\index.html
+  // Ensure CSS var matches the actual navbar height (updates on resize)
+  document.addEventListener('DOMContentLoaded', function () {
+    const setNavHeight = () => {
+      const nav = document.querySelector('.navbar.fixed-top, .navbar');
+      if (nav) {
+        document.documentElement.style.setProperty('--navbar-height', nav.offsetHeight + 'px');
+      }
+    };
+    setNavHeight();
+    window.addEventListener('resize', setNavHeight);
+  });
+  </script>
   </body>
 </html>
