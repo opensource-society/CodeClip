@@ -9,7 +9,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 7 | 1 | 0 | 4 |
 | [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
-| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
@@ -49,6 +48,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@shobanCodebase](https://github.com/shobanCodebase) | 1 | 0 | 0 | 1 |
 | [@Prachiikhar25](https://github.com/Prachiikhar25) | 1 | 0 | 0 | 1 |
 | [@supriya46788](https://github.com/supriya46788) | 1 | 0 | 0 | 1 |
+| [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 0 |
 | [@nicksboson](https://github.com/nicksboson) | 1 | 0 | 0 | 1 |
 | [@Trupti0705](https://github.com/Trupti0705) | 0 | 1 | 0 | 1 |
 | [@Soumyosish](https://github.com/Soumyosish) | 0 | 1 | 0 | 1 |
