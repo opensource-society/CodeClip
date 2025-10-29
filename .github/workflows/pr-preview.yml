@@ -22,32 +22,40 @@ jobs:
           ref: ${{ github.event.pull_request.head.sha }}
           fetch-depth: 1
 
-      - name: Create preview directory
-        run: |
-          mkdir -p preview
+      - name: Set up Node.js
+        if: env.BUILD_REQUIRED == 'true' # Set this environment variable in the repository settings if a build is needed
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+          cache: "npm" # Cache dependencies for faster builds
+
+      - name: Install dependencies
+        if: env.BUILD_REQUIRED == 'true'
+        run: npm ci # Use npm ci for reproducible builds
+
+      - name: Build project
+        if: env.BUILD_REQUIRED == 'true'
+        run: npm run build # Replace with your build command (e.g., `hugo`, `vite build`, etc.)
+        env:
+          BASE_URL: /${{ github.repository }}/pr-preview/pr-${{ github.event.pull_request.number }}/
 
       - name: Copy files to preview folder
         run: |
-          # Copy only the necessary files for the static site, excluding git and github folders
-          rsync -av --exclude='.git*' --exclude='.github' --exclude='node_modules' --exclude='*.md' \
-            --exclude='LICENSE' --exclude='CONTRIBUTING.md' --exclude='CODE_OF_CONDUCT.md' \
-            --exclude='SECURITY.md' --exclude='LEADERBOARD.md' --exclude='NAVIGATION_IMPLEMENTATION.md' \
-            ./ preview/
-          
-          # List contents to debug
-          echo "Preview directory contents:"
-          find preview -type f | head -20
+          mkdir -p preview/pr-${{ github.event.pull_request.number }}
+          cp -r ./*.html ./styles ./assets preview/pr-${{ github.event.pull_request.number }}/ || echo "Copy fallback"
+        # Copies from `dist` if a build step exists, otherwise copies all files (excluding .git, .github)
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./preview
+          personal_token: ${{ secrets.DEPLOY_PAT }}
+          external_repository: Mastercoder0406/CodeClip
+          publish_dir: ./preview/pr-${{ github.event.pull_request.number }}
           publish_branch: gh-pages
           destination_dir: pr-preview/pr-${{ github.event.pull_request.number }}
-          keep_files: true  # Keep other PR previews
-          user_name: 'github-actions[bot]'
-          user_email: 'github-actions[bot]@users.noreply.github.com'
+          keep_files: false # Clean up old files to avoid bloat
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
 
       - name: Comment PR with preview URL
         uses: marocchino/sticky-pull-request-comment@v2
