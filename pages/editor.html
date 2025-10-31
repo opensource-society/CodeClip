@@ -173,9 +173,68 @@ return str.split('').reverse().join('');
 }
             </code></pre>
 
-            <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
+        <button id="runBtn" class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
+    <span class="btn-text">Run Code</span>
+    <span class="spinner hidden"></span>
+</button>
+
+<div id="output" class="mt-4"></div>
+            <style>
+                .btn {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Spinner Style  <button class="btn btn-custom-blue mt-2 px-4 py-2 rounded shadow">
                 Run Code
-            </button>
+            </button> */
+.spinner {
+  width: 18px;
+  height: 18px;
+  border: 3px solid #ffffff;
+  border-top: 3px solid transparent;
+  border-radius: 50%;
+  animation: spin 0.7s linear infinite;
+}
+
+/* Hide by default */
+.hidden {
+  display: none;
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+            </style>
+            <script>
+                const runBtn = document.getElementById("runBtn");
+const spinner = runBtn.querySelector(".spinner");
+const btnText = runBtn.querySelector(".btn-text");
+const output = document.getElementById("output");
+
+runBtn.addEventListener("click", async () => {
+  // Show spinner
+  spinner.classList.remove("hidden");
+  btnText.textContent = "Running...";
+
+  // Simulate code execution delay (replace with your real code execution logic)
+  await new Promise((res) => setTimeout(res, 2000));
+
+  // Hide spinner and reset text
+  spinner.classList.add("hidden");
+  btnText.textContent = "Run Code";
+
+  // Show result
+  output.innerHTML = "<p>✅ Code executed successfully!</p>";
+});
+
+            </script>
         </div>
 
         <!-- Grabber between center and right panels -->

@@ -9,17 +9,312 @@
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <!-- Community logos -->
+     <link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css"
+/>
 
-  <!-- Link your separate CSS file here -->
-  <link rel="stylesheet" href="/CodeClip/styles/challenges.css" />
+<!-- Link your separate CSS file here -->
+<link rel="stylesheet" href="../styles/challenges.css" /> <!-- changed the link -->
+
+<!-- ============== Favicon ============== -->
+<link
+    rel="shortcut icon"
+    href="assets/favicon/codeClip-favicon.png"
+    type="image/png"
+/>
+
 </head>
 <body>
+  <style>
+    /* ================= Root & Theme ================= */
+:root {
+  --bg: #f8f9fc;
+  --text: #1f2937;
+  --card-bg: #fff;
+  --accent: #4f46e5;
+  --accent-hover: #4338ca;
+  --border: #e5e7eb;
 
-  <!-- Header -->
+  --easy-bg: #dcfce7;
+  --easy-text: #166534;
+  --medium-bg: #fef9c3;
+  --medium-text: #854d0e;
+  --hard-bg: #fee2e2;
+  --hard-text: #991b1b;
+}
+
+[data-theme="dark"] {
+  --bg: #0f172a;
+  --text: #f9fafb;
+  --card-bg: #1e293b;
+  --border: #334155;
+}
+
+/* ================= Global ================= */
+body {
+  font-family: "Inter", sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  margin: 0;
+  line-height: 1.6;
+  transition: background 0.3s, color 0.3s;
+}
+
+/* ================= Hero ================= */
+.challenges-hero {
+  background: linear-gradient(135deg, #4f46e5, #9333ea);
+  color: #fff;
+  padding: 4rem 1rem;
+  text-align: center;
+}
+
+.challenges-hero__title {
+  font-size: 2.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.challenges-hero__description {
+  max-width: 650px;
+  margin: 0 auto;
+  font-size: 1.1rem;
+  opacity: 0.9;
+}
+
+/* ================= Filter Bar ================= */
+.challenges-filter {
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.7);
+  border: 1px solid var(--border);
+  border-radius: 14px;
+  padding: 1rem 1.5rem;
+  margin: -2rem auto 2rem;
+  width: 95%;
+  max-width: 1100px;
+  box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+  transition: background 0.3s;
+}
+
+[data-theme="dark"] .challenges-filter {
+  background: rgba(30, 41, 59, 0.8);
+}
+
+
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: 0.2s;
+  border: none;
+}
+
+.btn-primary {
+  background: var(--accent);
+  color: #fff;
+}
+.btn-primary:hover {
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: var(--border);
+  color: var(--text);
+}
+.btn-secondary:hover {
+  background: #cbd5e1;
+}
+
+/* ================= Challenges Grid ================= */
+.challenges-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+  gap: 2rem;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+.challenge-card__actions a{
+  text-align: center;
+
+}
+.challenge-card {
+  background: var(--card-bg);
+  border-radius: 16px;
+  padding: 1.5rem;
+  box-shadow: 0 3px 12px rgba(0,0,0,0.08);
+  transition: transform 0.75s, box-shadow 0.75s, opacity 0.25s;
+  opacity: 1;
+}
+
+.challenge-card.hide {
+  opacity: 0;
+  transform: scale(0.95);
+  pointer-events: none;
+}
+
+.challenge-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 6px 20px rgba(0,0,0,0.12);
+}
+
+.challenge-card__header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.challenge-card__title {
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+
+.challenge-card__description {
+  margin: 1rem 0;
+  font-size: 0.95rem;
+  color: #6b7280;
+}
+
+[data-theme="dark"] .challenge-card__description {
+  color: #94a3b8;
+}
+
+.challenge-card__meta {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.category-tag {
+  background: var(--border);
+  padding: 0.3rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.8rem;
+  font-weight: 500;
+}
+
+.difficulty-badge {
+  padding: 0.3rem 0.7rem;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+}
+.difficulty-easy { background: var(--easy-bg); color: var(--easy-text); }
+.difficulty-medium { background: var(--medium-bg); color: var(--medium-text); }
+.difficulty-hard { background: var(--hard-bg); color: var(--hard-text); }
+
+.challenge-card__actions {
+  display: flex;
+  gap: 0.6rem;
+}
+
+/* ================= Theme Toggle ================= */
+#theme-toggle {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  border: none;
+  background: var(--accent);
+  color: #fff;
+  border-radius: 50%;
+  width: 52px;
+  height: 52px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  transition: 0.3s;
+}
+#theme-toggle:hover {
+  background: var(--accent-hover);
+}
+
+/* ================= Empty State ================= */
+.no-results-message {
+  text-align: center;
+  padding: 2rem;
+  opacity: 0.8;
+}
+.no-results-message h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+}
+
+
+/* ================= Controls Section  ================= */
+ .filter-controls {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    padding: 1rem;
+    /* background: #fff; */
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(105, 80, 80, 0.1);
+  }
+
+  .filter-group {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .filter-group label {
+    font-size: 24px;
+    font-weight: 900;
+    margin-bottom: 4px;
+    color: dodgerblue;
+  }
+
+  .filter-select,
+  .search-input {
+    padding: 8px 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 14px;
+  }
+
+  .search-input {
+  width: 400px;   
+  max-width: 100%; 
+  padding: 10px 15px; 
+  font-size: 16px;  
+  border-radius: 8px; 
+  border: 1px solid #ccc; 
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  border-color: #4f46e5; 
+  outline: none;
+  box-shadow: 0 0 5px rgba(79, 70, 229, 0.4);
+}
+
+  .search-group {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-left:auto; /* pushes search bar to the right */
+  }
+
+  
+
+  </style>
+
+  <Header>
   <header class="header" role="banner">
     <div class="container header__container">
       <div class="header__logo">
-        <span class="logo-text">CodeClip</span>
+
+        <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+
+        <a href="../index.html" class="logo-text">CodeClip</a>
+
       </div>
       <nav class="header__nav" id="navMenu" aria-label="Primary navigation">
         <ul class="nav__list">
@@ -43,6 +338,10 @@
     </div>
   </header>
 
+
+
+  
+
   <!-- Main Content -->
   <main>
     <!-- Hero Section -->
@@ -50,60 +349,73 @@
       <div class="container">
         <div class="challenges-hero__content">
           <h1 class="challenges-hero__title">
-            Coding <span class="highlight">Challenges</span>
+            Coding <span class="highlight">Challenges &lt/&gt </span>
           </h1>
-          <p class="challenges-hero__description">
-            Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, there's something for every developer.
-          </p>
+      <p class="challenges-hero__description">
+  Test your skills with our curated collection of coding challenges. From beginner-friendly problems to advanced algorithms, for every developer.
+  <!-- <span class="typing-loop"></span> -->
+</p>
         </div>
       </div>
     </section>
 
-    <!-- Filter Controls -->
-    <section class="challenges-filter" aria-labelledby="filters-heading">
-      <div class="container filter-controls">
-        <div class="filter-group">
   
-</div>
+     <!-- Update Filter Controls Section-->
+    <section class="challenges-filter" aria-labelledby="filters-heading">
+  <div class="container filter-controls">
+    <h2 id="filters-heading" class="visually-hidden">
+      Find Challenges That Match Your Skills
+    </h2>
 
-        <h2 id="filters-heading" class="visually-hidden">Filter Challenges</h2>
+    <!-- Difficulty -->
+    <div class="filter-group">
+      <label for="difficulty-filter">Difficulty:</label>
+      <select
+        id="difficulty-filter"
+        class="filter-select"
+        aria-label="Filter challenges by difficulty"
+      >
+        <option value="">All Levels</option>
+         <option value="easy">Easy 🟢</option>
+        <option value="medium">Medium 🟡</option>
+        <option value="hard">Hard 🔴</option>
+      </select>
+    </div>
 
-        <div class="filter-group">
-          <label for="difficulty-filter">Difficulty:</label>
-          <select id="difficulty-filter" class="filter-select" aria-label="Filter challenges by difficulty">
-            <option value="">All Levels</option>
-            <option value="easy">Easy</option>
-            <option value="medium">Medium</option>
-            <option value="hard">Hard</option>
-          </select>
-        </div>
+    <!-- Category -->
+    <div class="filter-group">
+      <label for="category-filter">Category:</label>
+      <select
+        id="category-filter"
+        class="filter-select"
+        aria-label="Filter challenges by category"
+      >
+        <option value="">All Categories</option>
+        <option value="arrays">Arrays</option>
+        <option value="strings">Strings</option>
+        <option value="algorithms">Algorithms</option>
+        <option value="data-structures">Data Structures</option>
+        <option value="frontend">Frontend</option>
+        <option value="backend">Backend</option>
+        <option value="fullstack">Fullstack</option>
+      </select>
+    </div>
 
-        <div class="filter-group">
-          <label for="category-filter">Category:</label>
-          <select id="category-filter" class="filter-select" aria-label="Filter challenges by category">
-            <option value="">All Categories</option>
-            <option value="arrays">Arrays</option>
-            <option value="strings">Strings</option>
-            <option value="algorithms">Algorithms</option>
-            <option value="data-structures">Data Structures</option>
-            <option value="frontend">Frontend</option>
-            <option value="backend">Backend</option>
-            <option value="fullstack">Fullstack</option>
-          </select>
-        </div>
+    <!-- Search -->
+    <div class="search-group">
+      <input
+        type="search"
+        id="search-challenges"
+        class="search-input"
+        placeholder="Search challenges..."
+        aria-label="Search coding challenges by title or tag"
+      />
+      <button id="clearFilters" class="btn btn-secondary">Clear</button>
+    </div>
 
-        <div class="search-group" style="display: flex; gap: 0.5rem; margin-left: auto;">
-          <input
-            type="search"
-            id="search-challenges"
-            class="search-input"
-            placeholder="Search challenges..."
-            aria-label="Search coding challenges by title or tag"
-          />
-          <button id="clearFilters" class="btn btn-secondary">Clear Filters</button>
-        </div>
-      </div>
-    </section>
+  </div>
+</section>
+
 
     <!-- Challenges Grid -->
     <section class="challenges-grid" aria-labelledby="challenge-heading">
@@ -183,6 +495,103 @@
               <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
             </div>
           </article>
+
+       <!-- Graph -->
+  <article class="challenge-card" data-difficulty="medium" data-category="graph" tabindex="0" aria-label="Challenge Number of Islands, difficulty medium, category graph">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Number of Islands</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given a 2D grid map of '1's (land) and '0's (water), count the number of islands. An island is surrounded by water and formed by connecting adjacent lands.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Graph</span>
+      <span class="category-tag">DFS</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Number of Islands">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+   <!-- Dynamic Programming -->
+  <article class="challenge-card" data-difficulty="medium" data-category="dp" tabindex="0" aria-label="Challenge Coin Change, difficulty medium, category dp">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Coin Change</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      You are given coins of different denominations and a total amount. Find the fewest number of coins needed to make up that amount.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Dynamic Programming</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Coin Change">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+ <!-- Two Pointers -->
+  <article class="challenge-card" data-difficulty="medium" data-category="two-pointers" tabindex="0" aria-label="Challenge Container With Most Water, difficulty medium, category two-pointers">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Container With Most Water</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given n non-negative integers representing vertical lines, find two lines that together form a container with the most water.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Two Pointers</span>
+      <span class="category-tag">Greedy</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Container With Most Water">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+
+    <!-- Prefix Sum -->
+  <article class="challenge-card" data-difficulty="medium" data-category="prefix-sum" tabindex="0" aria-label="Challenge Subarray Sum Equals K, difficulty medium, category prefix-sum">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Subarray Sum Equals K</h3>
+      <span class="difficulty-badge difficulty-medium">Medium</span>
+    </header>
+    <p class="challenge-card__description">
+      Given an array of integers and an integer k, return the total number of continuous subarrays whose sum equals to k.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Prefix Sum</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Subarray Sum Equals K">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
+    <!-- Sliding Window -->
+  <article class="challenge-card" data-difficulty="hard" data-category="sliding-window" tabindex="0" aria-label="Challenge Minimum Window Substring, difficulty hard, category sliding-window">
+    <header class="challenge-card__header">
+      <h3 class="challenge-card__title">Minimum Window Substring</h3>
+      <span class="difficulty-badge difficulty-hard">Hard</span>
+    </header>
+    <p class="challenge-card__description">
+      Given two strings s and t, return the minimum window in s which contains all the characters in t.
+    </p>
+    <div class="challenge-card__meta">
+      <span class="category-tag">Sliding Window</span>
+      <span class="category-tag">Hash Map</span>
+    </div>
+    <div class="challenge-card__actions">
+      <a href="editor.html" class="btn btn-primary btn-sm" aria-label="Solve challenge Minimum Window Substring">Solve Challenge</a>
+      <a href="../javascript-executor.html" class="btn btn-secondary btn-sm" aria-label="Run in JS Executor">Run in JS Executor</a>
+    </div>
+  </article>
+
         </div>
 
         <div id="no-results" class="no-results-message" style="display:none;">
@@ -198,12 +607,15 @@
     <div class="container">
       <div class="footer__content">
         <section class="footer__section">
-          <h4>CodeClip</h4>
+          <h2 class="header__logo">
+  <span class="logo-text">Code</span><span class="logo-text2">Clip</span>
+</h2>
+
           <p>Master coding challenges in your browser</p>
         </section>
 
         <section class="footer__section">
-          <h4>Quick Links</h4>
+          <h2>Quick Links</h2>
           <ul>
             <li><a href="/">Home</a></li>
             <li><a href="challenges.html">Challenges</a></li>
@@ -211,14 +623,15 @@
           </ul>
         </section>
 
-        <section class="footer__section">
-          <h4>Community</h4>
-          <ul>
-            <li><a href="#" aria-label="GitHub link">GitHub</a></li>
-            <li><a href="#" aria-label="Discord link">Discord</a></li>
-            <li><a href="#" aria-label="Twitter link">Twitter</a></li>
-          </ul>
-        </section>
+  <section class="footer__section">
+  <h2>Community</h2>
+  <ul>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="GitHub link" target="_blank">GitHub <i class="fab fa-github"></i></a></li>
+    <li><a href="https://github.com/opensource-society/CodeClip" aria-label="Discord link" target="_blank" >Discord <i class="fab fa-discord"></i></a></li>
+    <li><a href="https://www.linkedin.com/in/adityai0/" aria-label="Linkedn  link" target="_blank">Linkedin<i class="fab fa-linkedin"></i></a></li>
+  </ul>
+</section>
+
       </div>
       <div class="footer__bottom">
         <p>&copy; 2024 CodeClip. All rights reserved.</p>
