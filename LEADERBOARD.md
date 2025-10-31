@@ -29,6 +29,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
+| [@MAYANKSHARMA01010](https://github.com/MAYANKSHARMA01010) | 1 | 1 | 0 | 0 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
 | [@Apo-orva17](https://github.com/Apo-orva17) | 1 | 0 | 0 | 1 |
 | [@ananyaguptacodes](https://github.com/ananyaguptacodes) | 1 | 0 | 0 | 1 |
