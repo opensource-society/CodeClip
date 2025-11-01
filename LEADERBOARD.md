@@ -22,6 +22,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@shreya-mishra325](https://github.com/shreya-mishra325) | 2 | 0 | 0 | 1 |
 | [@Methika2005](https://github.com/Methika2005) | 2 | 0 | 0 | 1 |
 | [@sanjanaaraii](https://github.com/sanjanaaraii) | 2 | 0 | 0 | 1 |
+| [@snehaaadn](https://github.com/snehaaadn) | 2 | 0 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 2 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
@@ -40,7 +41,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Pushpendra1798](https://github.com/Pushpendra1798) | 1 | 0 | 0 | 1 |
 | [@Jyoti520](https://github.com/Jyoti520) | 1 | 0 | 0 | 1 |
 | [@chilaka-eswari](https://github.com/chilaka-eswari) | 1 | 0 | 0 | 1 |
-| [@snehaaadn](https://github.com/snehaaadn) | 1 | 0 | 0 | 1 |
 | [@Surabhi210](https://github.com/Surabhi210) | 1 | 0 | 0 | 1 |
 | [@Shrutik-0101](https://github.com/Shrutik-0101) | 0 | 1 | 0 | 1 |
 | [@Kalika-Jay](https://github.com/Kalika-Jay) | 1 | 0 | 0 | 1 |
