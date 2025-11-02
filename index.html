@@ -521,7 +521,134 @@
     </div>
   </div>
 </section>
+<style>
+#leaderboardSection {
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+  padding: 60px 20px;
+  text-align: center;
+  border-radius: 16px;
+  box-shadow: 0 4px 15px rgba(0, 120, 255, 0.08);
+  max-width: 900px;
+  margin: 60px auto;
+  font-family: 'Poppins', sans-serif;
+}
 
+#leaderboardSection h2 {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #1f1f1f;
+  margin-bottom: 12px;
+}
+
+#leaderboardSection .highlight {
+  color: #0078ff;
+  font-weight: 800;
+}
+
+#leaderboardSection p {
+  color: #555;
+  max-width: 650px;
+  margin: 0 auto 40px;
+  line-height: 1.7;
+  font-size: 1rem;
+}
+
+/* ===== Leaderboard List ===== */
+.leaderboard-list {
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* ===== Leaderboard Row ===== */
+.leaderboard-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: #fff;
+  padding: 18px 25px;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  transition: all 0.25s ease-in-out;
+}
+
+.leaderboard-row:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 14px rgba(0, 120, 255, 0.12);
+}
+
+/* ===== User Image ===== */
+.leaderboard-Img {
+  width: 65px;
+  height: 65px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #0078ff;
+  margin: 0 15px;
+  box-shadow: 0 0 8px rgba(0,120,255,0.1);
+}
+
+/* ===== Rank and Text ===== */
+.rank {
+  font-weight: 700;
+  font-size: 1.2rem;
+  color: #0078ff;
+  min-width: 40px;
+}
+
+.userName {
+  flex: 1;
+  text-align: left;
+  font-weight: 600;
+  color: #2a2a2a;
+  font-size: 1rem;
+}
+
+.points {
+  font-weight: 700;
+  color: #444;
+  font-size: 1rem;
+}
+
+.badge {
+  font-size: 1rem;
+  margin-left: 6px;
+}
+
+.gold { color: #ffbf00; }
+.silver { color: #b0b0b0; }
+.bronze { color: #cd7f32; }
+
+/* ===== Rank Highlight Colors ===== */
+.rank-1 { border-left: 4px solid #ffbf00; }
+.rank-2 { border-left: 4px solid #b0b0b0; }
+.rank-3 { border-left: 4px solid #cd7f32; }
+
+/* ===== Responsive Design ===== */
+@media (max-width: 700px) {
+  .leaderboard-row {
+    flex-direction: column;
+    gap: 10px;
+    text-align: center;
+    padding: 20px;
+  }
+
+  .leaderboard-Img {
+    width: 80px;
+    height: 80px;
+  }
+
+  .rank {
+    font-size: 1rem;
+  }
+
+  .points {
+    font-size: 0.95rem;
+  }
+}
+
+
+</style>
     <!-- ================================ Leaderboard Section End Here ================================ -->
 
     <!-- ================================ About Section Start Here ================================ -->
