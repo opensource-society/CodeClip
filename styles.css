@@ -319,6 +319,24 @@ body {
 .btn-secondary:hover {
   background: #475569;
 }
+/*GSSOC LOGO*/
+.gssoc-logo {
+  height:80px;
+  width:100px;
+  position:relative;
+  top:110px;
+  left:160px;
+ 
+  
+  
+}
+.title{
+  position:relative;
+  top:15px;
+}
+.head{
+  font-size: 30px;
+}
 
 /* Code Window */
 .hero__visual {
