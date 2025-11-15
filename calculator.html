@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SGPA/CGPA Calculator</title>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        input { margin: 5px; }
+        button { margin: 10px 0; padding: 5px 10px; }
+    </style>
+</head>
+<body>
+    <h1>SGPA / CGPA / Percentage Calculator</h1>
+    <label>Enter marks (comma separated):</label><br>
+    <input type="text" id="marks" placeholder="e.g. 85,78,92"><br>
+    <button onclick="calculate()">Calculate</button>
+
+    <h2 id="result"></h2>
+
+    <script>
+        function calculate() {
+            let input = document.getElementById("marks").value;
+            let marks = input.split(',').map(Number);
+            
+            if (marks.some(isNaN)) {
+                alert("Please enter valid numbers separated by commas.");
+                return;
+            }
+
+            let total = marks.reduce((a, b) => a + b, 0);
+            let percentage = total / marks.length;
+            let sgpa = percentage / 9.5;
+            let cgpa = sgpa; // simplified
+
+            document.getElementById("result").innerHTML = `
+                Percentage: ${percentage.toFixed(2)}% <br>
+                SGPA: ${sgpa.toFixed(2)} <br>
+                CGPA: ${cgpa.toFixed(2)}
+            `;
+        }
+    </script>
+</body>
+</html>
