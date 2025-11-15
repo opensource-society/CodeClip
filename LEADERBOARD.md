@@ -14,6 +14,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
 | [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 4 |
+| [@Theuniii](https://github.com/Theuniii) | 0 | 3 | 0 | 2 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
 | [@hiitarun1](https://github.com/hiitarun1) | 2 | 0 | 0 | 1 |
@@ -25,7 +26,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@snehaaadn](https://github.com/snehaaadn) | 2 | 0 | 0 | 1 |
 | [@VidhanThakur09](https://github.com/VidhanThakur09) | 0 | 2 | 0 | 1 |
 | [@Sanskriti10247](https://github.com/Sanskriti10247) | 1 | 1 | 0 | 1 |
-| [@Theuniii](https://github.com/Theuniii) | 0 | 1 | 0 | 2 |
 | [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
