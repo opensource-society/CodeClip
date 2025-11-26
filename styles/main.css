@@ -999,11 +999,7 @@ html {
       gap: 0;
       row-gap: 2.5rem;
     }
-
-    row-gap: 2.5rem;
-  }
-
-  main .footer-logo-col,
+    main .footer-logo-col,
   .footer-links-col,
   .footer-contact-col-main {
     display: flex;
@@ -1375,6 +1371,23 @@ main .scroll_to_top {
   align-items: center;
   gap: 0.2rem;
 }
+
+/* Make the two contact columns sit side-by-side and keep internal buttons sized nicely */
+.footer-contact-row .footer-contact-col {
+  flex: 0 0 48%; /* two columns */
+  max-width: 48%;
+}
+.footer-contact-row .footer-contact-col.w-100 {
+  /* override bootstrap utility that was forcing full width */
+  width: auto;
+  max-width: 48%;
+}
+.footer-contact-row .footer-contact-btn {
+  width: 100%;
+  max-width: 260px; /* keep a comfortable max width */
+  margin-left: 0;
+  margin-right: 0;
+}
 @media (max-width: 768px) {
   text-decoration: none;
 }
@@ -1495,3 +1508,10 @@ main .contact-icons a {
 }
 
 /* ================== Footer Styles End Here ================== */
+
+/* Ensure contact buttons in the Contact Us footer keep a comfortable max width
+   (higher specificity so this rule wins over the generic .footer-contact-btn). */
+#contactFooter .footer-contact-row .footer-contact-btn {
+  max-width: 260px;
+  width: 100%;
+}
