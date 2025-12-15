@@ -5,20 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Challenges - CodeClip</title>
     
-    <!-- Google Fonts -->
+<!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <!-- Merge both font options for flexibility -->
+<!-- Merge both font options for flexibility -->
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Bitcount:wght@100..900&family=Oooh+Baby&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 
-    <!-- Styles -->
-    <!-- If you want to keep all challenge styles in one file, use: -->
+<!-- Styles -->
+<!-- If you want to keep all challenge styles in one file, use: -->
     <link rel="stylesheet" href="/CodeClip/styles/about.css">
-    <!-- Or, if you want to scope styles to just challenges, use: -->
-    <!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
+<!-- Or, if you want to scope styles to just challenges, use: -->
+<!-- <link rel="stylesheet" href="../styles/challenges.css" /> -->
 </head>
 <style>
     
@@ -234,13 +234,12 @@ body {
       </div>
       <nav class="header__nav" id="navMenu">
         <ul class="nav__list">
-          <li><a href="index.html" data-route="/" class="nav__link">Home</a></li>
+<li><a href="index.html" data-route="/" class="nav__link">Home</a></li>
 <li><a href="challenges.html" data-route="/challenges" class="nav__link active">Challenges</a></li>
 <li><a href="editor.html" data-route="/editor" class="nav__link">Editor</a></li>
 <li><a href="form.html" data-route= "/form" class="nav__link" >User Details</a></li>
 <li><a href="profile.html" data-route="/profile" class="nav__link">Profile</a></li>
 <li><a href="about.html" class="nav__link">About</a></li>
-
         </ul>
       </nav>
       <button class="header__toggle" id="navToggle" aria-label="Open navigation menu">
@@ -252,71 +251,158 @@ body {
   </header>
 
   <div class="about-container">
+        <br><br><hr>
+
     <h1>About CodeClip</h1>
-    <p><strong>CodeClip</strong> is a lightweight, browser-based code snippet manager built for developers who want a simple, fast, and distraction-free way to save and revisit frequently used code.</p>
+    <p><strong>CodeClip</strong> is a lightweight, browser-based <em>code snippet manager</em> designed for developers who want a clean, fast, and distraction-free way to save, organize, and reuse their frequently used code.</p>
 
-    <p>It is completely client-side, with no backend — your snippets are stored securely in your browser using <code>localStorage</code>. Whether you're a beginner or a seasoned developer, CodeClip helps you stay productive by keeping your code snippets easily accessible.</p>
- <hr>
-    <h2> Features</h2>
-    <ul>
-      <li> Light/Dark mode support</li>
-      <li> Save and manage code snippets effortlessly</li>
-      <li> Search functionality (in progress)</li>
-      <li> Responsive design for mobile and desktop</li>
-      <li> 100% privacy – nothing leaves your browser</li>
-    </ul>
+<p>⚡ 100% client-side — no backend, no sign-ups, no hassle. Your snippets are stored securely in your browser using <code>localStorage</code>, giving you complete privacy and instant access anytime.</p>
 
-    
-    <p>View the source code or contribute here:  
-      <a href="https://github.com/opensource-society/CodeClip" target="_blank">
-        github.com/opensource-society/CodeClip
-      </a>
-    </p>
+<p>Whether you’re just starting your coding journey or you’re an experienced developer, <strong>CodeClip</strong> keeps your productivity high by making your most-used code snippets only a click away.</p>
+<hr>
 
+  <h2>✨ Features</h2>
+<ul>
+  <li><strong>Light & Dark Mode</strong> – Switch seamlessly to match your coding vibe</li>
+  <li><strong>Snippet Management</strong> – Save, edit, and organize your code with ease</li>
+  <li><strong>Quick Search</strong> – (Coming soon) Instantly find the snippet you need</li>
+  <li><strong>Responsive Design</strong> – Optimized for both desktop and mobile devices</li>
+  <li><strong>100% Privacy</strong> – All data stays in your browser; nothing is sent to a server</li>
+</ul>
+
+  <p>🚀 Check out the source code or contribute to <strong>CodeClip</strong> on GitHub:  
+  <a href="https://github.com/opensource-society/CodeClip" target="_blank">
+    github.com/opensource-society/CodeClip
+  </a>
+</p>
+<p>Whether you want to suggest features, fix bugs, or just explore the code, your contributions are welcome!</p>
   </div>
 
   <!-- Footer -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer__content">
-        <div class="footer__section">
-          <h4>CodeClip</h4>
-          <p>Master coding challenges in your browser</p>
-        </div>
-        <div class="footer__section">
-          <h4>Quick Links</h4>
-          <ul>
-            <li><a href="index.html" data-route="/">Home</a></li>
-<li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
-<li><a href="form.html" data-route= "/form">User Details</a></li>
-<li><a href="editor.html" data-route="/editor">Editor</a></li>
+<footer class="footer">
+  <div class="container">
+    <div class="footer__content">
 
-          </ul>
-        </div>
-        <!--div class="footer__section">
-          <h4>Community</h4>
-          <ul class="social-links">
-            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank">GitHub</a></li>
-            <li><a href="#">Discord</a></li>
-            <li><a href="#">Twitter</a></li>
-            <li><a href="#">LinkedIn</a></li>
-          </ul>
-        </div-->
-         <div class="footer__section">
-          <h4>Community</h4>
-          <ul class="social-links">
-            <li><a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-github"></i></a></li>
-            <li><a href="#"><i class="fab fa-discord"></i></a></li>
-            <li><a href="#"><i class="fab fa-twitter"></i></a></li>
-            <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
-          </ul>
-        </div>
+      <!-- About Section -->
+      <div class="footer__section about">
+        <h4>CodeClip</h4>
+        <p>Master coding challenges right in your browser. Save, edit, and revisit snippets effortlessly.</p>
       </div>
-      <div class="footer__bottom">
-        <p>&copy; 2024 CodeClip. All rights reserved.</p>
+
+      <!-- Quick Links -->
+      <div class="footer__section links">
+        <h4>Quick Links</h4>
+        <ul>
+          <li><a href="index.html" data-route="/">Home</a></li>
+          <li><a href="challenges.html" data-route="/challenges">Challenges</a></li>
+          <li><a href="form.html" data-route="/form">User Details</a></li>
+          <li><a href="editor.html" data-route="/editor">Editor</a></li>
+        </ul>
       </div>
+
+      <!-- Community -->
+      <div class="footer__section community">
+        <h4>Community</h4>
+        <ul class="social-links">
+          <li><a href="https://github.com/opensource-society/CodeClip" target="_blank"><i class="fab fa-github"></i></a></li>
+          <li><a href="#"><i class="fab fa-discord"></i></a></li>
+          <li><a href="#"><i class="fab fa-twitter"></i></a></li>
+          <li><a href="#"><i class="fab fa-linkedin"></i></a></li>
+        </ul>
+      </div>
+
     </div>
-  </footer>
+
+    <!-- Bottom -->
+    <div class="footer__bottom">
+      <hr>
+      <p>&copy; 2025 <strong>CodeClip</strong>. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- Footer CSS -->
+<style>
+.footer {
+  background-color: #1e1e1e;
+  color: #fff;
+  padding: 50px 20px 20px;
+  font-family: 'Arial', sans-serif;
+}
+
+.footer__content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 40px;
+  justify-content: space-between;
+}
+
+.footer__section h4 {
+  margin-bottom: 15px;
+  font-size: 1.2em;
+  color: #fff;
+}
+
+.footer__section p {
+  max-width: 220px;
+  line-height: 1.5;
+  color: #ccc;
+}
+
+.footer__section ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.footer__section ul li {
+  margin-bottom: 10px;
+}
+
+.footer__section ul li a {
+  color: #fff;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+
+.footer__section ul li a:hover {
+  color: #1DA1F2;
+}
+
+.social-links {
+  display: flex;
+  gap: 15px;
+}
+
+.social-links a {
+  font-size: 1.4em;
+  color: #fff;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #1DA1F2;
+}
+
+.footer__bottom {
+  text-align: center;
+  margin-top: 30px;
+  font-size: 0.9em;
+  color: #aaa;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .footer__content {
+    flex-direction: column;
+    gap: 30px;
+  }
+  .footer__section p {
+    max-width: 100%;
+  }
+}
+</style>
+
 
   <!-- Theme Toggle Button (from main branch version) -->
   <button id="theme-toggle" title="Toggle theme">
@@ -324,7 +410,7 @@ body {
   </button>
 
   <!-- Scripts -->
- <script type="module" src="app.js"></script>
+<script type="module" src="app.js"></script>
 <script type="module" src="theme.js"></script>
 <script src="challenges.js"></script>
   <style>
