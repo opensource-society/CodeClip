@@ -7,16 +7,15 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | Username | Level 1 | Level 2 | Level 3 | PRs Merged |
 |----------|---------|---------|---------|-------------|
 | [@Nikhilrsingh](https://github.com/Nikhilrsingh) | 7 | 1 | 0 | 4 |
-| [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 5 |
 | [@Ishuuu1213](https://github.com/Ishuuu1213) | 3 | 1 | 0 | 5 |
 | [@Suhani1234-5](https://github.com/Suhani1234-5) | 0 | 1 | 1 | 5 |
 | [@Kashish-010](https://github.com/Kashish-010) | 4 | 0 | 0 | 2 |
 | [@DoyelMishra15](https://github.com/DoyelMishra15) | 3 | 0 | 0 | 3 |
 | [@cosmicTitiksha](https://github.com/cosmicTitiksha) | 1 | 1 | 0 | 4 |
-| [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 4 |
 | [@Theuniii](https://github.com/Theuniii) | 0 | 3 | 0 | 2 |
 | [@Shalini22-ui](https://github.com/Shalini22-ui) | 0 | 1 | 0 | 4 |
 | [@Shivin1016](https://github.com/Shivin1016) | 2 | 0 | 0 | 2 |
+| [@Mrunalisa](https://github.com/Mrunalisa) | 4 | 0 | 0 | 0 |
 | [@hiitarun1](https://github.com/hiitarun1) | 2 | 0 | 0 | 1 |
 | [@Anmol-Mittal30](https://github.com/Anmol-Mittal30) | 2 | 0 | 0 | 1 |
 | [@RagniNagpal](https://github.com/RagniNagpal) | 1 | 0 | 0 | 2 |
@@ -29,7 +28,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@ShroudAnkit53](https://github.com/ShroudAnkit53) | 1 | 0 | 0 | 1 |
 | [@Chinmayi-H-M](https://github.com/Chinmayi-H-M) | 1 | 0 | 0 | 1 |
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
-| [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
 | [@MAYANKSHARMA01010](https://github.com/MAYANKSHARMA01010) | 1 | 1 | 0 | 0 |
 | [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
 | [@Apo-orva17](https://github.com/Apo-orva17) | 1 | 0 | 0 | 1 |
@@ -56,6 +54,8 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
 | [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
 | [@anisha4890](https://github.com/anisha4890) | 1 | 0 | 0 | 0 |
+| [@Mansi2007275](https://github.com/Mansi2007275) | 1 | 0 | 0 | 0 |
+| [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 0 |
 | [@MohdAnas007](https://github.com/MohdAnas007) | 1 | 0 | 0 | 0 |
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@manishgithubri](https://github.com/manishgithubri) | 1 | 0 | 0 | 0 |
