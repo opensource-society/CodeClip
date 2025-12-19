@@ -31,6 +31,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@DevamshReddy-coder](https://github.com/DevamshReddy-coder) | 1 | 0 | 0 | 1 |
 | [@shreyanshdubey2112](https://github.com/shreyanshdubey2112) | 1 | 0 | 0 | 1 |
 | [@MAYANKSHARMA01010](https://github.com/MAYANKSHARMA01010) | 1 | 1 | 0 | 0 |
+| [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 1 |
 | [@Apo-orva17](https://github.com/Apo-orva17) | 1 | 0 | 0 | 1 |
 | [@ananyaguptacodes](https://github.com/ananyaguptacodes) | 1 | 0 | 0 | 1 |
 | [@Abhay-aps001](https://github.com/Abhay-aps001) | 1 | 0 | 0 | 1 |
@@ -55,7 +56,6 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@Ishika-codeit](https://github.com/Ishika-codeit) | 2 | 0 | 0 | 0 |
 | [@jdhruv555](https://github.com/jdhruv555) | 1 | 0 | 0 | 1 |
 | [@anisha4890](https://github.com/anisha4890) | 1 | 0 | 0 | 0 |
-| [@gitikaK](https://github.com/gitikaK) | 1 | 0 | 0 | 0 |
 | [@MohdAnas007](https://github.com/MohdAnas007) | 1 | 0 | 0 | 0 |
 | [@Samiksha-bajoria](https://github.com/Samiksha-bajoria) | 1 | 0 | 0 | 0 |
 | [@manishgithubri](https://github.com/manishgithubri) | 1 | 0 | 0 | 0 |
