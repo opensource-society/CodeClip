@@ -242,6 +242,82 @@
             outline: none;
             border-color: #667eea;
         }
+/* Modern modal dialog styles */
+.modal-dialog {
+    position: fixed;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: rgba(40, 44, 52, 0.45);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    animation: fadeIn 0.2s;
+}
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+.modal-content {
+    background: #fff;
+    border-radius: 16px;
+    padding: 32px 28px 24px 28px;
+    box-shadow: 0 8px 32px rgba(31,38,135,0.37);
+    max-width: 350px;
+    width: 100%;
+    text-align: center;
+    border: 1px solid #eee;
+    animation: slideUp 0.25s;
+}
+@keyframes slideUp {
+    from { transform: translateY(40px); opacity: 0; }
+    to { transform: translateY(0); opacity: 1; }
+}
+.modal-content h3 {
+    margin-bottom: 14px;
+    color: #764ba2;
+    font-size: 1.35rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+.modal-content p {
+    margin-bottom: 22px;
+    color: #444;
+    font-size: 1rem;
+}
+.modal-actions {
+    display: flex;
+    gap: 18px;
+    justify-content: center;
+}
+.btn-primary {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: #fff;
+    border: none;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 2px 8px rgba(102,126,234,0.12);
+    transition: background 0.2s, box-shadow 0.2s;
+}
+.btn-primary:hover {
+    background: linear-gradient(135deg, #764ba2 0%, #667eea 100%);
+    box-shadow: 0 4px 16px rgba(102,126,234,0.18);
+}
+.btn-secondary {
+    background: #f8f9fa;
+    color: #764ba2;
+    border: 2px solid #e9ecef;
+    font-weight: 600;
+    padding: 10px 22px;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: background 0.2s, border-color 0.2s;
+}
+.btn-secondary:hover {
+    background: #e9ecef;
+    border-color: #764ba2;
+}
 
         .output-container {
             flex: 1;
@@ -485,7 +561,7 @@ Ready to execute code in 75+ languages...</div>
                 this.apiEndpoint = 'https://judge0-ce.p.rapidapi.com';
                 this.isExecuting = false;
                 this.pollInterval = null;
-                
+                this.languageCodes = {};
                 this.initializeElements();
                 this.initializeEventListeners();
                 this.setupExamples();
@@ -542,6 +618,48 @@ Ready to execute code in 75+ languages...</div>
                     });
                 });
             }
+            
+onLanguageChange() {
+    // Save current code for previous language
+    const currentLang = this.prevLang || this.elements.languageSelect.value;
+    this.languageCodes[currentLang] = this.elements.codeEditor.value;
+
+    // Load code for new language, or starter template
+    const selectedLang = this.elements.languageSelect.value;
+    const starterTemplates = {
+        '63': '// Write your JavaScript code here...',
+        '71': '# Write your Python code here...',
+        '62': '// Write your Java code here...',
+        '54': '// Write your C++ code here...',
+        '50': '// Write your C code here...',
+        '51': '// Write your C# code here...',
+        '68': '// Write your PHP code here...',
+        '72': '# Write your Ruby code here...',
+        '60': '// Write your Go code here...',
+        '78': '// Write your Kotlin code here...',
+        '85': '# Write your Perl code here...',
+        '43': '// Write your code here...'
+    };
+    this.elements.codeEditor.value = this.languageCodes[selectedLang] || starterTemplates[selectedLang] || '';
+    this.prevLang = selectedLang;
+
+    // Update placeholder as before
+    const selectedOption = this.elements.languageSelect.selectedOptions[0];
+    if (selectedOption) {
+        const langName = selectedOption.textContent.toLowerCase();
+        if (langName.includes('python')) {
+            this.elements.codeEditor.placeholder = '# Write your Python code here...';
+        } else if (langName.includes('java')) {
+            this.elements.codeEditor.placeholder = '// Write your Java code here...';
+        } else if (langName.includes('c++') || langName.includes('cpp')) {
+            this.elements.codeEditor.placeholder = '// Write your C++ code here...';
+        } else if (langName.includes('javascript')) {
+            this.elements.codeEditor.placeholder = '// Write your JavaScript code here...';
+        } else {
+            this.elements.codeEditor.placeholder = '// Write your code here...';
+        }
+    }
+}
 
             loadApiKey() {
                 const saved = localStorage.getItem('judge0_api_key');
@@ -619,28 +737,7 @@ Ready to execute code in 75+ languages...</div>
                 }
             }
 
-            onLanguageChange() {
-                // Clear the editor when language changes
-                // this.clearEditor();
-                
-                // Update placeholder based on language
-                const selectedOption = this.elements.languageSelect.selectedOptions[0];
-                if (selectedOption) {
-                    const langName = selectedOption.textContent.toLowerCase();
-                    if (langName.includes('python')) {
-                        this.elements.codeEditor.placeholder = '# Write your Python code here...';
-                    } else if (langName.includes('java')) {
-                        this.elements.codeEditor.placeholder = '// Write your Java code here...';
-                    } else if (langName.includes('c++') || langName.includes('cpp')) {
-                        this.elements.codeEditor.placeholder = '// Write your C++ code here...';
-                    } else if (langName.includes('javascript')) {
-                        this.elements.codeEditor.placeholder = '// Write your JavaScript code here...';
-                    } else {
-                        this.elements.codeEditor.placeholder = '// Write your code here...';
-                    }
-                }
-            }
-
+      
             async executeCode() {
                 if (!this.apiKey) {
                     this.showError('Please enter and test your RapidAPI key first');
@@ -816,11 +913,32 @@ Ready to execute code in 75+ languages...</div>
                 }
             }
 
-            clearEditor() {
-                this.elements.codeEditor.value = '';
-                this.elements.inputData.value = '';
-                this.elements.codeEditor.focus();
-            }
+// ...inside class MultiLanguageExecutor...
+
+clearEditor() {
+    if (this.elements.codeEditor.value.trim() !== '' || this.elements.inputData.value.trim() !== '') {
+        // Show custom dialog
+        const dialog = document.getElementById('clearDialog');
+        dialog.style.display = 'flex';
+
+        const confirmBtn = document.getElementById('confirmClearBtn');
+        const cancelBtn = document.getElementById('cancelClearBtn');
+
+        const closeDialog = () => { dialog.style.display = 'none'; };
+
+        confirmBtn.onclick = () => {
+            this.elements.codeEditor.value = '';
+            this.elements.inputData.value = '';
+            this.elements.codeEditor.focus();
+            closeDialog();
+        };
+        cancelBtn.onclick = closeDialog;
+        return;
+    }
+    this.elements.codeEditor.value = '';
+    this.elements.inputData.value = '';
+    this.elements.codeEditor.focus();
+}
 
             clearOutput() {
                 this.elements.output.textContent = '';
@@ -1094,5 +1212,16 @@ print(f"You were probably born in {birth_year}.")`,
             console.error('Unhandled promise rejection:', event.reason);
         });
     </script>
+    <!-- Add this before </body> -->
+<div id="clearDialog" class="modal-dialog" style="display:none;">
+    <div class="modal-content">
+        <h3>Clear Code?</h3>
+        <p>This will remove all code and input. This action cannot be undone.</p>
+        <div class="modal-actions">
+            <button id="confirmClearBtn" class="btn btn-primary">Yes, Clear</button>
+            <button id="cancelClearBtn" class="btn btn-secondary">Cancel</button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
