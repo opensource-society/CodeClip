@@ -65,6 +65,8 @@
 <link rel="stylesheet" href="./styles/progress-dashboard.css" />
 <!-- === SMART PROGRESS DASHBOARD FEATURE END === -->
 
+<link rel="stylesheet" href="styles/footer.css" />
+
 <!-- Inline custom tweaks -->
 <style>
   .icon-container {
@@ -562,75 +564,64 @@
 
     <!-- ================================ Footer Section Start Here ================================ -->
     <footer id="contactFooter">
-      <div class="container">
-        <div class="row align-items-start justify-content-between py-4">
-          <div data-aos-duration="650" data-aos="fade-up" class="col-12 col-md-3 mb-4 mb-md-0 footer-logo-col">
-            <a class="navbar-brand mb-2" id="homeSection"
-              >Code<span>Clip</span></a
-            > 
-            <p class="footer-desc mb-0 text-dark">
-              CodeClip is a open source project under GirlScript Summer of Code
-              (GSSoC) 2025 to open for contribution
-            </p> 
-          </div>
-          <!-- Removed footer nav links when navbar is sticky issue #610 -->
-          <div class="col-12 col-md-6 footer-contact-col-main">
-            <h5 data-aos-duration="650" data-aos="fade-left" class="footer-title">Contact Us</h5>
-            <div class="footer-contact-row d-flex justify-content-center">
-              <div data-aos-duration="650" data-aos="fade-right"
-                class="footer-contact-col d-flex flex-column gap-3 w-100"
-              >
-                <a
-                  href="https://github.com/opensource-society/CodeClip"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-github me-2"></i> GitHub
-                </a>
-                <a
-                  href="https://discord.gg/NmGyBWAE3b"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-discord me-2"></i> Discord
-                </a>
-              </div>
-              <div data-aos-duration="650" data-aos="fade-left"
-                class="footer-contact-col d-flex flex-column align-items-center"
-              >
-              <!-- margin added -->
-                <a
-                  href="https://github.com/opensource-society/CodeClip/issues"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn"
-                  style="max-width: 250px"
-                >
-                  <i class="fas fa-exclamation-circle me-2"></i> Open an Issue
-                </a>
-                <!-- Added linkdin social connection -->
-                <a
-                  href="https://www.linkedin.com/in/adityai0"
-                  target="_blank"
-                  class="btn btn-primary mb-2 footer-contact-btn mt-3 "
-                  style="max-width: 250px"
-                >
-                  <i class="fab fa-linkedin-in me-2"></i> LinkedIn
-                </a>
-                
-              </div>
-            </div>
-          </div>
-        </div> 
-      </div> 
+  <div class="container footer-container">
+    <div class="row align-items-start justify-content-between py-4">
+
+      <!-- Logo + About -->
+      <div class="col-12 col-md-3 mb-4 footer-logo-col">
+        <a class="navbar-brand mb-2" id="homeSection">Code<span>Clip</span></a>
+        <p class="footer-desc">
+          CodeClip is an open-source project under GirlScript Summer of Code (GSSoC) 2025, 
+          aimed at helping developers learn, practice, and contribute.
+        </p>
+      </div>
+
+      <!-- Quick Links -->
+      <div class="col-12 col-md-3 mb-4 footer-links">
+        <h5 class="footer-title">Quick Links</h5>
+        <ul>
+          <li><a href="./index.html">🏠 Home</a></li>
+          <li><a href="./about.html">ℹ️ About</a></li>
+          <li><a href="./features.html">⚡ Features</a></li>
+          <li><a href="https://github.com/opensource-society/CodeClip/blob/main/CONTRIBUTING.md" target="_blank">🤝 Contribute</a></li>
+          <li><a href="#contactFooter">📩 Contact</a></li>
+        </ul>
+      </div>
+
+      <!-- Social Media -->
+      <div class="col-12 col-md-3 mb-4 footer-social">
+        <h5 class="footer-title">Follow Us</h5>
+        <div class="social-links">
+          <a href="https://github.com/opensource-society/CodeClip" aria-label="GitHub" target="_blank"><i class="fab fa-github"></i></a>
+          <a href="https://discord.gg/NmGyBWAE3b" aria-label="Discord" target="_blank"><i class="fab fa-discord"></i></a>
+          <a href="https://twitter.com" aria-label="Twitter" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://instagram.com" aria-label="Instagram" target="_blank"><i class="fab fa-instagram"></i></a>
+          <a href="https://youtube.com" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+          <a href="https://www.linkedin.com/in/adityai0" aria-label="LinkedIn" target="_blank"><i class="fab fa-linkedin-in"></i></a>
+        </div>
+      </div>
+
+      <!-- Newsletter -->
+      <div class="col-12 col-md-3 mb-4 footer-newsletter">
+        <h5 class="footer-title">Stay Updated</h5>
+        <form class="newsletter-form">
+          <input type="email" placeholder="Enter your email" aria-label="Email for newsletter" required>
+          <button type="submit">Subscribe</button>
+        </form>
+        <small class="text-muted">Get updates about new features & challenges.</small>
+      </div>
     </div>
-    <hr />
-    <p data-aos-duration="650" data-aos="fade-up" class="footerNote text-center mb-0">
-      &copy; CodeClip | Open Source Project 2025
-    </p>
   </div>
+
+  <hr />
+
+  <!-- Bottom Note -->
+  <p class="footerNote text-center mb-0">
+    Made with ❤️ by <a href="https://github.com/opensource-society/CodeClip/graphs/contributors" target="_blank">Contributors</a> | 
+    &copy; CodeClip 2025
+  </p>
 </footer>
+
     <!--AOS Animations-->
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
     <script>
