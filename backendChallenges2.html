@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="exploremore.css" />
+    <title>Backend Challenges</title>
+  </head>
+  <body>
+    <h1>Challenge: Build a Form Submission Backend</h1>
+
+    <div class="card">
+      <h2>Objective</h2>
+      <p>
+        Create a backend server that accepts form data sent from a frontend
+        using the POST method. The server should validate, process, and store
+        the data.
+      </p>
+
+      <h2>Key Features to Implement</h2>
+      <ol>
+        <li>
+          <strong>Server Setup:</strong>
+          <ul>
+            <li>
+              Use Express (Node.js) or Flask (Python) to set up the backend.
+            </li>
+            <li>
+              Enable body parsing to handle incoming POST request data (e.g.,
+              JSON or URL-encoded).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Form Endpoint:</strong>
+          <ul>
+            <li>
+              Create a <code>/submit</code> endpoint that accepts POST requests.
+            </li>
+            <li>
+              Collect data such as <code>name</code>, <code>email</code>,
+              <code>message</code>.
+            </li>
+            <li>
+              Validate the input (e.g., check required fields, valid email).
+            </li>
+          </ul>
+        </li>
+        <li>
+          <strong>Data Handling:</strong>
+          <ul>
+            <li>
+              Store form submissions in an in-memory array (for practice) or a
+              JSON file.
+            </li>
+            <li>
+              Return a success response with the submitted data in JSON format.
+            </li>
+            <li>Handle errors gracefully (missing fields, invalid data).</li>
+          </ul>
+        </li>
+        <li>
+          <strong>Optional Enhancements:</strong>
+          <ul>
+            <li>Save data into a database (SQLite, MongoDB, PostgreSQL).</li>
+            <li>Send an email notification on each form submission.</li>
+            <li>Add CORS support to allow frontend apps to connect.</li>
+          </ul>
+        </li>
+      </ol>
+
+      <h2>Tools & Techniques to Practice:</h2>
+      <ul>
+        <li>Backend frameworks: Express (Node.js) or Flask (Python).</li>
+        <li>HTTP POST request handling.</li>
+        <li>Data validation and JSON responses.</li>
+        <li>Optional: Database integration and CORS.</li>
+      </ul>
+
+      <h2>Challenge Goals</h2>
+      <ul>
+        <li>Understand how POST requests are handled in backend frameworks.</li>
+        <li>Learn how to receive and process data from frontend forms.</li>
+        <li>
+          Build a foundation for connecting frontend forms with databases.
+        </li>
+      </ul>
+    </div>
+  </body>
+</html>
