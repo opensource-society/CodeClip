@@ -90,8 +90,7 @@ codeclip/
    - Create a **feature branch**: `git checkout -b feat/`  
    - Follow the style guide; submit a pull request; respond to reviews.
 
-## 🛣️ Roadmap (Quarter 3 2025)
-
+## 🛣️ Roadmap (Q1 2026)
 1. **Landing & Vault MVP** – basic challenge listing 🛠  
 2. **Code Editor Integration** – CodeMirror + autosave 🛠  
 3. **JS Runtime** – iframe sandbox, execution timers 🛠  
