@@ -68,7 +68,7 @@ This leaderboard tracks contributors who have completed issues labeled as `level
 | [@yashp386](https://github.com/yashp386) | 1 | 0 | 0 | 0 |
 | [@Mastercoder0406](https://github.com/Mastercoder0406) | 0 | 1 | 0 | 0 |
 | [@Sravanthi359](https://github.com/Sravanthi359) | 0 | 1 | 0 | 0 |
-| [@TechMe103](https://github.com/TechMe103) | 0 | 1 | 0 | 0 |
+| [@SanikaSalunkhe1](https://github.com/SanikaSalunkhe1) | 0 | 1 | 0 | 0 |
 | [@Oviya-Babu](https://github.com/Oviya-Babu) | 0 | 1 | 0 | 0 |
 | [@faisal07777](https://github.com/faisal07777) | 1 | 0 | 0 | 0 |
 | [@AmritRaj29](https://github.com/AmritRaj29) | 1 | 0 | 0 | 0 |
